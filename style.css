@@ -1,0 +1,904 @@
+/* ============================================
+   ARBORA — Stylesheet
+   Organic, warm, reverent. Not slick, not tech.
+   Typography: Cormorant Garamond (display) + 
+   EB Garamond (body) + Source Sans 3 (UI/nav)
+   ============================================ */
+
+:root {
+    /* Earth palette */
+    --bark:       #3a2e2a;
+    --heartwood:  #5c4a3d;
+    --branch:     #7d6b5d;
+    --lichen:     #8a9a7b;
+    --moss:       #6b7f5e;
+    --needle:     #4a6741;
+    --sky:        #c5cfc0;
+    --fog:        #e8e4df;
+    --parchment:  #f4f0ea;
+    --cream:      #faf8f4;
+    --warmwhite:  #fcfaf6;
+    --amber:      #b8860b;
+    --clay:       #a0522d;
+
+    /* Typography scale */
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body:    'EB Garamond', Georgia, serif;
+    --font-ui:      'Source Sans 3', 'Source Sans Pro', sans-serif;
+
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+    --space-2xl: 10rem;
+}
+
+/* ---- Reset & Base ---- */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--bark);
+    background-color: var(--cream);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* ---- Navigation ---- */
+
+.site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-sm) var(--space-md);
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(58, 46, 42, 0.08);
+    transition: background 0.3s ease;
+}
+
+.nav-mark {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.nav-links a {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--branch);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--bark);
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--bark);
+    cursor: pointer;
+}
+
+/* ---- Hero ---- */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: var(--space-2xl) var(--space-md);
+    background: 
+        radial-gradient(ellipse at 30% 80%, rgba(106, 127, 94, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 20%, rgba(184, 134, 11, 0.04) 0%, transparent 50%),
+        linear-gradient(180deg, var(--cream) 0%, var(--parchment) 100%);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.hero-inner {
+    max-width: 700px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-super {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--lichen);
+    margin-bottom: var(--space-sm);
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+}
+
+.hero-title {
+    font-family: var(--font-display);
+    font-size: 3.2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--bark);
+    letter-spacing: 0.01em;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+}
+
+.hero-line {
+    width: 60px;
+    height: 1px;
+    background: var(--lichen);
+    margin: var(--space-md) auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+}
+
+.hero-sub {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--heartwood);
+    max-width: 540px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+}
+
+/* ---- Sections ---- */
+
+.section {
+    padding: var(--space-xl) var(--space-md);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container.narrow {
+    max-width: 720px;
+}
+
+.section-title {
+    font-family: var(--font-display);
+    font-size: 2.4rem;
+    font-weight: 300;
+    text-align: center;
+    color: var(--bark);
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.02em;
+}
+
+.section-subtitle {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--branch);
+    margin-bottom: var(--space-lg);
+}
+
+/* ---- Preamble ---- */
+
+.preamble {
+    background: var(--parchment);
+    border-top: 1px solid rgba(58, 46, 42, 0.06);
+    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+}
+
+.preamble .lead {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: var(--heartwood);
+    margin-bottom: var(--space-md);
+}
+
+.preamble .lead::first-letter {
+    font-family: var(--font-display);
+    font-size: 3.8rem;
+    float: left;
+    line-height: 0.85;
+    padding-right: 0.12em;
+    padding-top: 0.06em;
+    color: var(--bark);
+    font-weight: 500;
+}
+
+.preamble p:last-child {
+    font-family: var(--font-body);
+    font-style: italic;
+    color: var(--branch);
+    font-size: 1rem;
+}
+
+/* ---- Values Grid ---- */
+
+.values {
+    background: var(--cream);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+
+.value-card {
+    padding: var(--space-md);
+    border: 1px solid rgba(58, 46, 42, 0.08);
+    border-radius: 2px;
+    background: var(--warmwhite);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.value-card:hover {
+    border-color: rgba(138, 154, 123, 0.3);
+    box-shadow: 0 4px 20px rgba(58, 46, 42, 0.05);
+}
+
+.value-num {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--lichen);
+    display: block;
+    margin-bottom: var(--space-xs);
+    letter-spacing: 0.05em;
+}
+
+.value-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--bark);
+    margin-bottom: var(--space-xs);
+}
+
+.value-card p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--heartwood);
+}
+
+/* ---- Principles ---- */
+
+.principles {
+    background: var(--parchment);
+    border-top: 1px solid rgba(58, 46, 42, 0.06);
+    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+}
+
+.principles-list {
+    list-style: none;
+    counter-reset: principle;
+}
+
+.principles-list li {
+    counter-increment: principle;
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    position: relative;
+    padding-left: 3.5rem;
+}
+
+.principles-list li::before {
+    content: counter(principle);
+    position: absolute;
+    left: 0;
+    top: var(--space-md);
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--lichen);
+    line-height: 1;
+}
+
+.principles-list li:last-child {
+    border-bottom: none;
+}
+
+.principles-list strong {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--bark);
+}
+
+.principles-list span {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--heartwood);
+    line-height: 1.7;
+}
+
+/* ---- Traditions ---- */
+
+.traditions {
+    background: var(--cream);
+}
+
+.traditions-tiers {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.tier {
+    text-align: center;
+}
+
+.tier-label {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--bark);
+    margin-bottom: 0.3rem;
+}
+
+.tier-desc {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    color: var(--branch);
+    margin-bottom: var(--space-sm);
+}
+
+.tradition-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.tag {
+    font-family: var(--font-ui);
+    font-size: 0.8rem;
+    font-weight: 400;
+    padding: 0.45rem 1rem;
+    border-radius: 2px;
+    letter-spacing: 0.03em;
+}
+
+.tag.core {
+    background: var(--bark);
+    color: var(--parchment);
+}
+
+.tag.secondary {
+    background: transparent;
+    color: var(--heartwood);
+    border: 1px solid var(--branch);
+}
+
+.tag.tertiary {
+    background: transparent;
+    color: var(--branch);
+    border: 1px solid rgba(125, 107, 93, 0.3);
+    font-size: 0.75rem;
+}
+
+/* ---- Meta (What is a Religion) ---- */
+
+.meta {
+    background: var(--parchment);
+    border-top: 1px solid rgba(58, 46, 42, 0.06);
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+}
+
+.meta-item {
+    text-align: center;
+    padding: var(--space-md) var(--space-sm);
+}
+
+.meta-item h4 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--bark);
+    margin-bottom: 0.3rem;
+}
+
+.meta-item p {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--branch);
+}
+
+/* ---- Footer ---- */
+
+.site-footer {
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    background: var(--bark);
+    color: var(--fog);
+}
+
+.footer-mark {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--parchment);
+    margin-bottom: var(--space-sm);
+}
+
+.footer-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--sky);
+    font-style: italic;
+}
+
+.footer-text.small {
+    font-size: 0.8rem;
+    margin-top: var(--space-xs);
+    color: var(--branch);
+}
+
+/* ---- Sub-page layout ---- */
+
+.page-header {
+    padding: calc(var(--space-2xl) - 2rem) var(--space-md) var(--space-lg);
+    text-align: center;
+    background: 
+        radial-gradient(ellipse at 50% 100%, rgba(106, 127, 94, 0.05) 0%, transparent 60%),
+        var(--cream);
+}
+
+.page-header h1 {
+    font-family: var(--font-display);
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--bark);
+    margin-bottom: var(--space-xs);
+}
+
+.page-header p {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--branch);
+}
+
+.page-content {
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+}
+
+.page-content .container.narrow {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--heartwood);
+}
+
+.page-content h2 {
+    font-family: var(--font-display);
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.page-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: var(--bark);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xs);
+}
+
+.page-content p {
+    margin-bottom: var(--space-sm);
+}
+
+.page-content blockquote {
+    border-left: 2px solid var(--lichen);
+    padding-left: var(--space-md);
+    margin: var(--space-md) 0;
+    font-style: italic;
+    color: var(--branch);
+}
+
+.page-content .wip-notice {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--lichen);
+    background: rgba(138, 154, 123, 0.08);
+    border: 1px solid rgba(138, 154, 123, 0.2);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 2px;
+    margin: var(--space-md) 0;
+}
+
+/* ---- Tree Page Specific ---- */
+
+.tree-container {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.6;
+    background: var(--warmwhite);
+    border: 1px solid rgba(58, 46, 42, 0.08);
+    padding: var(--space-md);
+    overflow-x: auto;
+    white-space: pre;
+    color: var(--heartwood);
+    border-radius: 2px;
+}
+
+/* ---- Animations ---- */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .meta-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero-title {
+        font-size: 2.4rem;
+    }
+
+    .page-header {
+        padding: calc(var(--space-2xl) - 3rem) var(--space-sm) var(--space-md);
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 640px) {
+    html {
+        font-size: 16px;
+    }
+
+    /* Mobile nav — full screen overlay */
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(250, 248, 244, 0.98);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        z-index: 99;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links.open a {
+        font-size: 1.1rem;
+        letter-spacing: 0.15em;
+        padding: 0.5rem 0;
+    }
+
+    .nav-toggle {
+        display: block;
+        z-index: 101;
+        font-size: 1.5rem;
+        padding: 0.5rem;
+        /* Larger touch target */
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Hero — tighter on mobile */
+    .hero {
+        min-height: 85vh;
+        padding: var(--space-xl) var(--space-sm);
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+
+    .hero-title br {
+        display: none;
+    }
+
+    .hero-sub {
+        font-size: 0.92rem;
+        line-height: 1.75;
+    }
+
+    .hero-line {
+        width: 40px;
+        margin: var(--space-sm) auto;
+    }
+
+    /* Sections — less padding */
+    .section {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .section-subtitle {
+        font-size: 0.72rem;
+        margin-bottom: var(--space-md);
+    }
+
+    /* Preamble */
+    .preamble .lead {
+        font-size: 1.02rem;
+        line-height: 1.8;
+    }
+
+    .preamble .lead::first-letter {
+        font-size: 3rem;
+    }
+
+    /* Values — single column on phone */
+    .values-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .value-card {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .value-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .value-card p {
+        font-size: 0.88rem;
+    }
+
+    /* Principles — tighter layout */
+    .principles-list li {
+        padding-left: 2.8rem;
+        padding-top: var(--space-sm);
+        padding-bottom: var(--space-sm);
+    }
+
+    .principles-list li::before {
+        font-size: 1.5rem;
+        top: var(--space-sm);
+    }
+
+    .principles-list strong {
+        font-size: 1.15rem;
+    }
+
+    .principles-list span {
+        font-size: 0.92rem;
+    }
+
+    /* Traditions tags — wrap nicely */
+    .tradition-tags {
+        gap: 0.4rem;
+    }
+
+    .tag {
+        font-size: 0.75rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    .tier-label {
+        font-size: 1.25rem;
+    }
+
+    /* Meta grid — 2 column still works on phones */
+    .meta-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .meta-item {
+        padding: var(--space-sm) var(--space-xs);
+    }
+
+    .meta-item h4 {
+        font-size: 0.95rem;
+    }
+
+    .meta-item p {
+        font-size: 0.82rem;
+    }
+
+    /* Sub-pages */
+    .page-header {
+        padding: calc(var(--space-xl) + 1rem) var(--space-sm) var(--space-md);
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .page-content {
+        padding: var(--space-md) var(--space-sm) var(--space-lg);
+    }
+
+    .page-content .container.narrow {
+        font-size: 1rem;
+        line-height: 1.8;
+    }
+
+    .page-content h2 {
+        font-size: 1.5rem;
+        margin-top: var(--space-md);
+    }
+
+    .page-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .page-content blockquote {
+        padding-left: var(--space-sm);
+        font-size: 0.9rem;
+    }
+
+    .page-content .wip-notice {
+        font-size: 0.82rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    /* Tree — scrollable on mobile */
+    .tree-container {
+        font-size: 0.7rem;
+        padding: var(--space-sm);
+        line-height: 1.5;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Footer */
+    .site-footer {
+        padding: var(--space-lg) var(--space-sm);
+    }
+
+    .footer-mark {
+        font-size: 1.4rem;
+    }
+
+    .footer-text {
+        font-size: 0.88rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 1.55rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .meta-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .value-card {
+        padding: var(--space-sm);
+    }
+}
+
+/* Touch-friendly: ensure all interactive elements have adequate tap targets */
+@media (pointer: coarse) {
+    .nav-links a {
+        padding: 0.5rem 0.25rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tag {
+        min-height: 36px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* Safe area insets for notched phones */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .site-nav {
+        padding-left: max(var(--space-md), env(safe-area-inset-left));
+        padding-right: max(var(--space-md), env(safe-area-inset-right));
+        padding-top: max(var(--space-sm), env(safe-area-inset-top));
+    }
+
+    .site-footer {
+        padding-bottom: max(var(--space-xl), calc(var(--space-lg) + env(safe-area-inset-bottom)));
+    }
+
+    .hero {
+        padding-left: max(var(--space-sm), env(safe-area-inset-left));
+        padding-right: max(var(--space-sm), env(safe-area-inset-right));
+    }
+}
+
