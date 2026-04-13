@@ -1,27 +1,69 @@
 /* ============================================
-   ARBORA — Stylesheet
-   Organic, warm, reverent. Not slick, not tech.
+   ARBORA — Design System: "Living Architecture"
+
+   Every element draws from organic forms:
+   trees, roots, rings, flowing water, filtered
+   light. The site breathes. Sections flow like
+   canopy layers. Nothing is harsh or rectangular
+   — everything curves, grows, and connects.
+
    Typography: Cormorant Garamond (display) +
    EB Garamond (body) + Source Sans 3 (UI/nav)
    ============================================ */
+
+/* ──────────────────────────────────────────────
+   TOKENS
+   ────────────────────────────────────────────── */
 
 :root {
     /* Earth palette */
     --bark:       #3a2e2a;
     --heartwood:  #5c4a3d;
     --branch:     #7d6b5d;
-    --lichen:     #8a9a7b;
-    --moss:       #6b7f5e;
+    --stone:      #9a8f84;
+
+    /* Canopy palette */
     --needle:     #4a6741;
+    --moss:       #6b7f5e;
+    --lichen:     #8a9a7b;
+    --sage:       #a3b18a;
     --sky:        #c5cfc0;
-    --fog:        #e8e4df;
-    --parchment:  #f4f0ea;
-    --cream:      #faf8f4;
+
+    /* Light palette */
     --warmwhite:  #fcfaf6;
+    --cream:      #faf8f4;
+    --parchment:  #f4f0ea;
+    --fog:        #e8e4df;
+    --dawn:       #e8c9a0;
+
+    /* Earth depth */
+    --earth:      #4a3728;
+    --root:       #2a2118;
+    --canopy:     #2d4a2d;
+
+    /* Warm accents */
     --amber:      #b8860b;
+    --sunlight:   #d4a843;
     --clay:       #a0522d;
 
-    /* Typography scale */
+    /* Organic shadows */
+    --shadow-rest:    0 2px 8px rgba(58, 46, 42, 0.04),
+                      0 8px 32px rgba(58, 46, 42, 0.06);
+    --shadow-lifted:  0 4px 16px rgba(58, 46, 42, 0.06),
+                      0 16px 48px rgba(58, 46, 42, 0.10);
+    --shadow-glow:    0 0 40px rgba(138, 154, 123, 0.12);
+
+    /* Organic radii */
+    --radius-organic: 12px 8px 16px 4px;
+    --radius-leaf:    20px 4px 20px 4px;
+    --radius-stone:   8px 14px 8px 14px;
+    --radius-soft:    8px;
+
+    /* Organic easing */
+    --ease-organic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --ease-grow:    cubic-bezier(0.34, 1.56, 0.64, 1);
+
+    /* Typography */
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body:    'EB Garamond', Georgia, serif;
     --font-ui:      'Source Sans 3', 'Source Sans Pro', sans-serif;
@@ -35,7 +77,9 @@
     --space-2xl: 10rem;
 }
 
-/* ---- Reset & Base ---- */
+/* ──────────────────────────────────────────────
+   RESET & BASE
+   ────────────────────────────────────────────── */
 
 *, *::before, *::after {
     margin: 0;
@@ -58,11 +102,13 @@ body {
 }
 
 ::selection {
-    background: rgba(138, 154, 123, 0.25);
+    background: rgba(138, 154, 123, 0.3);
     color: var(--bark);
 }
 
-/* ---- Scroll Progress ---- */
+/* ──────────────────────────────────────────────
+   SCROLL PROGRESS
+   ────────────────────────────────────────────── */
 
 .scroll-progress {
     position: fixed;
@@ -70,17 +116,19 @@ body {
     left: 0;
     height: 2px;
     width: 0;
-    background: linear-gradient(90deg, var(--lichen), var(--moss));
+    background: linear-gradient(90deg, var(--lichen), var(--moss), var(--needle));
     z-index: 200;
     transition: width 0.1s linear;
 }
 
-/* ---- Reveal Animations (Progressive Enhancement) ---- */
+/* ──────────────────────────────────────────────
+   REVEAL ANIMATIONS (Progressive Enhancement)
+   ────────────────────────────────────────────── */
 
 .reveal {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(24px);
+    transition: opacity 0.9s var(--ease-organic), transform 0.9s var(--ease-organic);
 }
 
 .reveal.revealed {
@@ -88,7 +136,9 @@ body {
     transform: translateY(0);
 }
 
-/* ---- Navigation ---- */
+/* ──────────────────────────────────────────────
+   NAVIGATION
+   ────────────────────────────────────────────── */
 
 .site-nav {
     position: fixed;
@@ -100,18 +150,22 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-sm) var(--space-md);
-    background: rgba(250, 248, 244, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(58, 46, 42, 0.08);
-    transition: transform 0.35s ease, background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(250, 248, 244, 0.88);
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border-bottom: 1px solid rgba(138, 154, 123, 0.1);
+    transition: transform 0.4s var(--ease-organic),
+                background 0.3s ease,
+                padding 0.3s ease,
+                box-shadow 0.3s ease;
 }
 
 .site-nav.scrolled {
     padding-top: 0.6rem;
     padding-bottom: 0.6rem;
-    background: rgba(250, 248, 244, 0.96);
-    box-shadow: 0 1px 12px rgba(58, 46, 42, 0.06);
+    background: rgba(250, 248, 244, 0.95);
+    box-shadow: 0 1px 16px rgba(58, 46, 42, 0.06),
+                0 0 0 1px rgba(138, 154, 123, 0.06);
 }
 
 .site-nav.nav-hidden {
@@ -120,16 +174,38 @@ body {
 
 .nav-mark {
     font-family: var(--font-display);
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     font-weight: 500;
     letter-spacing: 0.08em;
     color: var(--bark);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.3s var(--ease-organic);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Tree-ring icon before "Arbora" */
+.nav-mark::before {
+    content: '';
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    border: 1.5px solid var(--lichen);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, var(--lichen) 2px, transparent 2px),
+                radial-gradient(circle at center, transparent 5px, rgba(138, 154, 123, 0.08) 6px, transparent 7px),
+                radial-gradient(circle at center, transparent 9px, rgba(138, 154, 123, 0.06) 10px, transparent 11px);
+    flex-shrink: 0;
+    transition: transform 0.6s var(--ease-organic);
 }
 
 .nav-mark:hover {
-    opacity: 0.7;
+    opacity: 0.75;
+}
+
+.nav-mark:hover::before {
+    transform: rotate(90deg) scale(1.1);
 }
 
 .nav-links {
@@ -145,7 +221,7 @@ body {
     text-transform: uppercase;
     color: var(--branch);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s var(--ease-organic);
     position: relative;
 }
 
@@ -156,10 +232,11 @@ body {
     left: 0;
     right: 0;
     height: 1.5px;
-    background: var(--lichen);
+    background: linear-gradient(90deg, var(--lichen), var(--moss));
+    border-radius: 1px;
     transform: scaleX(0);
     transform-origin: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s var(--ease-organic);
 }
 
 .nav-links a:hover {
@@ -177,7 +254,7 @@ body {
 
 .nav-links a.active::after {
     transform: scaleX(1);
-    background: var(--moss);
+    background: linear-gradient(90deg, var(--moss), var(--needle));
 }
 
 .nav-toggle {
@@ -189,7 +266,9 @@ body {
     cursor: pointer;
 }
 
-/* ---- Hero ---- */
+/* ──────────────────────────────────────────────
+   HERO
+   ────────────────────────────────────────────── */
 
 .hero {
     min-height: 100vh;
@@ -198,13 +277,20 @@ body {
     justify-content: center;
     text-align: center;
     padding: var(--space-2xl) var(--space-md);
-    background:
-        radial-gradient(ellipse at 30% 80%, rgba(106, 127, 94, 0.06) 0%, transparent 60%),
-        radial-gradient(ellipse at 70% 20%, rgba(184, 134, 11, 0.04) 0%, transparent 50%),
-        linear-gradient(180deg, var(--cream) 0%, var(--parchment) 100%);
     position: relative;
+    overflow: hidden;
+
+    /* Layered dappled-light background */
+    background:
+        radial-gradient(ellipse at 25% 30%, rgba(212, 168, 67, 0.07) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 60%, rgba(212, 168, 67, 0.05) 0%, transparent 40%),
+        radial-gradient(ellipse at 15% 70%, rgba(106, 127, 94, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 25%, rgba(106, 127, 94, 0.06) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 120%, rgba(232, 201, 160, 0.15) 0%, transparent 60%),
+        linear-gradient(175deg, var(--cream) 0%, var(--parchment) 60%, var(--fog) 100%);
 }
 
+/* Organic paper texture overlay */
 .hero::before {
     content: '';
     position: absolute;
@@ -212,61 +298,127 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
     pointer-events: none;
+    z-index: 0;
 }
 
 .hero-inner {
-    max-width: 700px;
+    max-width: 720px;
     position: relative;
+    z-index: 2;
+}
+
+/* SVG tree illustration in hero background */
+.hero-tree {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(500px, 70vw);
+    height: auto;
     z-index: 1;
+    color: var(--bark);
+    pointer-events: none;
+    animation: treeBreathe 10s var(--ease-organic) infinite;
 }
 
 .hero-super {
     font-family: var(--font-ui);
     font-size: 0.72rem;
     font-weight: 400;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--lichen);
     margin-bottom: var(--space-sm);
     opacity: 0;
-    animation: fadeUp 1s ease 0.3s forwards;
+    animation: fadeUp 1s var(--ease-organic) 0.3s forwards;
 }
 
 .hero-title {
     font-family: var(--font-display);
-    font-size: 3.2rem;
+    font-size: 3.4rem;
     font-weight: 300;
-    line-height: 1.2;
+    line-height: 1.18;
     color: var(--bark);
     letter-spacing: 0.01em;
     opacity: 0;
-    animation: fadeUp 1s ease 0.5s forwards;
+    animation: fadeUp 1.1s var(--ease-organic) 0.5s forwards;
 }
 
 .hero-line {
     width: 60px;
     height: 1px;
-    background: var(--lichen);
     margin: var(--space-md) auto;
     opacity: 0;
-    animation: fadeUp 1s ease 0.7s forwards;
+    animation: fadeUp 1s var(--ease-organic) 0.7s forwards;
+    background: none;
+    position: relative;
+}
+
+/* Organic decorative line with center dot */
+.hero-line::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--lichen), var(--moss), var(--lichen), transparent);
+}
+
+.hero-line::after {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--lichen);
+    opacity: 0.5;
 }
 
 .hero-sub {
     font-family: var(--font-body);
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     font-weight: 400;
-    line-height: 1.8;
+    line-height: 1.85;
     color: var(--heartwood);
     max-width: 540px;
     margin: 0 auto;
     opacity: 0;
-    animation: fadeUp 1s ease 0.9s forwards;
+    animation: fadeUp 1s var(--ease-organic) 0.9s forwards;
 }
 
-/* Scroll hint at bottom of hero */
+/* Scroll hint — dripping lines */
+.hero-scroll-hint {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    opacity: 0;
+    animation: fadeIn 1s ease 1.8s forwards;
+    z-index: 2;
+}
+
+.hero-scroll-hint span {
+    display: block;
+    width: 1px;
+    background: var(--lichen);
+    animation: scrollDrip 2.5s var(--ease-organic) infinite;
+}
+
+.hero-scroll-hint span:nth-child(1) { height: 12px; opacity: 0.2; animation-delay: 0s; }
+.hero-scroll-hint span:nth-child(2) { height: 16px; opacity: 0.35; animation-delay: 0.15s; }
+.hero-scroll-hint span:nth-child(3) { height: 12px; opacity: 0.2; animation-delay: 0.3s; }
+
+/* Legacy scroll hint fallback */
 .hero::after {
     content: '';
     position: absolute;
@@ -278,10 +430,12 @@ body {
     background: linear-gradient(to bottom, transparent, var(--lichen));
     opacity: 0;
     animation: fadeIn 1s ease 1.5s forwards, scrollPulse 2.5s ease-in-out 2.5s infinite;
+    z-index: 2;
 }
 
-@keyframes fadeIn {
-    to { opacity: 0.5; }
+/* Hide legacy hint if new hint exists */
+.hero:has(.hero-scroll-hint)::after {
+    display: none;
 }
 
 @keyframes scrollPulse {
@@ -289,10 +443,37 @@ body {
     50% { opacity: 0.2; transform: translateX(-50%) scaleY(0.6); }
 }
 
-/* ---- Sections ---- */
+/* ──────────────────────────────────────────────
+   SECTION SEPARATORS
+   ────────────────────────────────────────────── */
+
+.section-sep {
+    line-height: 0;
+    font-size: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.section-sep svg {
+    display: block;
+    width: 100%;
+    height: 50px;
+    position: relative;
+}
+
+.section-sep--tall svg {
+    height: 70px;
+}
+
+/* ──────────────────────────────────────────────
+   SECTIONS — BASE
+   ────────────────────────────────────────────── */
 
 .section {
     padding: var(--space-xl) var(--space-md);
+    position: relative;
 }
 
 .container {
@@ -314,6 +495,16 @@ body {
     letter-spacing: 0.02em;
 }
 
+/* Decorative accent line under section titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--lichen), transparent);
+    margin: var(--space-sm) auto 0;
+}
+
 .section-subtitle {
     font-family: var(--font-ui);
     font-size: 0.78rem;
@@ -325,12 +516,15 @@ body {
     margin-bottom: var(--space-lg);
 }
 
-/* ---- Preamble ---- */
+/* ──────────────────────────────────────────────
+   PREAMBLE
+   ────────────────────────────────────────────── */
 
 .preamble {
-    background: var(--parchment);
-    border-top: 1px solid rgba(58, 46, 42, 0.06);
-    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+    background:
+        radial-gradient(ellipse at 80% 20%, rgba(212, 168, 67, 0.04) 0%, transparent 50%),
+        var(--parchment);
+    position: relative;
 }
 
 .preamble .lead {
@@ -343,13 +537,14 @@ body {
 
 .preamble .lead::first-letter {
     font-family: var(--font-display);
-    font-size: 3.8rem;
+    font-size: 4rem;
     float: left;
-    line-height: 0.85;
-    padding-right: 0.12em;
+    line-height: 0.82;
+    padding-right: 0.14em;
     padding-top: 0.06em;
     color: var(--bark);
     font-weight: 500;
+    text-shadow: 2px 2px 0 rgba(138, 154, 123, 0.1);
 }
 
 .preamble p:last-child {
@@ -359,10 +554,15 @@ body {
     font-size: 1rem;
 }
 
-/* ---- Values Grid ---- */
+/* ──────────────────────────────────────────────
+   VALUES GRID
+   ────────────────────────────────────────────── */
 
 .values {
-    background: var(--cream);
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(138, 154, 123, 0.05) 0%, transparent 60%),
+        radial-gradient(ellipse at 70% 80%, rgba(212, 168, 67, 0.03) 0%, transparent 50%),
+        var(--cream);
 }
 
 .values-grid {
@@ -373,14 +573,18 @@ body {
 
 .value-card {
     padding: var(--space-md);
-    border: 1px solid rgba(58, 46, 42, 0.08);
-    border-radius: 3px;
-    background: var(--warmwhite);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(138, 154, 123, 0.12);
+    border-radius: var(--radius-organic);
+    background: linear-gradient(145deg, var(--warmwhite) 0%, rgba(250, 248, 244, 0.8) 100%);
+    box-shadow: var(--shadow-rest);
+    transition: border-color 0.4s var(--ease-organic),
+                box-shadow 0.4s var(--ease-organic),
+                transform 0.4s var(--ease-organic);
     position: relative;
     overflow: hidden;
 }
 
+/* Growing vine accent — left border */
 .value-card::before {
     content: '';
     position: absolute;
@@ -388,29 +592,66 @@ body {
     left: 0;
     width: 3px;
     height: 100%;
-    background: var(--lichen);
+    background: linear-gradient(180deg, transparent 10%, var(--lichen) 40%, var(--moss) 70%, var(--needle) 100%);
+    border-radius: 0 2px 2px 0;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.6s var(--ease-organic);
+}
+
+/* Subtle organic glow on hover */
+.value-card::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(138, 154, 123, 0.08), transparent 70%);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s var(--ease-organic);
+    pointer-events: none;
 }
 
 .value-card:hover {
-    border-color: rgba(138, 154, 123, 0.3);
-    box-shadow: 0 6px 24px rgba(58, 46, 42, 0.07);
-    transform: translateY(-2px);
+    border-color: rgba(138, 154, 123, 0.25);
+    box-shadow: var(--shadow-lifted);
+    transform: translateY(-3px);
 }
 
 .value-card:hover::before {
+    transform: scaleY(1);
+}
+
+.value-card:hover::after {
     opacity: 1;
 }
 
+/* Ring-styled numeral */
 .value-num {
     font-family: var(--font-display);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--lichen);
-    display: block;
-    margin-bottom: var(--space-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    border: 1.5px solid rgba(138, 154, 123, 0.3);
+    border-radius: 50%;
+    margin-bottom: var(--space-sm);
     letter-spacing: 0.05em;
+    transition: background 0.4s var(--ease-organic),
+                color 0.4s var(--ease-organic),
+                border-color 0.4s var(--ease-organic);
+}
+
+.value-card:hover .value-num {
+    background: var(--lichen);
+    color: var(--cream);
+    border-color: var(--lichen);
 }
 
 .value-card h3 {
@@ -428,50 +669,95 @@ body {
     color: var(--heartwood);
 }
 
-/* ---- Principles ---- */
+/* ──────────────────────────────────────────────
+   PRINCIPLES
+   ────────────────────────────────────────────── */
 
 .principles {
-    background: var(--parchment);
-    border-top: 1px solid rgba(58, 46, 42, 0.06);
-    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+    background:
+        radial-gradient(ellipse at 20% 30%, rgba(106, 127, 94, 0.04) 0%, transparent 50%),
+        var(--parchment);
+    position: relative;
 }
 
 .principles-list {
     list-style: none;
     counter-reset: principle;
+    position: relative;
+}
+
+/* Connecting vine line between items */
+.principles-list::before {
+    content: '';
+    position: absolute;
+    left: 1.15rem;
+    top: 2rem;
+    bottom: 2rem;
+    width: 1px;
+    background: linear-gradient(180deg,
+        transparent,
+        rgba(138, 154, 123, 0.2) 10%,
+        rgba(138, 154, 123, 0.2) 90%,
+        transparent);
 }
 
 .principles-list li {
     counter-increment: principle;
-    padding: var(--space-md) 0;
-    border-bottom: 1px solid rgba(58, 46, 42, 0.06);
+    padding: var(--space-md) 0 var(--space-md) 4rem;
+    border-bottom: none;
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
     position: relative;
-    padding-left: 3.5rem;
-    transition: padding-left 0.3s ease;
+    transition: padding-left 0.4s var(--ease-organic);
 }
 
 .principles-list li:hover {
-    padding-left: 4rem;
+    padding-left: 4.4rem;
 }
 
+/* Ring-numbered counter */
 .principles-list li::before {
     content: counter(principle);
     position: absolute;
     left: 0;
-    top: var(--space-md);
+    top: calc(var(--space-md) + 0.1rem);
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    border: 1.5px solid rgba(138, 154, 123, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 300;
+    font-size: 1rem;
+    font-weight: 400;
     color: var(--lichen);
     line-height: 1;
-    transition: color 0.3s ease;
+    background: var(--parchment);
+    transition: background 0.4s var(--ease-organic),
+                color 0.4s var(--ease-organic),
+                border-color 0.4s var(--ease-organic),
+                box-shadow 0.4s var(--ease-organic);
+    z-index: 1;
 }
 
 .principles-list li:hover::before {
-    color: var(--moss);
+    background: var(--lichen);
+    color: var(--cream);
+    border-color: var(--lichen);
+    box-shadow: 0 0 0 4px rgba(138, 154, 123, 0.1);
+}
+
+/* Subtle separator between items */
+.principles-list li + li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 4rem;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(138, 154, 123, 0.15), transparent 80%);
 }
 
 .principles-list li:last-child {
@@ -492,10 +778,14 @@ body {
     line-height: 1.7;
 }
 
-/* ---- Traditions ---- */
+/* ──────────────────────────────────────────────
+   TRADITIONS
+   ────────────────────────────────────────────── */
 
 .traditions {
-    background: var(--cream);
+    background:
+        radial-gradient(ellipse at 60% 40%, rgba(212, 168, 67, 0.04) 0%, transparent 50%),
+        var(--cream);
 }
 
 .traditions-tiers {
@@ -535,47 +825,60 @@ body {
     font-family: var(--font-ui);
     font-size: 0.8rem;
     font-weight: 400;
-    padding: 0.45rem 1rem;
-    border-radius: 2px;
+    padding: 0.5rem 1.1rem;
     letter-spacing: 0.03em;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.3s var(--ease-organic),
+                box-shadow 0.3s var(--ease-organic),
+                background 0.3s var(--ease-organic);
 }
 
 .tag:hover {
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .tag.core {
-    background: var(--bark);
+    background: linear-gradient(135deg, var(--bark) 0%, var(--earth) 100%);
     color: var(--parchment);
+    border-radius: var(--radius-leaf);
 }
 
 .tag.core:hover {
-    box-shadow: 0 3px 12px rgba(58, 46, 42, 0.2);
+    box-shadow: 0 4px 16px rgba(58, 46, 42, 0.2);
 }
 
 .tag.secondary {
     background: transparent;
     color: var(--heartwood);
-    border: 1px solid var(--branch);
+    border: 1px solid rgba(125, 107, 93, 0.35);
+    border-radius: var(--radius-stone);
 }
 
 .tag.secondary:hover {
-    background: rgba(58, 46, 42, 0.03);
+    background: rgba(138, 154, 123, 0.06);
+    border-color: var(--lichen);
 }
 
 .tag.tertiary {
     background: transparent;
     color: var(--branch);
-    border: 1px solid rgba(125, 107, 93, 0.3);
+    border: 1px solid rgba(125, 107, 93, 0.2);
+    border-radius: var(--radius-soft);
     font-size: 0.75rem;
 }
 
-/* ---- Meta (What is a Religion) ---- */
+.tag.tertiary:hover {
+    border-color: rgba(125, 107, 93, 0.4);
+}
+
+/* ──────────────────────────────────────────────
+   META (What Is a Religion)
+   ────────────────────────────────────────────── */
 
 .meta {
-    background: var(--parchment);
-    border-top: 1px solid rgba(58, 46, 42, 0.06);
+    background:
+        radial-gradient(ellipse at 40% 60%, rgba(106, 127, 94, 0.04) 0%, transparent 50%),
+        var(--parchment);
+    position: relative;
 }
 
 .meta-grid {
@@ -587,12 +890,19 @@ body {
 .meta-item {
     text-align: center;
     padding: var(--space-md) var(--space-sm);
-    border-radius: 3px;
-    transition: background 0.3s ease;
+    border-radius: var(--radius-stone);
+    border: 1px solid transparent;
+    transition: background 0.4s var(--ease-organic),
+                border-color 0.4s var(--ease-organic),
+                box-shadow 0.4s var(--ease-organic),
+                transform 0.4s var(--ease-organic);
 }
 
 .meta-item:hover {
     background: rgba(138, 154, 123, 0.06);
+    border-color: rgba(138, 154, 123, 0.12);
+    box-shadow: var(--shadow-rest);
+    transform: translateY(-2px);
 }
 
 .meta-item h4 {
@@ -610,22 +920,54 @@ body {
     color: var(--branch);
 }
 
-/* ---- Footer ---- */
+/* ──────────────────────────────────────────────
+   FOOTER
+   ────────────────────────────────────────────── */
 
 .site-footer {
     padding: var(--space-xl) var(--space-md);
     text-align: center;
-    background: var(--bark);
+    background: linear-gradient(180deg, var(--earth) 0%, var(--root) 100%);
     color: var(--fog);
+    position: relative;
 }
 
 .footer-mark {
     font-family: var(--font-display);
     font-size: 1.8rem;
     font-weight: 300;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
     color: var(--parchment);
     margin-bottom: var(--space-sm);
+    position: relative;
+    display: inline-block;
+}
+
+/* Tree-ring decoration around footer mark */
+.footer-mark::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid rgba(197, 207, 192, 0.08);
+    pointer-events: none;
+}
+
+.footer-mark::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 1px solid rgba(197, 207, 192, 0.04);
+    pointer-events: none;
 }
 
 .footer-nav {
@@ -643,17 +985,34 @@ body {
     text-transform: uppercase;
     color: var(--sky);
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: color 0.3s var(--ease-organic);
+    position: relative;
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--lichen);
+    transform: scaleX(0);
+    transition: transform 0.3s var(--ease-organic);
 }
 
 .footer-nav a:hover {
     color: var(--parchment);
 }
 
+.footer-nav a:hover::after {
+    transform: scaleX(1);
+}
+
 .footer-divider {
     width: 40px;
     height: 1px;
-    background: var(--branch);
+    background: linear-gradient(90deg, transparent, var(--branch), transparent);
     margin: 0 auto var(--space-md);
     opacity: 0.4;
 }
@@ -671,15 +1030,32 @@ body {
     color: var(--branch);
 }
 
-/* ---- Sub-page layout ---- */
+/* ──────────────────────────────────────────────
+   SUB-PAGE LAYOUT
+   ────────────────────────────────────────────── */
 
 .page-header {
     padding: calc(var(--space-2xl) - 2rem) var(--space-md) var(--space-lg);
     text-align: center;
-    background:
-        radial-gradient(ellipse at 50% 100%, rgba(106, 127, 94, 0.05) 0%, transparent 60%),
-        var(--cream);
     position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 30% 60%, rgba(106, 127, 94, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 30%, rgba(212, 168, 67, 0.04) 0%, transparent 45%),
+        radial-gradient(ellipse at 50% 120%, rgba(232, 201, 160, 0.1) 0%, transparent 60%),
+        linear-gradient(175deg, var(--cream) 0%, var(--parchment) 100%);
+}
+
+/* Texture overlay on page headers */
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
 }
 
 .page-header::after {
@@ -687,8 +1063,9 @@ body {
     display: block;
     width: 40px;
     height: 1px;
-    background: var(--lichen);
+    background: linear-gradient(90deg, transparent, var(--lichen), transparent);
     margin: var(--space-md) auto 0;
+    position: relative;
 }
 
 .page-header h1 {
@@ -697,6 +1074,7 @@ body {
     font-weight: 300;
     color: var(--bark);
     margin-bottom: var(--space-xs);
+    position: relative;
 }
 
 .page-header p {
@@ -705,12 +1083,15 @@ body {
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--branch);
+    position: relative;
 }
 
 .page-content {
     padding: var(--space-lg) var(--space-md) var(--space-xl);
-    background: var(--warmwhite);
-    border-top: 1px solid rgba(58, 46, 42, 0.04);
+    background:
+        radial-gradient(ellipse at 80% 10%, rgba(212, 168, 67, 0.03) 0%, transparent 40%),
+        var(--warmwhite);
+    border-top: 1px solid rgba(138, 154, 123, 0.08);
 }
 
 .page-content .container.narrow {
@@ -729,6 +1110,20 @@ body {
     margin-bottom: var(--space-sm);
     padding-bottom: var(--space-xs);
     border-bottom: 1px solid rgba(138, 154, 123, 0.2);
+    position: relative;
+}
+
+/* Small leaf-dot accent before h2 */
+.page-content h2::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--lichen);
+    margin-right: 0.6rem;
+    vertical-align: middle;
+    opacity: 0.6;
 }
 
 .page-content h2:first-child,
@@ -755,8 +1150,23 @@ body {
     margin: var(--space-md) 0;
     font-style: italic;
     color: var(--branch);
-    background: rgba(138, 154, 123, 0.04);
-    border-radius: 0 3px 3px 0;
+    background:
+        radial-gradient(ellipse at 0% 50%, rgba(138, 154, 123, 0.06) 0%, transparent 60%),
+        rgba(250, 248, 244, 0.5);
+    border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
+    position: relative;
+}
+
+/* Vine gradient on blockquote border */
+.page-content blockquote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -2px;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--sage), var(--lichen), var(--moss), var(--lichen), var(--sage));
+    border-radius: 1px;
 }
 
 .page-content .wip-notice {
@@ -767,33 +1177,206 @@ body {
     border: 1px solid rgba(138, 154, 123, 0.2);
     border-left: 3px solid var(--lichen);
     padding: var(--space-sm) var(--space-md);
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
     margin: var(--space-md) 0 var(--space-lg);
     line-height: 1.6;
 }
 
-/* ---- Tree Page Specific ---- */
+/* Invocation boxes (practices/rituals pages) */
+.invocation {
+    background:
+        radial-gradient(ellipse at 0% 50%, rgba(138, 154, 123, 0.06) 0%, transparent 60%),
+        rgba(138, 154, 123, 0.04);
+    border-left: 2px solid var(--lichen);
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) 0;
+    border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
+}
+
+.invocation strong {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--branch);
+}
+
+.invocation em {
+    display: block;
+    margin-top: 0.4rem;
+    color: var(--heartwood);
+    line-height: 1.8;
+}
+
+/* ──────────────────────────────────────────────
+   TREE PAGE
+   ────────────────────────────────────────────── */
 
 .tree-container {
     font-family: 'Source Code Pro', 'Courier New', monospace;
     font-size: 0.82rem;
     line-height: 1.6;
-    background: var(--warmwhite);
-    border: 1px solid rgba(58, 46, 42, 0.08);
+    background:
+        radial-gradient(ellipse at 50% 50%, rgba(138, 154, 123, 0.04) 0%, transparent 60%),
+        var(--warmwhite);
+    border: 1px solid rgba(138, 154, 123, 0.12);
     padding: var(--space-md);
     overflow-x: auto;
     white-space: pre;
     color: var(--heartwood);
-    border-radius: 3px;
-    box-shadow: inset 0 1px 4px rgba(58, 46, 42, 0.04);
+    border-radius: var(--radius-soft);
+    box-shadow: inset 0 2px 8px rgba(58, 46, 42, 0.04);
 }
 
-/* ---- Animations ---- */
+/* ──────────────────────────────────────────────
+   DECORATIVE PATTERNS & ILLUSTRATIONS
+   ────────────────────────────────────────────── */
+
+/* Pattern container — sits behind section content */
+.section-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+/* Ensure content sits above patterns */
+.section > .container,
+.hero-inner {
+    position: relative;
+    z-index: 2;
+}
+
+/* Sacred geometry mandala (hero background) */
+.hero-geometry {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(900px, 120vw);
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    color: var(--bark);
+    animation: mandalaRotate 120s linear infinite;
+}
+
+/* Large branching canopy pattern */
+.pattern-canopy {
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 140%);
+    height: auto;
+    color: var(--bark);
+    pointer-events: none;
+}
+
+/* Mycorrhizal network */
+.pattern-network {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 130%);
+    height: auto;
+    color: var(--bark);
+    pointer-events: none;
+}
+
+/* Classical column decorations */
+.deco-column {
+    position: absolute;
+    top: 5%;
+    height: 90%;
+    width: auto;
+    pointer-events: none;
+    color: var(--bark);
+}
+
+.deco-column--left {
+    left: -2rem;
+}
+
+.deco-column--right {
+    right: -2rem;
+    transform: scaleX(-1);
+}
+
+/* Root web pattern (footer) */
+.pattern-roots {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 130%);
+    height: auto;
+    color: var(--parchment);
+    pointer-events: none;
+}
+
+/* Footer content above roots */
+.site-footer > .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Ornamental flourish dividers */
+.ornament {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-sm) 0;
+    position: relative;
+    z-index: 1;
+}
+
+.ornament svg {
+    width: min(320px, 70%);
+    height: auto;
+    color: var(--bark);
+}
+
+/* Classical wave scroll border (vitruvian wave) */
+.wave-scroll {
+    position: absolute;
+    left: 8%;
+    right: 8%;
+    height: 10px;
+    pointer-events: none;
+    opacity: 0.08;
+}
+
+.wave-scroll svg {
+    width: 100%;
+    height: 100%;
+}
+
+.wave-scroll--top { top: 1rem; }
+.wave-scroll--bottom { bottom: 1rem; }
+
+/* Dot constellation pattern */
+.constellation {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.constellation svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ──────────────────────────────────────────────
+   KEYFRAME ANIMATIONS
+   ────────────────────────────────────────────── */
 
 @keyframes fadeUp {
     from {
         opacity: 0;
-        transform: translateY(16px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -801,7 +1384,41 @@ body {
     }
 }
 
-/* Fallback: if animations haven't completed after 3s, show content */
+@keyframes fadeIn {
+    to { opacity: 0.6; }
+}
+
+@keyframes scrollDrip {
+    0%   { transform: scaleY(1); opacity: 0.3; }
+    50%  { transform: scaleY(1.4); opacity: 0.15; }
+    100% { transform: scaleY(1); opacity: 0.3; }
+}
+
+@keyframes treeBreathe {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.012);
+        opacity: 1;
+    }
+}
+
+@keyframes ringPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(138, 154, 123, 0); }
+    50% { box-shadow: 0 0 0 6px rgba(138, 154, 123, 0.06); }
+}
+
+@keyframes mandalaRotate {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ──────────────────────────────────────────────
+   ACCESSIBILITY — REDUCED MOTION
+   ────────────────────────────────────────────── */
+
 @media (prefers-reduced-motion: reduce) {
     .hero-super, .hero-title, .hero-line, .hero-sub,
     .page-header h1, .page-header p {
@@ -812,10 +1429,30 @@ body {
     .reveal {
         opacity: 1;
         transform: none;
+        transition: none;
+    }
+
+    .hero-tree {
+        animation: none;
+    }
+
+    .hero-scroll-hint span {
+        animation: none;
+    }
+
+    .hero-geometry {
+        animation: none;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
 
-/* ---- Responsive ---- */
+/* ──────────────────────────────────────────────
+   RESPONSIVE — TABLET (900px)
+   ────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
     .values-grid {
@@ -827,7 +1464,19 @@ body {
     }
 
     .hero-title {
-        font-size: 2.4rem;
+        font-size: 2.5rem;
+    }
+
+    .hero-tree {
+        width: min(400px, 80vw);
+    }
+
+    .hero-geometry {
+        width: min(700px, 110vw);
+    }
+
+    .deco-column {
+        display: none;
     }
 
     .page-header {
@@ -837,7 +1486,19 @@ body {
     .page-header h1 {
         font-size: 2.2rem;
     }
+
+    .section-sep svg {
+        height: 35px;
+    }
+
+    .section-sep--tall svg {
+        height: 50px;
+    }
 }
+
+/* ──────────────────────────────────────────────
+   RESPONSIVE — MOBILE (640px)
+   ────────────────────────────────────────────── */
 
 @media (max-width: 640px) {
     html {
@@ -852,9 +1513,9 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(250, 248, 244, 0.98);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        background: rgba(250, 248, 244, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -895,8 +1556,8 @@ body {
     }
 
     .hero-title {
-        font-size: 1.8rem;
-        line-height: 1.3;
+        font-size: 1.85rem;
+        line-height: 1.28;
     }
 
     .hero-title br {
@@ -913,9 +1574,27 @@ body {
         margin: var(--space-sm) auto;
     }
 
-    .hero::after {
+    .hero-tree {
+        width: min(350px, 90vw);
+    }
+
+    .hero-geometry {
+        width: min(500px, 120vw);
+        animation: none;
+    }
+
+    .pattern-canopy,
+    .pattern-network,
+    .deco-column {
+        display: none;
+    }
+
+    .ornament svg {
+        width: min(240px, 60%);
+    }
+
+    .hero-scroll-hint {
         bottom: 1.5rem;
-        height: 28px;
     }
 
     /* Sections */
@@ -932,6 +1611,19 @@ body {
         margin-bottom: var(--space-md);
     }
 
+    .section-title::after {
+        width: 30px;
+    }
+
+    /* Separators */
+    .section-sep svg {
+        height: 25px;
+    }
+
+    .section-sep--tall svg {
+        height: 35px;
+    }
+
     /* Preamble */
     .preamble .lead {
         font-size: 1.02rem;
@@ -939,7 +1631,7 @@ body {
     }
 
     .preamble .lead::first-letter {
-        font-size: 3rem;
+        font-size: 3.2rem;
     }
 
     /* Values */
@@ -950,6 +1642,7 @@ body {
 
     .value-card {
         padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-soft);
     }
 
     .value-card h3 {
@@ -960,20 +1653,36 @@ body {
         font-size: 0.88rem;
     }
 
+    .value-num {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.78rem;
+    }
+
     /* Principles */
+    .principles-list::before {
+        left: 0.85rem;
+    }
+
     .principles-list li {
-        padding-left: 2.8rem;
+        padding-left: 3rem;
         padding-top: var(--space-sm);
         padding-bottom: var(--space-sm);
     }
 
     .principles-list li:hover {
-        padding-left: 2.8rem;
+        padding-left: 3rem;
     }
 
     .principles-list li::before {
-        font-size: 1.5rem;
-        top: var(--space-sm);
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 0.85rem;
+        top: calc(var(--space-sm) + 0.15rem);
+    }
+
+    .principles-list li + li::after {
+        left: 3rem;
     }
 
     .principles-list strong {
@@ -991,7 +1700,7 @@ body {
 
     .tag {
         font-size: 0.75rem;
-        padding: 0.35rem 0.75rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .tier-label {
@@ -1006,6 +1715,7 @@ body {
 
     .meta-item {
         padding: var(--space-sm) var(--space-xs);
+        border-radius: var(--radius-soft);
     }
 
     .meta-item h4 {
@@ -1046,6 +1756,7 @@ body {
     .page-content blockquote {
         padding-left: var(--space-sm);
         font-size: 0.9rem;
+        border-radius: 0 4px 4px 0;
     }
 
     .page-content .wip-notice {
@@ -1070,6 +1781,16 @@ body {
         font-size: 1.4rem;
     }
 
+    .footer-mark::before {
+        width: 90px;
+        height: 90px;
+    }
+
+    .footer-mark::after {
+        width: 120px;
+        height: 120px;
+    }
+
     .footer-text {
         font-size: 0.88rem;
     }
@@ -1083,7 +1804,10 @@ body {
     }
 }
 
-/* Extra small phones */
+/* ──────────────────────────────────────────────
+   EXTRA SMALL PHONES (380px)
+   ────────────────────────────────────────────── */
+
 @media (max-width: 380px) {
     .hero-title {
         font-size: 1.55rem;
@@ -1102,7 +1826,10 @@ body {
     }
 }
 
-/* Touch-friendly */
+/* ──────────────────────────────────────────────
+   TOUCH-FRIENDLY
+   ────────────────────────────────────────────── */
+
 @media (pointer: coarse) {
     .nav-links a {
         padding: 0.5rem 0.25rem;
@@ -1116,9 +1843,16 @@ body {
         display: flex;
         align-items: center;
     }
+
+    .meta-item {
+        min-height: 44px;
+    }
 }
 
-/* Safe area insets */
+/* ──────────────────────────────────────────────
+   SAFE AREA INSETS
+   ────────────────────────────────────────────── */
+
 @supports (padding: env(safe-area-inset-bottom)) {
     .site-nav {
         padding-left: max(var(--space-md), env(safe-area-inset-left));

@@ -21,20 +21,136 @@
             <a href="canon.html">Canon</a>
             <a href="tree.html">The Tree</a>
         </div>
-        <button class="nav-toggle" aria-label="Menu">☰</button>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
     </nav>
 
-    <!-- Hero -->
+    <!-- ═══════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════ -->
     <header class="hero">
+
+        <!-- Sacred geometry mandala — flower of life + concentric rings -->
+        <svg class="hero-geometry" viewBox="0 0 800 800" aria-hidden="true">
+            <g stroke="currentColor" fill="none" stroke-width="0.6">
+                <!-- Flower of Life — Seed -->
+                <circle cx="400" cy="400" r="60" opacity="0.06"/>
+                <circle cx="460" cy="400" r="60" opacity="0.05"/>
+                <circle cx="430" cy="452" r="60" opacity="0.05"/>
+                <circle cx="370" cy="452" r="60" opacity="0.05"/>
+                <circle cx="340" cy="400" r="60" opacity="0.05"/>
+                <circle cx="370" cy="348" r="60" opacity="0.05"/>
+                <circle cx="430" cy="348" r="60" opacity="0.05"/>
+                <!-- Flower of Life — Second ring -->
+                <circle cx="520" cy="400" r="60" opacity="0.035"/>
+                <circle cx="490" cy="452" r="60" opacity="0.035"/>
+                <circle cx="490" cy="348" r="60" opacity="0.035"/>
+                <circle cx="280" cy="400" r="60" opacity="0.035"/>
+                <circle cx="310" cy="452" r="60" opacity="0.035"/>
+                <circle cx="310" cy="348" r="60" opacity="0.035"/>
+                <circle cx="460" cy="504" r="60" opacity="0.035"/>
+                <circle cx="340" cy="504" r="60" opacity="0.035"/>
+                <circle cx="400" cy="504" r="60" opacity="0.035"/>
+                <circle cx="460" cy="296" r="60" opacity="0.035"/>
+                <circle cx="340" cy="296" r="60" opacity="0.035"/>
+                <circle cx="400" cy="296" r="60" opacity="0.035"/>
+                <!-- Concentric rings -->
+                <circle cx="400" cy="400" r="120" opacity="0.04"/>
+                <circle cx="400" cy="400" r="190" opacity="0.03"/>
+                <circle cx="400" cy="400" r="270" opacity="0.025"/>
+                <circle cx="400" cy="400" r="360" opacity="0.018"/>
+                <!-- Radial lines (12 directions) -->
+                <line x1="400" y1="30" x2="400" y2="770" opacity="0.02"/>
+                <line x1="30" y1="400" x2="770" y2="400" opacity="0.02"/>
+                <line x1="139" y1="139" x2="661" y2="661" opacity="0.015"/>
+                <line x1="661" y1="139" x2="139" y2="661" opacity="0.015"/>
+                <line x1="215" y1="60" x2="585" y2="740" opacity="0.012"/>
+                <line x1="60" y1="215" x2="740" y2="585" opacity="0.012"/>
+                <line x1="585" y1="60" x2="215" y2="740" opacity="0.012"/>
+                <line x1="740" y1="215" x2="60" y2="585" opacity="0.012"/>
+            </g>
+        </svg>
+
+        <!-- Tree illustration — branches and roots -->
+        <svg class="hero-tree" viewBox="0 0 600 900" fill="none" aria-hidden="true">
+            <g opacity="0.09" stroke="currentColor" stroke-linecap="round">
+                <!-- Trunk -->
+                <path d="M300 850 C297 720 294 580 300 400" stroke-width="6"/>
+                <path d="M298 750 C296 680 295 600 298 480" stroke-width="2" opacity="0.5"/>
+                <!-- Primary branches — right -->
+                <path d="M300 540 C335 495 385 455 450 430" stroke-width="4"/>
+                <path d="M300 460 C345 415 405 385 470 355" stroke-width="3"/>
+                <path d="M300 390 C335 355 375 325 430 290" stroke-width="2.5"/>
+                <!-- Primary branches — left -->
+                <path d="M300 510 C265 465 215 435 150 415" stroke-width="4"/>
+                <path d="M300 430 C255 385 195 355 130 335" stroke-width="3"/>
+                <path d="M300 370 C265 335 225 305 170 275" stroke-width="2.5"/>
+                <!-- Secondary branches — right -->
+                <path d="M450 430 C480 418 515 400 550 385" stroke-width="2"/>
+                <path d="M450 430 C460 405 475 380 495 355" stroke-width="1.5"/>
+                <path d="M470 355 C500 340 530 325 560 305" stroke-width="1.5"/>
+                <path d="M470 355 C480 330 495 305 515 280" stroke-width="1.2"/>
+                <path d="M430 290 C455 275 480 260 510 245" stroke-width="1.5"/>
+                <path d="M430 290 C440 265 455 240 475 215" stroke-width="1.2"/>
+                <!-- Secondary branches — left -->
+                <path d="M150 415 C120 403 85 390 50 378" stroke-width="2"/>
+                <path d="M150 415 C140 390 125 365 105 340" stroke-width="1.5"/>
+                <path d="M130 335 C100 320 70 310 40 300" stroke-width="1.5"/>
+                <path d="M130 335 C120 310 105 285 85 260" stroke-width="1.2"/>
+                <path d="M170 275 C145 260 120 245 90 235" stroke-width="1.5"/>
+                <path d="M170 275 C160 250 145 225 125 200" stroke-width="1.2"/>
+                <!-- Crown branches -->
+                <path d="M300 330 C315 295 335 260 360 220" stroke-width="2"/>
+                <path d="M300 310 C285 275 265 240 240 205" stroke-width="2"/>
+                <path d="M300 270 C310 240 325 210 345 175" stroke-width="1.5"/>
+                <path d="M300 260 C290 230 275 200 255 170" stroke-width="1.5"/>
+                <path d="M360 220 C375 200 390 175 410 150" stroke-width="1"/>
+                <path d="M240 205 C225 185 210 160 190 140" stroke-width="1"/>
+                <!-- Crown tips -->
+                <path d="M300 230 C305 195 315 160 330 125" stroke-width="1.2"/>
+                <path d="M300 220 C295 185 285 155 270 120" stroke-width="1.2"/>
+                <path d="M300 195 C303 170 308 140 315 110" stroke-width="0.8"/>
+                <path d="M300 190 C297 165 292 140 285 110" stroke-width="0.8"/>
+                <!-- Roots -->
+                <path d="M300 850 C260 875 200 895 130 880" stroke-width="5"/>
+                <path d="M300 850 C340 875 400 895 470 880" stroke-width="5"/>
+                <path d="M300 850 C275 880 225 910 165 920" stroke-width="3"/>
+                <path d="M300 850 C325 880 375 910 435 920" stroke-width="3"/>
+                <path d="M195 893 C160 905 115 912 70 905" stroke-width="2.5"/>
+                <path d="M405 893 C440 905 485 912 530 905" stroke-width="2.5"/>
+                <path d="M130 880 C100 890 60 895 20 888" stroke-width="2"/>
+                <path d="M470 880 C500 890 540 895 580 888" stroke-width="2"/>
+                <!-- Fine root tendrils -->
+                <path d="M165 920 C140 928 105 932 70 928" stroke-width="1.5"/>
+                <path d="M435 920 C460 928 495 932 530 928" stroke-width="1.5"/>
+                <path d="M300 850 C290 870 270 888 245 895" stroke-width="1.5"/>
+                <path d="M300 850 C310 870 330 888 355 895" stroke-width="1.5"/>
+            </g>
+        </svg>
+
         <div class="hero-inner">
             <p class="hero-super">A religion of</p>
             <h1 class="hero-title">Interconnection, Deep Time<br>& Presence</h1>
             <div class="hero-line"></div>
             <p class="hero-sub">We seek wisdom from all human traditions that illuminate our relationship to the living world, to our ancestors, and to the vast unfolding of time.</p>
         </div>
+
+        <div class="hero-scroll-hint" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </header>
 
-    <!-- Preamble -->
+    <!-- Separator: Hero → Preamble -->
+    <div class="section-sep section-sep--tall" aria-hidden="true" style="background: var(--parchment)">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,25 C1200,65 960,8 720,38 C480,68 240,12 0,48 Z" fill="var(--cream)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         PREAMBLE
+         ═══════════════════════════════════════════ -->
     <section class="section preamble">
         <div class="container narrow">
             <p class="lead">Arbora is a syncretic, non-theistic religion built on the humble curation of humanity's deepest wisdom. It draws from Buddhism, Daoism, Stoicism, Judaism, indigenous traditions from every continent, classical philosophy, Sufism, Christian mysticism, and the empirical sciences, weaving their most resonant threads into a coherent practice for those who find the sacred in trees, in silence, in community, and in the long arc of geological time.</p>
@@ -42,8 +158,80 @@
         </div>
     </section>
 
-    <!-- Core Values -->
+    <!-- Ornamental flourish divider -->
+    <div class="ornament" aria-hidden="true">
+        <svg viewBox="0 0 400 30" fill="none">
+            <g stroke="currentColor" opacity="0.15">
+                <!-- Central diamond -->
+                <path d="M200,4 L208,15 L200,26 L192,15 Z" stroke-width="0.8"/>
+                <!-- Inner lines -->
+                <line x1="130" y1="15" x2="190" y2="15" stroke-width="0.6"/>
+                <line x1="210" y1="15" x2="270" y2="15" stroke-width="0.6"/>
+                <!-- Leaf shapes -->
+                <path d="M125,15 C128,10 135,10 138,15 C135,20 128,20 125,15 Z" stroke-width="0.6" fill="currentColor" fill-opacity="0.03"/>
+                <path d="M262,15 C265,10 272,10 275,15 C272,20 265,20 262,15 Z" stroke-width="0.6" fill="currentColor" fill-opacity="0.03"/>
+                <!-- Outer curls -->
+                <path d="M120,15 C115,8 105,7 98,12" stroke-width="0.5" fill="none"/>
+                <path d="M120,15 C115,22 105,23 98,18" stroke-width="0.5" fill="none"/>
+                <path d="M280,15 C285,8 295,7 302,12" stroke-width="0.5" fill="none"/>
+                <path d="M280,15 C285,22 295,23 302,18" stroke-width="0.5" fill="none"/>
+                <!-- Terminal dots -->
+                <circle cx="96" cy="15" r="1.5" fill="currentColor" opacity="0.4"/>
+                <circle cx="304" cy="15" r="1.5" fill="currentColor" opacity="0.4"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Separator: Preamble → Values -->
+    <div class="section-sep" aria-hidden="true" style="background: var(--cream)">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,18 C1320,45 1080,5 840,30 C600,55 360,10 0,35 Z" fill="var(--parchment)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         CORE VALUES
+         ═══════════════════════════════════════════ -->
     <section class="section values" id="values">
+        <!-- Background: large branching canopy pattern -->
+        <div class="section-bg" aria-hidden="true">
+            <svg class="pattern-canopy" viewBox="0 0 1400 700" fill="none">
+                <g stroke="currentColor" stroke-linecap="round">
+                    <!-- Central trunk rising from below -->
+                    <path d="M700,700 C700,600 698,480 700,350" stroke-width="5" opacity="0.04"/>
+                    <!-- Main branches — right -->
+                    <path d="M700,500 C750,460 830,430 920,410" stroke-width="3.5" opacity="0.035"/>
+                    <path d="M920,410 C970,400 1030,395 1100,390" stroke-width="2.5" opacity="0.03"/>
+                    <path d="M920,410 C950,385 990,360 1040,335" stroke-width="2" opacity="0.025"/>
+                    <path d="M1100,390 C1140,385 1190,382 1250,380" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M1040,335 C1070,315 1110,295 1160,275" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M700,420 C740,390 800,365 870,340" stroke-width="3" opacity="0.035"/>
+                    <path d="M870,340 C920,325 980,312 1050,300" stroke-width="2" opacity="0.025"/>
+                    <path d="M870,340 C890,315 920,288 960,260" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M700,360 C730,335 775,310 830,285" stroke-width="2.5" opacity="0.03"/>
+                    <path d="M830,285 C870,270 915,255 970,240" stroke-width="1.5" opacity="0.02"/>
+                    <!-- Main branches — left -->
+                    <path d="M700,480 C650,440 570,410 480,395" stroke-width="3.5" opacity="0.035"/>
+                    <path d="M480,395 C430,385 370,380 300,378" stroke-width="2.5" opacity="0.03"/>
+                    <path d="M480,395 C450,370 410,345 360,320" stroke-width="2" opacity="0.025"/>
+                    <path d="M300,378 C260,375 210,373 150,372" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M360,320 C330,300 290,280 240,260" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M700,400 C660,370 600,345 530,325" stroke-width="3" opacity="0.035"/>
+                    <path d="M530,325 C480,310 420,298 350,288" stroke-width="2" opacity="0.025"/>
+                    <path d="M530,325 C510,300 480,275 440,250" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M700,350 C670,325 625,300 570,280" stroke-width="2.5" opacity="0.03"/>
+                    <path d="M570,280 C530,265 485,250 430,238" stroke-width="1.5" opacity="0.02"/>
+                    <!-- Crown -->
+                    <path d="M700,310 C710,275 725,240 745,200" stroke-width="2" opacity="0.025"/>
+                    <path d="M700,300 C690,265 675,230 655,195" stroke-width="2" opacity="0.025"/>
+                    <path d="M700,260 C705,230 715,195 728,160" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M700,250 C695,220 685,190 672,155" stroke-width="1.5" opacity="0.02"/>
+                    <path d="M745,200 C760,178 778,155 800,130" stroke-width="1" opacity="0.015"/>
+                    <path d="M655,195 C640,173 622,150 600,128" stroke-width="1" opacity="0.015"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="container">
             <h2 class="section-title">The Root</h2>
             <p class="section-subtitle">Eight values from which everything grows</p>
@@ -93,8 +281,69 @@
         </div>
     </section>
 
-    <!-- Eight Principles -->
+    <!-- Separator: Values → Principles -->
+    <div class="section-sep" aria-hidden="true" style="background: var(--parchment)">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,22 C1260,48 1080,8 900,32 C720,56 540,12 360,36 C180,52 60,18 0,28 Z" fill="var(--cream)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         EIGHT PRINCIPLES
+         ═══════════════════════════════════════════ -->
     <section class="section principles" id="principles">
+        <!-- Classical column decorations -->
+        <svg class="deco-column deco-column--left" viewBox="0 0 50 600" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-linecap="round" opacity="0.06">
+                <!-- Ionic capital — volutes -->
+                <path d="M8,25 C8,15 15,8 25,8 C35,8 42,15 42,20 C42,25 38,28 34,28" stroke-width="1.2"/>
+                <path d="M8,25 C8,35 15,42 25,42 C35,42 42,35 42,30 C42,25 38,22 34,22" stroke-width="1.2"/>
+                <circle cx="10" cy="25" r="3" stroke-width="0.8"/>
+                <!-- Echinus -->
+                <path d="M5,48 C10,45 40,45 45,48" stroke-width="1"/>
+                <line x1="5" y1="50" x2="45" y2="50" stroke-width="0.8"/>
+                <!-- Fluted shaft -->
+                <line x1="13" y1="52" x2="14" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="19" y1="52" x2="20" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="25" y1="52" x2="25" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="31" y1="52" x2="30" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="37" y1="52" x2="36" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <!-- Shaft outline -->
+                <line x1="10" y1="52" x2="11" y2="548" stroke-width="0.8"/>
+                <line x1="40" y1="52" x2="39" y2="548" stroke-width="0.8"/>
+                <!-- Base moldings -->
+                <line x1="8" y1="550" x2="42" y2="550" stroke-width="0.8"/>
+                <path d="M6,558 C6,554 10,550 10,550 L40,550 C40,550 44,554 44,558" stroke-width="0.8"/>
+                <line x1="4" y1="560" x2="46" y2="560" stroke-width="1"/>
+                <rect x="3" y="562" width="44" height="6" rx="1" stroke-width="0.8"/>
+                <!-- Entasis marks -->
+                <path d="M10,200 C9,200 9,201 10,201" stroke-width="0.4" opacity="0.4"/>
+                <path d="M40,200 C41,200 41,201 40,201" stroke-width="0.4" opacity="0.4"/>
+                <path d="M10,400 C9,400 9,401 10,401" stroke-width="0.4" opacity="0.4"/>
+                <path d="M40,400 C41,400 41,401 40,401" stroke-width="0.4" opacity="0.4"/>
+            </g>
+        </svg>
+        <svg class="deco-column deco-column--right" viewBox="0 0 50 600" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-linecap="round" opacity="0.06">
+                <path d="M8,25 C8,15 15,8 25,8 C35,8 42,15 42,20 C42,25 38,28 34,28" stroke-width="1.2"/>
+                <path d="M8,25 C8,35 15,42 25,42 C35,42 42,35 42,30 C42,25 38,22 34,22" stroke-width="1.2"/>
+                <circle cx="10" cy="25" r="3" stroke-width="0.8"/>
+                <path d="M5,48 C10,45 40,45 45,48" stroke-width="1"/>
+                <line x1="5" y1="50" x2="45" y2="50" stroke-width="0.8"/>
+                <line x1="13" y1="52" x2="14" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="19" y1="52" x2="20" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="25" y1="52" x2="25" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="31" y1="52" x2="30" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="37" y1="52" x2="36" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="10" y1="52" x2="11" y2="548" stroke-width="0.8"/>
+                <line x1="40" y1="52" x2="39" y2="548" stroke-width="0.8"/>
+                <line x1="8" y1="550" x2="42" y2="550" stroke-width="0.8"/>
+                <path d="M6,558 C6,554 10,550 10,550 L40,550 C40,550 44,554 44,558" stroke-width="0.8"/>
+                <line x1="4" y1="560" x2="46" y2="560" stroke-width="1"/>
+                <rect x="3" y="562" width="44" height="6" rx="1" stroke-width="0.8"/>
+            </g>
+        </svg>
+
         <div class="container narrow">
             <h2 class="section-title">The Eight Principles</h2>
             <p class="section-subtitle">Draft — to be expanded with source texts, invocations, and practice guidance</p>
@@ -136,8 +385,105 @@
         </div>
     </section>
 
-    <!-- Traditions -->
+    <!-- Ornamental flourish divider -->
+    <div class="ornament" aria-hidden="true">
+        <svg viewBox="0 0 400 30" fill="none">
+            <g stroke="currentColor" opacity="0.12">
+                <!-- Central motif — triple ring -->
+                <circle cx="200" cy="15" r="8" stroke-width="0.6"/>
+                <circle cx="200" cy="15" r="5" stroke-width="0.5"/>
+                <circle cx="200" cy="15" r="2" stroke-width="0.4" fill="currentColor" fill-opacity="0.06"/>
+                <!-- Extending vine lines -->
+                <path d="M130,15 C145,15 155,12 165,10 C175,8 185,8 192,12" stroke-width="0.6"/>
+                <path d="M130,15 C145,15 155,18 165,20 C175,22 185,22 192,18" stroke-width="0.6"/>
+                <path d="M270,15 C255,15 245,12 235,10 C225,8 215,8 208,12" stroke-width="0.6"/>
+                <path d="M270,15 C255,15 245,18 235,20 C225,22 215,22 208,18" stroke-width="0.6"/>
+                <!-- Small leaf accents -->
+                <path d="M125,15 C127,11 133,11 135,15 C133,19 127,19 125,15 Z" stroke-width="0.5" fill="currentColor" fill-opacity="0.04"/>
+                <path d="M265,15 C267,11 273,11 275,15 C273,19 267,19 265,15 Z" stroke-width="0.5" fill="currentColor" fill-opacity="0.04"/>
+                <!-- Outer extensions -->
+                <line x1="80" y1="15" x2="123" y2="15" stroke-width="0.4" opacity="0.6"/>
+                <line x1="277" y1="15" x2="320" y2="15" stroke-width="0.4" opacity="0.6"/>
+                <!-- Terminal flourishes -->
+                <path d="M80,15 C75,10 68,9 62,12" stroke-width="0.4" opacity="0.5"/>
+                <path d="M80,15 C75,20 68,21 62,18" stroke-width="0.4" opacity="0.5"/>
+                <path d="M320,15 C325,10 332,9 338,12" stroke-width="0.4" opacity="0.5"/>
+                <path d="M320,15 C325,20 332,21 338,18" stroke-width="0.4" opacity="0.5"/>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Separator: Principles → Traditions -->
+    <div class="section-sep" aria-hidden="true" style="background: var(--cream)">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,20 C1200,50 960,5 720,30 C480,55 240,10 0,40 Z" fill="var(--parchment)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         TRADITIONS
+         ═══════════════════════════════════════════ -->
     <section class="section traditions" id="traditions">
+        <!-- Background: mycorrhizal network pattern -->
+        <div class="section-bg" aria-hidden="true">
+            <svg class="pattern-network" viewBox="0 0 1400 500" fill="none">
+                <g stroke="currentColor" stroke-linecap="round">
+                    <!-- Network connections — organic curves -->
+                    <path d="M60,250 C120,220 180,270 250,240" stroke-width="0.8" opacity="0.05"/>
+                    <path d="M250,240 C320,210 370,280 450,250" stroke-width="0.8" opacity="0.05"/>
+                    <path d="M450,250 C530,220 580,270 660,240" stroke-width="0.8" opacity="0.05"/>
+                    <path d="M660,240 C740,210 790,275 870,245" stroke-width="0.8" opacity="0.05"/>
+                    <path d="M870,245 C950,215 1000,270 1080,240" stroke-width="0.8" opacity="0.05"/>
+                    <path d="M1080,240 C1160,215 1210,265 1300,238" stroke-width="0.8" opacity="0.05"/>
+                    <!-- Second layer -->
+                    <path d="M100,350 C180,320 250,370 340,340" stroke-width="0.7" opacity="0.04"/>
+                    <path d="M340,340 C420,310 490,360 580,330" stroke-width="0.7" opacity="0.04"/>
+                    <path d="M580,330 C660,300 730,350 820,320" stroke-width="0.7" opacity="0.04"/>
+                    <path d="M820,320 C900,295 970,340 1060,315" stroke-width="0.7" opacity="0.04"/>
+                    <path d="M1060,315 C1140,290 1200,335 1300,310" stroke-width="0.7" opacity="0.04"/>
+                    <!-- Third layer -->
+                    <path d="M50,150 C130,125 200,170 290,145" stroke-width="0.6" opacity="0.035"/>
+                    <path d="M290,145 C380,120 440,165 540,140" stroke-width="0.6" opacity="0.035"/>
+                    <path d="M540,140 C630,118 690,155 780,135" stroke-width="0.6" opacity="0.035"/>
+                    <path d="M780,135 C870,115 930,158 1020,138" stroke-width="0.6" opacity="0.035"/>
+                    <path d="M1020,138 C1110,118 1180,155 1280,135" stroke-width="0.6" opacity="0.035"/>
+                    <!-- Cross connections -->
+                    <path d="M250,240 C270,280 300,310 340,340" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M450,250 C470,210 490,175 540,140" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M660,240 C680,270 700,300 730,330" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M870,245 C860,210 840,175 820,140" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M1080,240 C1070,280 1065,310 1060,340" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M340,340 C370,300 400,270 450,250" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M580,330 C610,290 640,260 660,240" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M820,320 C840,280 860,260 870,245" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M290,145 C280,180 265,210 250,240" stroke-width="0.5" opacity="0.03"/>
+                    <path d="M780,135 C800,170 830,205 870,245" stroke-width="0.5" opacity="0.03"/>
+                </g>
+                <!-- Network nodes -->
+                <g fill="currentColor">
+                    <circle cx="60" cy="250" r="4" opacity="0.07"/>
+                    <circle cx="250" cy="240" r="5" opacity="0.08"/>
+                    <circle cx="450" cy="250" r="6" opacity="0.09"/>
+                    <circle cx="660" cy="240" r="5" opacity="0.08"/>
+                    <circle cx="870" cy="245" r="6" opacity="0.09"/>
+                    <circle cx="1080" cy="240" r="5" opacity="0.08"/>
+                    <circle cx="1300" cy="238" r="4" opacity="0.07"/>
+                    <circle cx="100" cy="350" r="3" opacity="0.06"/>
+                    <circle cx="340" cy="340" r="5" opacity="0.08"/>
+                    <circle cx="580" cy="330" r="4" opacity="0.07"/>
+                    <circle cx="820" cy="320" r="5" opacity="0.08"/>
+                    <circle cx="1060" cy="315" r="4" opacity="0.07"/>
+                    <circle cx="1300" cy="310" r="3" opacity="0.06"/>
+                    <circle cx="50" cy="150" r="3" opacity="0.06"/>
+                    <circle cx="290" cy="145" r="4" opacity="0.07"/>
+                    <circle cx="540" cy="140" r="5" opacity="0.08"/>
+                    <circle cx="780" cy="135" r="4" opacity="0.07"/>
+                    <circle cx="1020" cy="138" r="5" opacity="0.08"/>
+                    <circle cx="1280" cy="135" r="3" opacity="0.06"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="container">
             <h2 class="section-title">Source Traditions</h2>
             <p class="section-subtitle">We draw from the deepest wells of human wisdom</p>
@@ -189,8 +535,39 @@
         </div>
     </section>
 
-    <!-- What is a Religion -->
+    <!-- Separator: Traditions → Meta -->
+    <div class="section-sep" aria-hidden="true" style="background: var(--parchment)">
+        <svg viewBox="0 0 1440 50" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,15 C1320,42 1080,8 840,28 C600,48 360,12 120,35 C40,42 0,30 0,30 Z" fill="var(--cream)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         WHAT IS A RELIGION
+         ═══════════════════════════════════════════ -->
     <section class="section meta" id="meta">
+        <!-- Background: concentric sacred geometry -->
+        <div class="section-bg" aria-hidden="true">
+            <svg viewBox="0 0 800 400" fill="none" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(900px,110%);height:auto;color:var(--bark)">
+                <g stroke="currentColor" fill="none" stroke-width="0.5">
+                    <!-- Concentric octagons -->
+                    <polygon points="400,120 480,160 480,240 400,280 320,240 320,160" opacity="0.04"/>
+                    <polygon points="400,80 520,140 520,260 400,320 280,260 280,140" opacity="0.03"/>
+                    <polygon points="400,40 560,120 560,280 400,360 240,280 240,120" opacity="0.025"/>
+                    <polygon points="400,5 598,100 598,300 400,395 202,300 202,100" opacity="0.018"/>
+                    <!-- Cross lines -->
+                    <line x1="400" y1="5" x2="400" y2="395" opacity="0.015"/>
+                    <line x1="202" y1="200" x2="598" y2="200" opacity="0.015"/>
+                    <line x1="240" y1="120" x2="560" y2="280" opacity="0.012"/>
+                    <line x1="560" y1="120" x2="240" y2="280" opacity="0.012"/>
+                    <!-- Inner star -->
+                    <polygon points="400,130 440,180 430,240 370,240 360,180" opacity="0.035" stroke-width="0.4"/>
+                    <!-- Central dot -->
+                    <circle cx="400" cy="200" r="4" fill="currentColor" opacity="0.04"/>
+                </g>
+            </svg>
+        </div>
+
         <div class="container narrow">
             <h2 class="section-title">What Is a Religion?</h2>
             <p class="section-subtitle">The abstract structure that Arbora consciously implements</p>
@@ -232,8 +609,49 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Separator: Meta → Footer (root-like edge) -->
+    <div class="section-sep section-sep--tall" aria-hidden="true" style="background: var(--earth)">
+        <svg viewBox="0 0 1440 70" preserveAspectRatio="none">
+            <path d="M0,0 L1440,0 L1440,30 C1380,15 1320,35 1260,20 C1200,5 1140,40 1080,18 C1020,0 960,35 900,22 C840,8 780,38 720,20 C660,5 600,40 540,22 C480,5 420,35 360,18 C300,2 240,38 180,22 C120,6 60,35 0,20 Z" fill="var(--parchment)"/>
+        </svg>
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════ -->
     <footer class="site-footer">
+        <!-- Root network pattern -->
+        <svg class="pattern-roots" viewBox="0 0 1400 200" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-linecap="round" opacity="0.06">
+                <!-- Dense root web -->
+                <path d="M700,10 C660,30 590,50 500,55" stroke-width="3"/>
+                <path d="M700,10 C740,30 810,50 900,55" stroke-width="3"/>
+                <path d="M700,10 C680,35 630,65 550,80" stroke-width="2.5"/>
+                <path d="M700,10 C720,35 770,65 850,80" stroke-width="2.5"/>
+                <path d="M500,55 C440,60 370,65 280,62" stroke-width="2.5"/>
+                <path d="M900,55 C960,60 1030,65 1120,62" stroke-width="2.5"/>
+                <path d="M500,55 C480,75 440,95 380,105" stroke-width="2"/>
+                <path d="M900,55 C920,75 960,95 1020,105" stroke-width="2"/>
+                <path d="M550,80 C510,95 450,110 380,118" stroke-width="1.8"/>
+                <path d="M850,80 C890,95 950,110 1020,118" stroke-width="1.8"/>
+                <path d="M280,62 C230,65 170,68 100,64" stroke-width="2"/>
+                <path d="M1120,62 C1170,65 1230,68 1300,64" stroke-width="2"/>
+                <path d="M380,105 C330,115 270,125 200,128" stroke-width="1.5"/>
+                <path d="M1020,105 C1070,115 1130,125 1200,128" stroke-width="1.5"/>
+                <path d="M700,10 C695,45 685,80 670,115" stroke-width="1.8"/>
+                <path d="M700,10 C705,45 715,80 730,115" stroke-width="1.8"/>
+                <!-- Fine tendrils -->
+                <path d="M100,64 C70,66 35,67 0,64" stroke-width="1.2"/>
+                <path d="M1300,64 C1330,66 1365,67 1400,64" stroke-width="1.2"/>
+                <path d="M200,128 C160,135 110,140 50,138" stroke-width="1"/>
+                <path d="M1200,128 C1240,135 1290,140 1350,138" stroke-width="1"/>
+                <path d="M670,115 C640,145 600,165 550,175" stroke-width="1.2"/>
+                <path d="M730,115 C760,145 800,165 850,175" stroke-width="1.2"/>
+                <path d="M380,118 C340,130 290,145 230,155" stroke-width="1"/>
+                <path d="M1020,118 C1060,130 1110,145 1170,155" stroke-width="1"/>
+            </g>
+        </svg>
+
         <div class="container narrow">
             <p class="footer-mark">Arbora</p>
             <nav class="footer-nav">
