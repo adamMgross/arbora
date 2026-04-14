@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Tree — Arbora</title>
+    <meta name="description" content="The full structure of Arbora — a data structure and a symbol, mapping the branches of this tradition.">
+    <meta name="theme-color" content="#3a2e2a">
+    <meta property="og:title" content="The Tree — Arbora">
+    <meta property="og:description" content="The full structure of Arbora — a data structure and a symbol, mapping the branches of this tradition.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,75 +40,200 @@
 
             <p>The tree grows. New branches appear. Old ones are pruned or grafted. The structure is alive.</p>
 
-            <div class="tree-container">
-ROOT: Arbora
-│
-├── COSMOLOGY & WORLDVIEW
-│   ├── Synthesis Preamble
-│   ├── Creation Stories
-│   │   ├── Buddhist / Hindu
-│   │   ├── Daoist
-│   │   ├── Indigenous North American
-│   │   ├── Scientific / Deep Time
-│   │   ├── Jewish Mystical (Kabbalah)
-│   │   ├── Sufi / Islamic Mystical
-│   │   ├── Christian Mystical
-│   │   ├── Norse (Yggdrasil)
-│   │   └── [open]
-│   └── Nature of Reality
-│
-├── EIGHT CORE PRINCIPLES
-│   ├── 1. Honor the Web of Life
-│   ├── 2. Dwell in Deep Time
-│   ├── 3. Seek Clarity Through Practice
-│   ├── 4. Give and Receive in Reciprocity
-│   ├── 5. Remember Your Ancestors
-│   ├── 6. Gather and Break Bread
-│   ├── 7. Question Everything; Revere the Search
-│   └── 8. Stand Humbly Before the Unknowable
-│
-├── DAILY PRACTICES
-│   ├── Morning
-│   │   ├── Porch Ritual
-│   │   ├── Morning Walk
-│   │   └── Seasonal Variations
-│   ├── Movement
-│   │   ├── Silent Movement
-│   │   └── Intentional Listening
-│   ├── Contemplation
-│   │   ├── Sitting / Meditation
-│   │   ├── Study & Reading
-│   │   └── Nature Observation
-│   └── Evening
-│       ├── Reflection
-│       └── Presence
-│
-├── SEASONAL & COMMUNITY RITUALS
-│   ├── Seasons
-│   │   ├── Spring — Renewal
-│   │   ├── Summer — Pilgrimage
-│   │   ├── Autumn — Gratitude
-│   │   └── Winter — Rest
-│   ├── Community
-│   │   ├── Weekly Gathering
-│   │   ├── Feast Days
-│   │   ├── Rites of Passage
-│   │   └── Pilgrimage
-│   └── Personal Milestones
-│
-├── THE CANON
-│   ├── Creation & Cosmology
-│   ├── Ethics & Philosophy
-│   ├── Prayers & Invocations
-│   ├── Poetry & Contemplation
-│   ├── Ancestral & Historical
-│   └── Scientific & Natural History
-│
-└── ARTISTIC REPRESENTATIONS
-    ├── Visual Tree Diagrams
-    ├── Calligraphy & Illuminated Text
-    ├── Symbols & Icons
-    └── Photography
+            <div class="tree-svg-container">
+                <svg id="arbora-tree" viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive tree diagram showing the structure of Arbora">
+                    <defs>
+                        <filter id="branch-glow" x="-30%" y="-30%" width="160%" height="160%">
+                            <feGaussianBlur stdDeviation="4" result="glow"/>
+                            <feMerge>
+                                <feMergeNode in="glow"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- ═══ ROOT SYSTEM ═══ -->
+                    <g class="tree-roots">
+                        <path class="root-path" d="M400,920 Q380,960 340,1000 Q320,1020 290,1050"/>
+                        <path class="root-path" d="M400,920 Q370,955 350,985 Q338,1010 318,1040"/>
+                        <path class="root-path" d="M400,920 Q408,958 392,995 Q380,1025 372,1060"/>
+                        <path class="root-path" d="M400,920 Q418,955 428,995 Q435,1030 440,1060"/>
+                        <path class="root-path" d="M400,920 Q432,952 462,988 Q482,1018 502,1050"/>
+                        <path class="root-path" d="M400,920 Q445,948 478,972 Q508,998 530,1030"/>
+                        <path class="root-path" d="M400,920 Q358,948 322,968 Q292,988 262,1015"/>
+                        <path class="root-path" d="M400,920 Q452,942 498,962 Q538,985 558,1012"/>
+
+                        <!-- Core values on roots -->
+                        <text class="root-value-text" x="268" y="1062" text-anchor="middle" transform="rotate(-28,268,1062)">Honor the Web of Life</text>
+                        <text class="root-value-text" x="300" y="1048" text-anchor="middle" transform="rotate(-18,300,1048)">Dwell in Deep Time</text>
+                        <text class="root-value-text" x="355" y="1068" text-anchor="middle" transform="rotate(-6,355,1068)">Seek Clarity</text>
+                        <text class="root-value-text" x="430" y="1068" text-anchor="middle" transform="rotate(6,430,1068)">Reciprocity</text>
+                        <text class="root-value-text" x="495" y="1058" text-anchor="middle" transform="rotate(15,495,1058)">Remember Ancestors</text>
+                        <text class="root-value-text" x="538" y="1040" text-anchor="middle" transform="rotate(22,538,1040)">Gather &amp; Break Bread</text>
+                        <text class="root-value-text" x="245" y="1025" text-anchor="middle" transform="rotate(-32,245,1025)">Revere the Search</text>
+                        <text class="root-value-text" x="565" y="1022" text-anchor="middle" transform="rotate(30,565,1022)">Stand Humbly</text>
+                    </g>
+
+                    <!-- Ground line -->
+                    <path class="ground-line" d="M100,920 Q200,916 300,921 Q400,925 500,918 Q600,913 700,920" fill="none"/>
+
+                    <!-- ═══ TRUNK ═══ -->
+                    <g class="tree-trunk">
+                        <path d="M388,920 Q384,845 381,770 Q379,700 383,635 Q386,565 391,495 Q394,430 397,370
+                                 L403,370 Q406,430 409,495 Q414,565 417,635 Q421,700 419,770 Q416,845 412,920 Z"
+                              class="trunk-fill"/>
+                        <path d="M388,920 Q384,845 381,770 Q379,700 383,635 Q386,565 391,495 Q394,430 397,370"
+                              class="trunk-edge" stroke-width="2"/>
+                        <path d="M412,920 Q416,845 419,770 Q421,700 417,635 Q414,565 409,495 Q406,430 403,370"
+                              class="trunk-edge" stroke-width="2"/>
+                    </g>
+
+                    <!-- Trunk bark texture -->
+                    <g class="trunk-details" opacity="0.15">
+                        <path d="M394,850 Q396,830 393,810" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                        <path d="M406,780 Q404,760 407,740" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                        <path d="M398,700 Q400,680 397,660" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                        <path d="M402,620 Q400,600 403,580" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                        <path d="M396,540 Q398,520 395,500" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                        <path d="M404,460 Q402,440 405,420" stroke="var(--branch)" stroke-width="0.7" fill="none"/>
+                    </g>
+
+                    <!-- Trunk label -->
+                    <text class="trunk-label" x="400" y="908" text-anchor="middle">Arbora</text>
+
+                    <!-- ═══ CANOPY (decorative leaf clusters) ═══ -->
+                    <g class="tree-canopy">
+                        <!-- Behind cosmology -->
+                        <ellipse cx="195" cy="345" rx="55" ry="45" class="canopy-cluster"/>
+                        <ellipse cx="155" cy="378" rx="35" ry="30" class="canopy-cluster"/>
+                        <ellipse cx="240" cy="382" rx="30" ry="25" class="canopy-cluster"/>
+                        <!-- Behind principles -->
+                        <ellipse cx="610" cy="310" rx="50" ry="42" class="canopy-cluster"/>
+                        <ellipse cx="660" cy="340" rx="32" ry="28" class="canopy-cluster"/>
+                        <ellipse cx="565" cy="345" rx="28" ry="24" class="canopy-cluster"/>
+                        <!-- Behind practices -->
+                        <ellipse cx="168" cy="478" rx="48" ry="38" class="canopy-cluster"/>
+                        <ellipse cx="128" cy="508" rx="30" ry="25" class="canopy-cluster"/>
+                        <!-- Behind rituals -->
+                        <ellipse cx="648" cy="455" rx="42" ry="36" class="canopy-cluster"/>
+                        <ellipse cx="688" cy="480" rx="28" ry="24" class="canopy-cluster"/>
+                        <!-- Behind canon -->
+                        <ellipse cx="162" cy="605" rx="45" ry="35" class="canopy-cluster"/>
+                        <ellipse cx="125" cy="630" rx="28" ry="22" class="canopy-cluster"/>
+                        <!-- Crown -->
+                        <ellipse cx="400" cy="340" rx="55" ry="48" class="canopy-cluster"/>
+                        <ellipse cx="355" cy="362" rx="38" ry="32" class="canopy-cluster"/>
+                        <ellipse cx="445" cy="358" rx="40" ry="34" class="canopy-cluster"/>
+                    </g>
+
+                    <!-- ═══ BRANCHES ═══ -->
+
+                    <!-- ── Branch 1: Cosmology (upper left) ── -->
+                    <g class="tree-branch" data-branch="cosmology">
+                        <a href="cosmology.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M392,475 Q355,448 298,415 Q248,388 190,368"/>
+                            <path class="branch-path branch-twig" d="M298,415 Q278,402 258,408"/>
+                            <path class="branch-path branch-twig" d="M268,405 Q248,394 228,400"/>
+                            <path class="branch-path branch-twig" d="M238,396 Q218,386 198,394"/>
+                            <g class="branch-label-group" transform="translate(178,352)">
+                                <rect class="branch-label-bg" x="-68" y="-16" width="136" height="32" rx="6" ry="10"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">Cosmology</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="252" y="420" text-anchor="end">Synthesis Preamble</text>
+                                <text class="leaf-label" x="222" y="410" text-anchor="end">Creation Stories</text>
+                                <text class="leaf-label" x="192" y="404" text-anchor="end">Nature of Reality</text>
+                            </g>
+                        </a>
+                    </g>
+
+                    <!-- ── Branch 2: Principles (upper right) ── -->
+                    <g class="tree-branch" data-branch="principles">
+                        <a href="principles.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M408,455 Q448,420 508,382 Q558,352 618,332"/>
+                            <path class="branch-path branch-twig" d="M508,382 Q530,368 548,374"/>
+                            <path class="branch-path branch-twig" d="M538,370 Q558,356 578,362"/>
+                            <path class="branch-path branch-twig" d="M568,358 Q588,346 606,354"/>
+                            <path class="branch-path branch-twig" d="M508,382 Q525,395 545,390"/>
+                            <g class="branch-label-group" transform="translate(628,318)">
+                                <rect class="branch-label-bg" x="-58" y="-16" width="116" height="32" rx="10" ry="6"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">Principles</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="552" y="384">Web of Life</text>
+                                <text class="leaf-label" x="582" y="370">Deep Time</text>
+                                <text class="leaf-label" x="610" y="362">Clarity</text>
+                                <text class="leaf-label" x="548" y="400">Reciprocity</text>
+                                <text class="leaf-label" x="575" y="386">Ancestors</text>
+                                <text class="leaf-label" x="605" y="374">Gather</text>
+                                <text class="leaf-label" x="548" y="414">Search</text>
+                                <text class="leaf-label" x="578" y="400">Humility</text>
+                            </g>
+                        </a>
+                    </g>
+
+                    <!-- ── Branch 3: Practices (mid left) ── -->
+                    <g class="tree-branch" data-branch="practices">
+                        <a href="practices.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M386,558 Q342,530 282,512 Q222,498 165,495"/>
+                            <path class="branch-path branch-twig" d="M282,512 Q262,500 245,508"/>
+                            <path class="branch-path branch-twig" d="M252,504 Q232,494 215,502"/>
+                            <path class="branch-path branch-twig" d="M222,498 Q202,490 185,498"/>
+                            <path class="branch-path branch-twig" d="M192,494 Q175,486 158,494"/>
+                            <g class="branch-label-group" transform="translate(152,480)">
+                                <rect class="branch-label-bg" x="-52" y="-16" width="104" height="32" rx="8" ry="8"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">Practices</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="240" y="520" text-anchor="end">Morning</text>
+                                <text class="leaf-label" x="210" y="512" text-anchor="end">Movement</text>
+                                <text class="leaf-label" x="180" y="508" text-anchor="end">Contemplation</text>
+                                <text class="leaf-label" x="152" y="504" text-anchor="end">Evening</text>
+                            </g>
+                        </a>
+                    </g>
+
+                    <!-- ── Branch 4: Rituals (mid right) ── -->
+                    <g class="tree-branch" data-branch="rituals">
+                        <a href="rituals.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M414,538 Q458,508 528,490 Q588,476 648,472"/>
+                            <path class="branch-path branch-twig" d="M528,490 Q550,478 568,484"/>
+                            <path class="branch-path branch-twig" d="M558,480 Q578,470 598,478"/>
+                            <path class="branch-path branch-twig" d="M590,474 Q612,466 632,474"/>
+                            <g class="branch-label-group" transform="translate(660,458)">
+                                <rect class="branch-label-bg" x="-42" y="-16" width="84" height="32" rx="6" ry="10"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">Rituals</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="572" y="496">Seasons</text>
+                                <text class="leaf-label" x="602" y="488">Community</text>
+                                <text class="leaf-label" x="635" y="482">Milestones</text>
+                            </g>
+                        </a>
+                    </g>
+
+                    <!-- ── Branch 5: Canon (lower left) ── -->
+                    <g class="tree-branch" data-branch="canon">
+                        <a href="canon.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M388,648 Q342,630 282,620 Q222,614 165,618"/>
+                            <path class="branch-path branch-twig" d="M282,620 Q260,610 242,618"/>
+                            <path class="branch-path branch-twig" d="M248,614 Q228,606 210,614"/>
+                            <path class="branch-path branch-twig" d="M218,610 Q198,604 180,612"/>
+                            <g class="branch-label-group" transform="translate(150,604)">
+                                <rect class="branch-label-bg" x="-52" y="-16" width="104" height="32" rx="10" ry="6"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">The Canon</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="238" y="630" text-anchor="end">Cosmology</text>
+                                <text class="leaf-label" x="206" y="624" text-anchor="end">Ethics</text>
+                                <text class="leaf-label" x="176" y="622" text-anchor="end">Prayers</text>
+                                <text class="leaf-label" x="238" y="644" text-anchor="end">Poetry</text>
+                                <text class="leaf-label" x="206" y="638" text-anchor="end">Ancestral</text>
+                                <text class="leaf-label" x="176" y="636" text-anchor="end">Science</text>
+                            </g>
+                        </a>
+                    </g>
+                </svg>
             </div>
         </div>
     </div>

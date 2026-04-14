@@ -168,3 +168,38 @@ if (document.querySelector('.page-content')) {
         bar.style.width = progress + '%';
     }, { passive: true });
 }
+
+// ── Interactive SVG Tree ──
+
+const arboraTree = document.getElementById('arbora-tree');
+
+if (arboraTree) {
+    // Reveal leaf labels on branch hover/touch
+    const branches = arboraTree.querySelectorAll('.tree-branch');
+
+    branches.forEach(branch => {
+        const showLeaves = () => {
+            branch.querySelectorAll('.leaf-label').forEach(leaf => {
+                leaf.style.opacity = '0.8';
+            });
+        };
+
+        const hideLeaves = () => {
+            branch.querySelectorAll('.leaf-label').forEach(leaf => {
+                leaf.style.opacity = '';
+            });
+        };
+
+        branch.addEventListener('mouseenter', showLeaves);
+        branch.addEventListener('mouseleave', hideLeaves);
+        branch.addEventListener('focusin', showLeaves);
+        branch.addEventListener('focusout', hideLeaves);
+    });
+
+    // Scroll-triggered reveal for the tree itself
+    const treeContainer = document.querySelector('.tree-svg-container');
+    if (treeContainer) {
+        treeContainer.classList.add('reveal');
+        revealObserver.observe(treeContainer);
+    }
+}
