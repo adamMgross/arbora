@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today — Arbora</title>
+    <meta name="description" content="Your daily touchpoint — a morning invocation, a reading, and an evening reflection.">
+    <meta name="theme-color" content="#3a2e2a">
+    <meta property="og:title" content="Today — Arbora">
+    <meta property="og:description" content="Your daily touchpoint — a morning invocation, a reading, and an evening reflection.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="site-nav">
+        <a href="index.html" class="nav-mark">Arbora</a>
+        <div class="nav-links">
+            <a href="today.html">Today</a>
+            <a href="cosmology.html">Cosmology</a>
+            <a href="principles.html">Principles</a>
+            <a href="practices.html">Practices</a>
+            <a href="rituals.html">Rituals</a>
+            <a href="canon.html">Canon</a>
+            <a href="tree.html">The Tree</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
+    </nav>
+
+    <header class="page-header">
+        <h1>Today</h1>
+        <p id="season-greeting"></p>
+    </header>
+
+    <div class="page-content">
+        <div class="container narrow">
+
+            <h2 id="morning-heading">Morning</h2>
+            <div class="invocation" id="morning-invocation">
+                <em id="morning-text"></em>
+            </div>
+
+            <h2 id="reading-heading">A Reading</h2>
+            <blockquote id="reading-text"></blockquote>
+            <p class="reading-source" id="reading-source" style="font-family: var(--font-ui); font-size: 0.85rem; color: var(--branch); margin-top: -0.5rem; margin-bottom: var(--space-lg);"></p>
+
+            <h2 id="evening-heading">Evening</h2>
+            <div class="invocation" id="evening-invocation">
+                <em id="evening-text"></em>
+            </div>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container narrow">
+            <p class="footer-mark">Arbora</p>
+            <nav class="footer-nav">
+                <a href="today.html">Today</a>
+                <a href="cosmology.html">Cosmology</a>
+                <a href="principles.html">Principles</a>
+                <a href="practices.html">Practices</a>
+                <a href="rituals.html">Rituals</a>
+                <a href="canon.html">Canon</a>
+                <a href="tree.html">The Tree</a>
+            </nav>
+            <div class="footer-divider"></div>
+            <p class="footer-text">A living document. The canon is never closed.</p>
+        </div>
+    </footer>
+
+    <script>
+    (function() {
+        // ── Season & time detection ──
+        var now = new Date();
+        var month = now.getMonth(); // 0-indexed
+        var hour = now.getHours();
+        var dayOfYear = Math.floor((now - new Date(now.getFullYear(), 0, 0)) / 86400000);
+
+        var season;
+        if (month >= 2 && month <= 4) season = 'spring';
+        else if (month >= 5 && month <= 7) season = 'summer';
+        else if (month >= 8 && month <= 10) season = 'autumn';
+        else season = 'winter';
+
+        var timeOfDay;
+        if (hour < 12) timeOfDay = 'morning';
+        else if (hour < 18) timeOfDay = 'afternoon';
+        else timeOfDay = 'evening';
+
+        // ── Season greetings ──
+        var seasonGreetings = {
+            spring: 'The world is waking. So may you.',
+            summer: 'The light is long. The mountains are open.',
+            autumn: 'The year is turning. Hold it lightly.',
+            winter: 'The roots are working beneath the frozen ground.'
+        };
+
+        document.getElementById('season-greeting').textContent = seasonGreetings[season];
+
+        // ── Morning invocations (7, cycling weekly) ──
+        var morningInvocations = [
+            'I woke today because others endured before me \u2014 through crossings I cannot imagine, in languages I no longer speak. I carry their survival in my body. This morning, with this tea, I remember them.',
+            'The jacarandas on this street were here before I was and may outlast me. The hillside oaks of Elysian Park are exhaling right now, and I am breathing what they give. I am not separate from this neighborhood. I am a neighbor to all of it.',
+            'This person beside me, this animal against my leg \u2014 they will not always be here, and neither will I. Let me not miss this morning by thinking about the afternoon. Let me be fully where I am, with whom I am.',
+            'The sun that warms this porch has risen over this basin for four and a half billion years. The hills I see were seafloor once. The tea in my hands grew from soil that was stone, that was magma, that was stardust. I am a brief visitor in an ancient story. That is enough.',
+            'What season is it \u2014 not on the calendar, but in the world? What is blooming, what is dormant, what is migrating through? Let me notice the light, the temperature, the angle of the sun. My body knows what time it is if I let it.',
+            'I have already received today: warmth, breath, this cup, this company. Before the day asks anything of me, let me ask what I will give back. Not out of guilt, but because exchange is how living systems endure.',
+            'I do not understand why anything exists at all. I do not understand consciousness, or love, or why the light at this hour turns everything gold. I do not need to understand. Let me begin this day in honest amazement.'
+        ];
+
+        // ── Canon readings (14, cycling every two weeks) ──
+        var canonReadings = [
+            {
+                text: 'Constantly regard the universe as one living being, having one substance and one soul; and observe how all things have reference to one perception, the perception of this one living being; and how all things act with one movement; and how all things are the cooperating causes of all things that exist; observe too the continuous spinning of the thread and the structure of the web.',
+                source: 'Marcus Aurelius, Meditations IV.40'
+            },
+            {
+                text: 'The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name. The nameless is the beginning of heaven and earth. The named is the mother of ten thousand things.',
+                source: 'Lao Tzu, Tao Te Ching Ch. 1'
+            },
+            {
+                text: 'In the indigenous worldview, a gift is not a commodity but a way of creating relationship. The plant gives to the animal, the animal gives to the earth, the earth gives to the plant. Round and round the gifts go, weaving a web of reciprocity.',
+                source: 'Robin Wall Kimmerer, Braiding Sweetgrass'
+            },
+            {
+                text: 'All conditioned things are impermanent. When one sees this with wisdom, one turns away from suffering. This is the path to purification.',
+                source: 'Dhammapada, verse 277'
+            },
+            {
+                text: 'If I am not for myself, who will be for me? But if I am only for myself, what am I? And if not now, when?',
+                source: 'Hillel the Elder, Pirkei Avot 1:14'
+            },
+            {
+                text: 'This being human is a guest house. Every morning a new arrival. A joy, a depression, a meanness, some momentary awareness comes as an unexpected visitor. Welcome and entertain them all!',
+                source: 'Rumi, \u201CThe Guest House\u201D'
+            },
+            {
+                text: 'Tell me, what is it you plan to do with your one wild and precious life?',
+                source: 'Mary Oliver, \u201CThe Summer Day\u201D'
+            },
+            {
+                text: 'I come into the peace of wild things who do not tax their lives with forethought of grief. I come into the presence of still water. And I feel above me the day-blind stars waiting with their light. For a time I rest in the grace of the world, and am free.',
+                source: 'Wendell Berry, \u201CThe Peace of Wild Things\u201D'
+            },
+            {
+                text: 'Some things are within our power, while others are not. Within our power are opinion, motivation, desire, aversion, and, in a word, whatever is of our own doing.',
+                source: 'Epictetus, Enchiridion Ch. 1'
+            },
+            {
+                text: 'No man ever steps in the same river twice, for it is not the same river and he is not the same man.',
+                source: 'Heraclitus, Fragment 12'
+            },
+            {
+                text: 'Are you looking for me? I am in the next seat. My shoulder is against yours. When you really look for me, you will see me instantly \u2014 you will find me in the tiniest house of time.',
+                source: 'Kabir'
+            },
+            {
+                text: 'From the place where we are right flowers will never grow in the spring. The place where we are right is hard and trampled like a yard. But doubts and loves dig up the world like a mole, a plow.',
+                source: 'Yehuda Amichai, \u201CThe Place Where We Are Right\u201D'
+            },
+            {
+                text: 'It is not upon you to finish the work, but neither are you free to desist from it.',
+                source: 'Rabbi Tarfon, Pirkei Avot 2:16'
+            },
+            {
+                text: 'stay together / learn the flowers / go light',
+                source: 'Gary Snyder, \u201CFor the Children\u201D'
+            }
+        ];
+
+        // ── Evening reflections (7, cycling weekly) ──
+        var eveningReflections = [
+            'What did I receive today that I did not earn? A meal someone prepared. A conversation that surprised me. The particular quality of light at a particular hour. Let me name one gift before I sleep.',
+            'Which of the eight did I embody today? Which did I neglect? No judgment \u2014 just observation. Tomorrow is another attempt. The practice is in the returning.',
+            'This day is over and will not come again. Whatever I did or failed to do, it is done. Let me release it as a tree releases a leaf \u2014 not in grief, but because holding on is not what living things do.',
+            'Who did I love well today? Who did I fail to see? Tomorrow, let me be more present to the people and creatures who share this life with me. They are not permanent. Neither am I.',
+            'The stars above this city are the same stars my ancestors navigated by, prayed under, feared and loved. The light arriving tonight left its source years or centuries ago. I am held in a web of time so vast that my anxieties, seen from that distance, are specks on the surface of an ocean.',
+            'The day was full of noise. Let the night be quiet. I do not need to process every thought or solve every problem before sleep. Some things resolve themselves in rest. The roots work in the dark.',
+            'My grandparents slept in places far from here \u2014 in Grodno, in Vilna, in apartments and houses I will never see. They closed their eyes not knowing what the morning would bring. I close mine in safety they fought to make possible. I do not take this for granted.'
+        ];
+
+        // ── Select today's content ──
+        var morningIndex = dayOfYear % morningInvocations.length;
+        var readingIndex = dayOfYear % canonReadings.length;
+        var eveningIndex = dayOfYear % eveningReflections.length;
+
+        document.getElementById('morning-text').textContent = morningInvocations[morningIndex];
+        document.getElementById('reading-text').textContent = canonReadings[readingIndex].text;
+        document.getElementById('reading-source').textContent = '\u2014 ' + canonReadings[readingIndex].source;
+        document.getElementById('evening-text').textContent = eveningReflections[eveningIndex];
+
+        // ── "now" indicator ──
+        var nowLabel = ' <span style="font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lichen); vertical-align: middle; margin-left: 0.5em;">now</span>';
+
+        if (timeOfDay === 'morning') {
+            document.getElementById('morning-heading').innerHTML += nowLabel;
+        } else if (timeOfDay === 'afternoon') {
+            document.getElementById('reading-heading').innerHTML += nowLabel;
+        } else {
+            document.getElementById('evening-heading').innerHTML += nowLabel;
+        }
+    })();
+    </script>
+    <script src="src/js/main.js"></script>
+</body>
+</html>
