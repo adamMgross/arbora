@@ -28,7 +28,7 @@ if (toggle && navLinks) {
 const currentPage = location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage) {
+    if (href === currentPage || currentPage.startsWith(href.replace('.html', '-'))) {
         link.classList.add('active');
     }
 });
@@ -79,6 +79,12 @@ document.querySelectorAll('.principles-list li').forEach((li, i) => {
     li.classList.add('reveal');
     li.style.transitionDelay = (i * 0.07) + 's';
     revealObserver.observe(li);
+});
+
+document.querySelectorAll('.canon-card').forEach((card, i) => {
+    card.classList.add('reveal');
+    card.style.transitionDelay = (i * 0.08) + 's';
+    revealObserver.observe(card);
 });
 
 // Stagger tradition tags by tier
