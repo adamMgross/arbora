@@ -1273,10 +1273,10 @@ body {
 
 .root-value-text {
     font-family: var(--font-ui);
-    font-size: 8.5px;
+    font-size: 11px;
     fill: var(--branch);
     letter-spacing: 0.02em;
-    opacity: 0.7;
+    opacity: 0.75;
 }
 
 /* Canopy clusters */
@@ -1315,7 +1315,7 @@ body {
 
 .branch-label {
     font-family: var(--font-ui);
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
     fill: var(--warmwhite);
     letter-spacing: 0.04em;
@@ -1325,7 +1325,7 @@ body {
 /* Leaf / sub-section labels */
 .leaf-label {
     font-family: var(--font-body);
-    font-size: 9px;
+    font-size: 11px;
     fill: var(--branch);
     opacity: 0;
     transition: opacity 0.4s var(--ease-organic),
@@ -2038,8 +2038,9 @@ body {
         stroke-width: 12;
     }
 
-    .tree-branch .leaf-label {
-        opacity: 0.6;
+    /* Show leaf labels at low opacity on touch (no hover) */
+    .leaf-label {
+        opacity: 0.55;
     }
 }
 
