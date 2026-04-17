@@ -1,0 +1,18 @@
+{
+  "name": "Arbora",
+  "short_name": "Arbora",
+  "description": "A religion of interconnection, deep time, and presence",
+  "start_url": "today.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#3a2e2a",
+  "background_color": "#faf8f4",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -6,6 +6,10 @@
     <title>Today — Arbora</title>
     <meta name="description" content="Your daily touchpoint — a morning invocation, a reading, and an evening reflection.">
     <meta name="theme-color" content="#3a2e2a">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Arbora">
     <meta property="og:title" content="Today — Arbora">
     <meta property="og:description" content="Your daily touchpoint — a morning invocation, a reading, and an evening reflection.">
     <meta property="og:type" content="website">
@@ -114,10 +118,17 @@
             'I have never lived this day before and will never live it again. Whatever I think I know about how it will go, I do not. The mind that arrives at this morning without conclusions is the mind that can actually see it. Let me begin as a beginner.',
             'The river does not decide to reach the sea. The tree does not plan to grow toward light. There is a grain to things, and when I work with it, more is accomplished than when I strain against it. Today, let me notice the grain before I push.',
             'The iron in my blood was forged in a star that died before the sun was born. The calcium in my bones came from ancient seas. This body is assembled from the oldest events in the cosmos. I am not just alive \u2014 I am borrowed from deep time.',
-            'Zhuangzi\u2019s cook did not cut the ox \u2014 he found the spaces already there and moved through them. The best work finds the grain of the material and follows it. Let me approach this day\u2019s labor with that kind of attention: not forcing, but following.'
+            'Zhuangzi\u2019s cook did not cut the ox \u2014 he found the spaces already there and moved through them. The best work finds the grain of the material and follows it. Let me approach this day\u2019s labor with that kind of attention: not forcing, but following.',
+            'The Stoics called it prosoche \u2014 attention to your own impulses and judgments before the day\u2019s noise arrives. What am I bringing to this morning? What mood arrived with me before I chose it? Let me notice the interior weather before I step into the world.',
+            'Before the day asks anything of me, let me notice what it is already doing. The trees are already working. The birds have already begun. The light has been moving since before I woke. I arrive, as usual, late to what is already underway.',
+            'This cup came from the other side of the world \u2014 from soil and rain and hands I will never know, from a tradition thousands of years old. Let me drink it slowly enough to remember that. The morning cup is a small altar. The attention I bring to it is the practice.',
+            'The jacaranda on my street does not know it is in a city. The crow on the wire does not know about the freeway. I am surrounded by lives that are completely indifferent to my schedule. Let me be glad of that. The world does not need my permission to be alive.',
+            'I am not in the mountains today. But the mountains are still there, doing what they always do \u2014 rising imperceptibly, being patient beyond my comprehension, holding the watershed that feeds everything downstream. I carry a piece of that patience with me. Let me use it.',
+            'This world was built through collaboration \u2014 the geese who caught the falling woman, the turtle who offered its back, the muskrat who dove to the bottom. Every morning I wake into the continuation of that gift. What was given to me, I did not earn. Let me pass it on.',
+            'The ancestors who gave me this life did not give it to me to spend in distraction. This morning, this tea, this light \u2014 this is the inheritance. Somewhere in Grodno, in Vilna, someone woke into a morning far harder than this and chose to continue. I continue in their name.'
         ];
 
-        // ── Canon readings (36, cycling) ──
+        // ── Canon readings (60, cycling) ──
         // Ordered to distribute traditions evenly across the cycle.
         var canonReadings = [
             // 1 — Stoic
@@ -299,10 +310,130 @@
             {
                 text: 'Turn it over and turn it over, for everything is in it. See into it, grow old in it, waste not a moment from it \u2014 for there is no better measure.',
                 source: 'Ben Bag-Bag, Pirkei Avot 5:22'
+            },
+            // 37 — Confucian
+            {
+                text: 'At fifteen I set my heart on learning. At thirty I stood firm. At forty I had no doubts. At fifty I understood Heaven\u2019s will. At sixty my ear was attuned. At seventy I could follow my heart\u2019s desire without transgressing what was right.',
+                source: 'Confucius, Analects 2:4'
+            },
+            // 38 — Scientific / deep time
+            {
+                text: 'In geologic time, a human lifetime is reduced to a brevity that is too inhibiting to think about deep in the night. A day is a millionth of a human lifetime, but it is a billionth of a river\u2019s.',
+                source: 'John McPhee, Basin and Range'
+            },
+            // 39 — Scientific
+            {
+                text: 'There is grandeur in this view of life, with its several powers, having been originally breathed into a few forms or into one; and that, whilst this planet has gone cycling on according to the fixed law of gravity, from so simple a beginning endless forms most beautiful and most wonderful have been, and are being, evolved.',
+                source: 'Charles Darwin, On the Origin of Species (1859)'
+            },
+            // 40 — Scientific
+            {
+                text: 'In nature nothing exists alone. Every living thing exists in relation to every other living thing \u2014 the web of life in which there is no single strand that can be touched without the vibration being felt throughout the entire web.',
+                source: 'Rachel Carson, Silent Spring (1962)'
+            },
+            // 41 — Scientific / interconnection
+            {
+                text: 'The Mother Trees were the biggest, oldest trees in the forest, and they were connected to all the other trees around them through the mycorrhizal network. They were sending carbon and nutrients and water to the younger trees. The forest was behaving as though it were a single organism.',
+                source: 'Suzanne Simard, Finding the Mother Tree (2021)'
+            },
+            // 42 — Ancestral
+            {
+                text: 'Consider if this is a man,\nWho labours in the mud,\nWho knows no peace,\nWho fights for a crust of bread,\nWho dies at a yes or a no.\nConsider that this has been:\nI commend these words to you.\nEngrave them on your hearts\nWhen you are in your house, when you walk on your way,\nWhen you go to bed, when you rise.',
+                source: 'Primo Levi, epigraph to If This Is a Man (1947)'
+            },
+            // 43 — Jewish / wonder
+            {
+                text: 'Just to be is a blessing, just to live is holy.',
+                source: 'Abraham Joshua Heschel, Man Is Not Alone'
+            },
+            // 44 — Greek
+            {
+                text: 'We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts. We are what we repeatedly do. Excellence, then, is not an act, but a habit.',
+                source: 'Aristotle, Nicomachean Ethics II.1'
+            },
+            // 45 — Hindu
+            {
+                text: 'Lead me from the unreal to the real. Lead me from darkness to light. Lead me from death to immortality.',
+                source: 'Brihadaranyaka Upanishad 1.3.28'
+            },
+            // 46 — Hindu
+            {
+                text: 'All this \u2014 whatever moves in this moving world \u2014 is enveloped by the Lord. Enjoy what is given up; do not covet what belongs to another. By this giving up, indeed, do you wish to live?',
+                source: 'Isha Upanishad 1 (trans. Patrick Olivelle)'
+            },
+            // 47 — Norse
+            {
+                text: 'At every door-way, before you enter, you should look around, you should spy around \u2014 for you cannot know where enemies are sitting in the hall before you.',
+                source: 'H\u00e1vam\u00e1l, stanza 1 (Norse, Poetic Edda)'
+            },
+            // 48 — Norse
+            {
+                text: 'The man who is moderately wise is the best of men; he does not demand too much wisdom. The noblest life is lived by those who know enough.',
+                source: 'H\u00e1vam\u00e1l, stanza 54'
+            },
+            // 49 — Indigenous
+            {
+                text: 'We are each called to be a hollow bone \u2014 a conduit for the healing and balancing energies that are needed in the world. Our obligation is not to seek our own balance alone, but to restore balance in the places where we live and in the relationships we carry.',
+                source: 'Sherri Mitchell (Weh\u2019na Ha\u2019mu Kwasset), Sacred Instructions'
+            },
+            // 50 — Contemporary / attention
+            {
+                text: 'The secret of tracking is that the tracker has no agenda about where the track is going. They are fully in the present moment, reading only what is in front of them. The question is never \u2018What do I want to find?\u2019 but \u2018What is here?\u2019',
+                source: 'Boyd Varty, Lion Tracker\u2019s Guide to Life'
+            },
+            // 51 — Contemporary / nature
+            {
+                text: 'When despair for the world grows in me\nand I wake in the night at the least sound\nin fear of what my life and my children\u2019s lives may be,\nI go and lie down where the wood drake\nrests in his beauty on the water, and the great heron feeds.\nI come into the peace of wild things.',
+                source: 'Wendell Berry, \u201cThe Peace of Wild Things\u201d'
+            },
+            // 52 — Contemporary / nature
+            {
+                text: 'We must uncenter our minds from ourselves;\nWe must unhumanize our views a little, and become confident\nAs the rock and ocean that we were made from.',
+                source: 'Robinson Jeffers, \u201cCarmel Point\u201d'
+            },
+            // 53 — Daoist / nature poetry
+            {
+                text: 'furu ike ya\nkawazu tobikomu\nmizu no oto\n\nThe old pond \u2014\na frog jumps in.\nSound of water.',
+                source: 'Matsuo Bash\u014d (1686)'
+            },
+            // 54 — Jewish
+            {
+                text: 'Go, eat your bread with joy, and drink your wine with a merry heart, for God has already approved what you do. Enjoy life with the wife whom you love, all the days of your vain life that he has given you under the sun.',
+                source: 'Ecclesiastes 9:7\u20139'
+            },
+            // 55 — Sufi / Islamic mystical
+            {
+                text: 'I was a hidden treasure and I loved to be known, so I created the world that I might be known.',
+                source: 'Hadith qudsi, widely cited in Sufi tradition'
+            },
+            // 56 — Jewish
+            {
+                text: 'Do not judge your fellow until you have reached their place.',
+                source: 'Hillel the Elder, Pirkei Avot 2:5'
+            },
+            // 57 — Jewish
+            {
+                text: 'The world stands on three things: on Torah, on service, and on acts of loving-kindness.',
+                source: 'Shimon the Just, Pirkei Avot 1:2'
+            },
+            // 58 — Confucian
+            {
+                text: 'He who learns but does not think is lost. He who thinks but does not learn is in great danger.',
+                source: 'Confucius, Analects 2:15'
+            },
+            // 59 — Jewish
+            {
+                text: 'Strive to be a person, and in a place where there are no persons, strive to be a person.',
+                source: 'Hillel the Elder, Pirkei Avot 2:6'
+            },
+            // 60 — Jewish / wonder
+            {
+                text: 'Life is routine and routine is resistance to wonder.',
+                source: 'Abraham Joshua Heschel, Man Is Not Alone'
             }
         ];
 
-        // ── Evening reflections (12, cycling) ──
+        // ── Evening reflections (16, cycling) ──
         var eveningReflections = [
             'What did I receive today that I did not earn? A meal someone prepared. A conversation that surprised me. The particular quality of light at a particular hour. Let me name one gift before I sleep.',
             'Which of the eight did I embody today? Which did I neglect? No judgment \u2014 just observation. Tomorrow is another attempt. The practice is in the returning.',
@@ -315,7 +446,11 @@
             'Was there silence today? Even a moment \u2014 in a car before turning the key, in a doorway between rooms? If so, what was in it? If not, let this be the first quiet of the day. It is not too late for stillness.',
             'My body carried everything today: the anxiety, the exertion, the laughter, the hours at a screen. It deserves acknowledgment. Tonight, let me feel it rather than ignore it. The body remembers what the mind prefers to skip.',
             'I spoke with someone today. Did I hear them? Did I let their words land before forming my response, or was I already somewhere else? The people around me are entire worlds. Let me try again tomorrow to actually enter one.',
-            'What is the world doing tonight that it was not doing a month ago? The light is different. Something is blooming or dormant or migrating. The year is in a particular phase and I am living through it. Let me be aware of what season I am actually in.'
+            'What is the world doing tonight that it was not doing a month ago? The light is different. Something is blooming or dormant or migrating. The year is in a particular phase and I am living through it. Let me be aware of what season I am actually in.',
+            'What did I learn today that I did not know this morning? Even one thing. Even small. The day that teaches nothing has been given too little attention. Tomorrow I will look more carefully.',
+            'What went unnoticed today that deserved to be seen? The person behind me in line. The plant on the windowsill. The way the afternoon light moved across the wall. Something was happening that I missed. Let me be less absent tomorrow.',
+            'My body carried me everywhere today, without being asked. It handled more than I noticed. Tonight, before sleep, let me feel it \u2014 not the things still undone, not tomorrow\u2019s list, but the actual weight and warmth of this body that has been carrying me all my life.',
+            'Somewhere tonight, in languages I do not speak, people I will never meet are asking themselves the same questions \u2014 what did I do, what could I have done better, what do I carry forward? The examined life is not a solitary project. I am not alone in this.'
         ];
 
         // ── Select today's content ──
