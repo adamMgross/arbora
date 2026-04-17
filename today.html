@@ -38,16 +38,16 @@
     <div class="page-content">
         <div class="container narrow">
 
-            <h2 id="morning-heading">Morning</h2>
+            <h2 id="morning-heading">Morning <button class="shuffle-btn" aria-label="Show a different invocation" data-section="morning">another</button></h2>
             <div class="invocation" id="morning-invocation">
                 <em id="morning-text"></em>
             </div>
 
-            <h2 id="reading-heading">A Reading</h2>
+            <h2 id="reading-heading">A Reading <button class="shuffle-btn" aria-label="Show a different reading" data-section="reading">another</button></h2>
             <blockquote id="reading-text"></blockquote>
             <p class="reading-source" id="reading-source" style="font-family: var(--font-ui); font-size: 0.85rem; color: var(--branch); margin-top: -0.5rem; margin-bottom: var(--space-lg);"></p>
 
-            <h2 id="evening-heading">Evening</h2>
+            <h2 id="evening-heading">Evening <button class="shuffle-btn" aria-label="Show a different reflection" data-section="evening">another</button></h2>
             <div class="invocation" id="evening-invocation">
                 <em id="evening-text"></em>
             </div>
@@ -101,7 +101,7 @@
 
         document.getElementById('season-greeting').textContent = seasonGreetings[season];
 
-        // ── Morning invocations (7, cycling weekly) ──
+        // ── Morning invocations (12, cycling) ──
         var morningInvocations = [
             'I woke today because others endured before me \u2014 through crossings I cannot imagine, in languages I no longer speak. I carry their survival in my body. This morning, with this tea, I remember them.',
             'The trees on my street were here before I was and may outlast me. The nearest park is exhaling right now, and I am breathing what the trees give. I am not separate from this neighborhood. I am a neighbor to all of it.',
@@ -109,70 +109,200 @@
             'The sun that warms this porch has risen over this place for four and a half billion years. The hills I see were seafloor once. The tea in my hands grew from soil that was stone, that was magma, that was stardust. I am a brief visitor in an ancient story. That is enough.',
             'What season is it \u2014 not on the calendar, but in the world? What is blooming, what is dormant, what is migrating through? Let me notice the light, the temperature, the angle of the sun. My body knows what time it is if I let it.',
             'I have already received today: warmth, breath, this cup, this company. Before the day asks anything of me, let me ask what I will give back. Not out of guilt, but because exchange is how living systems endure.',
-            'I do not understand why anything exists at all. I do not understand consciousness, or love, or why the light at this hour turns everything gold. I do not need to understand. Let me begin this day in honest amazement.'
+            'I do not understand why anything exists at all. I do not understand consciousness, or love, or why the light at this hour turns everything gold. I do not need to understand. Let me begin this day in honest amazement.',
+            'There are countless things I could attend to today \u2014 worries that are not mine, noise that asks only to be amplified. What I give my attention to, I become. Let me choose carefully what this morning is for.',
+            'I have never lived this day before and will never live it again. Whatever I think I know about how it will go, I do not. The mind that arrives at this morning without conclusions is the mind that can actually see it. Let me begin as a beginner.',
+            'The river does not decide to reach the sea. The tree does not plan to grow toward light. There is a grain to things, and when I work with it, more is accomplished than when I strain against it. Today, let me notice the grain before I push.',
+            'The iron in my blood was forged in a star that died before the sun was born. The calcium in my bones came from ancient seas. This body is assembled from the oldest events in the cosmos. I am not just alive \u2014 I am borrowed from deep time.',
+            'Zhuangzi\u2019s cook did not cut the ox \u2014 he found the spaces already there and moved through them. The best work finds the grain of the material and follows it. Let me approach this day\u2019s labor with that kind of attention: not forcing, but following.'
         ];
 
-        // ── Canon readings (14, cycling every two weeks) ──
+        // ── Canon readings (36, cycling) ──
+        // Ordered to distribute traditions evenly across the cycle.
         var canonReadings = [
+            // 1 — Stoic
             {
                 text: 'Constantly regard the universe as one living being, having one substance and one soul; and observe how all things have reference to one perception, the perception of this one living being; and how all things act with one movement; and how all things are the cooperating causes of all things that exist; observe too the continuous spinning of the thread and the structure of the web.',
                 source: 'Marcus Aurelius, Meditations IV.40'
             },
+            // 2 — Daoist
+            {
+                text: 'Once upon a time, I, Chuang Tzu, dreamt I was a butterfly, fluttering hither and thither, to all intents and purposes a butterfly, unaware that I was Chuang Tzu. Suddenly I awoke and lay there, Chuang Tzu once more. Now I do not know whether I was then a man dreaming I was a butterfly, or whether I am now a butterfly dreaming I am a man.',
+                source: 'Zhuangzi, Ch. 2 (trans. James Legge)'
+            },
+            // 3 — Buddhist
+            {
+                text: 'We are what we think. All that we are arises with our thoughts. With our thoughts we make the world. Speak or act with an impure mind and trouble will follow you as the wheel follows the ox that draws the cart. Speak or act with a pure mind and happiness will follow you as a shadow that never departs.',
+                source: 'Dhammapada, verses 1\u20132 (trans. Thomas Byrom)'
+            },
+            // 4 — Stoic
+            {
+                text: 'It is not that I have little time, but that I waste much of it. Life is long enough, and a sufficiently generous amount has been given to us for the highest achievements if it were all well invested. But when it is wasted in heedless luxury and spent on no good activity, we are forced at last by death\u2019s final constraint to realize that it has passed away before we knew it was passing.',
+                source: 'Seneca, On the Shortness of Life I.1'
+            },
+            // 5 — Buddhist
+            {
+                text: 'Do not go by what you have heard; do not go by tradition; do not go by what is in scripture; do not go by logical inference; do not go by appearances; do not go by the thought \u201Cthis is our teacher.\u201D But when you yourselves know: \u201CThese things are unwholesome, blameworthy, censured by the wise\u201D \u2014 then abandon them. And when you know: \u201CThese things are wholesome, blameless, praised by the wise; when practiced they lead to welfare and happiness\u201D \u2014 then take them up.',
+                source: 'Kalama Sutta, Anguttara Nikaya 3.65'
+            },
+            // 6 — Jewish
+            {
+                text: 'To every thing there is a season, and a time to every purpose under the heaven: a time to be born, and a time to die; a time to plant, and a time to pluck up that which is planted; a time to kill, and a time to heal; a time to break down, and a time to build up; a time to weep, and a time to laugh; a time to mourn, and a time to dance.',
+                source: 'Ecclesiastes 3:1\u20134'
+            },
+            // 7 — Greek
+            {
+                text: 'Nature loves to hide.',
+                source: 'Heraclitus, Fragment 123 (c. 500 BCE)'
+            },
+            // 8 — Daoist
             {
                 text: 'The Tao that can be told is not the eternal Tao. The name that can be named is not the eternal name. The nameless is the beginning of heaven and earth. The named is the mother of ten thousand things.',
                 source: 'Lao Tzu, Tao Te Ching Ch. 1'
             },
+            // 9 — Indigenous
             {
                 text: 'In the indigenous worldview, a gift is not a commodity but a way of creating relationship. The plant gives to the animal, the animal gives to the earth, the earth gives to the plant. Round and round the gifts go, weaving a web of reciprocity.',
                 source: 'Robin Wall Kimmerer, Braiding Sweetgrass'
             },
+            // 10 — Buddhist
             {
-                text: 'All conditioned things are impermanent. When one sees this with wisdom, one turns away from suffering. This is the path to purification.',
-                source: 'Dhammapada, verse 277'
+                text: 'Form is emptiness, emptiness is form. Form does not differ from emptiness; emptiness does not differ from form. Whatever is form, that is emptiness; whatever is emptiness, that is form. The same is true of feelings, perceptions, mental formations, and consciousness.',
+                source: 'Heart Sutra (trans. Thich Nhat Hanh)'
             },
+            // 11 — Stoic
+            {
+                text: 'Seek not that the things which happen should happen as you wish; but wish the things which happen to be as they are, and you will have a tranquil flow of life.',
+                source: 'Epictetus, Enchiridion Ch. 8'
+            },
+            // 12 — Hindu
+            {
+                text: '\u201CBring me a fruit from the banyan tree.\u201D \u2014 \u201CHere it is, sir.\u201D \u2014 \u201CBreak it.\u201D \u2014 \u201CWhat do you see?\u201D \u2014 \u201CSome very small seeds.\u201D \u2014 \u201CBreak one of them. What do you see?\u201D \u2014 \u201CNothing, sir.\u201D The father said: \u201CFrom that subtle essence which you do not see, this great banyan tree has grown. That which is the subtle essence \u2014 in that have all things their existence. That is the truth. That is the Self. And you, Shvetaketu, are that.\u201D',
+                source: 'Chandogya Upanishad 6.12'
+            },
+            // 13 — Jewish
             {
                 text: 'If I am not for myself, who will be for me? But if I am only for myself, what am I? And if not now, when?',
                 source: 'Hillel the Elder, Pirkei Avot 1:14'
             },
+            // 14 — Sufi
+            {
+                text: 'Even after all this time the sun never says to the earth, \u201CYou owe me.\u201D Look what happens with a love like that \u2014 it lights the whole sky.',
+                source: 'Hafiz (trans. Daniel Ladinsky)'
+            },
+            // 15 — Daoist
+            {
+                text: 'My mind works along without the control of the senses. Falling back upon eternal principles, I glide through the great joints and cavities as they exist, according to the natural constitution of the animal. A good cook changes his chopper once a year \u2014 because he cuts. An ordinary cook, once a month \u2014 because he hacks. But I have had this chopper for nineteen years, and its edge is as keen as if fresh from the grindstone. There are spaces in the joints; the edge of a chopper has no thickness; to insert that which has no thickness into such spaces \u2014 there is plenty of room.',
+                source: 'Zhuangzi, Ch. 3 (trans. James Legge, adapted)'
+            },
+            // 16 — Sufi
             {
                 text: 'This being human is a guest house. Every morning a new arrival. A joy, a depression, a meanness, some momentary awareness comes as an unexpected visitor. Welcome and entertain them all!',
                 source: 'Rumi, \u201CThe Guest House\u201D'
             },
+            // 17 — Christian mystical
+            {
+                text: 'If the only prayer you ever say in your entire life is \u201Cthank you,\u201D that will be enough.',
+                source: 'Meister Eckhart'
+            },
+            // 18 — Jewish
             {
                 text: 'One generation passes away, and another generation comes, but the earth abides forever. The sun also rises, and the sun goes down, and hastens to its place where it arose. The wind goes toward the south, and turns around to the north; it whirls about continually, and the wind returns again according to its circuits. All the rivers run into the sea, yet the sea is not full; to the place from which the rivers come, there they return again.',
                 source: 'Ecclesiastes 1:4\u20137'
             },
+            // 19 — Jewish
+            {
+                text: 'Who is wise? One who learns from every person. Who is strong? One who masters their own impulses. Who is rich? One who is satisfied with their portion. Who is honored? One who honors others.',
+                source: 'Ben Zoma, Pirkei Avot 4:1'
+            },
+            // 20 — Greek
+            {
+                text: 'The way up and the way down are one and the same.',
+                source: 'Heraclitus, Fragment 60 (c. 500 BCE)'
+            },
+            // 21 — Daoist
             {
                 text: 'Attain the utmost emptiness; hold fast to stillness. The ten thousand things stir about; I only watch for their going back. Things flourish and each returns to its root. Returning to the root is called stillness. Stillness is the return to one\u2019s destiny.',
                 source: 'Lao Tzu, Tao Te Ching Ch. 16'
             },
+            // 22 — Buddhist
+            {
+                text: 'Hatred does not cease by hatred at any time. Hatred ceases by love. This is an unalterable law.',
+                source: 'Dhammapada, verse 5'
+            },
+            // 23 — Stoic
+            {
+                text: 'Gather and save the time which till lately has been forced from you, or filched away, or has merely slipped from your hands. Make yourself believe the truth of my words: that certain moments are torn from us, that some are gently removed, and that others glide beyond our reach. The most disgraceful kind of loss, however, is that due to carelessness.',
+                source: 'Seneca, Letters to Lucilius I.1'
+            },
+            // 24 — Hindu
+            {
+                text: 'What the mind cannot think, but by which the mind thinks \u2014 know that alone as Brahman. What the eye cannot see, but by which the eye sees \u2014 know that alone as Brahman. What the ear cannot hear, but by which the ear hears \u2014 know that alone as Brahman.',
+                source: 'Kena Upanishad 1.5\u20137'
+            },
+            // 25 — Stoic
             {
                 text: 'Some things are within our power, while others are not. Within our power are opinion, motivation, desire, aversion, and, in a word, whatever is of our own doing.',
                 source: 'Epictetus, Enchiridion Ch. 1'
             },
+            // 26 — Norse
+            {
+                text: 'Cattle die, kindred die, every man is mortal. I know one thing that does not die: the good name of one who has done well.',
+                source: 'H\u00e1vam\u00e1l, stanzas 76\u201377 (Norse, c. 9th century)'
+            },
+            // 27 — Greek
             {
                 text: 'No man ever steps in the same river twice, for it is not the same river and he is not the same man.',
                 source: 'Heraclitus, Fragment 12'
             },
+            // 28 — Daoist
+            {
+                text: 'A man is born gentle and weak. At his death he is hard and stiff. Green plants are tender and filled with sap. At their death they are withered and dry. Therefore the stiff and unbending is the disciple of death. The gentle and yielding is the disciple of life.',
+                source: 'Lao Tzu, Tao Te Ching Ch. 76'
+            },
+            // 29 — Sufi/Bhakti
             {
                 text: 'Are you looking for me? I am in the next seat. My shoulder is against yours. When you really look for me, you will see me instantly \u2014 you will find me in the tiniest house of time.',
                 source: 'Kabir'
             },
+            // 30 — Sufi
+            {
+                text: 'The small man builds cages for everyone he knows. While the sage, who has to duck his head when the moon is low, keeps dropping keys all night long for the beautiful rowdy prisoners.',
+                source: 'Hafiz (trans. Daniel Ladinsky)'
+            },
+            // 31 — Jewish
             {
                 text: 'From the place where we are right flowers will never grow in the spring. The place where we are right is hard and trampled like a yard. But doubts and loves dig up the world like a mole, a plow.',
                 source: 'Yehuda Amichai, \u201CThe Place Where We Are Right\u201D'
             },
+            // 32 — Buddhist
+            {
+                text: 'All conditioned things are impermanent. When one sees this with wisdom, one turns away from suffering. This is the path to purification.',
+                source: 'Dhammapada, verse 277'
+            },
+            // 33 — Jewish
             {
                 text: 'It is not upon you to finish the work, but neither are you free to desist from it.',
                 source: 'Rabbi Tarfon, Pirkei Avot 2:16'
             },
+            // 34 — Christian mystical
+            {
+                text: 'The eye through which I see God is the same eye through which God sees me; my eye and God\u2019s eye are one eye, one seeing, one knowing, one love.',
+                source: 'Meister Eckhart, Sermons'
+            },
+            // 35 — Christian
             {
                 text: 'Praised be You, my Lord, through Brother Wind and through the air, cloudy and serene, and every kind of weather through which You give sustenance to Your creatures. Praised be You, my Lord, through Sister Water, who is very useful and humble and precious and chaste. Praised be You, my Lord, through our Sister, Mother Earth, who sustains and governs us, and produces varied fruits with colored flowers and herbs.',
                 source: 'Francis of Assisi, Canticle of the Sun (c. 1225)'
+            },
+            // 36 — Jewish
+            {
+                text: 'Turn it over and turn it over, for everything is in it. See into it, grow old in it, waste not a moment from it \u2014 for there is no better measure.',
+                source: 'Ben Bag-Bag, Pirkei Avot 5:22'
             }
         ];
 
-        // ── Evening reflections (7, cycling weekly) ──
+        // ── Evening reflections (12, cycling) ──
         var eveningReflections = [
             'What did I receive today that I did not earn? A meal someone prepared. A conversation that surprised me. The particular quality of light at a particular hour. Let me name one gift before I sleep.',
             'Which of the eight did I embody today? Which did I neglect? No judgment \u2014 just observation. Tomorrow is another attempt. The practice is in the returning.',
@@ -180,7 +310,12 @@
             'Who did I love well today? Who did I fail to see? Tomorrow, let me be more present to the people and creatures who share this life with me. They are not permanent. Neither am I.',
             'The stars above this city are the same stars my ancestors navigated by, prayed under, feared and loved. The light arriving tonight left its source years or centuries ago. I am held in a web of time so vast that my anxieties, seen from that distance, are specks on the surface of an ocean.',
             'The day was full of noise. Let the night be quiet. I do not need to process every thought or solve every problem before sleep. Some things resolve themselves in rest. The roots work in the dark.',
-            'My people slept in places far from here \u2014 in towns and cities I may never see, in languages some of us no longer speak. They closed their eyes not knowing what the morning would bring. I close mine in safety they struggled to make possible. I do not take this for granted.'
+            'My people slept in places far from here \u2014 in towns and cities I may never see, in languages some of us no longer speak. They closed their eyes not knowing what the morning would bring. I close mine in safety they struggled to make possible. I do not take this for granted.',
+            'Something was difficult today. I did not expect it, or I expected it and it was worse than I thought. That difficulty was not punishment. It was texture. Let me ask what it had to teach rather than when it will stop.',
+            'Was there silence today? Even a moment \u2014 in a car before turning the key, in a doorway between rooms? If so, what was in it? If not, let this be the first quiet of the day. It is not too late for stillness.',
+            'My body carried everything today: the anxiety, the exertion, the laughter, the hours at a screen. It deserves acknowledgment. Tonight, let me feel it rather than ignore it. The body remembers what the mind prefers to skip.',
+            'I spoke with someone today. Did I hear them? Did I let their words land before forming my response, or was I already somewhere else? The people around me are entire worlds. Let me try again tomorrow to actually enter one.',
+            'What is the world doing tonight that it was not doing a month ago? The light is different. Something is blooming or dormant or migrating. The year is in a particular phase and I am living through it. Let me be aware of what season I am actually in.'
         ];
 
         // ── Select today's content ──
@@ -194,15 +329,78 @@
         document.getElementById('evening-text').textContent = eveningReflections[eveningIndex];
 
         // ── "now" indicator ──
-        var nowLabel = ' <span style="font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lichen); vertical-align: middle; margin-left: 0.5em;">now</span>';
+        // Use insertAdjacentHTML so existing button DOM nodes are not destroyed.
+        var nowLabel = '<span style="font-family: var(--font-ui); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lichen); vertical-align: middle; margin-left: 0.5em;">now</span>';
 
         if (timeOfDay === 'morning') {
-            document.getElementById('morning-heading').innerHTML += nowLabel;
+            document.getElementById('morning-heading').insertAdjacentHTML('beforeend', nowLabel);
         } else if (timeOfDay === 'afternoon') {
-            document.getElementById('reading-heading').innerHTML += nowLabel;
+            document.getElementById('reading-heading').insertAdjacentHTML('beforeend', nowLabel);
         } else {
-            document.getElementById('evening-heading').innerHTML += nowLabel;
+            document.getElementById('evening-heading').insertAdjacentHTML('beforeend', nowLabel);
         }
+
+        // ── Shuffle buttons ──
+        function fadeSwap(el, fn) {
+            el.style.transition = 'opacity 0.25s';
+            el.style.opacity = '0';
+            setTimeout(function() {
+                fn();
+                el.style.opacity = '1';
+            }, 200);
+        }
+
+        document.querySelectorAll('.shuffle-btn').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var section = this.dataset.section;
+                var arr, currentIdx;
+
+                if (section === 'morning') {
+                    arr = morningInvocations;
+                    currentIdx = morningIndex;
+                } else if (section === 'reading') {
+                    arr = canonReadings;
+                    currentIdx = readingIndex;
+                } else {
+                    arr = eveningReflections;
+                    currentIdx = eveningIndex;
+                }
+
+                var newIdx;
+                do {
+                    newIdx = Math.floor(Math.random() * arr.length);
+                } while (newIdx === currentIdx && arr.length > 1);
+
+                if (section === 'morning') {
+                    morningIndex = newIdx;
+                    var el = document.getElementById('morning-text');
+                    fadeSwap(el.parentElement, function() {
+                        el.textContent = arr[newIdx];
+                    });
+                } else if (section === 'reading') {
+                    readingIndex = newIdx;
+                    var readEl = document.getElementById('reading-text');
+                    var srcEl = document.getElementById('reading-source');
+                    readEl.style.transition = 'opacity 0.25s';
+                    srcEl.style.transition = 'opacity 0.25s';
+                    readEl.style.opacity = '0';
+                    srcEl.style.opacity = '0';
+                    setTimeout(function() {
+                        readEl.textContent = arr[newIdx].text;
+                        srcEl.textContent = '\u2014 ' + arr[newIdx].source;
+                        readEl.style.opacity = '1';
+                        srcEl.style.opacity = '1';
+                    }, 200);
+                } else {
+                    eveningIndex = newIdx;
+                    var eveEl = document.getElementById('evening-text');
+                    fadeSwap(eveEl.parentElement, function() {
+                        eveEl.textContent = arr[newIdx];
+                    });
+                }
+            });
+        });
+
     })();
     </script>
     <script src="src/js/main.js"></script>
