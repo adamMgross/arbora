@@ -6,6 +6,10 @@
     <title>The Tree — Arbora</title>
     <meta name="description" content="The full structure of Arbora — a data structure and a symbol, mapping the branches of this tradition.">
     <meta name="theme-color" content="#3a2e2a">
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Arbora">
     <meta property="og:title" content="The Tree — Arbora">
     <meta property="og:description" content="The full structure of Arbora — a data structure and a symbol, mapping the branches of this tradition.">
     <meta property="og:type" content="website">
@@ -125,6 +129,10 @@
                         <ellipse cx="400" cy="340" rx="55" ry="48" class="canopy-cluster"/>
                         <ellipse cx="355" cy="362" rx="38" ry="32" class="canopy-cluster"/>
                         <ellipse cx="445" cy="358" rx="40" ry="34" class="canopy-cluster"/>
+                        <!-- Behind Today (upper right crown) -->
+                        <ellipse cx="500" cy="295" rx="48" ry="40" class="canopy-cluster"/>
+                        <ellipse cx="548" cy="318" rx="30" ry="26" class="canopy-cluster"/>
+                        <ellipse cx="462" cy="310" rx="28" ry="24" class="canopy-cluster"/>
                     </g>
 
                     <!-- ═══ BRANCHES ═══ -->
@@ -231,6 +239,25 @@
                                 <text class="leaf-label" x="196" y="622" text-anchor="end">Ancestral</text>
                                 <text class="leaf-label" x="196" y="636" text-anchor="end">Science</text>
                                 <text class="leaf-label" x="196" y="650" text-anchor="end">Companions</text>
+                            </g>
+                        </a>
+                    </g>
+
+                    <!-- ── Branch 6: Today (upper crown, rising) ── -->
+                    <g class="tree-branch" data-branch="today">
+                        <a href="today.html" class="branch-link">
+                            <path class="branch-path branch-main" d="M406,420 Q435,392 462,362 Q482,338 498,308"/>
+                            <path class="branch-path branch-twig" d="M462,362 Q478,348 496,354"/>
+                            <path class="branch-path branch-twig" d="M478,344 Q492,332 510,338"/>
+                            <path class="branch-path branch-twig" d="M494,326 Q506,315 522,322"/>
+                            <g class="branch-label-group" transform="translate(502,292)">
+                                <rect class="branch-label-bg" x="-36" y="-16" width="72" height="32" rx="10" ry="6"/>
+                                <text class="branch-label" text-anchor="middle" dy="1">Today</text>
+                            </g>
+                            <g class="sub-branches">
+                                <text class="leaf-label" x="500" y="368">Morning</text>
+                                <text class="leaf-label" x="500" y="382">Reading</text>
+                                <text class="leaf-label" x="500" y="396">Evening</text>
                             </g>
                         </a>
                     </g>

@@ -209,3 +209,10 @@ if (arboraTree) {
         revealObserver.observe(treeContainer);
     }
 }
+
+// ── Service Worker registration ──
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').catch(function() {});
+    });
+}
