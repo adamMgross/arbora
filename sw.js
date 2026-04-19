@@ -1,4 +1,4 @@
-const CACHE_NAME = 'arbora-v1';
+const CACHE_NAME = 'arbora-v2';
 
 const PRECACHE_URLS = [
     'today.html',
@@ -20,11 +20,13 @@ const PRECACHE_URLS = [
     'canon-ancestral.html',
     'canon-science.html',
     'canon-companions.html',
+    'canon-upanishads.html',
     'tree.html',
     'src/css/style.css',
     'src/js/main.js',
     'favicon.svg',
-    'manifest.json'
+    'manifest.json',
+    'robots.txt'
 ];
 
 self.addEventListener('install', function(event) {
