@@ -2476,3 +2476,267 @@ body {
     /* Principles list */
     .principles-list li { page-break-inside: avoid; }
 }
+
+/* ──────────────────────────────────────────────
+   SKIP LINK
+   ────────────────────────────────────────────── */
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: var(--space-sm);
+    z-index: 300;
+    background: var(--bark);
+    color: var(--cream);
+    padding: 0.6rem var(--space-sm);
+    border-radius: var(--radius-soft);
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: top 0.2s var(--ease-organic);
+}
+
+.skip-link:focus {
+    top: var(--space-sm);
+}
+
+/* ──────────────────────────────────────────────
+   COPY BUTTON (on blockquotes)
+   ────────────────────────────────────────────── */
+
+.copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: 1px solid rgba(138, 154, 123, 0.2);
+    border-radius: var(--radius-soft);
+    color: var(--lichen);
+    font-family: var(--font-ui);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s var(--ease-organic),
+                color 0.25s var(--ease-organic),
+                border-color 0.25s var(--ease-organic),
+                background 0.25s var(--ease-organic);
+    line-height: 1;
+    min-height: 28px;
+    display: flex;
+    align-items: center;
+}
+
+.page-content blockquote {
+    position: relative;
+}
+
+.page-content blockquote:hover .copy-btn,
+.page-content blockquote:focus-within .copy-btn {
+    opacity: 1;
+}
+
+.copy-btn:hover {
+    color: var(--moss);
+    border-color: rgba(107, 127, 94, 0.4);
+    background: rgba(138, 154, 123, 0.07);
+}
+
+.copy-btn.copied {
+    color: var(--needle);
+    border-color: var(--needle);
+}
+
+@media (pointer: coarse) {
+    .copy-btn {
+        opacity: 0.6;
+        min-height: 36px;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   OFFLINE INDICATOR
+   ────────────────────────────────────────────── */
+
+.offline-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--heartwood);
+    color: var(--cream);
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-align: center;
+    padding: 0.4rem var(--space-sm);
+    z-index: 250;
+    transform: translateY(100%);
+    transition: transform 0.4s var(--ease-organic);
+}
+
+.offline-bar.visible {
+    transform: translateY(0);
+}
+
+/* ──────────────────────────────────────────────
+   DARK MODE
+   ────────────────────────────────────────────── */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Inverted earth palette */
+        --bark:       #e8e2dc;
+        --heartwood:  #c8bfb5;
+        --branch:     #a09689;
+        --stone:      #8a8078;
+
+        /* Canopy — slightly desaturated for dark bg */
+        --needle:     #8aad7e;
+        --moss:       #94a887;
+        --lichen:     #a3b396;
+        --sage:       #7d9570;
+        --sky:        #5a6b54;
+
+        /* Dark surfaces */
+        --warmwhite:  #1a1714;
+        --cream:      #1e1b18;
+        --parchment:  #252220;
+        --fog:        #2e2a27;
+        --dawn:       #3a3020;
+
+        /* Earth depth — lighter for dark mode */
+        --earth:      #c8b8a0;
+        --root:       #d8d0c8;
+        --canopy:     #6a9a6a;
+
+        /* Warm accents — brighter */
+        --amber:      #d4a020;
+        --sunlight:   #e0c060;
+        --clay:       #c07040;
+
+        /* Shadows — stronger for dark bg */
+        --shadow-rest:    0 2px 8px rgba(0, 0, 0, 0.15),
+                          0 8px 32px rgba(0, 0, 0, 0.20);
+        --shadow-lifted:  0 4px 16px rgba(0, 0, 0, 0.20),
+                          0 16px 48px rgba(0, 0, 0, 0.30);
+        --shadow-glow:    0 0 40px rgba(138, 154, 123, 0.08);
+    }
+
+    body {
+        -webkit-font-smoothing: auto;
+    }
+
+    ::selection {
+        background: rgba(138, 154, 123, 0.35);
+        color: var(--bark);
+    }
+
+    .scroll-progress {
+        background: linear-gradient(90deg, var(--sage), var(--moss), var(--needle));
+    }
+
+    /* Nav */
+    .site-nav {
+        background: rgba(30, 27, 24, 0.92);
+    }
+
+    .site-nav.scrolled {
+        background: rgba(30, 27, 24, 0.97);
+        box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-links.open {
+        background: rgba(30, 27, 24, 0.98);
+    }
+
+    /* Hero */
+    .hero {
+        background: radial-gradient(ellipse at 50% 60%, rgba(60, 50, 40, 0.4) 0%, transparent 65%),
+                    var(--cream);
+    }
+
+    .hero-geometry {
+        opacity: 0.04;
+    }
+
+    /* Cards & interactive elements */
+    .value-card,
+    .canon-card {
+        background: linear-gradient(145deg, var(--fog) 0%, rgba(37, 34, 32, 0.8) 100%);
+        border-color: rgba(138, 154, 123, 0.12);
+    }
+
+    .value-card:hover,
+    .canon-card:hover {
+        border-color: rgba(138, 154, 123, 0.25);
+    }
+
+    /* Blockquotes */
+    .page-content blockquote {
+        background: rgba(138, 154, 123, 0.04);
+    }
+
+    /* Invocations */
+    .invocation {
+        background: rgba(138, 154, 123, 0.04);
+        border-color: rgba(138, 154, 123, 0.12);
+    }
+
+    /* Canon TOC */
+    .canon-toc {
+        background: rgba(138, 154, 123, 0.03);
+        border-color: rgba(138, 154, 123, 0.1);
+    }
+
+    /* Tags */
+    .tag {
+        background: rgba(138, 154, 123, 0.08);
+        border-color: rgba(138, 154, 123, 0.15);
+    }
+
+    /* Meta items */
+    .meta-item {
+        background: rgba(138, 154, 123, 0.04);
+        border-color: rgba(138, 154, 123, 0.1);
+    }
+
+    /* Footer */
+    .site-footer {
+        background: linear-gradient(180deg, var(--parchment) 0%, #141210 100%);
+    }
+
+    /* Section backgrounds */
+    .section:nth-child(even) {
+        background: rgba(138, 154, 123, 0.02);
+    }
+
+    /* Page headers */
+    .page-header {
+        background: radial-gradient(ellipse at 50% 70%, rgba(60, 50, 40, 0.3) 0%, transparent 60%),
+                    var(--cream);
+    }
+
+    /* Shuffle button */
+    .shuffle-btn {
+        border-color: rgba(138, 154, 123, 0.2);
+    }
+
+    /* WIP notice */
+    .page-content .wip-notice {
+        background: rgba(138, 154, 123, 0.06);
+        border-color: rgba(138, 154, 123, 0.12);
+    }
+
+    /* Tree SVG container */
+    .tree-svg-container {
+        background: rgba(138, 154, 123, 0.02);
+    }
+
+    /* Images / SVGs in dark mode */
+    img, svg:not(.hero-geometry):not(.hero-tree) {
+        opacity: 0.9;
+    }
+}

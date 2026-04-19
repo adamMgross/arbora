@@ -210,6 +210,46 @@ if (arboraTree) {
     }
 }
 
+// ── Copy buttons on blockquotes ──
+
+document.querySelectorAll('.page-content blockquote').forEach(bq => {
+    const btn = document.createElement('button');
+    btn.className = 'copy-btn';
+    btn.textContent = 'copy';
+    btn.setAttribute('aria-label', 'Copy passage to clipboard');
+    btn.addEventListener('click', () => {
+        const text = bq.textContent.replace(/\s*copy$/, '').trim();
+        navigator.clipboard.writeText(text).then(() => {
+            btn.textContent = 'copied';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = 'copy';
+                btn.classList.remove('copied');
+            }, 1500);
+        });
+    });
+    bq.appendChild(btn);
+});
+
+// ── Offline indicator ──
+
+const offlineBar = document.createElement('div');
+offlineBar.className = 'offline-bar';
+offlineBar.textContent = 'You are offline — cached content is available';
+document.body.appendChild(offlineBar);
+
+function updateOnlineStatus() {
+    if (!navigator.onLine) {
+        offlineBar.classList.add('visible');
+    } else {
+        offlineBar.classList.remove('visible');
+    }
+}
+
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+updateOnlineStatus();
+
 // ── Service Worker registration ──
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
