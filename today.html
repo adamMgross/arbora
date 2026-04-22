@@ -69,11 +69,23 @@
 
             <h2 id="reading-heading">A Reading <button class="shuffle-btn" aria-label="Show a different reading" data-section="reading">another</button></h2>
             <blockquote id="reading-text"></blockquote>
-            <p class="reading-source" id="reading-source" style="font-family: var(--font-ui); font-size: 0.85rem; color: var(--branch); margin-top: -0.5rem; margin-bottom: var(--space-lg);"></p>
+            <div class="reading-footer">
+                <p class="reading-source" id="reading-source"></p>
+                <div class="reading-actions">
+                    <a href="#" id="reading-canon-link" class="reading-tradition-link"></a>
+                    <button class="reading-bookmark-btn" id="reading-bookmark" aria-label="Save this reading" data-saved="false">save</button>
+                </div>
+            </div>
 
             <h2 id="evening-heading">Evening <button class="shuffle-btn" aria-label="Show a different reflection" data-section="evening">another</button></h2>
             <div class="invocation" id="evening-invocation">
                 <em id="evening-text"></em>
+            </div>
+
+            <div id="saved-readings-section" class="saved-section">
+                <h2 class="saved-heading">Saved</h2>
+                <div id="saved-readings-list"></div>
+                <button id="clear-saved" class="clear-saved-btn">clear all</button>
             </div>
 
         </div>
@@ -603,6 +615,114 @@
             }
         ];
 
+        // ── Canon page for each reading (parallel array, same order) ──
+        var canonReadingsPages = [
+            'canon-stoics.html',       // 1
+            'canon-daoism.html',       // 2
+            'canon-buddhism.html',     // 3
+            'canon-stoics.html',       // 4
+            'canon-buddhism.html',     // 5
+            'canon-jewish-wisdom.html',// 6
+            'canon-fragments.html',    // 7
+            'canon-daoism.html',       // 8
+            'canon-companions.html',   // 9
+            'canon-buddhism.html',     // 10
+            'canon-stoics.html',       // 11
+            'canon-upanishads.html',   // 12
+            'canon-jewish-wisdom.html',// 13
+            'canon-mystics.html',      // 14
+            'canon-daoism.html',       // 15
+            'canon-mystics.html',      // 16
+            'canon-mystics.html',      // 17
+            'canon-jewish-wisdom.html',// 18
+            'canon-jewish-wisdom.html',// 19
+            'canon-fragments.html',    // 20
+            'canon-daoism.html',       // 21
+            'canon-buddhism.html',     // 22
+            'canon-stoics.html',       // 23
+            'canon-upanishads.html',   // 24
+            'canon-stoics.html',       // 25
+            'canon-fragments.html',    // 26
+            'canon-fragments.html',    // 27
+            'canon-daoism.html',       // 28
+            'canon-mystics.html',      // 29
+            'canon-mystics.html',      // 30
+            'canon-ancestral.html',    // 31
+            'canon-buddhism.html',     // 32
+            'canon-jewish-wisdom.html',// 33
+            'canon-mystics.html',      // 34
+            'canon-mystics.html',      // 35
+            'canon-jewish-wisdom.html',// 36
+            'canon-fragments.html',    // 37
+            'canon-science.html',      // 38
+            'canon-science.html',      // 39
+            'canon-science.html',      // 40
+            'canon-science.html',      // 41
+            'canon-ancestral.html',    // 42
+            'canon-jewish-wisdom.html',// 43
+            'canon-fragments.html',    // 44
+            'canon-upanishads.html',   // 45
+            'canon-upanishads.html',   // 46
+            'canon-fragments.html',    // 47
+            'canon-fragments.html',    // 48
+            'canon-ancestral.html',    // 49
+            'canon-companions.html',   // 50
+            'canon-poetry.html',       // 51
+            'canon-poetry.html',       // 52
+            'canon-poetry.html',       // 53
+            'canon-jewish-wisdom.html',// 54
+            'canon-mystics.html',      // 55
+            'canon-jewish-wisdom.html',// 56
+            'canon-jewish-wisdom.html',// 57
+            'canon-fragments.html',    // 58
+            'canon-jewish-wisdom.html',// 59
+            'canon-jewish-wisdom.html',// 60
+            'canon-stoics.html',       // 61
+            'canon-daoism.html',       // 62
+            'canon-stoics.html',       // 63
+            'canon-upanishads.html',   // 64
+            'canon-buddhism.html',     // 65
+            'canon-jewish-wisdom.html',// 66
+            'canon-fragments.html',    // 67
+            'canon-daoism.html',       // 68
+            'canon-stoics.html',       // 69
+            'canon-companions.html',   // 70
+            'canon-buddhism.html',     // 71
+            'canon-upanishads.html',   // 72
+            'canon-mystics.html',      // 73
+            'canon-science.html',      // 74
+            'canon-daoism.html',       // 75
+            'canon-jewish-wisdom.html',// 76
+            'canon-stoics.html',       // 77
+            'canon-buddhism.html',     // 78
+            'canon-ancestral.html',    // 79
+            'canon-upanishads.html',   // 80
+            'canon-science.html',      // 81
+            'canon-fragments.html',    // 82
+            'canon-fragments.html',    // 83
+            'canon-mystics.html',      // 84
+            'canon-jewish-wisdom.html',// 85
+            'canon-science.html',      // 86
+            'canon-upanishads.html',   // 87
+            'canon-fragments.html',    // 88
+            'canon-daoism.html',       // 89
+            'canon-jewish-wisdom.html' // 90
+        ];
+
+        var traditionLabels = {
+            'canon-stoics.html':        'Stoic philosophy',
+            'canon-daoism.html':        'Daoist texts',
+            'canon-buddhism.html':      'Buddhist suttas',
+            'canon-jewish-wisdom.html': 'Jewish wisdom',
+            'canon-upanishads.html':    'Hindu philosophy',
+            'canon-mystics.html':       'Mystic voices',
+            'canon-fragments.html':     'Ancient fragments',
+            'canon-science.html':       'Science & nature',
+            'canon-companions.html':    'Contemporary companions',
+            'canon-poetry.html':        'Poetry',
+            'canon-ancestral.html':     'Ancestral texts'
+        };
+
         // ── Evening reflections (16, cycling) ──
         var eveningReflections = [
             'What did I receive today that I did not earn? A meal someone prepared. A conversation that surprised me. The particular quality of light at a particular hour. Let me name one gift before I sleep.',
@@ -632,6 +752,99 @@
         document.getElementById('reading-text').textContent = canonReadings[readingIndex].text;
         document.getElementById('reading-source').textContent = '\u2014 ' + canonReadings[readingIndex].source;
         document.getElementById('evening-text').textContent = eveningReflections[eveningIndex];
+
+        // ── Canon link ──
+        function setCanonLink(idx) {
+            var page = canonReadingsPages[idx];
+            var link = document.getElementById('reading-canon-link');
+            if (page) {
+                link.href = page;
+                link.textContent = 'Explore ' + (traditionLabels[page] || 'this tradition') + ' \u2192';
+                link.style.display = '';
+            } else {
+                link.style.display = 'none';
+            }
+        }
+        setCanonLink(readingIndex);
+
+        // ── Bookmarks ──
+        var SAVED_KEY = 'arbora-saved-readings';
+
+        function getSaved() {
+            try { return JSON.parse(localStorage.getItem(SAVED_KEY)) || []; }
+            catch(e) { return []; }
+        }
+        function setSaved(arr) {
+            try { localStorage.setItem(SAVED_KEY, JSON.stringify(arr)); } catch(e) {}
+        }
+        function isSaved(text, source) {
+            return getSaved().some(function(r) { return r.source === source && r.text === text; });
+        }
+
+        function updateBookmarkBtn() {
+            var r = canonReadings[readingIndex];
+            var btn = document.getElementById('reading-bookmark');
+            var saved = isSaved(r.text, r.source);
+            btn.textContent = saved ? 'saved \u2665' : 'save';
+            btn.dataset.saved = saved ? 'true' : 'false';
+        }
+        updateBookmarkBtn();
+
+        function renderSaved() {
+            var saved = getSaved();
+            var section = document.getElementById('saved-readings-section');
+            var list = document.getElementById('saved-readings-list');
+            if (saved.length === 0) {
+                section.classList.remove('is-visible');
+                return;
+            }
+            section.classList.add('is-visible');
+            list.innerHTML = '';
+            saved.forEach(function(r, i) {
+                var item = document.createElement('div');
+                item.className = 'saved-item';
+                var q = document.createElement('p');
+                q.className = 'saved-item-text';
+                q.textContent = r.text;
+                var src = document.createElement('p');
+                src.className = 'saved-item-source';
+                src.textContent = '\u2014 ' + r.source;
+                var removeBtn = document.createElement('button');
+                removeBtn.className = 'saved-remove-btn';
+                removeBtn.textContent = 'remove';
+                removeBtn.addEventListener('click', function() {
+                    var arr = getSaved();
+                    arr.splice(i, 1);
+                    setSaved(arr);
+                    renderSaved();
+                    updateBookmarkBtn();
+                });
+                item.appendChild(q);
+                item.appendChild(src);
+                item.appendChild(removeBtn);
+                list.appendChild(item);
+            });
+        }
+        renderSaved();
+
+        document.getElementById('reading-bookmark').addEventListener('click', function() {
+            var r = canonReadings[readingIndex];
+            var arr = getSaved();
+            if (isSaved(r.text, r.source)) {
+                arr = arr.filter(function(x) { return !(x.source === r.source && x.text === r.text); });
+            } else {
+                arr.push({ text: r.text, source: r.source });
+            }
+            setSaved(arr);
+            updateBookmarkBtn();
+            renderSaved();
+        });
+
+        document.getElementById('clear-saved').addEventListener('click', function() {
+            setSaved([]);
+            renderSaved();
+            updateBookmarkBtn();
+        });
 
         // ── "now" indicator ──
         // Use insertAdjacentHTML so existing button DOM nodes are not destroyed.
@@ -686,15 +899,21 @@
                     readingIndex = newIdx;
                     var readEl = document.getElementById('reading-text');
                     var srcEl = document.getElementById('reading-source');
+                    var canonLinkEl = document.getElementById('reading-canon-link');
                     readEl.style.transition = 'opacity 0.25s';
                     srcEl.style.transition = 'opacity 0.25s';
+                    canonLinkEl.style.transition = 'opacity 0.25s';
                     readEl.style.opacity = '0';
                     srcEl.style.opacity = '0';
+                    canonLinkEl.style.opacity = '0';
                     setTimeout(function() {
                         readEl.textContent = arr[newIdx].text;
                         srcEl.textContent = '\u2014 ' + arr[newIdx].source;
+                        setCanonLink(newIdx);
+                        updateBookmarkBtn();
                         readEl.style.opacity = '1';
                         srcEl.style.opacity = '1';
+                        canonLinkEl.style.opacity = '1';
                     }, 200);
                 } else {
                     eveningIndex = newIdx;

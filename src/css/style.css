@@ -2357,6 +2357,163 @@ body {
     }
 }
 
+/* ── Reading footer: source + canon link + bookmark ── */
+.reading-footer {
+    margin-top: -0.5rem;
+    margin-bottom: var(--space-lg);
+}
+
+.reading-footer .reading-source {
+    font-family: var(--font-ui);
+    font-size: 0.85rem;
+    color: var(--branch);
+    margin-bottom: 0.4rem;
+}
+
+.reading-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.reading-tradition-link {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--moss);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(107, 127, 94, 0.3);
+    transition: color 0.25s var(--ease-organic), border-color 0.25s var(--ease-organic);
+    padding-bottom: 1px;
+}
+
+.reading-tradition-link:hover {
+    color: var(--needle);
+    border-color: var(--needle);
+}
+
+.reading-bookmark-btn {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    background: none;
+    border: 1px solid rgba(154, 143, 132, 0.25);
+    border-radius: var(--radius-soft);
+    padding: 0.22rem 0.55rem;
+    cursor: pointer;
+    transition: color 0.25s var(--ease-organic), border-color 0.25s var(--ease-organic);
+    line-height: 1;
+    min-height: 28px;
+}
+
+.reading-bookmark-btn:hover {
+    color: var(--heartwood);
+    border-color: rgba(154, 143, 132, 0.45);
+}
+
+.reading-bookmark-btn[data-saved="true"] {
+    color: var(--clay);
+    border-color: rgba(160, 82, 45, 0.35);
+}
+
+/* ── Saved readings section ── */
+.saved-section {
+    display: none;
+    margin-top: var(--space-xl);
+    padding-top: var(--space-lg);
+    border-top: 1px solid rgba(138, 154, 123, 0.15);
+}
+
+.saved-section.is-visible {
+    display: block;
+}
+
+.saved-heading {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: var(--space-md);
+}
+
+.saved-item {
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid rgba(138, 154, 123, 0.1);
+}
+
+.saved-item:last-of-type {
+    border-bottom: none;
+}
+
+.saved-item-text {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--heartwood);
+    margin-bottom: 0.3rem;
+}
+
+.saved-item-source {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--branch);
+    margin-bottom: 0.4rem;
+}
+
+.saved-remove-btn {
+    font-family: var(--font-ui);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.saved-remove-btn:hover {
+    color: var(--clay);
+}
+
+.clear-saved-btn {
+    font-family: var(--font-ui);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    background: none;
+    border: 1px solid rgba(154, 143, 132, 0.2);
+    border-radius: var(--radius-soft);
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    margin-top: var(--space-sm);
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.clear-saved-btn:hover {
+    color: var(--heartwood);
+    border-color: rgba(154, 143, 132, 0.4);
+}
+
+/* ── Dark mode saved readings ── */
+@media (prefers-color-scheme: dark) {
+    .saved-section {
+        border-top-color: rgba(138, 154, 123, 0.1);
+    }
+    .saved-item {
+        border-bottom-color: rgba(138, 154, 123, 0.08);
+    }
+    .reading-bookmark-btn[data-saved="true"] {
+        color: #c8855a;
+        border-color: rgba(200, 133, 90, 0.35);
+    }
+}
+
 /* ──────────────────────────────────────────────
    CANON — TABLE OF CONTENTS
    ────────────────────────────────────────────── */
