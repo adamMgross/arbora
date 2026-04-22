@@ -1671,9 +1671,7 @@ body {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(250, 248, 244, 0.97);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: var(--cream);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -2165,6 +2163,46 @@ body {
     line-height: 1.5;
 }
 
+/* Tradition direct-access links below the Philosophy card */
+.canon-tradition-links {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid rgba(138, 154, 123, 0.15);
+    border-radius: var(--radius-leaf);
+    background: linear-gradient(135deg, rgba(250, 248, 244, 0.6), rgba(244, 240, 234, 0.4));
+    margin-top: -0.5rem;
+}
+
+.canon-tradition-label {
+    font-family: var(--font-ui);
+    font-size: 0.72rem;
+    color: var(--branch);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: 0.25rem;
+}
+
+.canon-tradition-links a {
+    font-family: var(--font-ui);
+    font-size: 0.78rem;
+    color: var(--heartwood);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    border-bottom: 1px solid rgba(107, 127, 94, 0.25);
+    transition: color 0.25s var(--ease-organic), border-color 0.25s var(--ease-organic);
+    padding-bottom: 1px;
+}
+
+.canon-tradition-links a:hover {
+    color: var(--needle);
+    border-color: var(--moss);
+}
+
 /* ── Breadcrumb ── */
 .canon-breadcrumb {
     font-family: var(--font-ui);
@@ -2649,7 +2687,7 @@ body {
     }
 
     .nav-links.open {
-        background: rgba(30, 27, 24, 0.98);
+        background: #1e1b18;
     }
 
     /* Hero */
