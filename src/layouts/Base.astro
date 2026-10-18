@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteNav from '../components/SiteNav.astro';
+import '../styles/index.css';
 
 interface Props {
   title: string;
@@ -32,7 +33,6 @@ const { title, description, ogTitle, ogDescription, fontsHref = defaultFontsHref
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://arbora.site/og-image.png">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="src/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href={fontsHref} rel="stylesheet">

@@ -87,11 +87,19 @@ function extract() {
   const head = [...document.head.children]
     .filter((el) => ['META', 'LINK', 'TITLE'].includes(el.tagName) && el.getAttribute('name') !== 'generator')
     .map((el) => {
+      if (
+        el.tagName === 'LINK' &&
+        el.getAttribute('rel') === 'stylesheet' &&
+        new URL(el.href, location.href).origin === location.origin
+      ) {
+        return 'link[local-stylesheet]';
+      }
       const attrs = [...el.attributes]
         .map((a) => [a.name, a.name === 'href' ? local(a.value).replace(/\/_astro\/[^?#]+/, '/_astro/*') : a.value])
         .sort(([x], [y]) => (x < y ? -1 : 1));
       return el.tagName.toLowerCase() + JSON.stringify(attrs) + (el.tagName === 'TITLE' ? el.textContent : '');
     })
+    .filter((entry, i, all) => entry !== 'link[local-stylesheet]' || all.indexOf(entry) === i)
     .sort();
   return {
     text: document.body.innerText,

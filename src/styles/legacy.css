@@ -1,3 +1,4 @@
+@layer legacy {
 /* ============================================
    ARBORA — Design System: "Living Architecture"
 
@@ -2934,4 +2935,5 @@ body {
     img, svg:not(.hero-geometry):not(.hero-tree) {
         opacity: 0.9;
     }
+}
 }
