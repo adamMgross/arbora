@@ -75,4 +75,13 @@ const today = defineCollection({
   }),
 });
 
-export const collections = { passages, invocations, canon, pages, today };
+const principles = defineCollection({
+  loader: yamlListLoader('src/content/principles.yml'),
+  schema: z.strictObject({
+    n: z.number().int().min(1),
+    title: z.string().min(1),
+    tagline: z.string().min(1),
+  }),
+});
+
+export const collections = { passages, invocations, canon, pages, today, principles };

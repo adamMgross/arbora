@@ -1,0 +1,15 @@
+---
+import { getEntry } from 'astro:content';
+
+interface Props {
+  n: number;
+}
+
+const { n } = Astro.props;
+const entry = await getEntry('principles', `principle-${n}`);
+if (!entry) throw new Error(`Unknown principle ${n}`);
+const { title, tagline } = entry.data;
+---
+
+<h2 id={`principle-${n}`}>{n}. {title}</h2>
+<p><strong>{tagline}</strong></p>

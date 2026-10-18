@@ -3,6 +3,8 @@ import { getCollection, render } from 'astro:content';
 import CanonToc from '../components/CanonToc.astro';
 import Invocation from '../components/Invocation.astro';
 import Passage from '../components/Passage.astro';
+import PrincipleHeading from '../components/PrincipleHeading.astro';
+import PrinciplesToc from '../components/PrinciplesToc.astro';
 import CanonLayout from '../layouts/CanonLayout.astro';
 import ProseLayout from '../layouts/ProseLayout.astro';
 import { canonHref, canonPageProps } from '../lib/canon';
@@ -21,7 +23,7 @@ export async function getStaticPaths() {
 
 const props = Astro.props;
 const { Content } = await render(props.entry);
-const components = { Passage, Invocation };
+const components = { Passage, Invocation, PrincipleHeading, PrinciplesToc };
 ---
 
 {

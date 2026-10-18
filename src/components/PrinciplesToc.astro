@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import CanonToc from './CanonToc.astro';
+
+const principles = (await getCollection('principles')).sort((a, b) => a.data.n - b.data.n);
+const items = principles.map(({ data }) => ({ label: `${data.n}. ${data.title}`, href: `#principle-${data.n}` }));
+---
+
+<CanonToc items={items} />

@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+
+const principles = (await getCollection('principles')).sort((a, b) => a.data.n - b.data.n);
+---
+
+<ol class="principles-list">
+    {principles.map(({ data }) => (
+        <li>
+            <strong>{data.title}</strong>
+            <span>{data.tagline}</span>
+        </li>
+    ))}
+</ol>
