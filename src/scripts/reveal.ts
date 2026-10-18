@@ -4,7 +4,6 @@ const REVEAL_SELECTORS = [
   '.page-content h2',
   '.page-content h3',
   '.page-content blockquote',
-  '.page-content .wip-notice',
   '.page-content .invocation',
 ];
 
