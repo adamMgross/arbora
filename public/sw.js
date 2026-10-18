@@ -23,7 +23,6 @@ const PRECACHE_URLS = [
     'canon-upanishads.html',
     'tree.html',
     'src/css/style.css',
-    'src/js/main.js',
     'favicon.svg',
     'manifest.json',
     'robots.txt'

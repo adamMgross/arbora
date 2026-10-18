@@ -12,6 +12,7 @@ const { values } = parseArgs({
     candidate: { type: 'string', default: 'dist' },
     pages: { type: 'string' },
     'no-screenshots': { type: 'boolean', default: false },
+    'allow-missing': { type: 'string' },
   },
 });
 
@@ -23,10 +24,11 @@ const filter = values.pages?.split(',');
 const pages = basePages.filter((p) => !filter || filter.some((f) => p.includes(f)));
 
 const NOT_SITE_FILES = /^(\.gitignore|\.nojekyll|README\.md|CHARTER\.md|DESIGN\.md|CLAUDE\.md|test-results\/.*)$/;
+const allowMissing = new Set(values['allow-missing']?.split(',') ?? []);
 const candidateFiles = new Set(listFiles(candidateDir));
 const failures = [];
 for (const file of listFiles(baseDir)) {
-  if (NOT_SITE_FILES.test(file) || candidateFiles.has(file)) continue;
+  if (NOT_SITE_FILES.test(file) || candidateFiles.has(file) || allowMissing.has(file)) continue;
   failures.push({ key: file, kind: 'route', detail: 'missing in candidate' });
 }
 

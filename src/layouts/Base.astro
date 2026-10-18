@@ -46,6 +46,8 @@ const { title, description, ogTitle, ogDescription, fontsHref = defaultFontsHref
         <Fragment slot="colophon"><slot name="footer-colophon" /></Fragment>
     </SiteFooter>
     <slot name="scripts" />
-    <script is:inline src="src/js/main.js"></script>
+    <script>
+        import '../scripts/main';
+    </script>
 </body>
 </html>
