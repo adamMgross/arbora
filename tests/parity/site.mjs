@@ -58,7 +58,7 @@ const types = {
   '.woff2': 'font/woff2',
 };
 
-export function serve(dir) {
+export function serve(dir, port = 0) {
   const server = createServer((req, res) => {
     const pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
     let file = normalize(join(dir, pathname));
@@ -72,7 +72,7 @@ export function serve(dir) {
     res.end(readFileSync(file));
   });
   return new Promise((ok) =>
-    server.listen(0, '127.0.0.1', () =>
+    server.listen(port, '127.0.0.1', () =>
       ok({ url: `http://127.0.0.1:${server.address().port}`, close: () => server.close() }),
     ),
   );
