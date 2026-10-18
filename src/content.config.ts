@@ -44,4 +44,35 @@ const canon = defineCollection({
   }),
 });
 
-export const collections = { passages, invocations, canon };
+const pages = defineCollection({
+  loader: glob({ pattern: '*.mdx', base: 'src/content/pages' }),
+  schema: z.strictObject({
+    heading: z.string().min(1),
+    subtitle: z.string().min(1),
+    title: z.string().min(1),
+    ogTitle: z.string().min(1).optional(),
+    description: z.string().min(1),
+    ogDescription: z.string().min(1),
+    toc: z.array(tocItem).optional(),
+  }),
+});
+
+const today = defineCollection({
+  loader: yamlListLoader('src/content/today.yml'),
+  schema: z.strictObject({
+    seasonGreetings: z.strictObject({
+      spring: z.string().min(1),
+      summer: z.string().min(1),
+      autumn: z.string().min(1),
+      winter: z.string().min(1),
+    }),
+    morningInvocations: z.array(z.string().min(1)).min(1),
+    readings: z
+      .array(z.strictObject({ text: z.string().min(1), source: z.string().min(1), tradition: reference('canon') }))
+      .min(1),
+    traditionLabels: z.record(z.string(), z.string().min(1)),
+    eveningReflections: z.array(z.string().min(1)).min(1),
+  }),
+});
+
+export const collections = { passages, invocations, canon, pages, today };

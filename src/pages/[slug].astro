@@ -1,21 +1,45 @@
 ---
 import { getCollection, render } from 'astro:content';
+import CanonToc from '../components/CanonToc.astro';
+import Invocation from '../components/Invocation.astro';
 import Passage from '../components/Passage.astro';
 import CanonLayout from '../layouts/CanonLayout.astro';
+import ProseLayout from '../layouts/ProseLayout.astro';
 import { canonHref, canonPageProps } from '../lib/canon';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('canon');
-  return entries.map((entry) => ({
-    params: { slug: canonHref(entry.id).replace(/\.html$/, '') },
-    props: { entry, entries },
-  }));
+  const canon = await getCollection('canon');
+  const pages = await getCollection('pages');
+  return [
+    ...canon.map((entry) => ({
+      params: { slug: canonHref(entry.id).replace(/\.html$/, '') },
+      props: { kind: 'canon' as const, entry, canon },
+    })),
+    ...pages.map((entry) => ({ params: { slug: entry.id }, props: { kind: 'page' as const, entry } })),
+  ];
 }
 
-const { entry, entries } = Astro.props;
-const { Content } = await render(entry);
+const props = Astro.props;
+const { Content } = await render(props.entry);
+const components = { Passage, Invocation };
 ---
 
-<CanonLayout {...canonPageProps(entry, entries)}>
-    <Content components={{ Passage }} />
-</CanonLayout>
+{
+  props.kind === 'canon' ? (
+    <CanonLayout {...canonPageProps(props.entry, props.canon)}>
+      <Content components={components} />
+    </CanonLayout>
+  ) : (
+    <ProseLayout
+      title={props.entry.data.title}
+      ogTitle={props.entry.data.ogTitle ?? props.entry.data.title}
+      description={props.entry.data.description}
+      ogDescription={props.entry.data.ogDescription}
+      heading={props.entry.data.heading}
+      subtitle={props.entry.data.subtitle}
+    >
+      {props.entry.data.toc && <CanonToc items={props.entry.data.toc} />}
+      <Content components={components} />
+    </ProseLayout>
+  )
+}
