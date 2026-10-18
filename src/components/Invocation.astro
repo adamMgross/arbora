@@ -1,0 +1,18 @@
+---
+import { getEntry } from 'astro:content';
+import { inline } from '../lib/inline';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const entry = await getEntry('invocations', id);
+if (!entry) throw new Error(`Unknown invocation id "${id}"`);
+const { label, text } = entry.data;
+---
+
+<div class="invocation">
+    <strong>{label}</strong><br>
+    <em set:html={inline(text)} />
+</div>

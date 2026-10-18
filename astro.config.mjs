@@ -1,3 +1,5 @@
+import mdx from '@astrojs/mdx';
+import { satteri } from '@astrojs/markdown-satteri';
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
@@ -6,4 +8,6 @@ export default defineConfig({
   trailingSlash: 'ignore',
   compressHTML: false,
   build: { format: 'file' },
+  integrations: [mdx()],
+  markdown: { processor: satteri({ features: { smartPunctuation: false, gfm: false } }) },
 });

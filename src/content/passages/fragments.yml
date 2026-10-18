@@ -1,0 +1,84 @@
+- id: fragments-heraclitus-1
+  text: "\"No man ever steps in the same river twice, for it's not the same river and he's not the same man.\""
+  attribution: Fragment 12 (paraphrase, widely attributed)
+- id: fragments-heraclitus-2
+  text: '"The way up and the way down are one and the same."'
+  attribution: Fragment 60
+- id: fragments-heraclitus-3
+  text: '"Nature loves to hide."'
+  attribution: Fragment 123
+- id: fragments-heraclitus-4
+  text: '"Listening not to me but to the Logos, it is wise to agree that all things are one."'
+  attribution: Fragment 50 (trans. G.S. Kirk)
+- id: fragments-heraclitus-5
+  text: '"The waking have one world in common; sleepers have each a private world of their own."'
+  attribution: Fragment 89
+- id: fragments-heraclitus-6
+  text: '"Opposition brings concord. Out of discord comes the fairest harmony."'
+  attribution: Fragment 8 (trans. Philip Wheelwright)
+- id: fragments-heraclitus-7
+  text: '"You cannot step into the same river twice. New waters flow constantly."'
+  attribution: Fragment 91
+- id: fragments-epicurus-1
+  text: '"Accustom yourself to believing that death is nothing to us, for good and evil imply the capacity for sensation, and death is the privation of all sentience. Therefore a correct understanding that death is nothing to us makes the mortality of life enjoyable, not by adding to life an unlimited time, but by taking away the yearning after immortality."'
+  attribution: "*Letter to Menoeceus* (trans. Robert Drew Hicks)"
+- id: fragments-epicurus-2
+  text: '"Of all the things which wisdom provides to make us entirely happy, much the greatest is the possession of friendship."'
+  attribution: "*Vatican Sayings*, 52"
+- id: fragments-epicurus-3
+  text: "\"It is not the young man who should be considered fortunate but the old man who has lived well, because the young man in his prime is still at the mercy of fortune's reversals, while the old man has come to anchor in old age as though in a harbor.\""
+  attribution: "*Letter to Menoeceus*"
+- id: fragments-aristotle-1
+  text: '"One swallow does not make a summer, nor does one day; and so too one day, or a short time, does not make a man blessed and happy."'
+  attribution: "*Nicomachean Ethics*, Book I (trans. W.D. Ross)"
+- id: fragments-aristotle-2
+  text: '"We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts."'
+  attribution: "*Nicomachean Ethics*, Book II, Ch. 1"
+- id: fragments-aristotle-3
+  text: '"The whole is more than the sum of its parts."'
+  attribution: "*Politics*, 1253a (paraphrase)"
+- id: fragments-aristotle-4
+  text: '"Educating the mind without educating the heart is no education at all."'
+  attribution: (attributed, widely paraphrased from the Ethics)
+- id: fragments-confucius-1
+  text: "\"At fifteen I set my heart on learning. At thirty I stood firm. At forty I had no doubts. At fifty I understood Heaven's will. At sixty my ear was attuned. At seventy I could follow my heart without transgressing the right.\""
+  attribution: "*Analects* 2:4 (trans. D.C. Lau)"
+- id: fragments-confucius-2
+  text: '"He who learns but does not think is lost. He who thinks but does not learn is in great danger."'
+  attribution: "*Analects* 2:15"
+- id: fragments-confucius-3
+  text: '"The man of virtue, wishing to be established himself, seeks also to establish others; wishing to be enlarged himself, he seeks also to enlarge others. The ability to judge of others by what is nigh in ourselves — this may be called the art of virtue."'
+  attribution: "*Analects* 6:28"
+- id: fragments-confucius-4
+  text: '"The superior man is catholic and no partisan. The mean man is partisan and not catholic."'
+  attribution: "*Analects* 2:14"
+- id: fragments-confucius-5
+  text: '"To know what you know and to allow that you do not know what you do not know — this is knowledge."'
+  attribution: "*Analects* 2:17 (trans. Arthur Waley)"
+- id: fragments-confucius-6
+  text: '"Do not impose on others what you yourself do not want."'
+  attribution: "*Analects* 12:2 (the Golden Rule, stated negatively — the formulation Confucius preferred: do not do, not must do)"
+- id: fragments-havamol-1
+  text: '"Cattle die, kindred die, every man is mortal. I know one thing that does not die: the good name of one who has done well."'
+  attribution: Stanzas 76–77 (trans. anonymous, widely adapted)
+- id: fragments-havamol-2
+  text: '"The unwise man is awake all night and ponders everything over; when morning comes he is weary in mind, and all is a burden as ever."'
+  attribution: Stanza 23
+- id: fragments-havamol-3
+  text: '"A man should be moderately wise, not over-wise — for those who know too much are often the least happy."'
+  attribution: Stanza 54 (adapted)
+- id: fragments-havamol-4
+  text: '"Better a house of your own, though small it be — here you are master. Two goats and a well-thatched roof are better than begging from the wealthy."'
+  attribution: Stanza 36 (adapted)
+- id: fragments-havamol-5
+  text: '"At every doorway before you enter, look carefully around — you never know what enemies may be sitting within."'
+  attribution: Stanza 1 (adapted)
+- id: fragments-havamol-6
+  text: '"A guest needs fire on entering a cold hall. He needs food, and a dry place to sit, and water. The man who arrives at a strange house knows nothing of the people within until he has sat among them and listened."'
+  attribution: Stanza 2–3 (adapted; on hospitality and the obligation of host and guest alike)
+- id: fragments-havamol-7
+  text: '"I know that I hung on a wind-rocked tree / nine whole nights, / with a spear wounded, and to Odin offered, / myself to myself; / on that tree of which no man knows / from what roots it springs. / Bread no one gave me, nor a horn of mead. / Downward I peered, took up the runes, / shrieking I took them — then fell back."'
+  attribution: Stanzas 138–139 (trans. Benjamin Thorpe, adapted; Odin's self-sacrifice on Yggdrasil to win the runes — wisdom purchased through ordeal)
+- id: fragments-havamol-8
+  text: '"The lame can ride a horse; the one-handed can herd sheep; the deaf can fight and prevail. It is better to be blind than to be burned. A dead man is useful to no one."'
+  attribution: Stanza 71 (adapted; on working with limitation rather than surrender to it)

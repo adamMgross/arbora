@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from 'astro:content';
+import Passage from '../components/Passage.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
+import { canonHref, canonPageProps } from '../lib/canon';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('canon');
+  return entries.map((entry) => ({
+    params: { slug: canonHref(entry.id).replace(/\.html$/, '') },
+    props: { entry, entries },
+  }));
+}
+
+const { entry, entries } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<CanonLayout {...canonPageProps(entry, entries)}>
+    <Content components={{ Passage }} />
+</CanonLayout>

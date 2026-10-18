@@ -1,0 +1,17 @@
+---
+import { inline } from '../lib/inline';
+import type { TocItem } from '../lib/toc';
+import TocList from './TocList.astro';
+
+interface Props {
+  items: TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul>
+    {items.map((item) => (
+        <li><a href={item.href} set:html={inline(item.label)} />{item.arrow && <> <span class="canon-toc-arrow">→</span></>}{item.children && <TocList items={item.children} />}</li>
+    ))}
+</ul>

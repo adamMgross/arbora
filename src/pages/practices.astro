@@ -1,4 +1,6 @@
 ---
+import Invocation from '../components/Invocation.astro';
+import Passage from '../components/Passage.astro';
 import ProseLayout from '../layouts/ProseLayout.astro';
 ---
 
@@ -24,46 +26,25 @@ import ProseLayout from '../layouts/ProseLayout.astro';
 
             <p>But the deeper practice is simpler: the cup is one thing. You are with it. You are not planning the day, not reviewing yesterday, not composing a text. Just the warmth, the steam rising, the first bitter-sweet contact with the tongue. This is what every contemplative tradition means by presence — not a special state you achieve, but a return to what is already happening. The cup teaches it without explanation.</p>
 
-            <blockquote>"In the tea room it is enough to cleanse the flower vases, light the charcoal and arrange the flowers, create coolness in summer and warmth in winter."<br>— Sen Rikyu (1522–1591), the great systematizer of the Japanese tea ceremony</blockquote>
+            <Passage id="practices-the-morning-cup-1" />
 
             <p>The morning ritual is already doing this. The tea is already the practice. Naming it doesn't change what happens — it deepens your awareness of what was already there. Drink slowly. Let the cup be the whole world for a few minutes before the world arrives to ask things of you.</p>
 
             <p>Choose one invocation for the morning, or none. Let the choice follow the season, your mood, what you need. Rotate freely.</p>
 
-            <div class="invocation">
-                <strong>Ancestors</strong><br>
-                <em>I woke today because others endured before me — through crossings I cannot imagine, in languages I no longer speak. I carry their survival in my body. This morning, with this tea, I remember them. I am the continuation.</em>
-            </div>
+            <Invocation id="practice-ancestors" />
 
-            <div class="invocation">
-                <strong>Trees &amp; Living World</strong><br>
-                <em>The trees on my street were here before I was and may outlast me. The nearest park is exhaling right now, and I am breathing what the trees give. I am not separate from this neighborhood. I am a neighbor to all of it.</em>
-            </div>
+            <Invocation id="practice-trees-living-world" />
 
-            <div class="invocation">
-                <strong>Presence with Loved Ones</strong><br>
-                <em>This person beside me, this animal against my leg — they will not always be here, and neither will I. Let me not miss this morning by thinking about the afternoon. Let me be fully where I am, with whom I am.</em>
-            </div>
+            <Invocation id="practice-presence-with-loved-ones" />
 
-            <div class="invocation">
-                <strong>Deep Time</strong><br>
-                <em>The sun that warms this morning has risen over this place for four and a half billion years. The hills I see were seafloor once. The tea in my hands grew from soil that was stone, that was magma, that was stardust. I am a brief visitor in an ancient story. That is enough.</em>
-            </div>
+            <Invocation id="practice-deep-time" />
 
-            <div class="invocation">
-                <strong>Seasonal Awareness</strong><br>
-                <em>What season is it — not on the calendar, but in the world? What is blooming, what is dormant, what is migrating through? Let me notice the light, the temperature, the angle of the sun. My body knows what time it is if I let it.</em>
-            </div>
+            <Invocation id="practice-seasonal-awareness" />
 
-            <div class="invocation">
-                <strong>Reciprocity</strong><br>
-                <em>I have already received today: warmth, breath, this cup, this company. Before the day asks anything of me, let me ask what I will give back. Not out of guilt, but because exchange is how living systems endure.</em>
-            </div>
+            <Invocation id="practice-reciprocity" />
 
-            <div class="invocation">
-                <strong>Wonder</strong><br>
-                <em>I do not understand why anything exists at all. I do not understand consciousness, or love, or why the light at this hour turns everything gold. I do not need to understand. Let me begin this day in honest amazement.</em>
-            </div>
+            <Invocation id="practice-wonder" />
 
             <h3>Morning Walk</h3>
             <p>Ten to twenty minutes through your neighborhood. Notice specific trees, listen for birds, observe seasonal changes. Walk without earbuds. Let the world speak first.</p>
@@ -85,20 +66,11 @@ import ProseLayout from '../layouts/ProseLayout.astro';
             <h3>Silent Movement</h3>
             <p>One or two workouts per week in silence — no podcasts, no music with words. Just your body, your breath, the sound of your feet or the weight in your hands. This is where meditation lives for people who move.</p>
 
-            <div class="invocation">
-                <strong>Embodied Attention</strong><br>
-                <em>My body is not a vehicle for my mind. It is the instrument through which I know the world. For this next hour, let me attend to what it tells me — the pull, the breath, the ground beneath my feet.</em>
-            </div>
+            <Invocation id="practice-embodied-attention" />
 
-            <div class="invocation">
-                <strong>The Tracker's Eye</strong><br>
-                <em>Boyd Varty says: "Tracking is the art of paying attention." On this run, on this court, let me track — the wind direction, the shadow length, the birds that scatter as I pass. The world is speaking. I am practicing how to listen.</em>
-            </div>
+            <Invocation id="practice-the-tracker-s-eye" />
 
-            <div class="invocation">
-                <strong>Walking Meditation</strong><br>
-                <em>Each step is an arrival, not a means to a destination. I am not going somewhere. I am here, and here, and here again. The ground receives my weight. I receive the ground.</em>
-            </div>
+            <Invocation id="practice-walking-meditation" />
 
             <h3>Intentional Listening</h3>
             <p>On the workouts that do include podcasts or audiobooks, consider rotating in material from the canon: an audiobook of <em>Meditations</em> or <em>Braiding Sweetgrass</em>, a lecture on Daoism or forest ecology. Not every workout — but often enough that your commute and exercise time become a form of study.</p>
@@ -143,10 +115,7 @@ import ProseLayout from '../layouts/ProseLayout.astro';
             <h3>A Digital Sabbath</h3>
             <p>Adapted from Shabbat's prohibition on work — which is really a prohibition on creating, on imposing your will on the world for one day out of seven. The digital version: one evening per week, or one morning per weekend, with no screens. No phone, no laptop, no television. The discomfort of the first twenty minutes is the practice. What comes after — boredom, restlessness, then a strange settling — is the point.</p>
 
-            <div class="invocation">
-                <strong>Entering Silence</strong><br>
-                <em>For the next hour I will not be reachable, and the world will continue without my attention. The notifications can accumulate. The news will still be the news when I return. What I am doing now — sitting with my own mind, without input — is older than any technology and more necessary than any of them.</em>
-            </div>
+            <Invocation id="practice-entering-silence" />
 
             <h3>Silent Commute</h3>
             <p>Once or twice a week, drive or walk without audio. Let the commute be empty. Notice what your mind does when it is not being fed — what it returns to, what it avoids, what surfaces unbidden. The Stoics called this examining your impressions. The Buddhists call it noting. The practice is the same: let the silence show you what is actually on your mind.</p>
@@ -154,34 +123,22 @@ import ProseLayout from '../layouts/ProseLayout.astro';
             <h3>The Attention Audit</h3>
             <p>Nassim Taleb observes that the modern world floods us with information precisely because most of it is noise — the signal-to-noise ratio degrades as volume increases. An attention audit is simple: at the end of any day, ask what you consumed that you will remember in a week. The answer is usually very little. The rest was noise dressed up as urgency. The canon exists to replace some of that noise with signal — texts that have survived centuries because they contain things worth returning to.</p>
 
-            <blockquote>"We have become combatants in the war against our own attention. The technologies that were supposed to free us have instead become the most efficient tools ever devised for the distraction and fragmentation of human consciousness."<br>— adapted from Neil Postman, Technopoly (1992)</blockquote>
+            <Passage id="practices-the-attention-audit-1" />
 
-            <blockquote>"Solitude requires you to move past reacting to information created by other people and focus instead on your own thoughts and experiences — this is a fundamental human need."<br>— Cal Newport, Digital Minimalism (2019)</blockquote>
+            <Passage id="practices-the-attention-audit-2" />
 
             <h2>Evening</h2>
 
             <h3>Reflection</h3>
             <p>Five minutes before sleep. No special posture, no ceremony. Just a brief, honest accounting — a genuine noticing.</p>
 
-            <div class="invocation">
-                <strong>Gratitude</strong><br>
-                <em>What did I receive today that I did not earn? A meal someone prepared. A conversation that surprised me. The particular quality of light at a particular hour. Let me name one gift before I sleep.</em>
-            </div>
+            <Invocation id="practice-gratitude" />
 
-            <div class="invocation">
-                <strong>The Principles</strong><br>
-                <em>Which of <a href="principles.html">the eight</a> did I embody today? Which did I neglect? No judgment — just observation. Tomorrow is another attempt. The practice is in the returning.</em>
-            </div>
+            <Invocation id="practice-the-principles" />
 
-            <div class="invocation">
-                <strong>Impermanence</strong><br>
-                <em>This day is over and will not come again. Whatever I did or failed to do, it is done. Let me release it as a tree releases a leaf — not in grief, but because holding on is not what living things do.</em>
-            </div>
+            <Invocation id="practice-impermanence" />
 
-            <div class="invocation">
-                <strong>Connection</strong><br>
-                <em>Who did I love well today? Who did I fail to see? Tomorrow, let me be more present to the people and creatures who share this life with me. They are not permanent. Neither am I.</em>
-            </div>
+            <Invocation id="practice-connection" />
 
             <h3>Presence</h3>
             <p>Put your phone in another room. Be with the people and animals who share your home. This is the point.</p>

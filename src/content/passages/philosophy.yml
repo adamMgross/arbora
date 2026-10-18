@@ -1,0 +1,70 @@
+- id: philosophy-marcus-aurelius-1
+  text: '"Constantly regard the universe as one living being, having one substance and one soul; and observe how all things have reference to one perception, the perception of this one living being; and how all things act with one movement; and how all things are the cooperating causes of all things that exist; observe too the continuous spinning of the thread and the structure of the web."'
+  attribution: IV.40 (trans. George Long)
+- id: philosophy-marcus-aurelius-2
+  text: '"How small a part of the boundless and unfathomable time is assigned to every man! For it is very soon swallowed up in the eternal. And how small a part of the whole substance! And how small a part of the universal soul! And on what a small clod of the whole earth you creep! Reflecting on all this, consider nothing to be great, except to act as your nature leads you, and to endure that which the common nature brings."'
+  attribution: V.24
+- id: philosophy-epictetus-1
+  text: '"Some things are within our power, while others are not. Within our power are opinion, motivation, desire, aversion, and, in a word, whatever is of our own doing. Not within our power are our body, our property, reputation, office, and, in a word, whatever is not of our own doing."'
+  attribution: Chapter 1 (trans. Elizabeth Carter, adapted)
+- id: philosophy-seneca-1
+  text: "\"It is not that we have a short time to live, but that we waste a great deal of it. Life is long enough, and a sufficiently generous amount has been given to us for the highest achievements if it were all well invested. But when it is wasted in heedless luxury and spent on no good activity, we are forced at last by death's final constraint to realize that it has passed away before we knew it was passing.\""
+  attribution: "*On the Shortness of Life*, 1 (trans. C.D.N. Costa)"
+- id: philosophy-heraclitus-1
+  text: "\"No man ever steps in the same river twice, for it's not the same river and he's not the same man.\""
+  attribution: Fragment 12 (paraphrase, widely attributed)
+- id: philosophy-heraclitus-2
+  text: '"The way up and the way down are one and the same."'
+  attribution: Fragment 60
+- id: philosophy-heraclitus-3
+  text: '"Nature loves to hide."'
+  attribution: Fragment 123
+- id: philosophy-epicurus-1
+  text: '"Accustom yourself to believing that death is nothing to us, for good and evil imply the capacity for sensation, and death is the privation of all sentience... Death, therefore, the most awful of evils, is nothing to us, seeing that, when we are, death is not come, and, when death is come, we are not."'
+  attribution: (trans. Robert Drew Hicks)
+- id: philosophy-aristotle-1
+  text: '"One swallow does not make a summer, nor does one day; and so too one day, or a short time, does not make a man blessed and happy... We become just by doing just acts, temperate by doing temperate acts, brave by doing brave acts."'
+  attribution: Book I and Book II (trans. W.D. Ross, adapted)
+- id: philosophy-confucius-1
+  text: "\"At fifteen I set my heart on learning. At thirty I stood firm. At forty I had no doubts. At fifty I understood Heaven's will. At sixty my ear was attuned. At seventy I could follow my heart without transgressing the right.\""
+  attribution: "*Analects* 2:4"
+- id: philosophy-confucius-2
+  text: '"He who learns but does not think is lost. He who thinks but does not learn is in great danger."'
+  attribution: "*Analects* 2:15"
+- id: philosophy-tao-te-ching-1
+  text: |-
+    "The Tao that can be told is not the eternal Tao.
+    The name that can be named is not the eternal name.
+    The nameless is the beginning of heaven and earth.
+    The named is the mother of ten thousand things."
+  attribution: Chapter 1 (trans. Gia-Fu Feng & Jane English)
+- id: philosophy-tao-te-ching-2
+  text: '"A man is born gentle and weak. At his death he is hard and stiff. Green plants are tender and filled with sap. At their death they are withered and dry. Therefore the stiff and unbending is the disciple of death. The gentle and yielding is the disciple of life."'
+  attribution: Chapter 76
+- id: philosophy-dhammapada-1
+  text: '"We are what we think. All that we are arises with our thoughts. With our thoughts we make the world."'
+  attribution: Verse 1 (trans. Thomas Byrom)
+- id: philosophy-dhammapada-2
+  text: '"Hatred does not cease by hatred, but only by love; this is the eternal rule."'
+  attribution: Verse 5
+- id: philosophy-pirkei-avot-1
+  text: '"If I am not for myself, who will be for me? But if I am only for myself, what am I? And if not now, when?"'
+  attribution: Hillel the Elder, 1:14
+- id: philosophy-pirkei-avot-2
+  text: '"It is not upon you to finish the work, but neither are you free to desist from it."'
+  attribution: Rabbi Tarfon, 2:16
+- id: philosophy-rumi-1
+  text: |-
+    "This being human is a guest house.
+    Every morning a new arrival.
+    A joy, a depression, a meanness,
+    some momentary awareness comes
+    as an unexpected visitor.
+    Welcome and entertain them all!"
+  attribution: '"The Guest House" (trans. Coleman Barks)'
+- id: philosophy-upanishads-1
+  text: "\"In the beginning there was Existence alone — One only, without a second. It thought to itself: 'Let me become many, let me grow forth.' Thus it projected the universe... That which is the finest essence — this whole world has that as its soul. That is Reality. That is the Self. *Tat tvam asi* — Thou art that.\""
+  attribution: 6.2–6.12 (trans. Eknath Easwaran, adapted)
+- id: philosophy-upanishads-2
+  text: '"What the mind cannot think, but by which the mind thinks — know that alone as Brahman, not this which people worship here. What the eye cannot see, but by which the eye sees — know that alone as Brahman."'
+  attribution: Kena Upanishad 1.5–6

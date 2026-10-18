@@ -1,0 +1,15 @@
+---
+import { getEntry } from 'astro:content';
+import { inline } from '../lib/inline';
+
+interface Props {
+  id: string;
+}
+
+const { id } = Astro.props;
+const entry = await getEntry('passages', id);
+if (!entry) throw new Error(`Unknown passage id "${id}"`);
+const { text, attribution } = entry.data;
+---
+
+<blockquote><Fragment set:html={inline(text)} />{attribution && <><br />— <Fragment set:html={inline(attribution)} /></>}</blockquote>

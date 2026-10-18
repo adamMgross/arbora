@@ -1,0 +1,15 @@
+---
+import type { TocItem } from '../lib/toc';
+import TocList from './TocList.astro';
+
+interface Props {
+  items: TocItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav class="canon-toc" aria-label="On this page">
+    <p class="canon-toc-label">On this page</p>
+    <TocList items={items} />
+</nav>

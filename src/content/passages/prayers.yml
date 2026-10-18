@@ -1,0 +1,57 @@
+- id: prayers-morning-1
+  text: "*I woke today. This is not guaranteed and never was. My ancestors — in every place of passage and peril — woke on mornings far harder than this and chose to continue. I continue in their name. Let me use this day with the seriousness it deserves.*"
+  attribution: Adapted from the Jewish *Modeh Ani* (morning gratitude prayer)
+- id: prayers-morning-2
+  text: "*Waking, I vow with all beings to be grateful for each moment and to attend to it fully — not rehearsing the past, not drafting the future, but arriving here.*"
+  attribution: Adapted from Robert Aitken's Buddhist morning verse
+- id: prayers-meals-1
+  text: "*We give thanks for this food — for the soil that grew it, the sun and rain that fed it, the hands that harvested and prepared it. We eat not alone but together, and in doing so we remember that every meal connects us to the living world and to each other.*"
+  attribution: Adapted from the Jewish *hamotzi* and indigenous gratitude practices
+- id: prayers-meals-2
+  text: "*This food is the gift of the whole universe — the earth, the sky, and much hard work. May we eat in mindfulness so as to be worthy to receive it. May we transform our unskillful states of mind and learn to eat with moderation. May we take only foods that nourish us and prevent illness. We accept this food to realize the path of understanding and love.*"
+  attribution: Adapted from Thich Nhat Hanh's Five Contemplations
+- id: prayers-meals-3
+  text: "*Consider this plate. Someone plowed. Someone planted. Someone harvested in heat. An animal, perhaps, gave its life. Rain fell on fields I will never see. All of it arrived here, ordinary and complete, asking nothing in return. Let me receive it without greed, eat what is sufficient, and waste nothing — remembering that the simplest meal, taken with awareness, is enough.*"
+  attribution: Adapted from the Stoic practice of *prosoche* (attention) and Epictetus on simplicity at table
+- id: prayers-meals-4
+  text: "*We give thanks to the earth, which sustains us. We give thanks to the waters — the rivers, the rain, the springs — which quench all thirst. We give thanks to the plants, who offer themselves as food and medicine. We give thanks to the animals, who teach us and give their lives so we may live. We give thanks to the wind, which brings the seasons and carries seeds to new ground. We give thanks to the sun, which warms the soil and makes growing possible. All of these gifts arrive before we ask. We eat now, remembering that we are fed by the whole living world.*"
+  attribution: Adapted from the Haudenosaunee Thanksgiving Address (*Ohén:ton Karihwatéhkwen*)
+- id: prayers-meals-5
+  text: "*The Dao nourishes the ten thousand things without claiming them. This grain grew in silence. This water gathered from clouds I never noticed. The meal before me required no philosophy — only soil, rain, warmth, and time. I eat simply, as the sparrow eats: taking what is here, leaving what remains, and returning to the day.*"
+  attribution: Adapted from the *Dao De Jing*, chapters 34 and 81, on effortless provision
+- id: prayers-movement-1
+  text: "*I move now in silence. Each footfall lands on ground that holds me without condition. The breath enters, the breath leaves — I do not need to manage it. For these minutes I release the planning mind, the rehearsing mind, the mind that narrates the run as it happens. There is only the body moving through air, the heart doing its ancient work, the feet finding their rhythm on the path. Whatever arrives in the silence is welcome. Whatever departs, let it go.*"
+  attribution: For silent running or walking, adapted from Thich Nhat Hanh's walking meditation and the Zen practice of *kinhin*
+- id: prayers-movement-2
+  text: "*I enter this water as my ancestors entered it — without title, without rank, carrying nothing. The cold is honest. The current does not ask my name. For a moment I belong to something older than language: the river's long patience, the lake's held stillness, the ocean's indifferent vastness. Let the water take what I have been carrying. Let me surface lighter than I went in.*"
+  attribution: For entering water, adapted from mikveh tradition and river baptism practices across cultures
+- id: prayers-seasonal-1
+  text: "*The light is returning. What was dormant stirs. I align myself with the season of growth — not forcing, but making conditions for emergence. Let what needs to begin, begin.*"
+  attribution: For the light half of the year (spring equinox through autumn equinox)
+- id: prayers-seasonal-2
+  text: "*The dark is deepening. The world rests, and I may rest too. I align myself with the season of inwardness — reading, reflection, the slow work of roots beneath frozen ground. What endures does not need the light to endure.*"
+  attribution: For the dark half of the year (autumn equinox through spring equinox)
+- id: prayers-seasonal-3
+  text: "*The earth tilts back toward the sun. Snow melts into streams I can hear from the trail. The first green pushes through mud that was frozen a week ago. Something in me answers — the same restlessness the sap feels, the same urge to rise. Today I plant what I intend to grow this year: a practice, a relationship, a skill, a question worth living with. I push it into the dark soil and trust the season to do its work.*"
+  attribution: For the spring equinox
+- id: prayers-seasonal-4
+  text: "*The longest light. The sun holds and holds and holds before it lets go. The garden is loud with growth. The air smells of cut grass and warm stone. I stand at the fullest point of the year and let it fill me — knowing that fullness is not permanence, that the peak is also the turning. Let me burn well today. Let me give as generously as the light gives, without counting what remains.*"
+  attribution: For the summer solstice
+- id: prayers-seasonal-5
+  text: "*The scales balance. Day and night share the sky equally, and for one still moment the world is poised between abundance and austerity. The harvest is in. The shelves are stocked. The fruit is heavy on the branch. I take account of what grew and what failed, what I planted in spring and what the season decided for me. Gratitude for what came. Acceptance of what did not. The dark half begins, and I am ready to go inward.*"
+  attribution: For the autumn equinox
+- id: prayers-seasonal-6
+  text: "*The shortest day. The sun barely clears the ridge before it drops again. The trees are bare scaffolding against a grey sky. The cold is honest and complete. I sit with the darkness as the ancients did — not defeating it with distraction but letting it teach me what it teaches: that stillness has depth, that rest is labor's companion, that the seed splits open underground where no one sees. Tonight I light a flame — small, deliberate — and remember that the light returns because it always has.*"
+  attribution: For the winter solstice, adapted from Yule, Dongzhi, and Hanukkah traditions of kindling light in the darkest season
+- id: prayers-community-gathering-1
+  text: "*We gather at this table not out of obligation but out of the oldest human instinct: the need to be together, to share food, to speak honestly, and to know that we are not alone. For the next few hours, let us be fully here — not performing, not producing, not elsewhere in our minds. This is the practice. This is the point.*"
+  attribution: Opening blessing for the weekly gathering
+- id: prayers-community-gathering-2
+  text: "*We came from separate days and separate concerns. For a while we were together, and that togetherness was its own kind of sustenance. We leave now carrying something we did not have when we arrived. Go gently. Come back.*"
+  attribution: Closing blessing for the weekly gathering
+- id: prayers-ancestor-remembrance-1
+  text: "*We remember those who are no longer at this table but whose presence made this table possible. We name them not to summon them but to honor the truth that we are the continuation of their lives, their choices, their endurance. They crossed oceans, survived winters, buried children, and kept going — so that, eventually, improbably, we could be here. We do not let them become abstractions. We say their names. We tell their stories. We live in a way that would make the journey worth it.*"
+  attribution: Adapted from the Jewish *Yizkor* and Kaddish traditions
+- id: prayers-wilderness-1
+  text: "*I enter this place as a guest — not an owner, not a conqueror, not a consumer. The trees were here before me. The stone beneath the trail is older than my species. The water I will drink tonight has been cycling through rock and sky for longer than I can comprehend. Let me walk with the attention this place deserves. Let me take only what I need and leave more than I found. Let me be worthy of the silence.*"
+  attribution: For arriving in the mountains
