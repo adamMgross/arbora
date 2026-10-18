@@ -1,1 +1,7 @@
 .claude
+node_modules
+dist
+.astro
+.parity
+test-results
+playwright-report
