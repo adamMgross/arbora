@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Jewish Wisdom — Arbora"
   description="Pirkei Avot and Ecclesiastes — the Ethics of the Fathers and Kohelet's searching meditations on time, impermanence, and what endures."
   ogTitle="Jewish Wisdom — Arbora"
   ogDescription="Pirkei Avot and Ecclesiastes — the two Jewish wisdom texts most deeply aligned with Arbora's values."
+  heading="Jewish Wisdom"
+  subtitle="Pirkei Avot · Ecclesiastes"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "Jewish Wisdom" },
+  ]}
+  pager={{ prev: { label: "Buddhist Suttas", href: "canon-buddhism.html" }, center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, next: { label: "Mystic Voices", href: "canon-mystics.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Jewish Wisdom</h1>
-        <p>Pirkei Avot · Ecclesiastes</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>Jewish Wisdom</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#pirkei-avot">Pirkei Avot (Ethics of the Fathers)</a></li>
@@ -75,16 +67,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"Go, eat your bread with joy, and drink your wine with a merry heart, for God has already approved what you do. Let your garments be always white. Let not oil be lacking on your head. Enjoy life with the wife whom you love, all the days of your vain life that he has given you under the sun, because that is your portion in life."<br>— 9:7–9</blockquote>
 
             <blockquote>"Whatever your hand finds to do, do it with your might, for there is no work or thought or knowledge or wisdom in the grave, to which you are going."<br>— 9:10</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-buddhism.html">‹ Buddhist Suttas</a>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <a href="canon-mystics.html">Mystic Voices ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

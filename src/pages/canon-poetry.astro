@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Poetry — Arbora"
   description="Poetry chosen because it enacts Arbora's values rather than merely describing them — Basho, Wendell Berry, Yehuda Amichai, Kabir, and more."
   ogTitle="Poetry — Arbora"
   ogDescription="Poetry does what philosophy cannot: it bypasses the arguing mind and lands in the body."
+  heading="Poetry"
+  subtitle="What philosophy cannot say"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Poetry" },
+  ]}
+  pager={{ prev: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, center: { label: "All Canon", href: "canon.html" }, next: { label: "Prayers & Invocations", href: "canon-prayers.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Poetry</h1>
-        <p>What philosophy cannot say</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Poetry</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#basho">Matsuo Basho</a></li>
@@ -72,16 +65,4 @@ import Base from '../layouts/Base.astro';
             <h3 id="kabir">Kabir</h3>
             <p><em>A 15th-century Indian mystic poet who belonged to no religion and all of them. He wove Hindu and Muslim imagery into poems of radical non-duality.</em></p>
             <blockquote>"Are you looking for me? I am in the next seat.<br>My shoulder is against yours.<br>You will not find me in stupas, not in Indian shrine rooms,<br>nor in synagogues, nor in cathedrals:<br>not in masses, nor kirtans, not in legs winding<br>around your own neck, nor in eating nothing but vegetables.<br>When you really look for me, you will see me instantly —<br>you will find me in the tiniest house of time.<br>Kabir says: Student, tell me, what is God?<br>He is the breath inside the breath."<br>— (trans. Robert Bly)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-philosophy.html">‹ Classical Philosophy &amp; Sacred Texts</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-prayers.html">Prayers &amp; Invocations ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

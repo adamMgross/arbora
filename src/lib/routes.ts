@@ -1,9 +1,20 @@
+export const routes = {
+  home: { label: 'Arbora', href: 'index.html' },
+  today: { label: 'Today', href: 'today.html' },
+  cosmology: { label: 'Cosmology', href: 'cosmology.html' },
+  principles: { label: 'Principles', href: 'principles.html' },
+  practices: { label: 'Practices', href: 'practices.html' },
+  rituals: { label: 'Rituals', href: 'rituals.html' },
+  canon: { label: 'Canon', href: 'canon.html' },
+  tree: { label: 'The Tree', href: 'tree.html' },
+} as const;
+
 export const navLinks = [
-  { label: 'Today', href: 'today.html' },
-  { label: 'Cosmology', href: 'cosmology.html' },
-  { label: 'Principles', href: 'principles.html' },
-  { label: 'Practices', href: 'practices.html' },
-  { label: 'Rituals', href: 'rituals.html' },
-  { label: 'Canon', href: 'canon.html' },
-  { label: 'The Tree', href: 'tree.html' },
+  routes.today,
+  routes.cosmology,
+  routes.principles,
+  routes.practices,
+  routes.rituals,
+  routes.canon,
+  routes.tree,
 ] as const;

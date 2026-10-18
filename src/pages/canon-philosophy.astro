@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title={"Classical Philosophy & Sacred Texts — Arbora"}
   description="Passages from ancient traditions — Stoics, Buddhists, Daoists, Jewish wisdom, Sufi poetry, the Upanishads — that have been read and reread for millennia."
   ogTitle={"Classical Philosophy & Sacred Texts — Arbora"}
   ogDescription="Passages from ancient traditions that have been read and reread for millennia because they articulate truths about how to live that have not expired."
+  heading={"Classical Philosophy & Sacred Texts"}
+  subtitle="The trunk of the tradition"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts" },
+  ]}
+  pager={{ center: { label: "All Canon", href: "canon.html" }, next: { label: "Poetry", href: "canon-poetry.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Classical Philosophy &amp; Sacred Texts</h1>
-        <p>The trunk of the tradition</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Classical Philosophy &amp; Sacred Texts</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#classical-philosophy">Classical Philosophy</a>
@@ -130,16 +123,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"What the mind cannot think, but by which the mind thinks — know that alone as Brahman, not this which people worship here. What the eye cannot see, but by which the eye sees — know that alone as Brahman."<br>— Kena Upanishad 1.5–6</blockquote>
 
             <p class="canon-read-more"><a href="canon-upanishads.html">More from the Upanishads, Bhagavad Gita, and Advaita Vedanta →</a></p>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <span class="canon-nav-spacer"></span>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-poetry.html">Poetry ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

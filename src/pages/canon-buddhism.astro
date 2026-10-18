@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Buddhist Suttas — Arbora"
   description="The Dhammapada, Heart Sutra, and Kalama Sutta — foundational Buddhist texts on impermanence, emptiness, and the practice of clear seeing."
   ogTitle="Buddhist Suttas — Arbora"
   ogDescription="The Dhammapada, Heart Sutra, and Kalama Sutta — three texts that together offer the essential Buddhist teaching on mind, reality, and practice."
+  heading="Buddhist Suttas"
+  subtitle="Dhammapada · Heart Sutra · Kalama Sutta"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "Buddhist Suttas" },
+  ]}
+  pager={{ prev: { label: "Daoist Texts", href: "canon-daoism.html" }, center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, next: { label: "Jewish Wisdom", href: "canon-jewish-wisdom.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Buddhist Suttas</h1>
-        <p>Dhammapada · Heart Sutra · Kalama Sutta</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>Buddhist Suttas</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#dhammapada">The Dhammapada</a></li>
@@ -80,16 +72,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"But when you yourselves know: 'These things are bad; these things are blamable; these things are censured by the wise; undertaken and observed, these things lead to harm and ill' — abandon them.<br><br>When you yourselves know: 'These things are good; these things are not blamable; these things are praised by the wise; undertaken and observed, these things lead to benefit and happiness' — enter on and abide in them."<br>— (trans. Soma Thera)</blockquote>
 
             <blockquote>"When greed arises, it arises for the harm of oneself, for the harm of others, for the harm of both. When there is no greed, it is for the welfare of oneself, for the welfare of others, for the welfare of both. This is one thing that, when seen with wisdom, gives rise to the abandonment of greed."<br>— (from the fuller text)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-daoism.html">‹ Daoist Texts</a>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <a href="canon-jewish-wisdom.html">Jewish Wisdom ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

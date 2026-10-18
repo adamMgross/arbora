@@ -1,0 +1,24 @@
+---
+import type { ComponentProps } from 'astro/types';
+import Base from './Base.astro';
+
+interface Props extends ComponentProps<typeof Base> {
+  heading: string;
+  subtitle: string;
+}
+
+const { heading, subtitle, ...base } = Astro.props;
+---
+
+<Base {...base}>
+    <header class="page-header" id="main">
+        <h1>{heading}</h1>
+        <p>{subtitle}</p>
+    </header>
+
+    <div class="page-content">
+        <div class="container narrow">
+            <slot />
+        </div>
+    </div>
+</Base>

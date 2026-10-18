@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Contemporary Companions — Arbora"
   description="Modern works that reach toward the same truths as the ancient traditions — scientific, literary, and philosophical companions in a contemporary register."
   ogTitle="Contemporary Companions — Arbora"
   ogDescription="They are the canopy, not the roots — modern echoes of ancient truths."
+  heading="Contemporary Companions"
+  subtitle="The canopy, not the roots"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Contemporary Companions" },
+  ]}
+  pager={{ prev: { label: "Scientific & Natural History", href: "canon-science.html" }, center: { label: "All Canon", href: "canon.html" }, next: { label: "Upanishads & Hindu Philosophy", href: "canon-upanishads.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Contemporary Companions</h1>
-        <p>The canopy, not the roots</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Contemporary Companions</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#nature-interconnection">Nature &amp; Interconnection</a></li>
@@ -93,16 +86,4 @@ import Base from '../layouts/Base.astro';
 
             <h3 id="technology-attention">Technology &amp; Attention</h3>
             <p><strong>Neil Postman, <em>Technopoly</em></strong> — The surrender of culture to technology. Intellectual grounding for why silence and presence matter more now than ever.</p>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-science.html">‹ Scientific &amp; Natural History</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-upanishads.html">Upanishads &amp; Hindu Philosophy ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

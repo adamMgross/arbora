@@ -12,7 +12,7 @@
     "test:e2e": "playwright test --project=e2e",
     "parity": "node tests/parity/run.mjs",
     "format:check": "prettier --no-error-on-unmatched-pattern --check 'tests/**/*.{ts,mjs}' 'scripts/*.mjs' '*.{json,mjs,ts}'",
-    "quality": "npm run format:check && npm test && npm run build"
+    "quality": "npm run format:check && npm run check && npm test && npm run build"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",

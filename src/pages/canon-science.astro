@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title={"Scientific & Natural History — Arbora"}
   description="Science, practiced with attention and humility, is a form of revelation. Deep time, forest ecology, and the interconnected intelligence of the natural world."
   ogTitle={"Scientific & Natural History — Arbora"}
   ogDescription="Scripture for those who find the universe more astonishing the more precisely they look at it."
+  heading={"Scientific & Natural History"}
+  subtitle="Empirical fact as sacred story"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Scientific & Natural History" },
+  ]}
+  pager={{ prev: { label: "Ancestral & Historical", href: "canon-ancestral.html" }, center: { label: "All Canon", href: "canon.html" }, next: { label: "Contemporary Companions", href: "canon-companions.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Scientific &amp; Natural History</h1>
-        <p>Empirical fact as sacred story</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Scientific &amp; Natural History</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#simard">Suzanne Simard</a></li>
@@ -66,16 +59,4 @@ import Base from '../layouts/Base.astro';
             <h3 id="carson">Rachel Carson, <em>Silent Spring</em></h3>
             <p><em>The book that launched the modern environmental movement. Carson — a marine biologist with a poet's ear — documented the devastation caused by pesticides with such clarity and moral force that the world could not look away.</em></p>
             <blockquote>"In nature nothing exists alone. Every living thing exists in relation to every other living thing — the web of life in which there is no single strand that can be touched without the vibration being felt throughout the entire web."<br>— Rachel Carson, <em>Silent Spring</em> (1962)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-ancestral.html">‹ Ancestral &amp; Historical</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-companions.html">Contemporary Companions ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

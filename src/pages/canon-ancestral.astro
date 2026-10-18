@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title={"Ancestral & Historical Texts — Arbora"}
   description="Texts on exile, survival, cultural persistence, and the long memory of peoples who endured. Ancestry is not abstract — it is particular."
   ogTitle={"Ancestral & Historical Texts — Arbora"}
   ogDescription="Specific names, specific towns, specific crossings. The religion of interconnection includes connection backward through time."
+  heading={"Ancestral & Historical Texts"}
+  subtitle="Exile, survival, and the long memory of peoples who endured"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Ancestral & Historical Texts" },
+  ]}
+  pager={{ prev: { label: "Prayers & Invocations", href: "canon-prayers.html" }, center: { label: "All Canon", href: "canon.html" }, next: { label: "Scientific & Natural History", href: "canon-science.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Ancestral &amp; Historical Texts</h1>
-        <p>Exile, survival, and the long memory of peoples who endured</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Ancestral &amp; Historical Texts</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#dubnow">Simon Dubnow</a></li>
@@ -83,16 +76,4 @@ import Base from '../layouts/Base.astro';
             <h3 id="milosz">Czeslaw Milosz, "Dedication" from <em>Rescue</em> (1945)</h3>
             <p><em>Written in Warsaw in 1945, addressed to the dead. Milosz — a Polish Nobel laureate — understood that the survivor's task is not merely to remember, but to speak for those who no longer can.</em></p>
             <blockquote>"What is poetry which does not save<br>Nations or people?<br>A connivance with official lies,<br>A song of drunkards whose throats will be cut in a moment,<br>Readings for sophomore girls.<br>That I wanted good poetry without knowing it,<br>That I discovered, late, its survey purpose,<br>In this and only this I find salvation."<br>— Czeslaw Milosz, "Dedication" (trans. the author)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-prayers.html">‹ Prayers &amp; Invocations</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-science.html">Scientific &amp; Natural History ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

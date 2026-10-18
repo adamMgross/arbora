@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="The Stoics — Arbora"
   description="Marcus Aurelius, Epictetus, and Seneca — the three great Stoic writers on virtue, clarity, time, and living according to nature."
   ogTitle="The Stoics — Arbora"
   ogDescription="The three great Stoic writers — a Roman emperor, a former slave, and a playwright-turned-philosopher — all writing toward the same question: how do you live well?"
+  heading="The Stoics"
+  subtitle="Marcus Aurelius · Epictetus · Seneca"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "The Stoics" },
+  ]}
+  pager={{ center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, next: { label: "Ancient Fragments", href: "canon-fragments.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>The Stoics</h1>
-        <p>Marcus Aurelius · Epictetus · Seneca</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>The Stoics</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#introduction">Introduction</a></li>
@@ -95,16 +87,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"If you shape your life according to nature, you will never be poor; if according to people's opinions, you will never be rich."<br>— <em>Letters to Lucilius</em>, XVI.7</blockquote>
 
             <blockquote>"Omnia, Lucili, aliena sunt, tempus tantum nostrum est. — Everything, Lucilius, belongs to others; time alone is ours."<br>— <em>Letters to Lucilius</em>, I.1</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <span class="canon-nav-spacer"></span>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <a href="canon-fragments.html">Ancient Fragments ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

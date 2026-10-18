@@ -1,0 +1,22 @@
+---
+export interface PagerLink {
+  label: string;
+  href: string;
+}
+
+export interface Pager {
+  prev?: PagerLink;
+  center: PagerLink;
+  next?: PagerLink;
+}
+
+const { prev, center, next } = Astro.props as Pager;
+---
+
+<nav class="canon-nav" aria-label="Section navigation">
+    {prev ? <a href={prev.href}>‹ {prev.label}</a> : <span class="canon-nav-spacer"></span>}
+    <div class="canon-nav-center">
+        <a href={center.href}>{center.label}</a>
+    </div>
+    {next ? <a href={next.href}>{next.label} ›</a> : <span class="canon-nav-spacer"></span>}
+</nav>

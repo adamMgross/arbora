@@ -1,0 +1,16 @@
+---
+interface Props {
+  from: string;
+  to: string;
+  path: string;
+  tall?: boolean;
+}
+
+const { from, to, path, tall = false } = Astro.props;
+---
+
+<div class:list={['section-sep', { 'section-sep--tall': tall }]} aria-hidden="true" style={`background: var(--${from})`}>
+    <svg viewBox={`0 0 1440 ${tall ? 70 : 50}`} preserveAspectRatio="none">
+        <path d={path} fill={`var(--${to})`}/>
+    </svg>
+</div>

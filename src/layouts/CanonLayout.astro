@@ -1,0 +1,21 @@
+---
+import Breadcrumb from '../components/Breadcrumb.astro';
+import type { Crumb } from '../components/Breadcrumb.astro';
+import CanonNav from '../components/CanonNav.astro';
+import type { Pager } from '../components/CanonNav.astro';
+import type { ComponentProps } from 'astro/types';
+import ProseLayout from './ProseLayout.astro';
+
+interface Props extends ComponentProps<typeof ProseLayout> {
+  trail: Crumb[];
+  pager: Pager;
+}
+
+const { trail, pager, ...prose } = Astro.props;
+---
+
+<ProseLayout {...prose}>
+    <Breadcrumb trail={trail} />
+    <slot />
+    <CanonNav {...pager} />
+</ProseLayout>

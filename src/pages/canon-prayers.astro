@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title={"Prayers & Invocations — Arbora"}
   description="Adapted from existing traditions — Jewish brachot, Buddhist chants, indigenous prayers — stripped of theistic framing. For morning, meals, seasons, gathering, ancestors, and wilderness."
   ogTitle={"Prayers & Invocations — Arbora"}
   ogDescription="Adapted from existing traditions — stripped of theistic framing. The form is a gift from the traditions; the words are yours to shape."
+  heading={"Prayers & Invocations"}
+  subtitle="The form is a gift; the words are yours to shape"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Prayers & Invocations" },
+  ]}
+  pager={{ prev: { label: "Poetry", href: "canon-poetry.html" }, center: { label: "All Canon", href: "canon.html" }, next: { label: "Ancestral & Historical", href: "canon-ancestral.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Prayers &amp; Invocations</h1>
-        <p>The form is a gift; the words are yours to shape</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>Prayers &amp; Invocations</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#morning">Morning</a></li>
@@ -94,16 +87,4 @@ import Base from '../layouts/Base.astro';
             <h3 id="wilderness">Wilderness</h3>
 
             <blockquote><em>I enter this place as a guest — not an owner, not a conqueror, not a consumer. The trees were here before me. The stone beneath the trail is older than my species. The water I will drink tonight has been cycling through rock and sky for longer than I can comprehend. Let me walk with the attention this place deserves. Let me take only what I need and leave more than I found. Let me be worthy of the silence.</em><br>— For arriving in the mountains</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-poetry.html">‹ Poetry</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <a href="canon-ancestral.html">Ancestral &amp; Historical ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

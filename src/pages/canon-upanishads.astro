@@ -1,28 +1,21 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title={"The Upanishads & Hindu Philosophy — Arbora"}
   description="The Upanishads, Bhagavad Gita, and Advaita Vedanta — ancient Hindu texts on non-duality, interconnection, and the self that pervades all things."
   ogTitle={"The Upanishads & Hindu Philosophy — Arbora"}
   ogDescription="That which is the subtle essence — in that have all things their existence. Hindu philosophical texts on non-duality, action, and the nature of the real."
+  heading={"The Upanishads & Hindu Philosophy"}
+  subtitle="That which is the subtle essence — in that have all things their existence"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "The Upanishads & Hindu Philosophy" },
+  ]}
+  pager={{ prev: { label: "Contemporary Companions", href: "canon-companions.html" }, center: { label: "All Canon", href: "canon.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>The Upanishads &amp; Hindu Philosophy</h1>
-        <p>That which is the subtle essence — in that have all things their existence</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <span>The Upanishads &amp; Hindu Philosophy</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#upanishads">The Upanishads</a></li>
@@ -116,16 +109,4 @@ import Base from '../layouts/Base.astro';
             <blockquote><em>"Like the space in a jar, the individual soul is enclosed within names and forms. When the jar is broken, the space merges with the infinite space. So too, when ignorance is destroyed, the individual soul merges with the Supreme Self."</em><br>— Adi Shankara, Atma Bodha (trans. Swami Chinmayananda)</blockquote>
 
             <p>For Arbora, Advaita Vedanta offers one of the most uncompromising articulations of what we experience in the presence of trees, rivers, mountains — the sense that the boundary between observer and observed is thinner than we thought. The Upanishadic seers sat in forests. Their philosophy grew from that sitting, from long attention to the world as it actually presents itself when you stop narrating it.</p>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-companions.html">‹ Contemporary Companions</a>
-                <div class="canon-nav-center">
-                    <a href="canon.html">All Canon</a>
-                </div>
-                <span class="canon-nav-spacer"></span>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

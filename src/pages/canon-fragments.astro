@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Ancient Fragments — Arbora"
   description="Heraclitus, Epicurus, Aristotle, and Confucius — fragments and passages from ancient philosophers who shaped the Western and Eastern philosophical traditions."
   ogTitle="Ancient Fragments — Arbora"
   ogDescription="Heraclitus, Epicurus, Aristotle, Confucius, and the Norse Hávamál — ancient voices that speak across millennia with startling directness."
+  heading="Ancient Fragments"
+  subtitle="Heraclitus · Epicurus · Aristotle · Confucius · Hávamál"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "Ancient Fragments" },
+  ]}
+  pager={{ prev: { label: "The Stoics", href: "canon-stoics.html" }, center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, next: { label: "Daoist Texts", href: "canon-daoism.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Ancient Fragments</h1>
-        <p>Heraclitus · Epicurus · Aristotle · Confucius · Hávamál</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>Ancient Fragments</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#heraclitus">Heraclitus of Ephesus</a></li>
@@ -132,16 +124,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"I know that I hung on a wind-rocked tree / nine whole nights, / with a spear wounded, and to Odin offered, / myself to myself; / on that tree of which no man knows / from what roots it springs. / Bread no one gave me, nor a horn of mead. / Downward I peered, took up the runes, / shrieking I took them — then fell back."<br>— Stanzas 138–139 (trans. Benjamin Thorpe, adapted; Odin's self-sacrifice on Yggdrasil to win the runes — wisdom purchased through ordeal)</blockquote>
 
             <blockquote>"The lame can ride a horse; the one-handed can herd sheep; the deaf can fight and prevail. It is better to be blind than to be burned. A dead man is useful to no one."<br>— Stanza 71 (adapted; on working with limitation rather than surrender to it)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-stoics.html">‹ The Stoics</a>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <a href="canon-daoism.html">Daoist Texts ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

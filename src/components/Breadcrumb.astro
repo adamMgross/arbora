@@ -1,0 +1,21 @@
+---
+export interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  trail: Crumb[];
+}
+
+const { trail } = Astro.props;
+---
+
+<nav class="canon-breadcrumb" aria-label="Breadcrumb">
+    {trail.map((crumb, i) => (
+        <>
+            {i > 0 && <span class="sep">›</span>}
+            {crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span>{crumb.label}</span>}
+        </>
+    ))}
+</nav>

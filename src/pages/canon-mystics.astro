@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Mystic Voices — Arbora"
   description="Rumi, Hafiz, Kabir, Meister Eckhart, and Francis of Assisi — mystics from different traditions who converge on the same experience of unity and presence."
   ogTitle="Mystic Voices — Arbora"
   ogDescription="Rumi, Hafiz, Kabir, Meister Eckhart, and Francis of Assisi — voices that cannot be contained by doctrine, that speak from direct experience of something beyond categories."
+  heading="Mystic Voices"
+  subtitle="Rumi · Hafiz · Kabir · Meister Eckhart · Francis of Assisi"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "Mystic Voices" },
+  ]}
+  pager={{ prev: { label: "Jewish Wisdom", href: "canon-jewish-wisdom.html" }, center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Mystic Voices</h1>
-        <p>Rumi · Hafiz · Kabir · Meister Eckhart · Francis of Assisi</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>Mystic Voices</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#rumi">Rumi (Sufi)</a></li>
@@ -104,16 +96,4 @@ import Base from '../layouts/Base.astro';
             <p><em>Francesco d'Assisi (1181–1226) was the son of a wealthy cloth merchant who gave away his possessions, rebuilt a ruined chapel stone by stone, and founded a religious order centered on radical poverty and love for all created things. The Canticle of the Sun, written around 1225 near the end of his life, is the oldest surviving work of Italian literature. It is addressed to the sun, the moon, the wind, the water, fire, and the earth — each praised as a brother or sister, each recognized as a fellow creature in the family of the living world. It is the most ecologically literate text in the Christian tradition. Read "Praised be" as gratitude addressed to existence itself.</em></p>
 
             <blockquote>"Praised be You, my Lord, through Brother Sun,<br>who brings the day; and You give light through him.<br>And he is beautiful and radiant in all his splendor!<br>Of You, Most High, he bears the likeness.<br><br>Praised be You, my Lord, through Sister Moon and the stars;<br>in heaven You formed them clear and precious and beautiful.<br><br>Praised be You, my Lord, through Brother Wind<br>and through the air, cloudy and serene,<br>and every kind of weather through which You give sustenance to Your creatures.<br><br>Praised be You, my Lord, through Sister Water,<br>who is very useful and humble and precious and chaste.<br><br>Praised be You, my Lord, through Brother Fire,<br>through whom You light the night,<br>and he is beautiful and playful and robust and strong.<br><br>Praised be You, my Lord, through our Sister, Mother Earth,<br>who sustains and governs us,<br>and who produces varied fruits with colored flowers and herbs."<br>— <em>Canticle of the Sun</em> (c. 1225, trans. Bill Barrett, adapted)</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-jewish-wisdom.html">‹ Jewish Wisdom</a>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <span class="canon-nav-spacer"></span>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

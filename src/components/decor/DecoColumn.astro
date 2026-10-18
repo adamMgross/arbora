@@ -1,0 +1,43 @@
+---
+interface Props {
+  side: 'left' | 'right';
+  entasis?: boolean;
+}
+
+const { side, entasis = false } = Astro.props;
+---
+
+<svg class={`deco-column deco-column--${side}`} viewBox="0 0 50 600" fill="none" aria-hidden="true">
+            <g stroke="currentColor" stroke-linecap="round" opacity="0.06">
+                <!-- Ionic capital — volutes -->
+                <path d="M8,25 C8,15 15,8 25,8 C35,8 42,15 42,20 C42,25 38,28 34,28" stroke-width="1.2"/>
+                <path d="M8,25 C8,35 15,42 25,42 C35,42 42,35 42,30 C42,25 38,22 34,22" stroke-width="1.2"/>
+                <circle cx="10" cy="25" r="3" stroke-width="0.8"/>
+                <!-- Echinus -->
+                <path d="M5,48 C10,45 40,45 45,48" stroke-width="1"/>
+                <line x1="5" y1="50" x2="45" y2="50" stroke-width="0.8"/>
+                <!-- Fluted shaft -->
+                <line x1="13" y1="52" x2="14" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="19" y1="52" x2="20" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="25" y1="52" x2="25" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="31" y1="52" x2="30" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <line x1="37" y1="52" x2="36" y2="548" stroke-width="0.6" opacity="0.7"/>
+                <!-- Shaft outline -->
+                <line x1="10" y1="52" x2="11" y2="548" stroke-width="0.8"/>
+                <line x1="40" y1="52" x2="39" y2="548" stroke-width="0.8"/>
+                <!-- Base moldings -->
+                <line x1="8" y1="550" x2="42" y2="550" stroke-width="0.8"/>
+                <path d="M6,558 C6,554 10,550 10,550 L40,550 C40,550 44,554 44,558" stroke-width="0.8"/>
+                <line x1="4" y1="560" x2="46" y2="560" stroke-width="1"/>
+                <rect x="3" y="562" width="44" height="6" rx="1" stroke-width="0.8"/>
+{entasis && (
+<Fragment>
+                <!-- Entasis marks -->
+                <path d="M10,200 C9,200 9,201 10,201" stroke-width="0.4" opacity="0.4"/>
+                <path d="M40,200 C41,200 41,201 40,201" stroke-width="0.4" opacity="0.4"/>
+                <path d="M10,400 C9,400 9,401 10,401" stroke-width="0.4" opacity="0.4"/>
+                <path d="M40,400 C41,400 41,401 40,401" stroke-width="0.4" opacity="0.4"/>
+</Fragment>
+)}
+            </g>
+        </svg>

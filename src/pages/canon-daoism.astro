@@ -1,30 +1,22 @@
 ---
-import Base from '../layouts/Base.astro';
+import CanonLayout from '../layouts/CanonLayout.astro';
 ---
 
-<Base
+<CanonLayout
   title="Daoist Texts — Arbora"
   description="The Tao Te Ching and Zhuangzi — the two great texts of Daoism, on the nature of reality, effortless action, and the dissolution of the boundary between self and world."
   ogTitle="Daoist Texts — Arbora"
   ogDescription="Lao Tzu and Zhuangzi — the foundational texts of Daoism. Where Laozi is concise, Zhuangzi is wild, funny, and subversive."
+  heading="Daoist Texts"
+  subtitle="Lao Tzu · Zhuangzi"
+  trail={[
+    { label: "Canon", href: "canon.html" },
+    { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" },
+    { label: "Daoist Texts" },
+  ]}
+  pager={{ prev: { label: "Ancient Fragments", href: "canon-fragments.html" }, center: { label: "Classical Philosophy & Sacred Texts", href: "canon-philosophy.html" }, next: { label: "Buddhist Suttas", href: "canon-buddhism.html" } }}
 >
-    <header class="page-header" id="main">
-        <h1>Daoist Texts</h1>
-        <p>Lao Tzu · Zhuangzi</p>
-    </header>
-
-    <div class="page-content">
-        <div class="container narrow">
-
-            <nav class="canon-breadcrumb" aria-label="Breadcrumb">
-                <a href="canon.html">Canon</a>
-                <span class="sep">›</span>
-                <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                <span class="sep">›</span>
-                <span>Daoist Texts</span>
-            </nav>
-
-            <nav class="canon-toc" aria-label="On this page">
+<nav class="canon-toc" aria-label="On this page">
                 <p class="canon-toc-label">On this page</p>
                 <ul>
                     <li><a href="#tao-te-ching">Lao Tzu, <em>Tao Te Ching</em></a></li>
@@ -71,16 +63,4 @@ import Base from '../layouts/Base.astro';
             <blockquote>"Flow with whatever may happen and let your mind be free. Stay centered by accepting whatever you are doing. This is the ultimate."<br>— Chapter 4 (trans. Gia-Fu Feng &amp; Jane English)</blockquote>
 
             <blockquote>"The perfect man has no self. The spirit man has no merit. The sage has no reputation."<br>— Chapter 1</blockquote>
-
-            <nav class="canon-nav" aria-label="Section navigation">
-                <a href="canon-fragments.html">‹ Ancient Fragments</a>
-                <div class="canon-nav-center">
-                    <a href="canon-philosophy.html">Classical Philosophy &amp; Sacred Texts</a>
-                </div>
-                <a href="canon-buddhism.html">Buddhist Suttas ›</a>
-            </nav>
-
-        </div>
-    </div>
-
-</Base>
+</CanonLayout>

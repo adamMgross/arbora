@@ -1,9 +1,9 @@
 ---
-import { navLinks } from '../lib/routes';
+import { navLinks, routes } from '../lib/routes';
 ---
 
 <nav class="site-nav">
-    <a href="index.html" class="nav-mark">Arbora</a>
+    <a href={routes.home.href} class="nav-mark">{routes.home.label}</a>
     <div class="nav-links">
         {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
     </div>
