@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ancestral &amp; Historical Texts — Arbora</title>
-    <meta name="description" content="Texts on exile, survival, cultural persistence, and the long memory of peoples who endured. Ancestry is not abstract — it is particular.">
-    <meta name="theme-color" content="#3a2e2a">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Arbora">
-    <meta property="og:title" content="Ancestral & Historical Texts — Arbora">
-    <meta property="og:description" content="Specific names, specific towns, specific crossings. The religion of interconnection includes connection backward through time.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arbora.site/og-image.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <nav class="site-nav">
-        <a href="index.html" class="nav-mark">Arbora</a>
-        <div class="nav-links">
-            <a href="today.html">Today</a>
-            <a href="cosmology.html">Cosmology</a>
-            <a href="principles.html">Principles</a>
-            <a href="practices.html">Practices</a>
-            <a href="rituals.html">Rituals</a>
-            <a href="canon.html">Canon</a>
-            <a href="tree.html">The Tree</a>
-        </div>
-        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    </nav>
+---
+import Base from '../layouts/Base.astro';
+---
 
+<Base
+  title={"Ancestral & Historical Texts — Arbora"}
+  description="Texts on exile, survival, cultural persistence, and the long memory of peoples who endured. Ancestry is not abstract — it is particular."
+  ogTitle={"Ancestral & Historical Texts — Arbora"}
+  ogDescription="Specific names, specific towns, specific crossings. The religion of interconnection includes connection backward through time."
+>
     <header class="page-header" id="main">
         <h1>Ancestral &amp; Historical Texts</h1>
         <p>Exile, survival, and the long memory of peoples who endured</p>
@@ -123,22 +95,4 @@
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="container narrow">
-            <p class="footer-mark">Arbora</p>
-            <nav class="footer-nav">
-                <a href="today.html">Today</a>
-                <a href="cosmology.html">Cosmology</a>
-                <a href="principles.html">Principles</a>
-                <a href="practices.html">Practices</a>
-                <a href="rituals.html">Rituals</a>
-                <a href="canon.html">Canon</a>
-                <a href="tree.html">The Tree</a>
-            </nav>
-            <div class="footer-divider"></div>
-            <p class="footer-text">A living document. The canon is never closed.</p>
-        </div>
-    </footer>
-    <script src="src/js/main.js"></script>
-</body>
-</html>
+</Base>

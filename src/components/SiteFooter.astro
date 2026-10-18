@@ -1,0 +1,16 @@
+---
+import { navLinks } from '../lib/routes';
+---
+
+<footer class="site-footer">
+    <slot name="roots" />
+    <div class="container narrow">
+        <p class="footer-mark">Arbora</p>
+        <nav class="footer-nav">
+            {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+        </nav>
+        <div class="footer-divider"></div>
+        <p class="footer-text">A living document. The canon is never closed.</p>
+        <slot name="colophon" />
+    </div>
+</footer>

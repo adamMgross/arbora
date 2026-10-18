@@ -1,41 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jewish Wisdom — Arbora</title>
-    <meta name="description" content="Pirkei Avot and Ecclesiastes — the Ethics of the Fathers and Kohelet's searching meditations on time, impermanence, and what endures.">
-    <meta name="theme-color" content="#3a2e2a">
-    <link rel="manifest" href="manifest.json">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Arbora">
-    <meta property="og:title" content="Jewish Wisdom — Arbora">
-    <meta property="og:description" content="Pirkei Avot and Ecclesiastes — the two Jewish wisdom texts most deeply aligned with Arbora's values.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arbora.site/og-image.png">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="src/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-</head>
-<body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    <nav class="site-nav">
-        <a href="index.html" class="nav-mark">Arbora</a>
-        <div class="nav-links">
-            <a href="today.html">Today</a>
-            <a href="cosmology.html">Cosmology</a>
-            <a href="principles.html">Principles</a>
-            <a href="practices.html">Practices</a>
-            <a href="rituals.html">Rituals</a>
-            <a href="canon.html">Canon</a>
-            <a href="tree.html">The Tree</a>
-        </div>
-        <button class="nav-toggle" aria-label="Menu">&#9776;</button>
-    </nav>
+---
+import Base from '../layouts/Base.astro';
+---
 
+<Base
+  title="Jewish Wisdom — Arbora"
+  description="Pirkei Avot and Ecclesiastes — the Ethics of the Fathers and Kohelet's searching meditations on time, impermanence, and what endures."
+  ogTitle="Jewish Wisdom — Arbora"
+  ogDescription="Pirkei Avot and Ecclesiastes — the two Jewish wisdom texts most deeply aligned with Arbora's values."
+>
     <header class="page-header" id="main">
         <h1>Jewish Wisdom</h1>
         <p>Pirkei Avot · Ecclesiastes</p>
@@ -115,22 +87,4 @@
         </div>
     </div>
 
-    <footer class="site-footer">
-        <div class="container narrow">
-            <p class="footer-mark">Arbora</p>
-            <nav class="footer-nav">
-                <a href="today.html">Today</a>
-                <a href="cosmology.html">Cosmology</a>
-                <a href="principles.html">Principles</a>
-                <a href="practices.html">Practices</a>
-                <a href="rituals.html">Rituals</a>
-                <a href="canon.html">Canon</a>
-                <a href="tree.html">The Tree</a>
-            </nav>
-            <div class="footer-divider"></div>
-            <p class="footer-text">A living document. The canon is never closed.</p>
-        </div>
-    </footer>
-    <script src="src/js/main.js"></script>
-</body>
-</html>
+</Base>

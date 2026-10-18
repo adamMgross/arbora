@@ -32,6 +32,13 @@ export function prepareSite(ref) {
   return dist;
 }
 
+export function listFiles(dir, prefix = '') {
+  return readdirSync(join(dir, prefix), { withFileTypes: true }).flatMap((entry) => {
+    const rel = prefix ? `${prefix}/${entry.name}` : entry.name;
+    return entry.isDirectory() ? listFiles(dir, rel) : [rel];
+  });
+}
+
 export function listPages(dir) {
   return readdirSync(dir)
     .filter((f) => f.endsWith('.html'))

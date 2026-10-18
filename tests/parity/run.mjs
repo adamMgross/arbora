@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { parseArgs } from 'node:util';
 import { captureSite, ensureFontsHar } from './capture.mjs';
 import { compareData, compareImages } from './compare.mjs';
-import { listPages, prepareSite, repoRoot, serve } from './site.mjs';
+import { listFiles, listPages, prepareSite, repoRoot, serve } from './site.mjs';
 
 const { values } = parseArgs({
   options: {
@@ -22,9 +22,13 @@ const candidatePages = new Set(listPages(candidateDir));
 const filter = values.pages?.split(',');
 const pages = basePages.filter((p) => !filter || filter.some((f) => p.includes(f)));
 
+const NOT_SITE_FILES = /^(\.gitignore|\.nojekyll|README\.md|CHARTER\.md|DESIGN\.md|CLAUDE\.md|test-results\/.*)$/;
+const candidateFiles = new Set(listFiles(candidateDir));
 const failures = [];
-for (const page of basePages)
-  if (!candidatePages.has(page)) failures.push({ key: page, kind: 'route', detail: 'missing in candidate' });
+for (const file of listFiles(baseDir)) {
+  if (NOT_SITE_FILES.test(file) || candidateFiles.has(file)) continue;
+  failures.push({ key: file, kind: 'route', detail: 'missing in candidate' });
+}
 
 const [baseServer, candidateServer] = await Promise.all([serve(baseDir), serve(candidateDir)]);
 const launch = () => chromium.launch();
