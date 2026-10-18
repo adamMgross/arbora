@@ -75,10 +75,20 @@ try {
   candidateServer.close();
 }
 
-for (const f of failures.slice(0, 40)) {
-  console.log(`FAIL ${f.kind} ${f.key}${f.detail ? ` ${f.detail}` : ''}${f.reordered ? ' (order changed)' : ''}`);
+const grouped = new Map();
+for (const f of failures) {
+  const id = f.kind === 'styles' ? `styles ${f.detail}` : `${f.kind} ${f.key} ${f.detail ?? ''}`;
+  const group = grouped.get(id) ?? { ...f, count: 0, example: f.key };
+  group.count++;
+  grouped.set(id, group);
+}
+const reported = [...grouped.values()];
+for (const f of reported.slice(0, 40)) {
+  console.log(
+    `FAIL ${f.kind} ${f.kind === 'styles' ? '' : f.key}${f.detail ? ` ${f.detail}` : ''}${f.reordered ? ' (order changed)' : ''}${f.count > 1 ? ` (x${f.count}, e.g. ${f.example})` : f.kind === 'styles' ? ` (${f.example})` : ''}`,
+  );
   for (const line of (f.onlyBase ?? []).slice(0, 3)) console.log(`  - ${line.slice(0, 160)}`);
   for (const line of (f.onlyCandidate ?? []).slice(0, 3)) console.log(`  + ${line.slice(0, 160)}`);
 }
-if (failures.length > 40) console.log(`... ${failures.length - 40} more`);
+if (reported.length > 40) console.log(`... ${reported.length - 40} more distinct`);
 process.exit(failures.length ? 1 : 0);

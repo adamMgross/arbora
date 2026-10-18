@@ -5,9 +5,14 @@ import { normalizeText } from './normalize.mjs';
 const FONT_URL = /fonts\.(googleapis|gstatic)\.com/;
 const DEFAULT_TIME = '2026-04-22T09:00:00-07:00';
 
-export const SCREENSHOT_CONFIGS = [375, 768, 1280].flatMap((width) =>
-  ['light', 'dark'].map((scheme) => ({ width, scheme, label: `${width}-${scheme}` })),
-);
+export const SCREENSHOT_CONFIGS = [
+  ...[375, 768, 1280].flatMap((width) =>
+    ['light', 'dark'].map((scheme) => ({ width, scheme, label: `${width}-${scheme}` })),
+  ),
+  { width: 375, scheme: 'light', label: '375-reduced-motion', reducedMotion: 'reduce' },
+  { width: 375, scheme: 'dark', label: '375-touch-dark', touch: true },
+  { width: 1000, scheme: 'light', label: '1000-print', media: 'print' },
+];
 
 export function todayTimes() {
   const times = [];
@@ -60,10 +65,12 @@ export async function ensureFontsHar(browser, baseUrl, pages, harPath) {
   await context.close();
 }
 
-async function withContext(browser, { width, scheme, time, harPath }, fn) {
+async function withContext(browser, { width, scheme, time, harPath, reducedMotion, touch }, fn) {
   const context = await browser.newContext({
     viewport: { width, height: 800 },
     colorScheme: scheme,
+    reducedMotion: reducedMotion ?? 'no-preference',
+    ...(touch ? { hasTouch: true, isMobile: true } : {}),
     timezoneId: 'America/Los_Angeles',
     locale: 'en-US',
     deviceScaleFactor: 1,
@@ -101,7 +108,129 @@ function extract() {
     })
     .filter((entry, i, all) => entry !== 'link[local-stylesheet]' || all.indexOf(entry) === i)
     .sort();
+  for (const animation of document.getAnimations()) {
+    try {
+      if (animation.effect?.getTiming().iterations === Infinity) animation.cancel();
+      else animation.finish();
+    } catch {
+      // an animation that cannot be settled is left as is
+    }
+  }
+  const PROPS = [
+    'display',
+    'position',
+    'top',
+    'right',
+    'bottom',
+    'left',
+    'z-index',
+    'float',
+    'overflow-x',
+    'overflow-y',
+    'width',
+    'height',
+    'min-width',
+    'min-height',
+    'max-width',
+    'max-height',
+    'margin-top',
+    'margin-right',
+    'margin-bottom',
+    'margin-left',
+    'padding-top',
+    'padding-right',
+    'padding-bottom',
+    'padding-left',
+    'border-top-width',
+    'border-right-width',
+    'border-bottom-width',
+    'border-left-width',
+    'border-top-style',
+    'border-right-style',
+    'border-bottom-style',
+    'border-left-style',
+    'border-top-color',
+    'border-right-color',
+    'border-bottom-color',
+    'border-left-color',
+    'border-top-left-radius',
+    'border-top-right-radius',
+    'border-bottom-right-radius',
+    'border-bottom-left-radius',
+    'color',
+    'background-color',
+    'background-image',
+    'background-position',
+    'background-size',
+    'background-repeat',
+    'opacity',
+    'transform',
+    'filter',
+    'backdrop-filter',
+    'box-shadow',
+    'mix-blend-mode',
+    'font-family',
+    'font-size',
+    'font-weight',
+    'font-style',
+    'line-height',
+    'letter-spacing',
+    'text-transform',
+    'text-align',
+    'text-decoration-line',
+    'white-space',
+    'cursor',
+    'visibility',
+    'pointer-events',
+    'flex-direction',
+    'flex-wrap',
+    'flex-grow',
+    'flex-shrink',
+    'flex-basis',
+    'align-items',
+    'justify-content',
+    'gap',
+    'grid-template-columns',
+    'outline-style',
+    'outline-width',
+    'outline-offset',
+    'content',
+    'transition-property',
+    'transition-duration',
+    'transition-timing-function',
+    'transition-delay',
+    'animation-name',
+    'animation-duration',
+    'animation-iteration-count',
+    'animation-delay',
+    'fill',
+    'stroke',
+    'stroke-width',
+  ];
+  const keyOf = (el) =>
+    el.tagName.toLowerCase() +
+    (el.id ? '#' + el.id : '') +
+    (typeof el.className === 'string' && el.className ? '.' + el.className.trim().split(/\s+/).join('.') : '');
+  const snapshot = (el, pseudo) => {
+    const cs = getComputedStyle(el, pseudo);
+    return PROPS.map((p) => {
+      const value = cs.getPropertyValue(p);
+      if (p === 'background-position' && cs.getPropertyValue('background-image') === 'none') return '';
+      return p === 'transform' && value === 'matrix(1, 0, 0, 1, 0, 0)' ? 'none' : value;
+    });
+  };
+  const styles = [];
+  for (const el of document.body.querySelectorAll('*')) {
+    styles.push({ key: keyOf(el), values: snapshot(el) });
+    for (const pseudo of ['::before', '::after']) {
+      const rendered = getComputedStyle(el, pseudo);
+      if (rendered.content !== 'none' && rendered.display !== 'none')
+        styles.push({ key: keyOf(el) + pseudo, values: snapshot(el, pseudo) });
+    }
+  }
   return {
+    styleProps: PROPS,
+    styles,
     text: document.body.innerText,
     head,
     ids: [...document.querySelectorAll('[id]')].map((el) => el.id),
@@ -109,9 +238,10 @@ function extract() {
   };
 }
 
-async function capturePage(context, baseUrl, file, { screenshot }) {
+async function capturePage(context, baseUrl, file, { screenshot, media }) {
   const page = await context.newPage();
   try {
+    if (media) await page.emulateMedia({ media });
     await page.goto(`${baseUrl}/${file}`, { waitUntil: 'load' });
     await page.evaluate(() => document.fonts.ready.then(() => 0));
     await page.evaluate(() => {
@@ -146,7 +276,7 @@ export async function captureSite({ launch, baseUrl, pages, harPath, screenshots
         mapLimit(pages, 1, async (file) => {
           results.set(
             `${file}@${config.label}`,
-            await capturePage(context, baseUrl, file, { screenshot: screenshots }),
+            await capturePage(context, baseUrl, file, { screenshot: screenshots, media: config.media }),
           );
         }),
       ),

@@ -17,6 +17,34 @@ export function compareData(key, base, candidate) {
     else if (kind !== 'head' && !sameOrder)
       failures.push({ key, kind, onlyBase: [], onlyCandidate: [], reordered: true });
   }
+  failures.push(...compareStyles(key, base, candidate));
+  return failures;
+}
+
+function compareStyles(key, base, candidate) {
+  if (base.styles.length !== candidate.styles.length) {
+    return [{ key, kind: 'styles', detail: `element count ${base.styles.length} vs ${candidate.styles.length}` }];
+  }
+  const failures = [];
+  for (let i = 0; i < base.styles.length; i++) {
+    const a = base.styles[i];
+    const b = candidate.styles[i];
+    if (a.key !== b.key) {
+      failures.push({ key, kind: 'styles', detail: `structure differs at ${i}: ${a.key} vs ${b.key}` });
+      break;
+    }
+    const changed = base.styleProps.filter((_, j) => a.values[j] !== b.values[j]);
+    if (changed.length) {
+      failures.push({
+        key,
+        kind: 'styles',
+        detail: `${a.key} ${changed
+          .slice(0, 4)
+          .map((p) => `${p}: ${a.values[base.styleProps.indexOf(p)]} -> ${b.values[base.styleProps.indexOf(p)]}`)
+          .join(' | ')}`,
+      });
+    }
+  }
   return failures;
 }
 
