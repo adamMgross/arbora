@@ -33,90 +33,65 @@ The palette shifts through warm earth tones — amber morning light, green canop
 
 ## Color System
 
-### Earth Palette (Primary)
-| Token | Hex | Source | Usage |
-|-------|-----|--------|-------|
-| `--bark` | `#3a2e2a` | Dark bark | Primary text, deep accents |
-| `--heartwood` | `#5c4a3d` | Inner wood | Secondary text, body copy |
-| `--branch` | `#7d6b5d` | Dry branch | Tertiary text, captions |
-| `--stone` | `#9a8f84` | River stone | Borders, muted UI |
+The tokens are defined once, in `src/styles/tokens.css`. That file is the source of truth for every value, so this document names roles and does not repeat hex codes.
 
-### Canopy Palette (Accent)
-| Token | Hex | Source | Usage |
-|-------|-----|--------|-------|
-| `--needle` | `#4a6741` | Conifer needle | Strong green accent |
-| `--moss` | `#6b7f5e` | Forest moss | Medium green accent |
-| `--lichen` | `#8a9a7b` | Lichen | Light green accent, borders |
-| `--sage` | `#a3b18a` | Sage brush | Subtle green tint |
-| `--sky` | `#c5cfc0` | Overcast sky | Lightest green, footer text |
+| Group | Tokens | Role |
+|---|---|---|
+| Earth | `--bark`, `--heartwood`, `--branch`, `--stone` | Text from strongest to quietest, and borders |
+| Canopy | `--needle`, `--moss`, `--lichen`, `--sage`, `--sky` | Green accents from strong to faint, and footer text |
+| Light | `--warmwhite`, `--cream`, `--parchment`, `--fog`, `--dawn` | Card, page, alternate-section, and deeper backgrounds, and a warm highlight |
+| Depth | `--earth`, `--root`, `--canopy` | Footer and dark sections |
+| Warm accents | `--amber`, `--sunlight`, `--clay` | Resin, filtered sun, river clay |
 
-### Light Palette (Backgrounds)
-| Token | Hex | Source | Usage |
-|-------|-----|--------|-------|
-| `--warmwhite` | `#fcfaf6` | Morning light | Card backgrounds |
-| `--cream` | `#faf8f4` | Cream | Primary backgrounds |
-| `--parchment` | `#f4f0ea` | Old paper | Alternate section backgrounds |
-| `--fog` | `#e8e4df` | Morning fog | Deeper background accent |
-| `--dawn` | `#e8c9a0` | Dawn light | Warm highlight |
+Shadows (`--shadow-*`), organic radii (`--radius-*`), easing (`--ease-organic`, `--ease-grow`), fonts, and spacing (`--space-xs` to `--space-2xl`) are tokens too. `--dawn`, `--amber`, `--sunlight`, `--shadow-glow`, and `--ease-grow` are defined and not yet used.
 
-### Earth Depth (Dark)
-| Token | Hex | Source | Usage |
-|-------|-----|--------|-------|
-| `--earth` | `#4a3728` | Rich soil | Footer, dark sections |
-| `--root` | `#2a2118` | Deep root | Deepest backgrounds |
-| `--canopy` | `#2d4a2d` | Dense canopy | Dark green accent |
-
-### Warm Accents
-| Token | Hex | Source | Usage |
-|-------|-----|--------|-------|
-| `--amber` | `#b8860b` | Tree resin | Warm highlight |
-| `--sunlight` | `#d4a843` | Filtered sun | Golden accents |
-| `--clay` | `#a0522d` | River clay | Warm accent |
+Dark mode follows `prefers-color-scheme` and redefines the palette in `tokens.css`. Several palette tokens change meaning there, so `--earth` becomes a light color. Moving this to semantic tokens is ticketed (`arb-748i`).
 
 ---
 
 ## Typography
 
-### Typeface Roles
-- **Cormorant Garamond** (Display): Headings, hero text, section titles, decorative numerals. Weight 300-600. Elegant, organic serifs that echo hand-lettering.
-- **EB Garamond** (Body): Long-form text, paragraphs, quotes. Weight 400-600. Readable, warm, historically grounded.
-- **Source Sans 3** (UI): Navigation, labels, tags, small caps, metadata. Weight 300-600. Clean but warm sans-serif.
+### Typeface roles
+- **Cormorant Garamond** (display): headings, hero text, section titles, decorative numerals. Elegant serifs that echo hand-lettering.
+- **EB Garamond** (body and UI): long-form text, quotations, navigation, labels, tags, and metadata. `--font-ui` and `--font-body` are the same face.
+
+Source Sans 3 is still requested by every page and is not used. Removing it is ticketed (`arb-7r1s`).
 
 ### Scale
-The typographic scale follows organic proportions (loosely based on the golden ratio):
-- Hero title: 3.2rem (desktop), 1.8rem (mobile)
-- Section title: 2.4rem / 1.8rem
-- Card heading: 1.3rem / 1.15rem
-- Body: 1.05rem / 1rem
-- Small/UI: 0.78rem / 0.72rem
-- Micro: 0.72rem
+The scale is not tokenized. The main steps in use:
+- Hero title: 3.4rem on desktop, with smaller steps at 900 px, 640 px, and 380 px
+- Section title: 2.4rem, 1.8rem on small screens
+- Card heading: 1.3rem
+- Body: 1.05rem
+- Small UI text: 0.72rem to 0.88rem
 
-### Drop Caps
-The first letter of preamble/introductory paragraphs uses Cormorant Garamond at large size, floated left. This is a nod to illuminated manuscripts — sacred texts made physical.
+### Drop caps
+The first letter of introductory paragraphs uses Cormorant Garamond at large size, floated left, a nod to illuminated manuscripts.
 
 ---
 
 ## Animation Language
 
 ### Timing
-All animations use organic easing: `cubic-bezier(0.25, 0.46, 0.45, 0.94)` — a curve that starts with gentle acceleration and settles slowly, like a branch coming to rest after the wind passes.
+Animations use organic easing, `--ease-organic`: gentle acceleration that settles slowly, like a branch coming to rest.
 
-### Named Motions
+### Named motions
 | Motion | Description | Duration | Usage |
-|--------|------------|----------|-------|
-| **Breathe** | Gentle scale pulse (1.0 → 1.015 → 1.0) | 8-12s | Background SVGs, decorative elements |
-| **Unfold** | Fade up + slight vertical slide | 0.8s | Scroll-triggered reveals |
-| **Grow** | Scale from 0 → 1 along Y axis, origin bottom | 0.5s | Accent lines, borders |
-| **Drift** | Very slow horizontal float | 20-40s | Background particles |
-| **Sway** | Subtle rotation (-0.5deg → 0.5deg) | 6-8s | Tree SVG, organic elements |
-| **Ripple** | Outward ring expansion | 0.6s | Click/tap feedback |
+|---|---|---|---|
+| **Breathe** | Gentle scale pulse on the hero tree (`treeBreathe`) | 10s | Hero tree |
+| **Unfold** | Fade up with a slight vertical slide (`fadeUp`, and the `.reveal` transition) | 1s to 1.1s | Hero text and scroll reveals |
+| **Sway** | Rotation of plus or minus 0.15 degrees (`tree-sway`) | 8s | The tree diagram |
+| **Turn** | Slow rotation (`mandalaRotate`) | 120s | Hero geometry |
+| **Drip** | Scaling lines (`scrollDrip`) | 2.5s | Scroll hint |
+
+Drift and Ripple were imagined and never built.
 
 ### Rules
 - Never animate text directly (no bouncing headers)
 - Background motion should be imperceptible until you look for it
-- Hover states transition over 0.3-0.5s, never instantly
-- Scroll-triggered animations fire once, then stay
-- Reduced motion: all animations disabled, content visible immediately
+- Hover states transition over 0.3 to 0.5s where possible. Some controls use 0.15s to 0.25s.
+- Scroll-triggered reveals fire once, then stay
+- Reduced motion disables animation and shows content immediately. The tree diagram's sway does not yet stop (`arb-yq84`).
 
 ---
 
@@ -163,7 +138,7 @@ Margins and paddings aren't perfectly uniform. Sections have slightly different 
 
 ## Responsive Philosophy
 
-The site is mobile-first. On small screens:
+The intent is mobile-first, and the stylesheet is currently desktop-first with `max-width` queries at 900 px, 640 px, and 380 px (`arb-0yyn` tracks the inversion). On small screens:
 - Organic shapes simplify but don't disappear
 - Separator waves become gentler (lower amplitude)
 - Cards stack single-column with consistent organic radius
