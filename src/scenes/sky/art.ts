@@ -61,14 +61,52 @@ const BASE_ART: Record<(typeof SKY_ART_BASE)[number], Drawer> = {
     return `${o}<circle cx="${cx + 10}" cy="${cy - 30}" r="24" fill="none" stroke="${GOLD}" stroke-width="1"/>`;
   },
   venus(cx, cy) {
-    let o = `<circle cx="${cx}" cy="${cy}" r="52" fill="${CREAM}"/>`;
-    for (let i = -3; i <= 3; i++)
-      o += `<path d="M${cx - 50},${cy + i * 13} Q${cx},${cy + i * 13 + (i % 2 ? 6 : -6)} ${cx + 50},${cy + i * 13}" fill="none" stroke="${MUTED}" stroke-width="3" opacity=".4"/>`;
-    o += `<path d="M${cx},${cy - 52} A52,52 0 0 0 ${cx},${cy + 52} A28,52 0 0 1 ${cx},${cy - 52}Z" fill="${LAPIS}" opacity=".88"/><circle cx="${cx}" cy="${cy}" r="52" fill="none" stroke="${GOLD}" stroke-width="1.1"/>`;
-    for (let g = 0; g < 7; g++) {
-      const gx = cx - 84 + g * 28;
-      o += `<path d="M${gx},${cy + 96} V${cy + 78} A6,6 0 0 1 ${gx + 12},${cy + 78} V${cy + 96}" fill="none" stroke="${GOLD}" stroke-width=".8" opacity=".8"/>`;
+    const hz = cy + 34;
+    const [vx, vy] = [cx + 46, cy - 56];
+    let o = `<path d="M${cx - 100},${hz} H${cx + 100} V${cy + 100} H${cx - 100}Z" fill="${SHADE}" opacity=".7"/>`;
+    for (let i = 1; i <= 4; i++)
+      o += `<path d="M${cx - 100},${hz + i * 8} q12,-3 24,0 t24,0 t24,0 t24,0 t24,0 t24,0 t24,0 t24,0" fill="none" stroke="${MUTED}" stroke-width=".6" opacity="${f(0.7 - i * 0.12)}"/>`;
+    o += `<path d="M${cx - 100},${hz} H${cx + 100}" stroke="${GOLD}" stroke-width=".9"/>`;
+    o += `<path d="M${cx - 92},${hz - 2} Q${cx - 30},${cy - 110} ${vx},${vy}" fill="none" stroke="${GOLD}" stroke-width=".5" stroke-dasharray="1.5 3" opacity=".6"/>${sparkle(cx - 92, hz - 3, 5, CREAM)}`;
+    o += `<circle cx="${vx}" cy="${vy}" r="24" fill="${GOLD}" opacity=".14"/>`;
+    for (let i = 0; i < 8; i++) {
+      const a = (i * Math.PI) / 4;
+      const len = i % 2 ? 18 : 32;
+      o += `<path d="M${f(vx + Math.cos(a) * 8)},${f(vy + Math.sin(a) * 8)} L${f(vx + Math.cos(a) * len)},${f(vy + Math.sin(a) * len)}" stroke="${CREAM}" stroke-width=".7" opacity=".8"/>`;
     }
+    o += sparkle(vx, vy, 13, CREAM);
+    for (let i = 0; i < 6; i++)
+      o += `<path d="M${vx - 6 + (i % 2) * 4},${hz + 4 + i * 6} h${8 - i}" stroke="${CREAM}" stroke-width="1.2" opacity="${f(0.8 - i * 0.11)}"/>`;
+    const gifts = [
+      (x: number, y: number) => `<path d="M${x},${y} l2,-4 l2,3 l2,-3 l2,4z" fill="${GOLD}"/>`,
+      (x: number, y: number) =>
+        [0, 3, 6].map((d) => `<circle cx="${x + d}" cy="${y - 1}" r="1.1" fill="${TEAL}"/>`).join(''),
+      (x: number, y: number) =>
+        `<path d="M${x},${y} l8,-4" stroke="${GOLD}" stroke-width="1"/><circle cx="${x + 8}" cy="${y - 4}" r="1.3" fill="${GOLD}"/>`,
+      (x: number, y: number) => `<path d="M${x},${y - 5} h7 v3 q-3.5,4 -7,0z" fill="${GOLD}"/>`,
+      (x: number, y: number) =>
+        `<circle cx="${x + 3}" cy="${y - 2}" r="2.4" fill="none" stroke="${GOLD}" stroke-width="1"/>`,
+      (x: number, y: number) => `<path d="M${x},${y - 2} q4,3 8,0" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`,
+      (x: number, y: number) => `<path d="M${x},${y} l4,-7 l4,7z" fill="${VERM}"/>`,
+    ];
+    let stair = '';
+    for (let g = 0; g < 7; g++) {
+      const x = cx - 72 + g * 12;
+      const y = cy - 40 + g * 20;
+      const ink = y > hz ? MUTED : GOLD;
+      stair += `${g ? 'L' : 'M'}${x + 6},${y}`;
+      o += `<path d="M${x},${y} V${y - 14} A6,6 0 0 1 ${x + 12},${y - 14} V${y}" fill="${LAPIS}" stroke="${ink}" stroke-width=".9"/>${gifts[g]!(x + 14, y)}`;
+    }
+    o += `<path d="${stair}" fill="none" stroke="${GOLD}" stroke-width=".4" stroke-dasharray="2 2" opacity=".5"/>`;
+    o += `<path d="M${cx - 66},${hz + 18} a10,10 0 0 1 20,0z" fill="${GOLD}" opacity=".8"/>`;
+    for (let k = -3; k <= 3; k++)
+      o += `<path d="M${cx - 56},${hz + 18} l${f(Math.sin((k * Math.PI) / 8) * 10)},${f(-Math.cos((k * Math.PI) / 8) * 10)}" stroke="${LAPIS}" stroke-width=".5"/>`;
+    const [px, py] = [cx + 22, cy + 84];
+    o += `<path d="M${px - 22},${py} l10,-3 l6,3z" fill="${VERM}" opacity=".9"/>`;
+    o += `<circle cx="${px}" cy="${py - 15}" r="2.6" fill="${CREAM}"/><path d="M${px - 3},${py - 11} Q${px},${py - 13} ${px + 3},${py - 11} L${px + 4},${py} L${px - 4},${py}Z" fill="${CREAM}"/><path d="M${px + 2},${py - 10} L${px + 9},${py - 19}" stroke="${CREAM}" stroke-width="1.3" stroke-linecap="round"/>`;
+    o += `<path d="M${vx},${vy + 14} L${px + 9},${py - 21}" stroke="${GOLD}" stroke-width=".6" stroke-dasharray="1 2.5" opacity=".8"/>`;
+    o += `<ellipse cx="${cx + 44}" cy="${py - 3}" rx="5" ry="3" fill="${CREAM}"/><circle cx="${cx + 39}" cy="${py - 5}" r="1.8" fill="${CREAM}"/>`;
+    o += `<ellipse cx="${cx + 57}" cy="${py - 3}" rx="4.5" ry="2.6" fill="${MUTED}"/><path d="M${cx + 53},${py - 5} q-2,-4 -5,-5" fill="none" stroke="${MUTED}" stroke-width=".9"/>`;
     return o;
   },
   mars(cx, cy) {
@@ -563,8 +601,6 @@ const OVERLAY: Partial<Record<SkyArt, (cx: number, cy: number) => string>> = {
     `<path d="M${cx - 10},${cy - 98} A86,86 0 0 1 ${cx + 92},${cy - 14}" fill="none" stroke="${GOLD}" stroke-width="1.6"/><circle cx="${cx + 92}" cy="${cy - 14}" r="3" fill="${GOLD}"/>`,
   mercury: (cx, cy) =>
     `<g transform="translate(${cx - 70} ${cy - 66})" fill="none" stroke="${GOLD}" stroke-width="1.5"><path d="M0,-26 V40 M-10,-30 q10,8 20,0 M-8,-8 q8,10 16,0 q-8,10 -16,20 q8,10 16,0"/><circle cy="-30" r="4"/></g>`,
-  venus: (cx, cy) =>
-    `<g transform="translate(${cx + 78} ${cy - 70})" fill="none" stroke="${GOLD}" stroke-width="1.8"><circle r="14"/><path d="M0,14V40M-12,28H12"/></g>`,
   mars: (cx, cy) =>
     `<g transform="translate(${cx + 70} ${cy - 62})" fill="none" stroke="${GOLD}" stroke-width="1.8"><circle r="14"/><path d="M10,-10L30,-30M30,-30H14M30,-30V-14"/></g>`,
   jupiter: (cx, cy) =>
@@ -612,6 +648,8 @@ const OVERLAY: Partial<Record<SkyArt, (cx: number, cy: number) => string>> = {
 const fitSize = (text: string, maxWidth: number, base: number, charWidth: number) =>
   Math.min(base, maxWidth / (text.length * charWidth));
 
+const OWN_PILGRIM = new Set<SkyArt>(['venus']);
+
 export function sphereFace(p: SkyPlate, st: SkyState | null): string {
   const id = uid('sp');
   let o = svgOpen(`${p.name}, ${p.alt}`);
@@ -635,7 +673,7 @@ export function sphereFace(p: SkyPlate, st: SkyState | null): string {
   o += `<g clip-path="url(#${id})">${ART[p.art](140, 176, st)}</g>`;
   const overlay = OVERLAY[p.art];
   if (overlay) o += `<g clip-path="url(#${id})">${overlay(140, 176)}</g>`;
-  o += pilgrim(140, 274, GOLD, 1.1);
+  if (!OWN_PILGRIM.has(p.art)) o += pilgrim(140, 274, GOLD, 1.1);
   let ticks = '';
   for (let i = 0; i < 72; i++) {
     const a = (i / 72) * Math.PI * 2;

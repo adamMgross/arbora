@@ -217,19 +217,33 @@ const BASE_ART: Record<(typeof WOOD_ART_BASE)[number], () => string> = {
   },
   aspen() {
     const r = rng(89);
-    const xs = [46, 74, 104, 140, 176, 206, 234];
-    let o = `<path d="M30,374 Q140,386 250,374" fill="none" stroke="${G}" stroke-width="1.2" opacity=".9"/>`;
+    const ground = 334;
+    const xs = [44, 66, 92, 116, 140, 164, 190, 214, 236];
+    let o = `<path d="M30,236 L64,176 L84,198 L118,140 L150,190 L178,160 L214,214 L250,184 V${ground} H30Z" fill="${INK_LIGHT}" opacity=".9"/>`;
+    o += `<path d="M106,160 L118,140 L130,158 M170,170 L178,160 L188,172" fill="none" stroke="${MOON}" stroke-width="1" opacity=".5"/>`;
+    o += `<path d="M30,${ground} H250 V392 H30Z" fill="${INK_DEEP}"/><circle cx="140" cy="372" r="26" fill="${GP}" opacity=".12"/><circle cx="140" cy="372" r="8" fill="${GP}" opacity=".5"/>`;
+    let root = 'M30,372';
+    for (let x = 44; x <= 250; x += 14) root += ` Q${x - 7},${f(366 + r() * 10)} ${x},${f(370 + r() * 4)}`;
+    o += `<path d="${root}" fill="none" stroke="${G}" stroke-width="1.8"/>`;
+    for (const x of xs) {
+      for (const side of [-1, 1])
+        o += `<path d="M${x},${ground} q${f(side * (3 + r() * 3))},12 ${f(side * (8 + r() * 6))},${f(34 + r() * 4)}" fill="none" stroke="${G}" stroke-width=".8" opacity=".85"/>`;
+      for (let k = 0; k < 4; k++)
+        o += `<path d="M${f(x - 10 + k * 7)},374 l${f(-2 + r() * 4)},${f(5 + r() * 10)}" stroke="${G}" stroke-width=".5" opacity=".5"/>`;
+    }
     xs.forEach((x, j) => {
-      o += `<path d="M${x},372 Q${f(x + (j % 2 ? 8 : -8))},392 ${f(x + (j % 2 ? -14 : 14))},404" fill="none" stroke="${G}" stroke-width=".8" opacity=".7"/>`;
+      o += birch(x, 96 + ((j * 29) % 46), ground, 7 + (j % 3) * 2);
     });
-    o += `<path d="M24,404 Q140,396 256,404" fill="none" stroke="${G}" stroke-width="1" stroke-dasharray="3 3" opacity=".7"/>`;
-    xs.forEach((x, j) => {
-      o += birch(x, 110 + ((j * 37) % 40), 372, 9 + (j % 3) * 2);
-    });
-    for (let i = 0; i < 90; i++)
-      o += `<circle cx="${f(30 + r() * 220)}" cy="${f(60 + r() * 110)}" r="${f(1.6 + r() * 1.6)}" fill="${G}" opacity="${f(0.35 + r() * 0.5)}"/>`;
-    for (let i = 0; i < 14; i++)
-      o += `<circle cx="${f(30 + r() * 220)}" cy="${f(180 + r() * 160)}" r="1.6" fill="${G}" opacity=".6"/>`;
+    for (let i = 0; i < 260; i++) {
+      const x = 30 + r() * 220;
+      const y = 56 + r() * 92 + Math.abs(x - 140) * 0.18;
+      o += `<circle cx="${f(x)}" cy="${f(y)}" r="${f(1.8 + r() * 1.8)}" fill="${r() < 0.7 ? G : GP}" opacity="${f(0.45 + r() * 0.5)}"/>`;
+    }
+    for (let i = 0; i < 12; i++)
+      o += `<circle cx="${f(36 + r() * 208)}" cy="${f(180 + r() * 150)}" r="1.7" fill="${G}" opacity=".7"/>`;
+    const strike = (x: number, y: number) =>
+      `<path d="M${x - 5},${y - 4} L${x + 1},${y} L${x - 5},${y + 4}Z" fill="${INK}"/><path d="M${x - 1},${y + 3} q-2,5 0,7 q2,-2 0,-7z" fill="${GP}"/>`;
+    o += strike(116, 250) + strike(119, 150) + strike(112, 352);
     return o;
   },
   bristlecone() {

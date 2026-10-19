@@ -2,14 +2,8 @@ import type { YearSeasonData } from '../../lib/decks';
 import { esc, f, polar, rng, uid } from '../../lib/svg';
 import { needleAngle, windowArcStart } from '../../lib/year-windows';
 import { svgOpen } from '../book';
-
-const WASHI = 'var(--art-washi)';
-const SUMI = 'var(--art-sumi)';
-const RED = 'var(--art-red)';
-const SERIF = "'Cormorant Garamond',Georgia,serif";
-const SMALLCAPS = "'Cormorant SC',Georgia,serif";
-
-const seasonVar = (key: string, part: string) => `var(--art-${key}-${part})`;
+import { hillPath, RED, seasonVar, SERIF, SMALLCAPS, SUMI, WASHI } from './ink';
+import { VIGNETTES } from './windows';
 
 function wrapWords(text: string, max: number): string[] {
   const lines: string[] = [];
@@ -24,27 +18,17 @@ function wrapWords(text: string, max: number): string[] {
   return lines;
 }
 
-function hillPath(y: number, amp: number, period: number, phase: number): string {
-  let d = `M18,${f(y)}`;
-  for (let x = 18; x <= 262; x += 8) d += ` L${x},${f(y + Math.sin(x / period + phase) * amp)}`;
-  return `${d} V318 H18 Z`;
-}
-
 export interface WindowCard {
   index: number;
   name: string;
   season: YearSeasonData;
 }
 
-export function windowFace(card: WindowCard): string {
-  const { index, name, season } = card;
-  const key = season.key;
-  const id = uid('ca');
+function landscape(index: number, key: string): string {
   const r = rng(index * 7 + 3);
   const ph = r() * 6;
   const ph2 = r() * 6;
-  let o = svgOpen(`Window ${index + 1}: ${name}`);
-  o += `<defs><clipPath id="${id}"><rect x="18" y="18" width="244" height="300"/></clipPath></defs><rect width="280" height="480" rx="10" fill="${WASHI}"/><g clip-path="url(#${id})">`;
+  let o = '';
   o += `<rect x="18" y="18" width="244" height="300" fill="${seasonVar(key, 'sky')}"/><circle cx="${f(60 + r() * 110)}" cy="${f(84 + r() * 50)}" r="30" fill="${seasonVar(key, 'sun')}"/>`;
   if (key === 'ember') {
     for (let b = 0; b < 3; b++)
@@ -64,6 +48,16 @@ export function windowFace(card: WindowCard): string {
     for (let fl = 0; fl < 70; fl++)
       o += `<circle cx="${f(20 + r() * 240)}" cy="${f(240 + r() * 76)}" r="${f(1.2 + r() * 1.6)}" fill="${r() < 0.6 ? seasonVar(key, 'arc') : seasonVar(key, 'sun')}"/>`;
   }
+  return o;
+}
+
+export function windowFace(card: WindowCard): string {
+  const { index, name, season } = card;
+  const key = season.key;
+  const id = uid('ca');
+  let o = svgOpen(`Window ${index + 1}: ${name}`);
+  o += `<defs><clipPath id="${id}"><rect x="18" y="18" width="244" height="300"/></clipPath></defs><rect width="280" height="480" rx="10" fill="${WASHI}"/><g clip-path="url(#${id})">`;
+  o += VIGNETTES[index]?.() ?? landscape(index, key);
   o += `</g><rect x="18" y="18" width="244" height="300" fill="none" stroke="${SUMI}" stroke-width="1"/>`;
   o += `<rect x="228" y="30" width="28" height="28" rx="2" fill="${RED}"/><text x="242" y="49" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="15" fill="${WASHI}">${index + 1}</text>`;
   wrapWords(name, 22).forEach((l, i) => {

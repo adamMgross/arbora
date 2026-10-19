@@ -10,7 +10,7 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 **What works, verified 2026-10-19:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 119 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,832 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 27.6 KB (Sky, 62 drawings), 4.4 KB (Year) gzipped, loaded only on their pages.
+**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,841 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 27.6 KB (Sky, 62 drawings), 4.4 KB (Year) gzipped, loaded only on their pages.
 
 **Blockers:** none. Orphaned pre-rewrite commits on GitHub still hold personal details until the move to a fresh repository (`arb-54cu`, decision 0007). `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
@@ -148,4 +148,12 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** naming all 36 figures on the dome buried it in labels. The Little Cloud's "candle seen through horn" was cut, because that comparison was made through a telescope. The Orphic tablet's translation is credited to Harrison's book, not to Gilbert Murray, because the page does not name the translator. Three lore claims rest on a single source: the Ram's link to Amun (Wikipedia), the Great Year's Timaeus line number, and "Scots" read as Irishmen in the Far Traveler.
 
 **Left unfinished:** the weakest drawings are the human figures (the Kneeler, the Serpent-Bearer, the Hero, the Maiden), the Whale's body, the Charioteer's horses, and the Great Year, which reads as a diagram. They are first editions for the picture pass. The new plates need the owner's read for tone (`arb-y8k3`).
+
+### 2026-10-19 (a picture language for each deck, with one test card each)
+
+**Done:** at the owner's go-ahead, wrote a picture language for each deck into `DESIGN.md` (Deck Pictures): the Wood's bands of a tree, the Sky's above and below with the pilgrim acting out each plate's set-down and receive, and the Year's window with the season's palette, the sun at the term's height, the place, the named event, and a mark of the old Japanese kō. Redrew one test card per deck to it: the Aspen, Venus, and window 51 (persimmons, with the kō's crickets at the door). The Year's windows can now each carry their own picture (`src/scenes/year/windows.ts`, keyed by window number), falling back to the season landscape, over shared helpers in `src/scenes/year/ink.ts`. A before-and-after page for the owner's phone is at https://claude.ai/artifact/6et9u52aJGVqsjx8HU6U14.
+
+**Findings:** the shared hill shape stopped four pixels short of every Year card's right edge, leaving a sliver of sky. It now reaches the frame. Venus's planet symbol overlay was dropped, since the lit ring marks the heaven and the language carries no glyphs. The stylesheet gained one token, `--art-fruit`.
+
+**Left unfinished:** the owner's read of the three test cards. After that, the rest of each deck gets drawn to its language, the Sky's pilgrim moves into every plate's drawing (`OWN_PILGRIM` in `src/scenes/sky/art.ts` lists the plates that already draw their own), and the Year's windows gain a place each.
 
