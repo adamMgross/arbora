@@ -18,7 +18,7 @@ function build(dir: string) {
 
 function freshCopy() {
   const dir = mkdtempSync(join(tmpdir(), 'arbora-integrity-'));
-  for (const entry of ['package.json', 'astro.config.mjs', 'tsconfig.json', 'src', 'public']) {
+  for (const entry of ['package.json', 'astro.config.mjs', 'tsconfig.json', 'src', 'public', 'integrations']) {
     cpSync(join(repo, entry), join(dir, entry), { recursive: true });
   }
   symlinkSync(join(repo, 'node_modules'), join(dir, 'node_modules'));

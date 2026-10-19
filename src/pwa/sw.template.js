@@ -1,32 +1,6 @@
-const CACHE_NAME = 'arbora-v2';
+const CACHE_NAME = '__CACHE_NAME__';
 
-const PRECACHE_URLS = [
-    'today.html',
-    'index.html',
-    'cosmology.html',
-    'principles.html',
-    'practices.html',
-    'rituals.html',
-    'canon.html',
-    'canon-philosophy.html',
-    'canon-stoics.html',
-    'canon-fragments.html',
-    'canon-daoism.html',
-    'canon-buddhism.html',
-    'canon-jewish-wisdom.html',
-    'canon-mystics.html',
-    'canon-poetry.html',
-    'canon-prayers.html',
-    'canon-ancestral.html',
-    'canon-science.html',
-    'canon-companions.html',
-    'canon-upanishads.html',
-    'tree.html',
-    'src/css/style.css',
-    'favicon.svg',
-    'manifest.json',
-    'robots.txt'
-];
+const PRECACHE_URLS = __PRECACHE_URLS__;
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
@@ -43,7 +17,7 @@ self.addEventListener('activate', function(event) {
         caches.keys().then(function(cacheNames) {
             return Promise.all(
                 cacheNames.filter(function(name) {
-                    return name !== CACHE_NAME;
+                    return name.startsWith('arbora-') && name !== CACHE_NAME;
                 }).map(function(name) {
                     return caches.delete(name);
                 })

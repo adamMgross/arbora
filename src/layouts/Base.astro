@@ -2,6 +2,7 @@
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteNav from '../components/SiteNav.astro';
 import '../styles/index.css';
+import { siteBaseUrl } from '../lib/pages';
 
 interface Props {
   title: string;
@@ -14,6 +15,7 @@ interface Props {
 const defaultFontsHref =
   'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap';
 const { title, description, ogTitle, ogDescription, fontsHref = defaultFontsHref } = Astro.props;
+const ogImage = new URL('og-image.png', siteBaseUrl(Astro.site, import.meta.env.BASE_URL)).href;
 ---
 
 <!doctype html>
@@ -31,7 +33,7 @@ const { title, description, ogTitle, ogDescription, fontsHref = defaultFontsHref
     <meta property="og:title" content={ogTitle}>
     <meta property="og:description" content={ogDescription}>
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arbora.site/og-image.png">
+    <meta property="og:image" content={ogImage}>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

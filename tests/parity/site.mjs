@@ -26,7 +26,7 @@ export function prepareSite(ref) {
     execFileSync('npx', ['astro', 'build'], {
       cwd: dir,
       stdio: 'inherit',
-      env: { ...process.env, BASE_PATH: '/', SITE: 'http://127.0.0.1' },
+      env: { ...process.env, BASE_PATH: '/', SITE: 'https://arbora.site' },
     });
   }
   return dist;
@@ -58,9 +58,13 @@ const types = {
   '.woff2': 'font/woff2',
 };
 
-export function serve(dir, port = 0) {
+export function serve(dir, port = 0, prefix = '') {
   const server = createServer((req, res) => {
-    const pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    let pathname = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    if (prefix) {
+      if (pathname !== prefix && !pathname.startsWith(`${prefix}/`)) return void res.writeHead(404).end('not found');
+      pathname = pathname.slice(prefix.length) || '/';
+    }
     let file = normalize(join(dir, pathname));
     if (!file.startsWith(dir)) return void res.writeHead(403).end();
     if (existsSync(file) && statSync(file).isDirectory()) file = join(file, 'index.html');

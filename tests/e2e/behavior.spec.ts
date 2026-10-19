@@ -13,13 +13,13 @@ async function openToday(page: Page, at: Date = SPRING_MORNING) {
     };
   });
   await page.clock.setFixedTime(at);
-  await page.goto('/today.html');
+  await page.goto('today.html');
 }
 
 test.describe('navigation', () => {
   test('mobile menu toggle opens and closes the link list and reports aria-expanded', async ({ page }) => {
     await page.setViewportSize({ width: 375, height: 800 });
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     const toggle = page.locator('.nav-toggle');
     const links = page.locator('.nav-links');
     await toggle.click();
@@ -31,17 +31,17 @@ test.describe('navigation', () => {
   });
 
   test('the nav blurs the content scrolled beneath it', async ({ page }) => {
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     await expect(page.locator('.site-nav')).toHaveCSS('backdrop-filter', /blur\(16px\)/);
   });
 
   test('canon sub-pages highlight only the Canon link as active', async ({ page }) => {
-    await page.goto('/canon-stoics.html');
+    await page.goto('canon-stoics.html');
     await expect(page.locator('.nav-links a.active')).toHaveText(['Canon']);
   });
 
   test('the nav hides when scrolling down and returns when scrolling up', async ({ page }) => {
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     const nav = page.locator('.site-nav');
     await page.evaluate(() => window.scrollTo(0, 1500));
     await expect(nav).toHaveClass(/scrolled/);
@@ -53,7 +53,7 @@ test.describe('navigation', () => {
 
 test.describe('content pages', () => {
   test('the scroll progress bar tracks position down to full width at the bottom', async ({ page }) => {
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     const bar = page.locator('.scroll-progress');
     await expect(bar).toHaveCSS('width', '0px');
     await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
@@ -62,7 +62,7 @@ test.describe('content pages', () => {
 
   test('every blockquote gets a copy button that confirms after copying', async ({ page, context }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-    await page.goto('/canon-stoics.html');
+    await page.goto('canon-stoics.html');
     const quotes = page.locator('.page-content blockquote');
     const count = await quotes.count();
     expect(count).toBeGreaterThan(5);
@@ -76,14 +76,14 @@ test.describe('content pages', () => {
   });
 
   test('headings are revealed once scrolled into view', async ({ page }) => {
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     const last = page.locator('.page-content h2').last();
     await last.scrollIntoViewIfNeeded();
     await expect(last).toHaveClass(/revealed/);
   });
 
   test('focusing a tree branch link reveals its leaf labels and blurring hides them', async ({ page }) => {
-    await page.goto('/tree.html');
+    await page.goto('tree.html');
     const branch = page.locator('.tree-branch').first();
     const leaf = branch.locator('.leaf-label').first();
     await expect(leaf).toHaveCSS('opacity', '0');
@@ -94,7 +94,7 @@ test.describe('content pages', () => {
   });
 
   test('the offline bar appears when the browser goes offline', async ({ page, context }) => {
-    await page.goto('/cosmology.html');
+    await page.goto('cosmology.html');
     const bar = page.locator('.offline-bar');
     await expect(bar).not.toHaveClass(/visible/);
     await context.setOffline(true);
