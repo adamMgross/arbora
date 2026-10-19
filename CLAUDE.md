@@ -1,6 +1,6 @@
 # Arbora
 
-A syncretic, non-theistic religion of interconnection, deep time, and presence, published as a static Astro site on GitHub Pages. The one rule that matters most: curate from existing traditions, never invent. Read `CHARTER.md` Part 0 and Part 2 before touching any content.
+A syncretic, non-theistic religion of interconnection, deep time, and presence, published as a static Astro site on GitHub Pages. The one rule that matters most: curate from existing traditions, never invent. If the owner's local `CHARTER.md` exists, read its Part 0 and Part 2 before touching any content. It is gitignored and absent from fresh clones, so otherwise work from the content rules in `README.md` and `VISION.md`.
 
 This repo follows `~/.claude/CLAUDE.md` in full. This file adds only what is specific to this repo and not derivable from the code.
 
@@ -12,7 +12,7 @@ This repo follows `~/.claude/CLAUDE.md` in full. This file adds only what is spe
 4. `docs/decisions/README.md`: index of decision records. Read one before revisiting the choice it records.
 5. `tk ready`: what to work on.
 
-Also: `CHARTER.md` (content authority) and `DESIGN.md` (design language, where `src/styles/tokens.css` wins on any value).
+Also: `DESIGN.md` (design language, where `src/styles/tokens.css` wins on any value).
 
 ## Commands
 
@@ -59,7 +59,7 @@ Breaking one of these is a defect, not a tradeoff.
 
 ## Traps
 
-- `CHARTER.md` holds personal details about the owner. It is not part of the build, so it is not published. Do not copy from it into site content, commit messages, or tickets beyond what the content rules need.
+- `CHARTER.md` holds personal details about the owner. It is gitignored and was purged from history on 2026-10-18 (`docs/decisions/0007`). Never track it, stage it with `git add -f`, or copy biographical details from it into site content, commits, tickets, or docs.
 - `.parity/` holds the recorded font HAR and built copies of old refs. It is gitignored. Delete `.parity/fonts.har` to re-record, then rerun the baseline self-comparison before trusting any result.
 - Parity candidates must be built with `npm run build:parity`. A different `SITE` changes the `og:image` and fails the head check.
 - Today's output depends on the local date, the hour, and `Math.random`. The harness freezes all three. Do not compare it by hand.

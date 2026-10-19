@@ -8,3 +8,4 @@
 | 0004 | Authored facts live in validated content collections | accepted |
 | 0005 | The stylesheet is plain global CSS from owner files in one explicit order | accepted |
 | 0006 | The service worker is generated from the build output | accepted |
+| 0007 | CHARTER.md is kept out of the repository and its history | accepted |

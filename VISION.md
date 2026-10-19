@@ -2,7 +2,7 @@
 
 ## Problem
 
-Arbora is a syncretic, non-theistic religion of interconnection, deep time, and presence, built by curating existing ancient traditions rather than inventing new text. It needs a home that can be read daily on a phone, that grows without its structure decaying, and that costs nothing to host. The founding context and the content rules live in `CHARTER.md`, which is the authority on what belongs in the canon.
+Arbora is a syncretic, non-theistic religion of interconnection, deep time, and presence, built by curating existing ancient traditions rather than inventing new text. It needs a home that can be read daily on a phone, that grows without its structure decaying, and that costs nothing to host. The founding context and the content rules live in the owner's local `CHARTER.md`, which is not in this repository (`docs/decisions/0007`). The rules that matter for content are restated below and in the README.
 
 The first version proved the ideas as 21 hand-written pages. Its structure did not scale: the shell was copied into every page, the same quotation and invocation text existed in several places and had drifted, and the page list was kept by hand in four files. The restructure recorded in `STATE.md` fixes the structure and leaves the content and the look as they were.
 
@@ -17,7 +17,7 @@ The owner, reading mostly on a phone in the spare minutes of an ordinary day, an
 3. The site works offline after the first visit. Pinned by `tests/e2e/pwa.spec.ts`.
 4. The site is static files on GitHub Pages with no server. Pinned by `npm run ci`, which builds and verifies the deployed base path.
 5. Every URL that existed before the restructure still exists. Pinned by the route check in `npm run parity`.
-6. The canon never closes, but stays lean: three tiers, curated not invented, ancient traditions primary (`CHARTER.md` Part 0). Reviewed by the owner, not by a test.
+6. The canon never closes, but stays lean: three tiers, curated not invented, ancient traditions primary. Reviewed by the owner, not by a test.
 
 ## Craft goals
 
@@ -34,8 +34,8 @@ Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw an
 
 - No new features during the restructure. The owner has none queued.
 - No server code, accounts, or database. Saved readings live in the reader's browser only.
-- No legalistic or prescriptive content. Practices stay loose and invocational (`CHARTER.md` Part 0).
-- No secular-naturalism framing. Ancient traditions are primary and modern writers are secondary (`CHARTER.md` Part 0).
+- No legalistic or prescriptive content. Practices stay loose and invocational.
+- No secular-naturalism framing. Ancient traditions are primary and modern writers are secondary.
 
 ## Success criteria
 
@@ -58,4 +58,4 @@ Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw an
 - Content lives in collections validated at build time (`docs/decisions/0004`).
 - The stylesheet is plain global CSS from owner files in one order (`docs/decisions/0005`).
 - The service worker is generated at build time (`docs/decisions/0006`).
-- `CHARTER.md` stays at the repository root as the agent dispatch document. The build does not publish it.
+- `CHARTER.md` is a local, gitignored file. It is never committed, and it is absent from the repository and its history (`docs/decisions/0007`).

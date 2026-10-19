@@ -31,7 +31,7 @@ docs/decisions/ why things are the way they are
 
 ## For agents and collaborators
 
-Read `CLAUDE.md` first. It gives the reading order, the commands, and the traps. `CHARTER.md` is the founding document and the authority on what belongs in the canon.
+Read `CLAUDE.md` first. It gives the reading order, the commands, and the traps. The owner keeps a founding document, `CHARTER.md`, locally and out of the repository. If it is present on your machine, read it before touching content. If not, the rules below are the working summary.
 
 Key rules for content:
 

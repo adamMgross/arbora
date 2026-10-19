@@ -5,3 +5,4 @@ dist
 .parity
 test-results
 playwright-report
+/CHARTER.md

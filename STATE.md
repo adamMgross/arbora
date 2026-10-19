@@ -72,3 +72,11 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Done:** the owner made the repository public, closing `arb-5mng`. Verified with `gh repo view`. `origin/main` is still at `1920c5a`, so the public remote holds the original site, including `CHARTER.md` at the root.
 
 **Left unfinished:** Pages is not enabled and nothing is pushed.
+
+### 2026-10-18 (CHARTER.md purged from history)
+
+**Done:** at the owner's request, removed `CHARTER.md` from every commit with `git filter-branch`, kept a copy on the owner's machine, and gitignored it (decision 0007). A bundle of the pre-rewrite history is outside the repository on this machine only. All commit hashes changed, including the `baseline/pre-astro` tag, so hashes quoted in earlier entries no longer resolve. The rewritten `main` was force-pushed with `[skip ci]` so the site did not deploy.
+
+**Findings:** older site copy in history, and two lines in the current content (`src/content/canon/ancestral.mdx` and `src/content/today.yml`), name the family's towns of origin, and one old version of `rituals.html` names the owner's neighborhood. Whether to reword them is the owner's call.
+
+**Left unfinished:** the Deploy workflow has not run. `arb-hk2f` stays open until the first deploy is green. `arb-eq17` tracks a public content guide.
