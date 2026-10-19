@@ -20,7 +20,7 @@ import {
 } from '../../lib/year-windows';
 import { byId, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
-import { wait } from '../motion';
+import { reveal, wait } from '../motion';
 import { ringSvg, windowFace, yearBack, type WindowCard } from './art';
 
 const KEY = 'arbora-year';
@@ -38,9 +38,9 @@ const STAGE = `
 <div class="stage-top"><p class="stage-cue" id="year-cue">The world's window is marked in red.</p></div>
 <div class="year-layout">
   <div class="ring" id="year-ring"></div>
+  <div class="actions year-actions"><button class="sbtn" id="year-draw" type="button">Turn the needle</button><button class="sbtn quiet" id="year-open" type="button" disabled>Open the book</button><button class="sbtn quiet" id="year-review" type="button">Review the season just ended</button></div>
   <div class="pair" id="year-pair"></div>
 </div>
-<div class="actions"><button class="sbtn" id="year-draw" type="button">Turn the needle</button><button class="sbtn quiet" id="year-open" type="button" disabled>Open the book</button><button class="sbtn quiet" id="year-review" type="button">Review the season just ended</button></div>
 <p class="closed" id="year-closed" hidden></p>
 <div id="year-book" class="out"></div>
 <div class="notebook" id="year-notebook"></div>
@@ -146,6 +146,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     h += `<p class="bk-note">In Japan's old calendar, the world's window is called “${esc(data.ko[today]!)}.”${others.length ? ` A year ago in this window you wrote: “${esc(others[others.length - 1]!.text)}”` : ''}</p>`;
     h += question('Sit with', 'What in you belongs to the window you drew, while the world moves through this one?');
     book.innerHTML = `${h}</div>`;
+    reveal(book);
   };
 
   const closedState = () => {
@@ -163,6 +164,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     const delta = (((needleAngle(pick) - current) % 360) + 360) % 360;
     rotation += 720 + delta;
     setNeedle();
+    reveal(ring);
     book.innerHTML = '';
     void wait(2900).then(() => {
       drawn = pick;
@@ -172,6 +174,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       openButton.disabled = false;
       busy = false;
       closedState();
+      reveal(pair.lastElementChild!, 'nearest');
     });
   };
 
@@ -193,6 +196,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     const passage = ended.passages[0]!;
     h += `</div><p class="bk-note">At the equinox or solstice that closes a season, the ring lights it and the notebook opens every page of it.</p>${passageHtml(passage)}`;
     notebook.innerHTML = h;
+    reveal(notebook);
   };
 
   drawRing(null);

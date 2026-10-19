@@ -4,13 +4,13 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete and the three reflection decks finished locally, not pushed. Hosting is the next step and is owner-blocked.
+**Phase:** Restructure complete and the three reflection decks finished and tailored for phones locally, not pushed. Hosting is the next step and is owner-blocked.
 
 **Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled. `main` is ahead of `origin/main` by the restructure, the onboarding, the CHARTER removal, and the decks, and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
 
-**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 114 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 32 end-to-end tests at both base paths. The three decks run in headless Chromium at 1280 and 400 px wide in both color schemes with no console errors, no page errors, and no horizontal overflow.
+**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 114 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 57 end-to-end tests at both base paths, 32 at desktop size and 25 in the `phone` project at an iPhone 15 viewport. The three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.6 KB gzipped (accepted by the owner, ceiling now 12 KB), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
+**Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.9 KB gzipped (ceiling 12 KB, about 60 bytes of room), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
 
 **Blockers:** `arb-hk2f`, the owner step that enables Pages and approves the first push. `arb-32io` decides the public address.
 
@@ -21,7 +21,8 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 | Assumption | Confidence |
 |---|---|
 | The Deploy workflow runs green on GitHub, including `playwright install --with-deps` and the pinned action majors | low, it has never run (`arb-nlmj`) |
-| Safari and Firefox render the site as Chromium does, including `var()` inside SVG presentation attributes and `transform-box: fill-box` on the Year's needle | low, only Chromium is exercised (`arb-589u`) |
+| Safari and Firefox render the site as Chromium does, including `var()` inside SVG presentation attributes and `transform-box: fill-box` on the Year's needle | medium for the decks in WebKit, checked by hand on 2026-10-18 with Playwright's WebKit build, low for Firefox and for the other pages (`arb-589u`) |
+| A real iPhone behaves like the WebKit build at an iPhone viewport, including `svh` units, the 3D card flip, smooth scrolling, and the tap feedback | medium, not tried on a device |
 | Older Safari still gets a nav blur, since the minifier keeps only the unprefixed `backdrop-filter` | medium, depends on the build's browser targets |
 | Cache-first HTML shows a new deploy one navigation late | high, read from `src/pwa/sw.template.js` |
 | Parity screenshots are stable across machines | medium, shown on this machine with recorded fonts only |
@@ -106,3 +107,12 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** the Sky's reach for a look shrank from 80 to 64 dome units so that, with sixteen figures up, the dark between them still answers with a mystery. The canon's Marcus Aurelius passage cites V.24 for what Long numbers XII.32 (`arb-w81y`).
 
 **Left unfinished:** nothing is pushed. The owner's tone read (`arb-y8k3`) and the Native-reader review (`arb-kbpk`) are for people, not code.
+
+### 2026-10-18 (the decks on a phone)
+
+**Done:** the owner said the oracle pages will be opened almost only on phones, in Safari and Chrome on iOS. An audit in WebKit and Chromium on five phone profiles found results landing off screen, plates and labels too small to read, a landscape dome taller than the screen, sticky hover colors, and an orphaned card on the hub. All are fixed and recorded in `docs/decisions/0011`: decks run edge to edge, each tap brings its result into view, the Wood spreads its plates into a sideways row to look at, the Sky's plate and dome labels are larger, the Year's buttons sit between the ring and the pair, and the hub stacks one deck to a row. A `phone` Playwright project now runs the deck spec and a new `tests/e2e/phone.spec.ts` at an iPhone 15 viewport.
+
+**Findings:** long dome labels near the zenith fit on neither side of their star and were placed without checking for overlap. Placement now takes the spot with the least overlap among both sides and a clamped position, which also clears overlaps on desktop. The stylesheet reached exactly 12,000 bytes gzipped and was trimmed to 11,942, so the 12 KB ceiling has almost no room left.
+
+**Left unfinished:** WebKit is not in CI (`arb-589u`), and nothing was tried on a real device. In phone landscape the Wood's walk takes a scroll.
+

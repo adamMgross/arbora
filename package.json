@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "vitest run --project unit",
-    "test:e2e": "playwright test --project=e2e",
+    "test:e2e": "playwright test --project=e2e --project=phone",
     "parity": "node tests/parity/run.mjs",
     "format:check": "prettier --no-error-on-unmatched-pattern --check 'tests/**/*.{ts,mjs}' 'src/**/*.css' 'src/**/*.ts' 'integrations/*.ts' 'scripts/*.mjs' '*.{json,mjs,ts}'",
     "quality": "npm run format:check && npm run check && npm test && npm run build && npm run verify:dist && npm run test:integration && npm run test:e2e",
@@ -18,7 +18,7 @@
     "verify:dist": "node scripts/verify-dist.mjs dist",
     "build:prod": "SITE=https://adammgross.github.io BASE_PATH=/arbora/ astro build",
     "verify:prod": "node scripts/verify-dist.mjs dist /arbora/",
-    "test:e2e:prod": "E2E_BASE_PATH=/arbora/ playwright test --project=e2e",
+    "test:e2e:prod": "E2E_BASE_PATH=/arbora/ playwright test --project=e2e --project=phone",
     "ci": "npm run quality && npm run build:prod && npm run verify:prod && npm run test:e2e:prod"
   },
   "devDependencies": {

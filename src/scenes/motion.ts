@@ -22,3 +22,9 @@ export function animate(duration: number, frame: (progress: number) => void): Pr
     requestAnimationFrame(step);
   });
 }
+
+export function reveal(el: Element, block: ScrollLogicalPosition = 'start'): void {
+  const r = el.getBoundingClientRect();
+  const settled = r.top >= 0 && (r.bottom <= innerHeight || (block === 'start' && r.top < innerHeight / 3));
+  if (!settled) el.scrollIntoView({ block, behavior: reducedMotion() ? 'auto' : 'smooth' });
+}

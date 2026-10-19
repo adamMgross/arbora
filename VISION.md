@@ -12,7 +12,7 @@ The owner, reading mostly on a phone in the spare minutes of an ordinary day, an
 
 ## Utility goals
 
-1. Every page is readable and navigable on a phone. Touch targets are at least 44 px and typography holds at mobile sizes. Not yet pinned by a test.
+1. Every page is readable and navigable on a phone. Touch targets are at least 44 px and typography holds at mobile sizes. The oracle decks are opened almost only on phones, in Safari and Chrome on iOS, so they are designed for the phone first (`docs/decisions/0011`). Pinned for the decks by the `phone` project in `playwright.config.ts`, not yet for the other pages.
 2. Today shows a morning invocation, a reading, and an evening reflection that are the same for a given day and different on the next, and can be shuffled and saved. Pinned by `tests/e2e/behavior.spec.ts` and `tests/unit/daily.test.ts`.
 3. The site works offline after the first visit. Pinned by `tests/e2e/pwa.spec.ts`.
 4. The site is static files on GitHub Pages with no server. Pinned by `npm run ci`, which builds and verifies the deployed base path.
@@ -29,7 +29,7 @@ The owner's portfolio treats beauty and economy as deliverables (`~/projects/por
 3. **Components that own their styles and logic.** Each concern has one file with a stated owner, pure logic sits apart from DOM code, and the cascade order is written down in one place.
 4. **Room for rich graphics.** New canvas, WebGL, or SVG scenes can be added without reworking the shell, the styles, or the build. The three decks are the first, as lazily loaded scene modules.
 
-Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw and 8.3 KB gzipped, script 7.6 KB raw and 3.1 KB gzipped, heaviest page `today.html` 40.7 KB raw and 14.0 KB gzipped with HTML only. The agent proposed these ceilings, and on 2026-10-18 the owner accepted the stylesheet at 11.6 KB gzipped once the decks joined it: script stays under 10 KB gzipped with no runtime dependency, and the stylesheet stays under 12 KB gzipped. A graphics scene loads only on the pages that use it.
+Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw and 8.3 KB gzipped, script 7.6 KB raw and 3.1 KB gzipped, heaviest page `today.html` 40.7 KB raw and 14.0 KB gzipped with HTML only. The agent proposed these ceilings, and on 2026-10-18 the owner accepted the stylesheet at 11.6 KB gzipped once the decks joined it, and it measured 11.9 KB after the phone layout: script stays under 10 KB gzipped with no runtime dependency, and the stylesheet stays under 12 KB gzipped. A graphics scene loads only on the pages that use it.
 
 ## Non-goals
 

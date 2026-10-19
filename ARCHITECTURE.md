@@ -103,6 +103,7 @@ The three decks are the first scenes, and they set the shape (`docs/decisions/00
 - `env` carries the clock, the random source, the storage, and the location lookup. Nothing in a scene calls `new Date()`, `Math.random`, or `localStorage` directly, so the end-to-end tests install a clock and a seeded random.
 - Colors are CSS custom properties referenced with `var()` inside the SVG strings and defined per deck in `Deck.css`. Script never carries a color, and a color-scheme change re-resolves them without script.
 - Motion respects `prefers-reduced-motion` through `src/scenes/motion.ts` (`wait`, `animate`, `reducedMotion`). CSS animations for the decks are switched off under the same query in `Deck.css`.
+- Phones are the design target and the desktop layout is the variant (`docs/decisions/0011`). The phone rules sit in the 640 px query at the end of `Deck.css`. After each tap a scene brings what it produced into view with `reveal` from `motion.ts`, which scrolls only when the element is off screen.
 - Drawing is pure: `art.ts` turns values into SVG strings and is also imported at build time by `DeckBacks.astro` to render the card backs on the hub.
 
 ## Shape
@@ -123,6 +124,7 @@ Invariants a reviewer can check. Where the code does not hold one yet, the ticke
 12. **Journals accrete.** `parseJournal` keeps unknown fields and reads missing ones as null. Pinned by `tests/unit/journal.test.ts`.
 13. **A card's art and quotations exist.** The art enum and the passage references are validated at build time. Pinned by `tests/integration/content-integrity.test.ts`.
 14. **One draw a day, per deck, per device.** A second walk, ascent, or needle turn on the same local date is refused, and the deck reopens the next day. Pinned by `tests/e2e/decks.spec.ts`.
+15. **The decks work on a phone.** At an iPhone 15 viewport every deck runs edge to edge with no side scroll, touch targets are at least 44 px, and the result of each tap comes into view. Pinned by the `phone` project, which runs `tests/e2e/decks.spec.ts` and `tests/e2e/phone.spec.ts`.
 
 Known drift from the Shape:
 

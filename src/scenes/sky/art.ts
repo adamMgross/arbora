@@ -732,7 +732,7 @@ function arcPath(list: Array<{ alt: number; az: number }>, minAlt: number): stri
     .join(' ');
 }
 
-export function domeSvg(st: SkyState, names: Record<string, string>, halo: [number, number]): string {
+export function domeSvg(st: SkyState, names: Record<string, string>, halo: [number, number], labelSize = 10): string {
   const { cx, cy, r: R, width, height } = DOME;
   let o = `<svg viewBox="0 0 ${width} ${height}" class="dome-svg" role="img" aria-label="The heavens over California now, drawn as an atlas. Tap to lift your eyes.">`;
   const ink = st.day ? DAY_INK : GOLD;
@@ -776,23 +776,33 @@ export function domeSvg(st: SkyState, names: Record<string, string>, halo: [numb
     ['W', 270],
   ] as Array<[string, number]>) {
     const a = (deg * Math.PI) / 180;
-    o += `<text x="${f(cx - (R + 16) * Math.sin(a))}" y="${f(cy - (R + 16) * Math.cos(a) + 4)}" text-anchor="middle" font-family="${SMALLCAPS}" font-weight="600" font-size="12" letter-spacing="2" fill="${ink}">${letter}</text>`;
+    o += `<text x="${f(cx - (R + 16) * Math.sin(a))}" y="${f(cy - (R + 16) * Math.cos(a) + 4)}" text-anchor="middle" font-family="${SMALLCAPS}" font-weight="600" font-size="${f(labelSize * 1.2)}" letter-spacing="2" fill="${ink}">${letter}</text>`;
   }
   const placed: Array<[number, number, number]> = [];
-  const free = (x: number, y: number, w: number) =>
-    !placed.some(([px, py, pw]) => Math.abs(py - y) < 12 && x < px + pw && px < x + w);
+  const clash = (x: number, y: number, w: number) =>
+    placed.reduce(
+      (sum, [px, py, pw]) =>
+        sum + (Math.abs(py - y) < labelSize * 1.2 ? Math.max(0, Math.min(x + w, px + pw) - Math.max(x, px)) : 0),
+      0,
+    );
   const placeLabel = (bx: number, y: number, w: number): { x: number; y: number; end: boolean } => {
-    for (const end of [false, true]) {
-      for (const dy of [0, 13, -13, 26, -26, 39, -39]) {
-        const x = end ? bx - 12 - w : bx + 12;
-        if (free(x, y + dy, w)) {
-          placed.push([x, y + dy, w]);
-          return { x: end ? bx - 12 : bx + 12, y: y + dy, end };
-        }
+    const clamped = Math.max(6, Math.min(bx + 12, width - 6 - w));
+    let best = { left: clamped, y, end: false, cost: Infinity };
+    for (const [left, end] of [
+      [bx + 12, false],
+      [bx - 12 - w, true],
+      [clamped, false],
+    ] as Array<[number, boolean]>) {
+      if (left < 6 || left + w > width - 6) continue;
+      for (const dy of [0, 1.3, -1.3, 2.6, -2.6, 3.9, -3.9].map((k) => k * labelSize)) {
+        const cost = clash(left, y + dy, w);
+        if (cost < best.cost) best = { left, y: y + dy, end, cost };
+        if (cost === 0) break;
       }
+      if (best.cost === 0) break;
     }
-    placed.push([bx + 12, y, w]);
-    return { x: bx + 12, y, end: false };
+    placed.push([best.left, best.y, w]);
+    return { x: best.end ? best.left + w : best.left, y: best.y, end: best.end };
   };
   st.beacons.forEach((b, j) => {
     const name = (names[b.id] ?? b.id).toUpperCase();
@@ -802,8 +812,12 @@ export function domeSvg(st: SkyState, names: Record<string, string>, halo: [numb
       o += `<g transform="translate(${f(b.x)} ${f(b.y)})">${moonDisc(0, 0, 6, st.moon, CREAM, st.day ? DAY_SKY : SHADE)}<circle r="6" fill="none" stroke="${ink}" stroke-width=".6"/></g>`;
     else if ((HEAVENS as string[]).includes(b.id))
       o += `<g class="beacon" style="animation-delay:${j * 0.4}s"><circle cx="${f(b.x)}" cy="${f(b.y)}" r="11" fill="${GOLD}" opacity=".14"/><circle cx="${f(b.x)}" cy="${f(b.y)}" r="4.2" fill="${GOLD}"/></g>`;
-    const spot = placeLabel(b.x, b.y + (b.id === 'milkyway' ? 14 : 4), name.length * 8.2 + 6);
-    o += `<text x="${f(spot.x)}" y="${f(spot.y)}"${spot.end ? ' text-anchor="end"' : ''} font-family="${SMALLCAPS}" font-weight="600" font-size="10" letter-spacing="1.5" fill="${label}" opacity=".8">${esc(name)}</text>`;
+    const spot = placeLabel(
+      b.x,
+      b.y + (b.id === 'milkyway' ? 14 : labelSize * 0.4),
+      name.length * labelSize * 0.82 + 6,
+    );
+    o += `<text x="${f(spot.x)}" y="${f(spot.y)}"${spot.end ? ' text-anchor="end"' : ''} font-family="${SMALLCAPS}" font-weight="600" font-size="${f(labelSize)}" letter-spacing="${f(labelSize * 0.15)}" fill="${label}" opacity=".8">${esc(name)}</text>`;
   });
   o += `<g data-halo transform="translate(${f(halo[0])} ${f(halo[1])})" fill="none" stroke="${GOLD}"><circle r="26" stroke-width="1.2"/><circle r="30" stroke-width=".5" opacity=".6"/></g></svg>`;
   return o;

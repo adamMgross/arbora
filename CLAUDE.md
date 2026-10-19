@@ -66,7 +66,7 @@ Breaking one of these is a defect, not a tradeoff.
 - Parity candidates must be built with `npm run build:parity`. A different `SITE` changes the `og:image` and fails the head check.
 - Today's output depends on the local date, the hour, and `Math.random`. The harness freezes all three. Do not compare it by hand.
 - `tests/unit/daily.test.ts` keeps the original day-number formula as an oracle, including its off-by-one in the first hour of each day under daylight saving time (`arb-65hn`). Fixing the bug means replacing that test.
-- Only Chromium is tested (`arb-589u`).
+- Only Chromium is tested (`arb-589u`). The `phone` Playwright project is Chromium at an iPhone viewport with touch, not WebKit, though iOS Safari and iOS Chrome both run WebKit.
 - The prose pre-commit hook rejects em dashes and semicolons in added Markdown lines and in comments. Rendered copy in HTML, YAML values, and `.mdx` is exempt.
 - Deck elements toggled with the `hidden` attribute also carry `display` rules, so `Deck.css` ends with a doubled-class `[hidden]` rule. Keep it last in that file.
 - The deck end-to-end tests install a fake clock. The Sky's dark adaptation starts from an IntersectionObserver, so a test scrolls the dome into view and waits for the `adapting` class before advancing the clock.

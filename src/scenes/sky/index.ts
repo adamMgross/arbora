@@ -15,13 +15,14 @@ import { signOf } from '../../lib/sky-math';
 import { esc, f } from '../../lib/svg';
 import { byId, keepForm, niceDate, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
-import { animate, reducedMotion, wait } from '../motion';
+import { animate, reducedMotion, reveal, wait } from '../motion';
 import { domeSvg, sphereFace } from './art';
 
 const KEY = 'arbora-sky';
 const ADAPT_MS = 12000;
 const PLURAL = new Set(['pleiades', 'twins', 'weaver']);
 const READY = 'Lift your eyes. The heavens are open where the lights stand.';
+const PHONE = '(max-width: 640px)';
 
 interface AscentEntry extends JournalEntry {
   plate: string;
@@ -79,11 +80,12 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       .map((s) => `<b>${esc(names[s.id] ?? s.id)}</b> in ${s.sign}${s.phase ? `, ${s.phase}` : ''}, ${s.state}`)
       .join(' · ')}`;
 
+  const phone = matchMedia(PHONE);
   const render = () => {
     st = skyState(env.now(), place());
     dome.classList.toggle('day', st.day);
     dome.querySelector('svg')?.remove();
-    dome.insertAdjacentHTML('afterbegin', domeSvg(st, names, halo));
+    dome.insertAdjacentHTML('afterbegin', domeSvg(st, names, halo, phone.matches ? 15 : 10));
     dome
       .querySelector('svg')!
       .setAttribute(
@@ -167,6 +169,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       returnBox.innerHTML = `<div class="return"><span class="rk">When ${esc(plate.name.toLowerCase())} last opened for you · ${esc(niceDate(previous.iso))}</span><span>“${esc(previous.line)}”</span></div>`;
     out.innerHTML = `<div class="drawn"><div class="cardslot"><div class="cardbox">${sphereFace(plate, st)}</div></div><div><p class="look" id="sky-look">Look at the plate before the book. What does it stir in you?</p><div class="actions"><button class="sbtn" type="button" id="sky-open">Open the book</button></div><div id="sky-book" class="out"></div></div></div>`;
     byId(out, 'sky-open').addEventListener('click', openBook);
+    reveal(previous ? returnBox : out);
     busy = false;
   }
 
@@ -184,6 +187,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     const passage = c.passages[Math.floor(env.random() * c.passages.length)]!;
     byId(out, 'sky-book').innerHTML =
       `<div class="book"><p class="bk-kicker">${esc(kicker)}</p><h4 class="bk-title">${esc(c.name)}</h4><p class="above">${esc(fill(c.above, st))}</p><div class="below"><p><span>Set down</span>${esc(c.set)}</p><p><span>Receive</span>${esc(c.receive)}</p></div>${passageHtml(passage)}${question('Sit with', c.question)}${keepForm('sky', 'Keep', 'Let it set', 'One line, in your own words')}</div>`;
+    reveal(byId(out, 'sky-book'));
     byId(out, 'sky-keep').addEventListener('click', () => finish('kept'));
     byId(out, 'sky-set').addEventListener('click', () => finish('set'));
   };
@@ -243,6 +247,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   });
 
   render();
+  phone.addEventListener('change', render);
   let started = false;
   const startAdapt = () => {
     if (started) return;

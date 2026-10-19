@@ -19,5 +19,12 @@ export default defineConfig({
     port,
     reuseExistingServer: false,
   },
-  projects: [{ name: 'e2e', use: { ...devices['Desktop Chrome'] } }],
+  projects: [
+    { name: 'e2e', testIgnore: /phone\.spec\.ts/, use: { ...devices['Desktop Chrome'] } },
+    {
+      name: 'phone',
+      testMatch: /(decks|phone)\.spec\.ts/,
+      use: { ...devices['iPhone 15'], browserName: 'chromium' },
+    },
+  ],
 });

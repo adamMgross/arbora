@@ -15,7 +15,7 @@ import {
 } from '../../lib/wood-walk';
 import { byId, keepForm, niceDate, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
-import { wait } from '../motion';
+import { reveal, wait } from '../motion';
 import { woodBack, woodFace, woodScene } from './art';
 
 const KEY = 'arbora-wood';
@@ -97,6 +97,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   };
 
   const resetSlots = () => {
+    trip.classList.remove('spread');
     for (const circle of WALK_ORDER) {
       const el = slot(circle);
       el.className = 'slot-empty';
@@ -146,6 +147,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     const last = lastWalk(journal.entries);
     if (last && last.status === 'kept') {
       trip.hidden = false;
+      trip.classList.add('spread');
       for (const circle of WALK_ORDER) {
         const name = last.cards[circle];
         const card = name && findCard(circle, name);
@@ -171,6 +173,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     dark.style.opacity = '0.12';
     cue.textContent = tableMode ? 'One light for the table. Follow it.' : 'Lights move between the firs. Follow one.';
     lights(3);
+    reveal(root);
   };
 
   async function follow(w: HTMLButtonElement): Promise<void> {
@@ -197,10 +200,12 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     }
     play.hidden = true;
     cue.textContent = tableMode ? 'The light led here.' : 'The three lights led here.';
+    trip.classList.add('spread');
     out.hidden = false;
     look.hidden = false;
     openButton.hidden = false;
     book.innerHTML = '';
+    reveal(trip);
     busy = false;
   }
 
@@ -217,10 +222,12 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     if (tableMode) {
       h += `${question('For the table', passageCard.table ?? '')}<p class="bk-note">Nothing is saved from a table draw. Pass the phone, or read it aloud.</p></div>`;
       book.innerHTML = h;
+      reveal(book);
       return;
     }
     h += `${question('Sit with', passageCard.question ?? '')}${keepForm('wood', 'Keep', 'Leave it on a branch', 'One line, in your own words')}</div>`;
     book.innerHTML = h;
+    reveal(book);
     byId(book, 'wood-keep').addEventListener('click', () => finish('kept'));
     byId(book, 'wood-set').addEventListener('click', () => finish('branch'));
   };
@@ -241,7 +248,10 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     cue.textContent = 'The wood is closed for today.';
   };
 
-  if (location.hash === '#table') tableSwitch.checked = true;
+  if (location.hash === '#table') {
+    tableSwitch.checked = true;
+    reveal(root);
+  }
   enterButton.addEventListener('click', enter);
   openButton.addEventListener('click', openBook);
   showReturn();
