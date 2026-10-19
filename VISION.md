@@ -29,7 +29,7 @@ The owner's portfolio treats beauty and economy as deliverables (`~/projects/por
 3. **Components that own their styles and logic.** Each concern has one file with a stated owner, pure logic sits apart from DOM code, and the cascade order is written down in one place.
 4. **Room for rich graphics.** New canvas, WebGL, or SVG scenes can be added without reworking the shell, the styles, or the build. The three decks are the first, as lazily loaded scene modules.
 
-Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw and 8.3 KB gzipped, script 7.6 KB raw and 3.1 KB gzipped, heaviest page `today.html` 40.7 KB raw and 14.0 KB gzipped with HTML only. The agent proposes, and the owner has not confirmed, these ceilings: script stays under 10 KB gzipped with no runtime dependency, and the stylesheet stays under 10 KB gzipped. A graphics scene loads only on the pages that use it.
+Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw and 8.3 KB gzipped, script 7.6 KB raw and 3.1 KB gzipped, heaviest page `today.html` 40.7 KB raw and 14.0 KB gzipped with HTML only. The agent proposed these ceilings, and on 2026-10-18 the owner accepted the stylesheet at 11.6 KB gzipped once the decks joined it: script stays under 10 KB gzipped with no runtime dependency, and the stylesheet stays under 12 KB gzipped. A graphics scene loads only on the pages that use it.
 
 ## Non-goals
 
@@ -49,7 +49,7 @@ Performance targets. Measured 2026-10-18 from `dist/`: stylesheet 41.5 KB raw an
 1. **Restructure.** Done locally 2026-10-18, not pushed.
 2. **Hosting.** The owner enables Pages and confirms the address. The first deploy runs.
 3. **Behavior and content.** Fix the known defects and reconcile drifted text, one ticket and one commit each, with the owner choosing the winning wording.
-4. **Graphics.** Done 2026-10-18: the three reflection decks landed as the first scenes (`docs/decisions/0008`, `0009`). What remains is content: the rest of the Wood's 52 cards and the Sky's fixed stars, the checking of the 72 window names and the quoted editions, and the owner's choices on location, illustration, and the Rituals page.
+4. **Graphics.** Done 2026-10-18: the three reflection decks landed as the first scenes (`docs/decisions/0008`, `0009`). The full decks followed the same day: 52 Wood cards, 31 Sky plates, the window names checked against phenology, every passage verified against its edition, the Sky's opt-in location (`docs/decisions/0010`), and the Rituals page's link to a table draw. What remains is people: the owner's read for tone and a reading of the Native-sourced cards by Native readers.
 
 ## Settled scope
 

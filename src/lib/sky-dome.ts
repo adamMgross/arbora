@@ -25,8 +25,22 @@ export const CALIFORNIA: Place = { lat: 36.8, lon: -119.4 };
 export const DOME = { width: 600, height: 520, cx: 300, cy: 262, r: 240 } as const;
 
 export type HeavenId = 'moon' | 'mercury' | 'venus' | 'sun' | 'mars' | 'jupiter' | 'saturn';
-export type FigureId = 'orion' | 'dipper' | 'pleiades';
-export type BeaconId = HeavenId | FigureId | 'milkyway';
+export type FigureId =
+  | 'orion'
+  | 'dipper'
+  | 'pleiades'
+  | 'dogstar'
+  | 'scorpion'
+  | 'swan'
+  | 'weaver'
+  | 'lion'
+  | 'bull'
+  | 'twins'
+  | 'queen'
+  | 'herdsman'
+  | 'chained'
+  | 'archer';
+export type BeaconId = HeavenId | FigureId | 'milkyway' | 'falling';
 
 export const HEAVENS: HeavenId[] = ['moon', 'mercury', 'venus', 'sun', 'mars', 'jupiter', 'saturn'];
 export const ORDINALS = ['', 'first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh'] as const;
@@ -92,7 +106,260 @@ export const FIGURES: Record<FigureId, Figure> = {
     lines: [],
     center: 0,
   },
+  dogstar: {
+    stars: [
+      [101.29, -16.72],
+      [95.68, -17.96],
+      [107.1, -26.39],
+      [104.66, -28.97],
+      [111.02, -29.3],
+      [95.08, -30.06],
+    ],
+    lines: [
+      [0, 1],
+      [0, 2],
+      [2, 3],
+      [2, 4],
+      [3, 5],
+    ],
+    center: 0,
+  },
+  scorpion: {
+    stars: [
+      [247.35, -26.43],
+      [241.36, -19.81],
+      [240.08, -22.62],
+      [239.71, -26.11],
+      [245.3, -25.59],
+      [248.97, -28.22],
+      [252.54, -34.29],
+      [252.97, -38.05],
+      [254.66, -42.36],
+      [258.04, -43.24],
+      [264.33, -43.0],
+      [265.62, -39.03],
+      [263.4, -37.1],
+    ],
+    lines: [
+      [1, 2],
+      [2, 3],
+      [2, 4],
+      [4, 0],
+      [0, 5],
+      [5, 6],
+      [6, 7],
+      [7, 8],
+      [8, 9],
+      [9, 10],
+      [10, 11],
+      [11, 12],
+    ],
+    center: 0,
+  },
+  swan: {
+    stars: [
+      [310.36, 45.28],
+      [305.56, 40.26],
+      [311.55, 33.97],
+      [296.24, 45.13],
+      [292.68, 27.96],
+      [299.08, 35.08],
+    ],
+    lines: [
+      [0, 1],
+      [1, 5],
+      [5, 4],
+      [3, 1],
+      [1, 2],
+    ],
+    center: 1,
+  },
+  weaver: {
+    stars: [
+      [279.23, 38.78],
+      [281.19, 37.61],
+      [283.63, 36.9],
+      [284.74, 32.69],
+      [282.52, 33.36],
+      [297.7, 8.87],
+      [296.57, 10.61],
+      [298.83, 6.41],
+    ],
+    lines: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 1],
+      [6, 5],
+      [5, 7],
+    ],
+    center: 0,
+  },
+  lion: {
+    stars: [
+      [152.09, 11.97],
+      [151.83, 16.76],
+      [154.99, 19.84],
+      [154.17, 23.42],
+      [148.19, 26.01],
+      [146.46, 23.77],
+      [168.53, 20.52],
+      [168.56, 15.43],
+      [177.27, 14.57],
+    ],
+    lines: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 5],
+      [2, 6],
+      [6, 8],
+      [8, 7],
+      [7, 0],
+    ],
+    center: 0,
+  },
+  bull: {
+    stars: [
+      [68.98, 16.51],
+      [81.57, 28.61],
+      [84.41, 21.14],
+      [64.95, 15.63],
+      [65.73, 17.54],
+      [67.15, 19.18],
+      [67.17, 15.87],
+    ],
+    lines: [
+      [3, 4],
+      [4, 5],
+      [5, 1],
+      [3, 6],
+      [6, 0],
+      [0, 2],
+    ],
+    center: 0,
+  },
+  twins: {
+    stars: [
+      [113.65, 31.89],
+      [116.33, 28.03],
+      [100.98, 25.13],
+      [95.74, 22.51],
+      [110.03, 21.98],
+      [99.43, 16.4],
+    ],
+    lines: [
+      [0, 1],
+      [0, 2],
+      [2, 3],
+      [1, 4],
+      [4, 5],
+    ],
+    center: 0,
+  },
+  queen: {
+    stars: [
+      [2.29, 59.15],
+      [10.13, 56.54],
+      [14.18, 60.72],
+      [21.45, 60.24],
+      [28.6, 63.67],
+    ],
+    lines: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+    ],
+    center: 2,
+  },
+  herdsman: {
+    stars: [
+      [213.92, 19.18],
+      [217.96, 30.37],
+      [218.02, 38.31],
+      [225.49, 40.39],
+      [228.88, 33.32],
+      [221.25, 27.07],
+      [208.67, 18.4],
+    ],
+    lines: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [3, 4],
+      [4, 5],
+      [5, 0],
+      [0, 6],
+    ],
+    center: 0,
+  },
+  chained: {
+    stars: [
+      [2.1, 29.09],
+      [9.83, 30.86],
+      [17.43, 35.62],
+      [30.97, 42.33],
+      [14.19, 38.5],
+      [12.45, 41.08],
+    ],
+    lines: [
+      [0, 1],
+      [1, 2],
+      [2, 3],
+      [2, 4],
+      [4, 5],
+    ],
+    center: 2,
+  },
+  archer: {
+    stars: [
+      [276.04, -34.38],
+      [275.25, -29.83],
+      [276.99, -25.42],
+      [283.82, -26.3],
+      [285.65, -29.88],
+      [271.45, -30.42],
+      [281.41, -26.99],
+      [286.74, -27.67],
+    ],
+    lines: [
+      [5, 1],
+      [1, 0],
+      [0, 5],
+      [1, 2],
+      [2, 6],
+      [6, 1],
+      [6, 3],
+      [3, 7],
+      [7, 4],
+      [4, 6],
+      [4, 0],
+    ],
+    center: 6,
+  },
 };
+
+interface Shower {
+  ra: number;
+  dec: number;
+  from: [month: number, day: number];
+  to: [month: number, day: number];
+}
+
+export const SHOWERS: Shower[] = [
+  { ra: 48, dec: 58, from: [7, 17], to: [8, 24] },
+  { ra: 112, dec: 33, from: [12, 4], to: [12, 20] },
+];
+
+const monthDay = (date: Date) => (date.getMonth() + 1) * 100 + date.getDate();
+
+export function activeShower(date: Date): Shower | null {
+  const md = monthDay(date);
+  return SHOWERS.find((s) => md >= s.from[0] * 100 + s.from[1] && md <= s.to[0] * 100 + s.to[1]) ?? null;
+}
 
 const FIELD_STARS = (() => {
   const r = rng(99);
@@ -196,6 +463,8 @@ export function skyState(date: Date, place: Place): SkyState {
       if (aa.alt > 10 && (!best || aa.alt > best.alt)) best = aa;
     }
     if (best) add('milkyway', best);
+    const shower = activeShower(date);
+    if (shower) add('falling', altaz(shower.ra, shower.dec, date, lat, lon));
     stars = FIELD_STARS.flatMap((s) => {
       const aa = altaz(s.ra, s.dec, date, lat, lon);
       if (aa.alt <= 0) return [];
@@ -242,7 +511,7 @@ export function standings(st: SkyState): HeavenStanding[] {
 
 export type Lift = { kind: 'beacon'; beacon: Beacon } | { kind: 'beyond'; x: number; y: number };
 
-const BEACON_REACH = 80;
+const BEACON_REACH = 64;
 
 export function lift(st: SkyState, x: number, y: number): Lift {
   let best: Beacon | null = null;

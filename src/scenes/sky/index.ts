@@ -10,6 +10,7 @@ import {
   type HeavenId,
   type SkyState,
 } from '../../lib/sky-dome';
+import { loadPlace, storePlace } from '../../lib/place';
 import { signOf } from '../../lib/sky-math';
 import { esc, f } from '../../lib/svg';
 import { byId, keepForm, niceDate, passageHtml, question, readData } from '../book';
@@ -19,6 +20,7 @@ import { domeSvg, sphereFace } from './art';
 
 const KEY = 'arbora-sky';
 const ADAPT_MS = 12000;
+const PLURAL = new Set(['pleiades', 'twins', 'weaver']);
 const READY = 'Lift your eyes. The heavens are open where the lights stand.';
 
 interface AscentEntry extends JournalEntry {
@@ -35,6 +37,7 @@ const STAGE = `
 <div class="stage-top"><p class="stage-cue" id="sky-cue">Let your eyes adjust.</p></div>
 <div class="dome" id="sky-dome"><div class="adapt" id="sky-adapt"><div class="adapt-msg">LET YOUR EYES ADJUST</div></div></div>
 <p class="heavens" id="sky-read"></p>
+<div class="actions place"><button class="sbtn quiet" id="sky-place" type="button"></button><span class="place-note" id="sky-place-note" role="status"></span></div>
 <div id="sky-return"></div>
 <p class="closed" id="sky-closed" hidden></p>
 <div class="out" id="sky-out"></div>`;
@@ -60,7 +63,11 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     journal = next;
     storeJournal(env.storage, KEY, journal);
   };
-  let st = skyState(env.now(), data.place);
+  const placeButton = byId<HTMLButtonElement>(root, 'sky-place');
+  const placeNote = byId(root, 'sky-place-note');
+  let own = loadPlace(env.storage);
+  const place = () => own ?? data.place;
+  let st = skyState(env.now(), place());
   let halo: [number, number] = [300, 262];
   let adapted = false;
   let busy = false;
@@ -73,10 +80,17 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       .join(' · ')}`;
 
   const render = () => {
-    st = skyState(env.now(), data.place);
+    st = skyState(env.now(), place());
     dome.classList.toggle('day', st.day);
     dome.querySelector('svg')?.remove();
     dome.insertAdjacentHTML('afterbegin', domeSvg(st, names, halo));
+    dome
+      .querySelector('svg')!
+      .setAttribute(
+        'aria-label',
+        `The heavens over ${own ? 'where you are' : 'California'} now, drawn as an atlas. Tap to lift your eyes.`,
+      );
+    placeButton.textContent = own ? 'Return to the California sky' : 'Read the sky over where you are';
     read.innerHTML = heavensLine();
     dome.querySelector('svg')!.addEventListener('click', (e) => {
       if (!adapted) return;
@@ -105,7 +119,15 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
         ? `By day the Sun stands alone, in ${sign}, the fourth heaven.`
         : `You looked to the ${dir}. ${plate.name} stands there, in ${sign}, the ${ORDINALS[plate.n ?? 0]} heaven.`;
     }
-    return `You looked to the ${dir}. ${plate.name}${plate.id === 'milkyway' ? ' stands' : ' has risen'} there.`;
+    const verb =
+      plate.id === 'milkyway'
+        ? 'stands'
+        : plate.id === 'falling'
+          ? 'are falling'
+          : PLURAL.has(plate.id)
+            ? 'have risen'
+            : 'has risen';
+    return `You looked to the ${dir}. ${plate.name} ${verb} there.`;
   };
 
   async function liftEyes(x: number, y: number): Promise<void> {
@@ -193,6 +215,32 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     closed.textContent = 'You climbed tonight. The heavens close until tomorrow.';
     cue.textContent = 'The heavens are closed for tonight.';
   };
+
+  placeButton.addEventListener('click', () => {
+    if (own) {
+      own = null;
+      storePlace(env.storage, null);
+      placeNote.textContent = '';
+      render();
+      return;
+    }
+    placeButton.disabled = true;
+    placeNote.textContent = 'Asking your browser where you are.';
+    env
+      .locate()
+      .then((found) => {
+        storePlace(env.storage, found);
+        own = loadPlace(env.storage);
+        placeNote.textContent = 'The sky over where you are, kept on this device only.';
+        render();
+      })
+      .catch(() => {
+        placeNote.textContent = 'Your browser did not share a location, so the sky stays over California.';
+      })
+      .finally(() => {
+        placeButton.disabled = false;
+      });
+  });
 
   render();
   let started = false;

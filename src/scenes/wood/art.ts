@@ -1,4 +1,7 @@
-import type { WoodArt, WoodCard } from '../../lib/decks';
+import type { WOOD_ART_BASE, WoodArt, WoodCard } from '../../lib/decks';
+import { ELDER_ART } from './art-elders';
+import { PASSAGE_ART } from './art-passages';
+import { SPIRIT_ART } from './art-spirits';
 import { esc, f, rng, uid } from '../../lib/svg';
 import {
   G,
@@ -25,7 +28,7 @@ import { svgOpen } from '../book';
 const FELL_SC = "'IM Fell English SC',Georgia,serif";
 const FELL = "'IM Fell English',Georgia,serif";
 
-const ART: Record<WoodArt, () => string> = {
+const BASE_ART: Record<(typeof WOOD_ART_BASE)[number], () => string> = {
   darkWood() {
     const r = rng(5);
     let o =
@@ -242,6 +245,8 @@ const ART: Record<WoodArt, () => string> = {
     return o;
   },
 };
+
+const ART: Record<WoodArt, () => string> = { ...BASE_ART, ...ELDER_ART, ...SPIRIT_ART, ...PASSAGE_ART };
 
 export function woodFace(card: WoodCard): string {
   const id = uid('gv');

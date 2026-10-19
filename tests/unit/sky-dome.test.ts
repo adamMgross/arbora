@@ -92,3 +92,39 @@ describe('pickBeyond', () => {
     expect(pickBeyond([{ id: 'only' }], 'only', () => 0.5).id).toBe('only');
   });
 });
+
+describe('the fixed stars', () => {
+  const ids = (date: Date) => skyState(date, CALIFORNIA).beacons.map((b) => b.id);
+
+  it('raises the summer figures on a July night and the winter figures on a January night', () => {
+    const summer = ids(new Date('2026-07-10T22:30:00-07:00'));
+    for (const id of ['swan', 'scorpion', 'archer', 'weaver', 'herdsman']) expect(summer).toContain(id);
+    for (const id of ['orion', 'bull', 'twins', 'dogstar']) expect(summer).not.toContain(id);
+    const winter = ids(new Date('2026-01-15T22:00:00-08:00'));
+    for (const id of ['orion', 'bull', 'twins', 'dogstar', 'pleiades']) expect(winter).toContain(id);
+    for (const id of ['scorpion', 'archer']) expect(winter).not.toContain(id);
+  });
+
+  it('keeps the Queen up all night, since she circles the pole', () => {
+    for (const hour of ['18', '21', '00', '03']) {
+      const day = hour < '12' ? '16' : '15';
+      expect(ids(new Date(`2026-01-${day}T${hour}:00:00-08:00`))).toContain('queen');
+    }
+  });
+
+  it('shows the falling stars only inside the August and December windows', () => {
+    expect(ids(new Date('2026-08-12T23:00:00-07:00'))).toContain('falling');
+    expect(ids(new Date('2026-12-14T23:00:00-08:00'))).toContain('falling');
+    expect(ids(new Date('2026-10-18T23:00:00-07:00'))).not.toContain('falling');
+    expect(ids(new Date('2026-09-01T23:00:00-07:00'))).not.toContain('falling');
+  });
+
+  it('places the December radiant in the Twins and the August radiant in the north', () => {
+    const dec = skyState(new Date('2026-12-14T23:00:00-08:00'), CALIFORNIA).beacons;
+    const twins = dec.find((b) => b.id === 'twins')!;
+    const falling = dec.find((b) => b.id === 'falling')!;
+    expect(Math.hypot(twins.x - falling.x, twins.y - falling.y)).toBeLessThan(30);
+    const aug = skyState(new Date('2026-08-12T23:00:00-07:00'), CALIFORNIA).beacons.find((b) => b.id === 'falling')!;
+    expect(aug.az > 300 || aug.az < 90).toBe(true);
+  });
+});

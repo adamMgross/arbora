@@ -4,17 +4,17 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete and the three reflection decks built locally, not pushed. Hosting is the next step and is owner-blocked.
+**Phase:** Restructure complete and the three reflection decks finished locally, not pushed. Hosting is the next step and is owner-blocked.
 
 **Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled. `main` is ahead of `origin/main` by the restructure, the onboarding, the CHARTER removal, and the decks, and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
 
-**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 108 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 29 end-to-end tests at both base paths. The three decks run in headless Chromium at 1280 and 400 px wide in both color schemes with no console errors, no page errors, and no horizontal overflow.
+**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 114 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 32 end-to-end tests at both base paths. The three decks run in headless Chromium at 1280 and 400 px wide in both color schemes with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-18 from `dist/`:** main script 10.3 KB raw and 4.2 KB gzipped, stylesheet 55.9 KB raw and 11.6 KB gzipped, scene chunks 30.5 KB (Sky), 25.4 KB (Wood), 11.8 KB (Year) raw, loaded only on their pages. The stylesheet is 1.6 KB gzipped over the ceiling VISION.md proposed and the owner never confirmed, because `Deck.css` joins the one global stylesheet (`docs/decisions/0005`).
+**Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.6 KB gzipped (accepted by the owner, ceiling now 12 KB), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
 
 **Blockers:** `arb-hk2f`, the owner step that enables Pages and approves the first push. `arb-32io` decides the public address.
 
-**Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address. The deck decisions tagged `decks` and `owner`: location for the Sky (`arb-ccw6`), illustration for the Wood (`arb-4ajl`), the table switch on Rituals (`arb-r5bw`), a tone read of the drafted plates and stories (`arb-y8k3`), and Native-reader review of the Native-sourced cards (`arb-kbpk`).
+**Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address. Two deck items need people rather than code: the owner's read for tone (`arb-y8k3`) and a reading of the Native-sourced cards by Native readers, with a packet on the ticket (`arb-kbpk`). Which Meditations translation the canon's V.24 passage really is (`arb-w81y`).
 
 **Untested assumptions:**
 
@@ -28,8 +28,8 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 | The `adammgross.github.io` user site does not register a worker that collides with `/arbora/` | low, not inspected |
 | The sky model stays within a degree for the current decades | medium, checked against four recorded events in 2000, 2020, and 2026 (`tests/unit/sky-math.test.ts`), not against a full ephemeris |
 | The fixed solar-term dates in `year.yml` are within a day of the true terms every year | medium, true for 2026 by inspection, not computed |
-| The 72 California window names are right for their dates | low, drafts from general natural history (`arb-skse`) |
-| The quoted translations match their named editions word for word | low, not yet checked (`arb-hlt9`) |
+| The 72 California window names are right for their dates | medium, checked against phenology sources on 2026-10-18, 15 moved or renamed (`arb-skse`) |
+| The quoted translations match their named editions word for word | high, 87 checked against the editions on 2026-10-18, 15 corrected, one Legge capitalization unconfirmed (`arb-hlt9`) |
 
 ## Log
 
@@ -96,3 +96,13 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** `Deck.css` display rules cancelled the `hidden` attribute on the deck's toggled elements, which the first headless run showed as a door that never closed, so the file ends with a doubled-class `[hidden]` rule. Playwright's installed clock fakes `requestAnimationFrame` and timers but not IntersectionObserver delivery, so the Sky tests scroll the dome into view and wait for the `adapting` class before advancing the clock. The stylesheet grew past the proposed, unconfirmed 10 KB gzipped ceiling to 11.6 KB.
 
 **Left unfinished:** nothing is pushed. The remaining 41 Wood cards (`arb-3enk`) and the fixed-star plates (`arb-smpw`) are content tasks. The window names (`arb-skse`) and the quoted editions (`arb-hlt9`) need checking. The owner decides location, illustration, the Rituals table switch, tone, and Native-reader review (`arb-ccw6`, `arb-4ajl`, `arb-r5bw`, `arb-y8k3`, `arb-kbpk`).
+
+### 2026-10-18 (the decks finished)
+
+**Done:** at the owner's request finished every open deck item. The Wood has all 52 cards: 8 new Elders (white pine, sugar maple, paper birch, redwood, oak, Bodhi tree, ceiba, Honi's carob), 10 new Spirits, and 23 new Passages, each with a story, a sourced passage, and a code-drawn plate in `src/scenes/wood/art-*.ts`. The Sky has 31 plates with twelve fixed-star figures that rise on the dome from real star positions, and the two meteor showers appear only in season. The Sky reads the sky over the reader when asked, California otherwise (`docs/decisions/0010`). The Rituals page links to a table draw. The window names were checked against phenology (15 changed) and all 87 passages against their editions (15 corrected). Tickets `arb-ccw6`, `arb-4ajl`, `arb-r5bw`, `arb-3enk`, `arb-smpw`, `arb-skse`, and `arb-hlt9` are closed.
+
+**Decisions:** the code-drawn gold line ships as the first edition of the Wood's plates, replaceable plate by plate because art is keyed by name. The table draw stays at the Wood's door and is linked from Rituals with `wood.html#table`. The owner accepted the 11.6 KB gzipped stylesheet. The drawing and research were split across five parallel agents, each scoped to separate files, then reviewed by rendering every plate.
+
+**Findings:** the Sky's reach for a look shrank from 80 to 64 dome units so that, with sixteen figures up, the dark between them still answers with a mystery. The canon's Marcus Aurelius passage cites V.24 for what Long numbers XII.32 (`arb-w81y`).
+
+**Left unfinished:** nothing is pushed. The owner's tone read (`arb-y8k3`) and the Native-reader review (`arb-kbpk`) are for people, not code.

@@ -25,22 +25,22 @@
     - { name: Lesser cold, month: 1, day: 6 }
     - { name: Greater cold, month: 1, day: 20 }
   windows:
-    - Almond orchards bloom in the valley
-    - Elephant seal pups are weaned on the beaches
+    - Elephant seal pups crowd the beaches
     - Manzanita bells hum with bees
     - Gray whales turn north
+    - Almond orchards bloom in the valley
     - The hills are at their greenest
+    - The first grunion run
     - First poppies open on the slopes
     - Ladybugs leave their winter clusters
-    - The desert blooms
     - Cliff swallows return to Capistrano
-    - The first grunion run
-    - Lupine paints the hillsides
+    - The desert blooms
+    - Goldfields carpet the valley floor
     - Ceanothus clouds the chaparral blue
     - Oak catkins dust the air
     - Quail call in pairs
     - Sage blooms on the coastal scrub
-    - Goldfields carpet the valley floor
+    - Lupine paints the hillsides
     - The last rains of the season
     - Yucca stalks rise on the slopes
     - Matilija poppies open
@@ -75,13 +75,13 @@
     - Acorns fall and the gathering begins
     - Santa Ana winds come down from the desert
     - Monarchs return to the coastal groves
-    - Sycamores turn along the washes
+    - Persimmons ripen in the orchards
     - Waterfowl arrive in the valley wetlands
     - First rain wakes the smell of the earth
-    - Persimmons glow among the falling leaves
-    - Green returns to the hills
+    - Sycamores turn along the washes
     - Toyon berries redden
     - Mushrooms rise in the oak woods
+    - Green returns to the hills
     - Snow closes the high passes
     - Sandhill cranes dance in the Delta
     - Oranges color on the trees
@@ -176,7 +176,7 @@
       from: 0
       to: 20
       passages:
-        - text: "For, lo, the winter is past, the rain is over and gone; the flowers appear on the earth; the time of the singing of birds is come."
+        - text: "For, lo, the winter is past, the rain is over and gone; The flowers appear on the earth; the time of the singing of birds is come."
           attribution: Song of Songs 2:11–12, King James Version
     - key: gold
       name: Gold
@@ -191,7 +191,7 @@
       to: 51
       passages:
         - text: "This world, which is the same for all, no one of gods or men has made; but it was ever, is now, and ever shall be an ever-living Fire, with measures of it kindling, and measures going out."
-          attribution: Heraclitus, Fragment 30, trans. John Burnet
+          attribution: Heraclitus, fragment 20 (Diels 30), trans. John Burnet, *Early Greek Philosophy*
     - key: rain
       name: Rain
       from: 52

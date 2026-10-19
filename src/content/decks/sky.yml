@@ -34,8 +34,8 @@
   set: the ornament this gate asks for.
   receive: the self that remains when it is gone.
   passages:
-    - text: "Hesperus, you bring back all that the bright dawn scattered: you bring the sheep, you bring the goat, you bring the child back to its mother."
-      attribution: Sappho, fragment 104a, rendered from the Greek
+    - text: Evening, thou that bringest all that bright morning scattered; thou bringest the sheep, the goat, the child back to her mother.
+      attribution: Sappho, fragment 95, trans. Henry Thornton Wharton, 1885
   question: What is the gate asking you to leave at the door, and what remains when you do?
 - id: sun
   kind: heaven
@@ -52,7 +52,7 @@
         who brings the day; and You give light through him.
         And he is beautiful and radiant in all his splendor!
         Of You, Most High, he bears the likeness.
-      attribution: Francis of Assisi, *Canticle of the Sun*
+      attribution: Francis of Assisi, *Canticle of the Sun*, trans. Bill Barrett, adapted
   question: What rises in you every day whether or not you attend to it?
 - id: mars
   kind: heaven
@@ -81,7 +81,7 @@
   set: appetite dressed as generosity.
   receive: the room your life is asking for.
   passages:
-    - text: Look round at the courses of the stars, as if thou wert going along with them; and constantly consider the changes of the elements into one another; for such thoughts purge away the filth of the terrene life.
+    - text: Look round at the courses of the stars, as if thou wert going along with them; and constantly consider the changes of the elements into one another, for such thoughts purge away the filth of the terrene life.
       attribution: Marcus Aurelius, *Meditations* VII.47, trans. George Long
   question: Where is your life asking for more room, and is that generosity or appetite?
 - id: saturn
@@ -166,7 +166,7 @@
   set: the belief that what you see is what is.
   receive: the company of the ones who sent the light.
   passages:
-    - text: Where is the way where light dwelleth? and as for darkness, where is the place thereof?
+    - text: Where is the way where light dwelleth? and as for darkness, where is the place thereof …
       attribution: Job 38:19, King James Version
   question: Whose light are you still living by?
 - id: mirror
@@ -178,8 +178,8 @@
   set: the hope that the answer is out there.
   receive: the face in the glass.
   passages:
-    - text: That which is below is like that which is above, and that which is above is like that which is below, to do the miracles of one only thing.
-      attribution: The Emerald Tablet, trans. Isaac Newton, c. 1680
+    - text: That which is below is like that which is above & that which is above is like that which is below to do the miracles of one only thing.
+      attribution: The Emerald Tablet, trans. Isaac Newton, Keynes MS 28, c. 1680–1690s, normalized text
   question: What have you been calling the sky that is yourself?
 - id: message
   kind: beyond
@@ -214,8 +214,8 @@
   set: the size you have given your troubles.
   receive: the scale of what you belong to.
   passages:
-    - text: How small a part of the boundless and unfathomable time is assigned to every man! … And on what a small clod of the whole earth you creep!
-      attribution: Marcus Aurelius, *Meditations* V.24, trans. George Long
+    - text: How small a part of the boundless and unfathomable time is assigned to every man, for it is very soon swallowed up in the eternal! … and on what a small clod of the whole earth thou creepest!
+      attribution: Marcus Aurelius, *Meditations* XII.32, trans. George Long
   question: From that height, which of today's worries would still be visible?
 - id: net
   kind: beyond
@@ -240,3 +240,147 @@
     - text: Who verily knows and who can here declare it, whence it was born and whence comes this creation? The Gods are later than this world's production. Who knows then whence it first came into being?
       attribution: Rig Veda 10.129.6, trans. Ralph T. H. Griffith
   question: What is the dark holding for you that you have been calling nothing?
+- id: dogstar
+  kind: stars
+  name: The Dog Star
+  alt: the rising before the flood
+  art: dogstar
+  above: The brightest of the fixed stars, at the hunter's heel. In Egypt she was Sopdet, and her first rising before dawn in high summer announced the flooding of the Nile and opened the year. The Greeks called the heavy days of her rising the dog days. In China the same star is the Celestial Wolf, watched by an archer in the south. Every people that saw her return read her as the herald of what comes next.
+  set: the wish to be warned of nothing.
+  receive: the sign that comes before the water.
+  passages:
+    - text: Arise, shine; for thy light is come, and the glory of the LORD is risen upon thee.
+      attribution: Isaiah 60:1, King James Version
+  question: What is rising in you just before the flood?
+- id: scorpion
+  kind: stars
+  name: The Scorpion
+  alt: the heart of fire
+  art: scorpion
+  above: A long curve of stars low in the summer south, with a red star at its heart. The Greeks said the scorpion was sent against the hunter and set across the sky from him, so that one rises as the other sets. To the Polynesian navigators the curve is the fishhook of Maui, which hauled the islands up out of the sea. In China the red star is the heart of the Azure Dragon. The heart of the figure is what everyone sees first.
+  set: the sting you keep ready.
+  receive: the heart, the brightest part of you.
+  passages:
+    - text: Keep thy heart with all diligence; for out of it are the issues of life.
+      attribution: Proverbs 4:23, King James Version
+  question: What is the red heart of the thing you are afraid of?
+- id: swan
+  kind: stars
+  name: The Swan
+  alt: the cross on the river
+  art: swan
+  above: A great cross of stars flying down the river of light on summer nights, wings spread, neck outstretched toward the south. The Greeks saw Zeus in the shape of a swan, and later Christians called it the Northern Cross. It flies along the very road that many peoples said the dead walk, and in that light it is the soul in flight, going the way everyone goes.
+  set: the fear of the long flight.
+  receive: wings for the road.
+  passages:
+    - text: If I take the wings of the morning, and dwell in the uttermost parts of the sea; Even there shall thy hand lead me, and thy right hand shall hold me.
+      attribution: Psalm 139:9–10, King James Version
+  question: Where are you flying, and what holds you on the way?
+- id: weaver
+  kind: stars
+  name: The Weaver and the Cowherd
+  alt: the meeting across the river
+  art: weaver
+  above: Two bright stars on either side of the summer river of light. In China and Japan they are the weaver girl of heaven and the cowherd who loved her, kept apart by the Silver River and allowed to meet one night a year, when the magpies of the world fly up and make a bridge of their wings. On that night people tie wishes to bamboo. It is the oldest story of love held across a distance.
+  set: the belief that distance ends love.
+  receive: the bridge that comes when it comes.
+  passages:
+    - text: Many waters cannot quench love, neither can the floods drown it.
+      attribution: Song of Songs 8:7, King James Version
+  question: Whom do you love across a river, and what would make the bridge?
+- id: lion
+  kind: stars
+  name: The Lion
+  alt: the heart of summer
+  art: lion
+  above: A sickle of stars like a lion's mane, crouched along the road of the sun, with the little king, Regulus, at its breast. When the sun passed through the lion in Egypt the river rose, and lion heads were carved on fountains and gates. The Greeks set Heracles' first labor here. Everywhere it is courage and kingship, and the summer heat when the sun is strongest.
+  set: the roar that covers fear.
+  receive: courage that does not need to be seen.
+  passages:
+    - text: "The wicked flee when no man pursueth: but the righteous are bold as a lion."
+      attribution: Proverbs 28:1, King James Version
+  question: Where would you be bold if no one were watching?
+- id: bull
+  kind: stars
+  name: The Bull
+  alt: the rain-bringers
+  art: bull
+  above: A V of stars for the face of a bull, a red eye, two long horns, and the Pleiades riding on its shoulder. In the oldest epic the gods loose the Bull of Heaven on the earth. Zeus took a bull's shape to carry Europa over the sea. The Greeks named the stars of the face the Hyades, the rainy ones, because their setting brought the rains. It is the strength of the earth and the patience of the plough.
+  set: the charge you keep making at the same wall.
+  receive: the strength that pulls the plough.
+  passages:
+    - text: My doctrine shall drop as the rain, my speech shall distil as the dew, as the small rain upon the tender herb, and as the showers upon the grass.
+      attribution: Deuteronomy 32:2, King James Version
+  question: Where is your strength best spent, charging or pulling?
+- id: twins
+  kind: stars
+  name: The Twins
+  alt: the brother who shares
+  art: twins
+  above: Two bright stars side by side in the winter sky. The Greeks said one brother was mortal and one was the son of Zeus, and when the mortal one died the other refused to live without him, so they share one life between them, a day below the earth and a day among the gods. Sailors saw them as the light on the mast in a storm. In India they are the twin horsemen who bring the dawn and heal the sick.
+  set: the wish to be spared alone.
+  receive: the one who shares your days.
+  passages:
+    - text: "Two are better than one; because they have a good reward for their labour. For if they fall, the one will lift up his fellow: but woe to him that is alone when he falleth; for he hath not another to help him up."
+      attribution: Ecclesiastes 4:9–10, King James Version
+  question: Whose life is bound with yours, and what have you shared?
+- id: queen
+  kind: stars
+  name: The Queen
+  alt: the turning throne
+  art: queen
+  above: A crooked W of stars close to the pole, turning around it all night and all year. The Greeks said Cassiopeia boasted that she was more beautiful than the daughters of the sea, and for her pride she was set in the sky on her throne, which swings her head down for half of every night. The throne is a seat of honor and a wheel at once. What is raised up turns.
+  set: the boast that turns the sea against you.
+  receive: grace in being turned.
+  passages:
+    - text: Pride goeth before destruction, and an haughty spirit before a fall.
+      attribution: Proverbs 16:18, King James Version
+  question: What would you stop defending if you knew the wheel would turn anyway?
+- id: herdsman
+  kind: stars
+  name: The Herdsman
+  alt: the keeper of the bear
+  art: herdsman
+  above: A kite of stars following the great bear around the pole, with a golden-orange star at its foot. Arcturus means the guardian of the bear. The herdsman drives the bear, or the ploughman follows the plough, through the year. The navigators of the Pacific steered by the same star, which passes overhead in Hawaii, and called it the star of gladness. It is the one who keeps watch and follows, and brings the travelers home.
+  set: the need to lead every step.
+  receive: the honor of keeping watch.
+  passages:
+    - text: Canst thou bring forth Mazzaroth in his season? or canst thou guide Arcturus with his sons?
+      attribution: Job 38:32, King James Version
+  question: Whom are you keeping watch over, and who steers by you?
+- id: chained
+  kind: stars
+  name: The Chained Woman
+  alt: the one set free
+  art: chained
+  above: A line of stars reaching from the winged horse. The Greeks said Andromeda was chained to a rock by the sea to pay for her mother's boast, and freed by a hero who came down out of the sky. In her girdle lies a faint cloud of light that the Persian astronomers called the little cloud. The figure is a bond and a release in the same stars. Every chain in the sky is drawn with its loosing.
+  set: the chain that was never yours to carry.
+  receive: the loosing that comes from outside you.
+  passages:
+    - text: "O LORD, truly I am thy servant; I am thy servant, and the son of thine handmaid: thou hast loosed my bonds."
+      attribution: Psalm 116:16, King James Version
+  question: What are you chained to for someone else's boast?
+- id: archer
+  kind: stars
+  name: The Archer and the Center
+  alt: where the river is widest
+  art: archer
+  above: Low in the summer south, the archer draws his bow at the scorpion's heart, and just beyond his arrow the river of light is widest and brightest, because there lies the center of the great wheel of stars we turn in. The Babylonians saw a warrior god here, and the Greeks the wise centaur who taught heroes. To aim, the old archers said, is to find the center in yourself.
+  set: the target outside you.
+  receive: the center you aim from.
+  passages:
+    - text: The man who would be benevolent is like the archer. The archer adjusts himself and then shoots. If he misses, he does not murmur against those who surpass himself. He simply turns round and seeks the cause of his failure in himself.
+      attribution: Mencius II.1.7, trans. James Legge
+  question: Where do you aim from, and when you miss, where do you look?
+- id: falling
+  kind: stars
+  name: The Falling Stars
+  alt: the tears of August and the winter fire
+  art: falling
+  above: Twice a year the sky rains light. In August the falling stars stream from the hero who freed the chained woman, and in Italy they are called the tears of Saint Lawrence, whose feast falls in the same week. In December they come out of the Twins, on the longest nights. In many places a falling star is a soul passing, and in many more it is the moment for a wish. Each one is the only light in the heavens that never comes back.
+  set: the wish you never say aloud.
+  receive: what passes, while it passes.
+  passages:
+    - text: "Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?"
+      attribution: Psalm 56:8, King James Version
+  question: What would you wish if you saw one fall tonight?

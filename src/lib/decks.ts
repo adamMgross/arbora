@@ -1,4 +1,4 @@
-export const WOOD_ART = [
+export const WOOD_ART_BASE = [
   'stayedAwake',
   'aspen',
   'bristlecone',
@@ -11,6 +11,58 @@ export const WOOD_ART = [
   'nurseLog',
   'leaffall',
 ] as const;
+
+export const WOOD_ART_ELDERS = [
+  'whitePine',
+  'sugarMaple',
+  'paperBirch',
+  'redwood',
+  'oak',
+  'bodhi',
+  'ceiba',
+  'carob',
+] as const;
+
+export const WOOD_ART_SPIRITS = [
+  'humbaba',
+  'pan',
+  'leshy',
+  'tapio',
+  'cernunnos',
+  'yakshi',
+  'burningBush',
+  'owl',
+  'forestSage',
+  'wind',
+] as const;
+
+export const WOOD_ART_PASSAGES = [
+  'clearing',
+  'rings',
+  'seed',
+  'fire',
+  'shelter',
+  'oldPaths',
+  'pruning',
+  'root',
+  'dormancy',
+  'grafting',
+  'fruit',
+  'bending',
+  'stillness',
+  'sprout',
+  'threads',
+  'firstLeaf',
+  'bareMountain',
+  'unremembered',
+  'hollow',
+  'treeOfField',
+  'edge',
+  'climbing',
+  'juniper',
+] as const;
+
+export const WOOD_ART = [...WOOD_ART_BASE, ...WOOD_ART_ELDERS, ...WOOD_ART_SPIRITS, ...WOOD_ART_PASSAGES] as const;
 
 export type WoodArt = (typeof WOOD_ART)[number];
 
@@ -26,6 +78,18 @@ export const SKY_ART = [
   'orion',
   'dipper',
   'milkyway',
+  'dogstar',
+  'scorpion',
+  'swan',
+  'weaver',
+  'lion',
+  'bull',
+  'twins',
+  'queen',
+  'herdsman',
+  'chained',
+  'archer',
+  'falling',
   'silence',
   'oldlight',
   'mirror',

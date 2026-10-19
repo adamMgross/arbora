@@ -11,3 +11,4 @@
 | 0007 | CHARTER.md is kept out of the repository and its history | accepted |
 | 0008 | The reflection decks are lazy scene modules over validated collections with one journal shape | accepted |
 | 0009 | The Sky deck reads the real heavens for a fixed California location and shows no numbers | accepted |
+| 0010 | The Sky reads the sky over the reader on request, and California by default | accepted |

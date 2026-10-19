@@ -36,7 +36,7 @@
   principle: principle-8
   story: Zhuangzi's friend complains of a huge tree so gnarled that no carpenter will touch it. Zhuangzi answers that its uselessness is why it has grown so old, and suggests lying down beneath it.
   passages:
-    - text: Why don't you plant it in Not-Even-Anything Village, or the field of Broad-and-Boundless, relax and do nothing by its side, or lie down for a free and easy sleep under it?
+    - text: Why don't you plant it in Not-Even-Anything Village or the field of Broad-and-Boundless, relax and do nothing by its side, or lie down for a free and easy sleep under it?
       attribution: Zhuangzi, chapter 1, trans. Burton Watson
 - id: wood-yggdrasil
   circle: Elder
@@ -70,7 +70,7 @@
   principle: principle-1
   story: In the Homeric hymn the mountain nymphs are born with their trees and die with them. When a pine or an oak withers, its nymph leaves the light of the sun. The Greeks did not say the tree had a spirit. They said the spirit had a tree. In this wood she comes out of a birch.
   passages:
-    - text: At their birth pines or high-topped oaks spring up with them upon the fruitful earth… But when the fate of death is near at hand, first those lovely trees wither where they stand, and the bark shrivels away about them, and the twigs fall down, and at last the life of the nymph and of the tree leave the light of the sun together.
+    - text: At their birth pines or high-topped oaks spring up with them upon the fruitful earth … but when the fate of death is near at hand, first those lovely trees wither where they stand, and the bark shrivels away about them, and the twigs fall down, and at last the life of the Nymph and of the tree leave the light of the sun together.
       attribution: Homeric Hymn to Aphrodite 264–272, trans. Hugh G. Evelyn-White, 1914
 - id: wood-kodama
   circle: Spirit
@@ -125,3 +125,459 @@
       attribution: Homer, *Iliad* VI, trans. Alexander Pope, 1715
   question: What are you being asked to let fall this season, and what is already budding in its place?
   table: What did each of you let fall this year?
+- id: wood-the-white-pine
+  circle: Elder
+  name: The White Pine
+  from: Haudenosaunee
+  art: whitePine
+  principle: principle-6
+  story: The Haudenosaunee tell that the Peacemaker brought five warring nations together and planted a great white pine at Onondaga as the sign of their union. The nations threw their weapons into the hole beneath it, where a current carried them away. Four white roots ran out to the four directions for any people who would follow them back to the tree, and an eagle sat at the top to watch for danger.
+  passages:
+    - text: Roots have spread out from the Tree of the Great Peace, one to the north, one to the east, one to the south and one to the west. The name of these roots is The Great White Roots and their nature is Peace and Strength.
+      attribution: The Constitution of the Five Nations, section 2, as recorded by Arthur C. Parker, 1916
+- id: wood-the-sugar-maple
+  circle: Elder
+  name: The Sugar Maple
+  from: New England and the Great Lakes
+  art: sugarMaple
+  principle: principle-4
+  story: At the end of winter, when the nights still freeze and the days begin to thaw, the sap of the sugar maple runs. The Haudenosaunee and the Anishinaabe were boiling it down long before anyone else on the continent, and the Haudenosaunee Thanksgiving Address greets the maple as the leader of the trees. It takes about forty gallons of sap to make one of syrup. The tree gives it at the leanest moment of the year.
+  passages:
+    - text: Ho, every one that thirsteth, come ye to the waters, and he that hath no money; come ye, buy, and eat; yea, come, buy wine and milk without money and without price.
+      attribution: Isaiah 55:1, King James Version
+- id: wood-the-paper-birch
+  circle: Elder
+  name: The Paper Birch
+  from: The north woods
+  art: paperBirch
+  principle: principle-1
+  story: After a fire in the north woods, the paper birch is among the first trees back, a stand of white trunks rising out of the ash to shade the spruce and fir that will one day replace it. Its bark peels in sheets like pages and does not rot, so the Anishinaabe and their neighbors made canoes of it, and containers, and lodges. It lives about a century and makes way.
+  passages:
+    - text: To appoint unto them that mourn in Zion, to give unto them beauty for ashes, the oil of joy for mourning, the garment of praise for the spirit of heaviness; that they might be called trees of righteousness, the planting of the LORD, that he might be glorified.
+      attribution: Isaiah 61:3, King James Version
+- id: wood-the-redwood
+  circle: Elder
+  name: The Redwood
+  from: The California coast
+  art: redwood
+  principle: principle-5
+  story: The coast redwood is the tallest living thing, and it drinks the fog. In a dry summer as much as a third of its water is mist combed out of the air by its needles. When an old redwood falls or burns, young trees sprout from its roots in a ring around the place where it stood, and grow up in a circle around an absence. Foresters call them family circles.
+  passages:
+    - text: "The righteous shall flourish like the palm tree: he shall grow like a cedar in Lebanon. … They shall still bring forth fruit in old age; they shall be fat and flourishing."
+      attribution: Psalm 92:12, 14, King James Version
+- id: wood-the-oak
+  circle: Elder
+  name: The Oak
+  from: Celtic, the druids
+  art: oak
+  principle: principle-8
+  story: The Roman writers say the druids kept their rites in oak groves, and their name may mean oak-knowers. Across Europe the oak was the tree of the sky god, from Zeus's oracle at Dodona, where priests listened to the rustling of its leaves, to the oak of Thor that Boniface cut down. Lightning seems to find oaks more than other trees, which may be why.
+  passages:
+    - text: The Druids—for that is the name they give to their magicians—held nothing more sacred than the mistletoe and the tree that bears it, supposing always that tree to be the robur. Of itself the robur is selected by them to form whole groves, and they perform none of their religious rites without employing branches of it.
+      attribution: Pliny the Elder, *Natural History* XVI.95, trans. John Bostock and H. T. Riley, 1855
+- id: wood-the-bodhi-tree
+  circle: Elder
+  name: The Bodhi Tree
+  from: Buddhist, Bodh Gaya
+  art: bodhi
+  principle: principle-3
+  story: Siddhartha sat down under a pipal fig at Bodh Gaya and resolved not to rise until he understood. He rose the Buddha. A cutting of that tree was carried to Sri Lanka in the third century before the common era and planted at Anuradhapura, where it still grows, the oldest tree in the world planted by a person on a known date. Bodhi trees at temples across Asia grow from its cuttings.
+  passages:
+    - text: At that time the blessed Buddha dwelt at Uruvelâ, on the bank of the river Nerañgarâ, at the foot of the Bodhi tree (tree of wisdom), just after he had become Sambuddha. And the blessed Buddha sat cross-legged at the foot of the Bodhi tree uninterruptedly during seven days, enjoying the bliss of emancipation.
+      attribution: Mahâvagga I.1, trans. T. W. Rhys Davids and Hermann Oldenberg, 1881
+- id: wood-the-ceiba
+  circle: Elder
+  name: The Ceiba
+  from: Maya
+  art: ceiba
+  principle: principle-1
+  story: For the Maya the world has a great tree at each of its four corners and one at its center, and the tree at the center is the ceiba, the green tree, whose roots go down into the underworld and whose branches hold up the sky. A ceiba is still left standing when the forest around it is cleared, alone in the middle of a field, and its spines and buttresses make it look built rather than grown.
+  passages:
+    - text: And out of the ground made the LORD God to grow every tree that is pleasant to the sight, and good for food; the tree of life also in the midst of the garden, and the tree of knowledge of good and evil.
+      attribution: Genesis 2:9, King James Version
+- id: wood-honis-carob
+  circle: Elder
+  name: Honi's Carob
+  from: Jewish, the Talmud
+  art: carob
+  principle: principle-5
+  story: Honi the Circle-Maker saw a man planting a carob and asked how long it would take to bear fruit. Seventy years, the man said. Honi asked whether he expected to live seventy years. The man answered that he had found the world full of carob trees planted by those before him, and was planting for those after. Then Honi fell asleep for seventy years and woke to see the man's grandson gathering the fruit.
+  passages:
+    - text: And Abraham planted a grove in Beer-sheba, and called there on the name of the LORD, the everlasting God.
+      attribution: Genesis 21:33, King James Version
+- id: wood-humbaba
+  circle: Spirit
+  name: Humbaba
+  from: Mesopotamian, Gilgamesh
+  art: humbaba
+  principle: principle-8
+  story: In the oldest written epic, Humbaba guards the Cedar Forest for the gods, a giant whose voice is the flood and whose breath is fire. Gilgamesh and Enkidu go to kill him for fame and for cedar, and they do. The poem does not let them enjoy it. The gods take Enkidu for the killing, and Gilgamesh goes looking for a way not to die. The guardian of a forest is there for a reason.
+  passages:
+    - text: "The trees of the LORD are full of sap; the cedars of Lebanon, which he hath planted; Where the birds make their nests: as for the stork, the fir trees are her house."
+      attribution: Psalm 104:16–17, King James Version
+- id: wood-pan
+  circle: Spirit
+  name: Pan
+  from: Greek, Arcadia
+  art: pan
+  principle: principle-1
+  story: Pan is the god of the wild places of Arcadia, goat-legged and piping, the source of the sudden fear that comes over people alone in the woods, which is why it is called panic. Socrates, who almost never left the city, prayed to him once, at the end of a long afternoon under a plane tree by a stream outside Athens.
+  passages:
+    - text: Beloved Pan, and all ye other gods who haunt this place, give me beauty in the inward soul; and may the outward and inward man be at one.
+      attribution: Plato, *Phaedrus* 279b, trans. Benjamin Jowett
+- id: wood-the-leshy
+  circle: Spirit
+  name: The Leshy
+  from: Slavic
+  art: leshy
+  principle: principle-7
+  story: In the Slavic forests the leshy is the master of the woods, as tall as the trees in the forest and as small as the grass in the meadow. He leads travelers in circles until they are lost. The remedy, the old people said, is to sit down, take off your clothes and put them back on inside out, and change your shoes from one foot to the other. Then the paths come right again.
+  passages:
+    - text: And thine ears shall hear a word behind thee, saying, This is the way, walk ye in it, when ye turn to the right hand, and when ye turn to the left.
+      attribution: Isaiah 30:21, King James Version
+- id: wood-tapio
+  circle: Spirit
+  name: Tapio
+  from: Finnish, the Kalevala
+  art: tapio
+  principle: principle-4
+  story: In the Finnish woods Tapio is the forest's king and Mielikki its mistress, and a hunter asks them for game rather than taking it. In the Kalevala the hunter sings to them, praising their forest castle and promising gifts, and the old hunters left offerings on a stump. What the forest gives is given.
+  passages:
+    - text: "For every beast of the forest is mine, and the cattle upon a thousand hills. I know all the fowls of the mountains: and the wild beasts of the field are mine."
+      attribution: Psalm 50:10–11, King James Version
+- id: wood-cernunnos
+  circle: Spirit
+  name: Cernunnos
+  from: Celtic, Gaul
+  art: cernunnos
+  principle: principle-1
+  story: A god with a stag's antlers sits cross-legged on a silver cauldron found in a Danish bog, holding a torc in one hand and a serpent in the other, with a stag beside him and animals all around. A stone carved in Paris in the first century names him Cernunnos. Almost nothing written about him survives. He is known only by what surrounds him.
+  passages:
+    - text: As the hart panteth after the water brooks, so panteth my soul after thee, O God.
+      attribution: Psalm 42:1, King James Version
+- id: wood-the-yakshi
+  circle: Spirit
+  name: The Yakshi
+  from: India, Sanchi
+  art: yakshi
+  principle: principle-1
+  story: On the stone gateways of the great stupa at Sanchi, a woman leans out from a tree, one arm around its trunk and one hand pulling down a branch, and the tree blooms at her touch. She is a yakshi, one of the spirits of trees and fertility worshipped in India before the Buddha and carved onto his monuments anyway. The Buddha's mother is said to have given birth holding the branch of a sal tree in the same pose.
+  passages:
+    - text: As the apple tree among the trees of the wood, so is my beloved among the sons. I sat down under his shadow with great delight, and his fruit was sweet to my taste.
+      attribution: Song of Songs 2:3, King James Version
+- id: wood-the-burning-bush
+  circle: Spirit
+  name: The Burning Bush
+  from: Hebrew, Exodus
+  art: burningBush
+  principle: principle-8
+  story: Moses was keeping his father-in-law's sheep at the back of the wilderness when he saw a bush on fire that was not burning up. He turned aside to look, and only when he turned aside did the voice call his name. The first thing it told him was to take off his shoes. The Midrash says the presence chose a thornbush to teach that no place is empty of it.
+  passages:
+    - text: "And the angel of the LORD appeared unto him in a flame of fire out of the midst of a bush: and he looked, and, behold, the bush burned with fire, and the bush was not consumed. … put off thy shoes from off thy feet, for the place whereon thou standest is holy ground."
+      attribution: Exodus 3:2, 5, King James Version
+- id: wood-the-owl
+  circle: Spirit
+  name: The Owl
+  from: Many peoples
+  art: owl
+  principle: principle-3
+  story: The owl belongs to Athena, who sees clearly, and its picture was stamped on the coins of Athens. In the Cherokee telling of the seven nights, the owl was among the animals that stayed awake, and was given sight in the dark. In other places it is the bird of death and bad news. Everywhere it is the one awake when everyone else is sleeping, which is a gift and a loneliness.
+  passages:
+    - text: "I am like a pelican of the wilderness: I am like an owl of the desert. I watch, and am as a sparrow alone upon the house top."
+      attribution: Psalm 102:6–7, King James Version
+- id: wood-the-forest-sage
+  circle: Spirit
+  name: The Forest Sage
+  from: Hindu, the forest books
+  art: forestSage
+  principle: principle-3
+  story: The oldest Indian wisdom was spoken among trees. The Upanishads were taught in forest hermitages, and the texts just before them are called the Aranyakas, the forest books. The laws of Manu describe a stage of life, after the work of the household is done, when a person goes to live in the forest, eating what it gives and studying. The forest is where you go to learn what could not be learned at home.
+  passages:
+    - text: When a householder sees his (skin) wrinkled, and (his hair) white, and the sons of his sons, then he may resort to the forest.
+      attribution: The Laws of Manu VI.2, trans. Georg Bühler, 1886
+- id: wood-the-wind-in-the-tops
+  circle: Spirit
+  name: The Wind in the Tops
+  from: Hebrew and Greek scripture
+  art: wind
+  principle: principle-8
+  story: In Hebrew and in Greek one word means wind, breath and spirit. David was told to wait until he heard the sound of marching in the tops of the trees, and then to move, because then he would not be going alone. In the gospel the wind blows where it wishes, and you hear its sound but cannot say where it came from. In a forest you hear it before you feel it, coming through the tops a long way off.
+  passages:
+    - text: "The wind bloweth where it listeth, and thou hearest the sound thereof, but canst not tell whence it cometh, and whither it goeth: so is every one that is born of the Spirit."
+      attribution: John 3:8, King James Version
+- id: wood-the-clearing
+  circle: Passage
+  name: The Clearing
+  from: The deep forest
+  art: clearing
+  principle: principle-3
+  story: Somewhere in every old forest a tree has fallen and taken its neighbors with it, and the sun reaches the ground for the first time in a century. Seeds that waited in the soil for decades wake. Light-hungry things grow fast. Foresters call it a gap, and most of a forest's change happens in its gaps. A clearing is what a loss looks like from the ground, a year later.
+  passages:
+    - text: "The people that walked in darkness have seen a great light: they that dwell in the land of the shadow of death, upon them hath the light shined."
+      attribution: Isaiah 9:2, King James Version
+  question: What has fallen and let the light in?
+  table: Where in your life did an opening come from something falling?
+- id: wood-rings
+  circle: Passage
+  name: Rings
+  from: The cut stump
+  art: rings
+  principle: principle-2
+  story: Every year a tree lays down a ring, pale and wide in a good spring, dark and narrow in drought. Fire scars, insect years, the year the neighbor fell and the light came in are all written in the wood, outside the old rings and never over them. Read across thousands of trees, the rings date old roof beams and keep the record of a climate.
+  passages:
+    - text: "One generation passeth away, and another generation cometh: but the earth abideth for ever."
+      attribution: Ecclesiastes 1:4, King James Version
+  question: What would this year's ring show, wide or narrow, and what is it wrapped around?
+  table: What was a narrow year for you that turned out to hold?
+- id: wood-the-seed
+  circle: Passage
+  name: The Seed
+  from: Chandogya Upanishad
+  art: seed
+  principle: principle-8
+  story: A father sends his son to fetch a fig from the great banyan, has him break it open, then break open one of the tiny seeds inside, and asks what he sees. Nothing, says the son. The father says that from that nothing the whole great tree has grown, that the same fine essence is the self of everything, and then, you are that.
+  passages:
+    - text: "'Fetch me from thence a fruit of the Nyagrodha tree.' 'Here is one, Sir.' 'Break it.' 'It is broken, Sir.' 'What do you see there?' 'These seeds, almost infinitesimal.' 'Break one of them.' 'It is broken, Sir.' 'What do you see there?' 'Not anything, Sir.' The father said: 'My son, that subtile essence which you do not perceive there, of that very essence this great Nyagrodha tree exists.'"
+      attribution: Chandogya Upanishad 6.12, trans. Max Müller, 1879
+  question: What small thing in you holds more than it looks like?
+  table: What started as almost nothing and became something large in your life?
+- id: wood-fire
+  circle: Passage
+  name: Fire
+  from: The western forests
+  art: fire
+  principle: principle-8
+  story: Some forests need to burn. Many cones of the lodgepole pine are sealed with resin that only fire melts, and the giant sequoia drops its seeds onto ash, where its seedlings take best. Low fires clear the brush and leave the big trees standing. The forests that never burn are the ones that burn worst when they finally do.
+  passages:
+    - text: "When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee: when thou walkest through the fire, thou shalt not be burned; neither shall the flame kindle upon thee."
+      attribution: Isaiah 43:2, King James Version
+  question: What has burned through your life, and what could only grow because it did?
+  table: What fire cleared ground for something good in your life?
+- id: wood-shelter
+  circle: Passage
+  name: Shelter
+  from: Every rain
+  art: shelter
+  principle: principle-6
+  story: Caught in the rain on a mountain, people go under the biggest tree they can find. Under an old fir the ground can stay dry through an hour of rain. Birds, deer and people have all known this for as long as there have been trees and rain. To shelter is to admit that you are not, at the moment, enough by yourself.
+  passages:
+    - text: And a man shall be as an hiding place from the wind, and a covert from the tempest; as rivers of water in a dry place, as the shadow of a great rock in a weary land.
+      attribution: Isaiah 32:2, King James Version
+  question: Where are you sheltering right now, and from what?
+  table: Who has been a shelter for you, and whom have you sheltered?
+- id: wood-the-old-paths
+  circle: Passage
+  name: The Old Paths
+  from: Jeremiah
+  art: oldPaths
+  principle: principle-5
+  story: Old trails in a forest are often older than the maps. Game trails became footpaths and footpaths became roads. Walking one, you put your feet where thousands have put theirs, and the path knows where the water is and where the pass is lower. The prophet told a people who had lost their way to stand at the crossroads and ask for the old paths.
+  passages:
+    - text: Thus saith the LORD, Stand ye in the ways, and see, and ask for the old paths, where is the good way, and walk therein, and ye shall find rest for your souls.
+      attribution: Jeremiah 6:16, King James Version
+  question: What old way have you walked away from that might still know where the water is?
+  table: What did someone older teach you that you only understood later?
+- id: wood-pruning
+  circle: Passage
+  name: Pruning
+  from: The orchard and the vine
+  art: pruning
+  principle: principle-3
+  story: A gardener cuts back a healthy branch so the tree can put its strength elsewhere, and a vine left unpruned grows long and wild and bears little. In the forest the trees prune themselves. The lower branches of a fir die in the shade and drop, and the trunk rises clean. What is cut away was alive, which is why it is hard.
+  passages:
+    - text: "Every branch in me that beareth not fruit he taketh away: and every branch that beareth fruit, he purgeth it, that it may bring forth more fruit."
+      attribution: John 15:2, King James Version
+  question: What living branch would you cut back if you wanted your strength to go elsewhere?
+  table: What did you give up that turned out to make room?
+- id: wood-the-root
+  circle: Passage
+  name: The Root
+  from: The ground beneath
+  art: root
+  principle: principle-5
+  story: Most of a tree is out of sight. The roots of a big oak spread wider than its crown, and in a dry year the tree lives on what they reach. The trees blown down in storms are mostly the ones whose roots ran shallow, in wet ground where they never had to go deep. The prophet said a people that survived would take root downward first, and only then bear fruit upward.
+  passages:
+    - text: And the remnant that is escaped of the house of Judah shall again take root downward, and bear fruit upward.
+      attribution: Isaiah 37:31, King James Version
+  question: What are your roots reaching for in this dry season?
+  table: What has kept you standing in a storm?
+- id: wood-dormancy
+  circle: Passage
+  name: Dormancy
+  from: The winter woods
+  art: dormancy
+  principle: principle-2
+  story: In winter a maple looks dead. It has dropped its leaves, sealed its wounds, moved its water out of the cells that would burst in a freeze, and stopped. The buds for next spring are already formed, wrapped in scales. A tree that did not stop in winter would not survive it. Rest is part of the work.
+  passages:
+    - text: Though the root thereof wax old in the earth, and the stock thereof die in the ground; Yet through the scent of water it will bud, and bring forth boughs like a plant.
+      attribution: Job 14:8–9, King James Version
+  question: What in you is resting, and what have you been calling it?
+  table: When did a season of doing nothing turn out to matter?
+- id: wood-grafting
+  circle: Passage
+  name: Grafting
+  from: The orchard
+  art: grafting
+  principle: principle-6
+  story: A grafter cuts a branch from one tree and binds it into another, and if the wood takes, the two grow as one tree, with the roots of one and the fruit of the other. Paul used the image for strangers who joined an old people, a wild olive branch grafted into a cultivated tree, drawing on a root it did not grow. Belonging can be given as well as inherited.
+  passages:
+    - text: And if some of the branches be broken off, and thou, being a wild olive tree, wert graffed in among them, and with them partakest of the root and fatness of the olive tree; Boast not against the branches. But if thou boast, thou bearest not the root, but the root thee.
+      attribution: Romans 11:17–18, King James Version
+  question: What root are you drawing on that you did not grow yourself?
+  table: Where have you been taken in, and where have you taken someone in?
+- id: wood-the-fruit
+  circle: Passage
+  name: The Fruit
+  from: The orchard in September
+  art: fruit
+  principle: principle-4
+  story: A tree does not eat its own fruit. It makes it for the birds and animals and people who will carry its seed away, and the fruit is how anyone outside the tree knows what kind of tree it is. You cannot tell an apple from a crabapple in winter. You can in September.
+  passages:
+    - text: Ye shall know them by their fruits. Do men gather grapes of thorns, or figs of thistles?
+      attribution: Matthew 7:16, King James Version
+  question: What are you making that is for someone else to carry away?
+  table: By what fruit would the people at this table know you?
+- id: wood-bending
+  circle: Passage
+  name: Bending
+  from: Tao Te Ching
+  art: bending
+  principle: principle-8
+  story: In a hard wind the stiff trees break and the supple ones bend and stand up again. Willows and young birches can be bowed to the ground by snow and rise in spring. Laozi, who took water and infants and grass for his images of strength, said that what is hard and stiff belongs with death and what is soft and supple belongs with life.
+  passages:
+    - text: Trees and plants, in their early growth, are soft and brittle; at their death, dry and withered. Thus it is that firmness and strength are the concomitants of death; softness and weakness, the concomitants of life.
+      attribution: Tao Te Ching 76, trans. James Legge
+  question: Where are you holding stiff against something you could bend under?
+  table: When did giving way turn out to be the strong thing?
+- id: wood-stillness
+  circle: Passage
+  name: Stillness
+  from: The windless forest
+  art: stillness
+  principle: principle-3
+  story: Deep in an old forest on a windless day it can be quieter than any room. Moss, needles and trunks soak up the sound, and after a while you begin to hear what was under the noise, a creek a long way off, a woodpecker, your own breath. Every contemplative tradition has a word for this stillness, and most of them went to the woods to find it.
+  passages:
+    - text: The (state of) vacancy should be brought to the utmost degree, and that of stillness guarded with unwearying vigour. All things alike go through their processes of activity, and (then) we see them return (to their original state). When things (in the vegetable world) have displayed their luxuriant growth, we see each of them return to its root.
+      attribution: Tao Te Ching 16, trans. James Legge
+  question: What do you hear when the noise stops?
+  table: Where do you go to be still?
+- id: wood-the-sprout
+  circle: Passage
+  name: The Sprout
+  from: Tao Te Ching
+  art: sprout
+  principle: principle-2
+  story: Every redwood was once a seedling an inch tall that a deer could have eaten. In a forest most seedlings die, and the ones that live do almost nothing visible for years, putting their effort into roots. The Daoists liked this. The tree that fills your arms grew from a shoot as fine as a hair.
+  passages:
+    - text: The tree which fills the arms grew from the tiniest sprout; the tower of nine storeys rose from a (small) heap of earth; the journey of a thousand li commenced with a single step.
+      attribution: Tao Te Ching 64, trans. James Legge
+  question: What small beginning are you tending that nobody can see yet?
+  table: What is a small thing you started that is still growing?
+- id: wood-the-threads-beneath
+  circle: Passage
+  name: The Threads Beneath
+  from: The forest floor
+  art: threads
+  principle: principle-1
+  story: Under the forest floor, fungal threads wrap the roots of nearly every tree and run between them. The fungus trades water and minerals for the sugar the trees make, and some of what one tree makes can pass through the threads to another. How much passes, and how deliberately, is still argued over. A walk in the woods is a walk across a net you cannot see.
+  passages:
+    - text: Frequently consider the connection of all things in the universe and their relation to one another. For in a manner all things are implicated with one another, and all in this way are friendly to one another.
+      attribution: Marcus Aurelius, *Meditations* VI.38, trans. George Long
+  question: Who are you connected to underground, in ways neither of you sees?
+  table: Who has been feeding you without your knowing it?
+- id: wood-first-leaf
+  circle: Passage
+  name: First Leaf
+  from: The mountains in spring
+  art: firstLeaf
+  principle: principle-2
+  story: The first leaves of spring come out small and soft, a green so pale it is almost yellow, before the tree has made the tougher leaves of summer. In the mountains the leaf-out climbs the slopes a little higher every day. Jesus told his listeners to learn from the fig tree, which tells you summer is near when its branch turns tender.
+  passages:
+    - text: Now learn a parable of the fig tree; When his branch is yet tender, and putteth forth leaves, ye know that summer is nigh.
+      attribution: Matthew 24:32, King James Version
+  question: What is putting out its first tender leaves in you?
+  table: What sign told you a new season was coming?
+- id: wood-the-bare-mountain
+  circle: Passage
+  name: The Bare Mountain
+  from: Mencius
+  art: bareMountain
+  principle: principle-7
+  story: Mencius pointed to Ox Mountain, bare and brown outside the city, and said it had once been beautiful with trees. People cut them, and when sprouts came back the cattle and goats grazed them, and now everyone thinks the mountain was always bare. That, he said, is what happens to the goodness in a person. What you see now is not the nature of the mountain.
+  passages:
+    - text: The trees of the Niu mountain were once beautiful. Being situated, however, in the borders of a large State, they were hewn down with axes and bills;—and could they retain their beauty? … To these things is owing the bare and stripped appearance of the mountain, and when people now see it, they think it was never finely wooded. But is this the nature of the mountain?
+      attribution: Mencius VI.1.8, trans. James Legge
+  question: What in you looks bare that was only cut back and grazed?
+  table: What did someone see in you that you had stopped seeing?
+- id: wood-the-unremembered
+  circle: Passage
+  name: The Unremembered
+  from: Ecclesiasticus
+  art: unremembered
+  principle: principle-5
+  story: Walking in a second-growth forest you pass the stumps of the first one, huge and gone grey, cut a century ago by people whose names no one knows, for houses no one remembers. The book of Ben Sira praises the famous ancestors, then turns to the others, the ones who left no memorial, and says their goodness was not forgotten anyway.
+  passages:
+    - text: And some there be, which have no memorial; who are perished, as though they had never been; and are become as though they had never been born; and their children after them. But these were merciful men, whose righteousness hath not been forgotten.
+      attribution: Ecclesiasticus 44:9–10, King James Version
+  question: Whose unremembered work are you standing on today?
+  table: Name someone in your family line whose name you do not know but whose life you can guess.
+- id: wood-the-hollow
+  circle: Passage
+  name: The Hollow
+  from: The old tree
+  art: hollow
+  principle: principle-8
+  story: An old tree is often hollow, its heartwood rotted away while the living wood around it keeps growing. It stands as well as before, and the hollow fills with life, owls, bats, bees, a bear in winter. The Daoists said that the use of a cup, a room or a wheel is in its emptiness.
+  passages:
+    - text: Clay is fashioned into vessels; but it is on their empty hollowness, that their use depends. The door and windows are cut out (from the walls) to form an apartment; but it is on the empty space (within), that its use depends.
+      attribution: Tao Te Ching 11, trans. James Legge
+  question: What emptiness in you is making room for something to live?
+  table: What empty space in your life turned out to be useful?
+- id: wood-the-tree-of-the-field
+  circle: Passage
+  name: The Tree of the Field
+  from: Deuteronomy
+  art: treeOfField
+  principle: principle-4
+  story: The law of Deuteronomy forbids an army besieging a city to cut down its fruit trees for siege works. You may eat from them, it says. The verse can be read two ways, that the tree of the field is a person's life, or, are the trees of the field people, that they should be besieged by you? The rabbis built on it a whole ethic against needless destruction, called bal tashchit, do not destroy.
+  passages:
+    - text: "When thou shalt besiege a city a long time, in making war against it to take it, thou shalt not destroy the trees thereof by forcing an axe against them: for thou mayest eat of them, and thou shalt not cut them down (for the tree of the field is man's life)."
+      attribution: Deuteronomy 20:19, King James Version
+  question: What are you about to cut down that you live on?
+  table: What do we waste that we could keep?
+- id: wood-the-edge-of-the-wood
+  circle: Passage
+  name: The Edge of the Wood
+  from: Every trailhead
+  art: edge
+  principle: principle-6
+  story: Coming out of a forest, the light changes before you reach the edge. The trunks thin, the ground brightens, there is sky between the trees, and then the open, the trailhead, the road. Ecologists say the edge between two places holds more life than either. Every walk in the woods ends with returning to the people you left, carrying something.
+  passages:
+    - text: The LORD shall preserve thy going out and thy coming in from this time forth, and even for evermore.
+      attribution: Psalm 121:8, King James Version
+  question: What are you carrying out of the wood, and to whom?
+  table: What did you bring home from somewhere that changed you?
+- id: wood-climbing-to-see
+  circle: Passage
+  name: Climbing to See
+  from: Luke
+  art: climbing
+  principle: principle-7
+  story: Zacchaeus was a tax collector, rich and unloved and short, and when the crowd blocked his view he ran ahead and climbed a sycamore fig by the road. That is where he was seen, and called down, and asked to host dinner. Children climb trees to see farther. Adults mostly forget that it can be done.
+  passages:
+    - text: "And he sought to see Jesus who he was; and could not for the press, because he was little of stature. And he ran before, and climbed up into a sycomore tree to see him: for he was to pass that way."
+      attribution: Luke 19:3–4, King James Version
+  question: What would you have to climb, and risk looking foolish, to see what you need to see?
+  table: When did you go out on a limb, and what did you see from there?
+- id: wood-under-the-juniper
+  circle: Passage
+  name: Under the Juniper
+  from: 1 Kings
+  art: juniper
+  principle: principle-6
+  story: Elijah, worn out and afraid, walked a day into the wilderness, sat down under a desert broom, which the old English Bible calls a juniper, and asked to die. Then he slept. An angel woke him, gave him bread baked on hot stones and a jar of water, and let him sleep again, and only after the second meal did he go on. Before anything else, the exhausted need to eat and sleep under a tree.
+  passages:
+    - text: And as he lay and slept under a juniper tree, behold, then an angel touched him, and said unto him, Arise and eat.
+      attribution: 1 Kings 19:5, King James Version
+  question: What would it mean to eat and sleep before you decide anything?
+  table: Who has fed you when you were at the end of yourself?

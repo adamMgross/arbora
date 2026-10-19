@@ -46,6 +46,22 @@ function dust(cx: number, cy: number, seed: number, n: number): string {
   return o;
 }
 
+function constellation(
+  cx: number,
+  cy: number,
+  stars: Array<[number, number, number]>,
+  lines: Array<[number, number]>,
+  accent: number[] = [],
+): string {
+  let o = '';
+  for (const [a, b] of lines)
+    o += `<path d="M${f(cx + stars[a]![0])},${f(cy + stars[a]![1])} L${f(cx + stars[b]![0])},${f(cy + stars[b]![1])}" stroke="${CREAM}" stroke-width=".6" stroke-dasharray="2 3" opacity=".55"/>`;
+  stars.forEach(([x, y, r], i) => {
+    o += accent.includes(i) ? sparkle(cx + x, cy + y, r * 2.2, VERM) : sparkle(cx + x, cy + y, r * 1.6, CREAM);
+  });
+  return o;
+}
+
 const ART: Record<SkyArt, Drawer> = {
   sun(cx, cy) {
     let o = '';
@@ -194,6 +210,311 @@ const ART: Record<SkyArt, Drawer> = {
     }
     return o;
   },
+  dogstar(cx, cy) {
+    let o = '';
+    for (let i = 0; i < 12; i++) {
+      const a = (i * 30 * Math.PI) / 180;
+      o += `<path d="M${f(cx - 10 + Math.cos(a) * 14)},${f(cy - 40 + Math.sin(a) * 14)}L${f(cx - 10 + Math.cos(a) * (i % 2 ? 26 : 40))},${f(cy - 40 + Math.sin(a) * (i % 2 ? 26 : 40))}" stroke="${CREAM}" stroke-width="1"/>`;
+    }
+    o += `<circle cx="${cx - 10}" cy="${cy - 40}" r="9" fill="${CREAM}"/>`;
+    for (let k = 0; k < 4; k++)
+      o += `<path d="M${cx - 100},${cy + 52 + k * 11} q25,-7 50,0 t50,0 t50,0 t50,0" fill="none" stroke="${TEAL}" stroke-width="${f(1.6 - k * 0.3)}" opacity="${f(0.8 - k * 0.15)}"/>`;
+    return (
+      o +
+      constellation(
+        cx - 10,
+        cy - 40,
+        [
+          [30, 14, 1.6],
+          [24, 44, 1.8],
+          [10, 50, 1.4],
+          [44, 50, 1.4],
+          [6, 70, 1.2],
+        ],
+        [
+          [0, 1],
+          [1, 2],
+          [1, 3],
+          [2, 4],
+        ],
+      )
+    );
+  },
+  scorpion(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [-30, -38, 3],
+      [-62, -78, 1.6],
+      [-68, -60, 1.8],
+      [-70, -40, 1.4],
+      [-44, -44, 1.3],
+      [-20, -26, 1.3],
+      [-6, 4, 1.6],
+      [-4, 28, 1.5],
+      [8, 50, 1.5],
+      [30, 58, 1.5],
+      [56, 48, 1.8],
+      [62, 26, 1.4],
+      [48, 18, 2],
+    ];
+    let o = `<circle cx="${cx - 30}" cy="${cy - 38}" r="16" fill="${VERM}" opacity=".25"/>`;
+    o += constellation(
+      cx,
+      cy,
+      S,
+      [
+        [1, 2],
+        [2, 3],
+        [2, 4],
+        [4, 0],
+        [0, 5],
+        [5, 6],
+        [6, 7],
+        [7, 8],
+        [8, 9],
+        [9, 10],
+        [10, 11],
+        [11, 12],
+      ],
+      [0],
+    );
+    return o;
+  },
+  swan(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [0, -70, 2.6],
+      [0, -18, 1.8],
+      [54, -6, 1.6],
+      [-54, -30, 1.6],
+      [0, 76, 1.8],
+      [0, 26, 1.4],
+    ];
+    let o = `<path d="M${cx - 120},${cy + 90} Q${cx},${cy - 20} ${cx + 120},${cy - 110}" fill="none" stroke="${CREAM}" stroke-width="46" opacity=".08"/>`;
+    o += dust(cx, cy, 31, 60);
+    return (
+      o +
+      constellation(
+        cx,
+        cy,
+        S,
+        [
+          [0, 1],
+          [1, 5],
+          [5, 4],
+          [3, 1],
+          [1, 2],
+        ],
+        [4],
+      )
+    );
+  },
+  weaver(cx, cy) {
+    let o = `<path d="M${cx - 30},${cy - 110} C${cx - 10},${cy - 20} ${cx + 20},${cy + 20} ${cx + 10},${cy + 110}" fill="none" stroke="${CREAM}" stroke-width="40" opacity=".1"/>`;
+    o += dust(cx, cy, 41, 50);
+    o += `<path d="M${cx - 34},${cy - 4} q16,-14 32,0 q16,-14 32,0" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`;
+    o += sparkle(cx - 62, cy - 40, 7, CREAM) + sparkle(cx + 64, cy + 34, 6.5, CREAM);
+    o += `<path d="M${cx - 70},${cy - 46} l-6,-10 h12 z M${cx - 70},${cy - 34} l-4,6 h8 z" fill="${GOLD}" opacity=".6"/>`;
+    for (const dx of [-14, 0, 14]) o += sparkle(cx + 64 + dx * 0.9, cy + 34 + (dx ? 9 : 0), dx ? 2.4 : 0, CREAM);
+    return o;
+  },
+  lion(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [-30, 40, 2.4],
+      [-32, 12, 1.4],
+      [-20, -8, 1.8],
+      [-24, -30, 1.4],
+      [-46, -46, 1.4],
+      [-56, -32, 1.4],
+      [40, -16, 1.6],
+      [40, 16, 1.4],
+      [76, 20, 1.8],
+    ];
+    let o = '';
+    for (let i = 0; i < 16; i++) {
+      const a = (i * 22.5 * Math.PI) / 180;
+      o += `<path d="M${f(cx + Math.cos(a) * 70)},${f(cy + Math.sin(a) * 70)}L${f(cx + Math.cos(a) * 92)},${f(cy + Math.sin(a) * 92)}" stroke="${GOLD}" stroke-width=".8" opacity=".45"/>`;
+    }
+    return (
+      o +
+      constellation(
+        cx,
+        cy,
+        S,
+        [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [3, 4],
+          [4, 5],
+          [2, 6],
+          [6, 8],
+          [8, 7],
+          [7, 0],
+        ],
+        [0],
+      )
+    );
+  },
+  bull(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [0, 20, 2.6],
+      [70, -60, 1.8],
+      [80, -10, 1.6],
+      [-24, 10, 1.3],
+      [-12, -4, 1.3],
+      [2, -16, 1.4],
+      [-10, 18, 1.3],
+    ];
+    let o = '';
+    for (let i = 0; i < 26; i++) {
+      const x = cx - 90 + ((i * 37) % 120);
+      const y = cy + 40 + ((i * 53) % 60);
+      o += `<path d="M${x},${y} l-3,8" stroke="${TEAL}" stroke-width=".9" opacity=".6"/>`;
+    }
+    o +=
+      sparkle(cx - 66, cy - 66, 4, CREAM) + sparkle(cx - 74, cy - 58, 3, CREAM) + sparkle(cx - 60, cy - 54, 3, CREAM);
+    return (
+      o +
+      constellation(
+        cx,
+        cy,
+        S,
+        [
+          [3, 4],
+          [4, 5],
+          [5, 1],
+          [3, 6],
+          [6, 0],
+          [0, 2],
+        ],
+        [0],
+      )
+    );
+  },
+  twins(cx, cy) {
+    let o = '';
+    for (const side of [-1, 1]) {
+      const x = cx + side * 30;
+      o += `<circle cx="${x}" cy="${cy - 46}" r="12" fill="${side < 0 ? CREAM : GOLD}" opacity=".9"/>`;
+      o += `<path d="M${x},${cy - 32} L${x},${cy + 50} M${x},${cy + 50} l-12,40 M${x},${cy + 50} l12,40 M${x},${cy - 14} l${-side * 26},18" stroke="${side < 0 ? CREAM : GOLD}" stroke-width="1.4" fill="none"/>`;
+    }
+    o += `<path d="M${cx - 4},${cy + 4} L${cx + 4},${cy + 4}" stroke="${GOLD}" stroke-width="2"/>`;
+    return o;
+  },
+  queen(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [-80, -6, 1.8],
+      [-40, 20, 2],
+      [0, -14, 2],
+      [40, 10, 1.8],
+      [80, -24, 1.6],
+    ];
+    let o = `<circle cx="${cx}" cy="${cy + 20}" r="70" fill="none" stroke="${GOLD}" stroke-width=".6" stroke-dasharray="3 4" opacity=".6"/>`;
+    o += sparkle(cx, cy + 20, 4, GOLD);
+    return (
+      o +
+      constellation(cx, cy - 40, S, [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [3, 4],
+      ])
+    );
+  },
+  herdsman(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [0, 64, 3],
+      [-6, 14, 1.4],
+      [-14, -36, 1.4],
+      [10, -66, 1.6],
+      [36, -30, 1.4],
+      [22, 10, 1.6],
+      [-30, 70, 1.3],
+    ];
+    let o = `<circle cx="${cx}" cy="${cy + 64}" r="14" fill="${GOLD}" opacity=".18"/>`;
+    o += `<path d="M${cx + 76},${cy - 86} a5,5 0 1 1 0.1,0" fill="none" stroke="${GOLD}"/><path d="M${cx + 66},${cy - 60} Q${cx + 50},${cy - 30} ${cx + 40},${cy - 32}" fill="none" stroke="${GOLD}" stroke-width=".7" stroke-dasharray="2 3"/>`;
+    return (
+      o +
+      constellation(
+        cx,
+        cy,
+        S,
+        [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [3, 4],
+          [4, 5],
+          [5, 0],
+          [0, 6],
+        ],
+        [0],
+      )
+    );
+  },
+  chained(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [-80, 40, 1.8],
+      [-40, 20, 1.6],
+      [0, -2, 2],
+      [70, -40, 1.8],
+      [-6, -30, 1.3],
+      [-14, -56, 1.3],
+    ];
+    let o = `<ellipse cx="${cx - 22}" cy="${cy - 62}" rx="14" ry="5" fill="${CREAM}" opacity=".25" transform="rotate(-30 ${cx - 22} ${cy - 62})"/>`;
+    for (const x of [-96, -86, -76, 76, 86, 96])
+      o += `<circle cx="${cx + x}" cy="${cy + 70}" r="4" fill="none" stroke="${MUTED}" stroke-width="1"/>`;
+    return (
+      o +
+      constellation(cx, cy, S, [
+        [0, 1],
+        [1, 2],
+        [2, 3],
+        [2, 4],
+        [4, 5],
+      ])
+    );
+  },
+  archer(cx, cy) {
+    const S: Array<[number, number, number]> = [
+      [-30, 40, 1.8],
+      [-30, 6, 1.6],
+      [-20, -24, 1.5],
+      [36, -18, 1.8],
+      [50, 14, 1.6],
+      [-62, 10, 1.4],
+      [14, -6, 1.3],
+      [58, -6, 1.3],
+    ];
+    let o = `<circle cx="${cx - 70}" cy="${cy + 34}" r="30" fill="${CREAM}" opacity=".08"/><circle cx="${cx - 70}" cy="${cy + 34}" r="12" fill="${CREAM}" opacity=".14"/>`;
+    o += dust(cx - 40, cy + 30, 51, 70);
+    return (
+      o +
+      constellation(cx, cy, S, [
+        [5, 1],
+        [1, 0],
+        [0, 5],
+        [1, 2],
+        [2, 6],
+        [6, 1],
+        [6, 3],
+        [3, 7],
+        [7, 4],
+        [4, 6],
+        [4, 0],
+      ])
+    );
+  },
+  falling(cx, cy) {
+    const r = rng(61);
+    let o = dust(cx, cy, 63, 40);
+    for (let i = 0; i < 9; i++) {
+      const x = cx - 80 + r() * 160;
+      const y = cy - 80 + r() * 120;
+      const len = 24 + r() * 30;
+      o += `<path d="M${f(x)},${f(y)} l${f(-len * 0.6)},${f(len)}" stroke="${CREAM}" stroke-width="${f(0.6 + r())}" stroke-linecap="round" opacity="${f(0.4 + r() * 0.5)}"/><circle cx="${f(x - len * 0.6)}" cy="${f(y + len)}" r="1.4" fill="${CREAM}"/>`;
+    }
+    return o;
+  },
   silence(cx, cy) {
     let o = '';
     for (let k = 1; k <= 6; k++) {
@@ -297,6 +618,28 @@ const OVERLAY: Partial<Record<SkyArt, (cx: number, cy: number) => string>> = {
     `<path d="M${cx - 34},${cy - 62} L${cx + 28},${cy - 58} L${cx + 12},${cy + 10} L${cx + 28},${cy + 68} M${cx - 34},${cy - 62} L${cx - 12},${cy - 2} L${cx - 38},${cy + 66} M${cx - 34},${cy - 62} Q${cx - 70},${cy - 60} ${cx - 78},${cy - 10} M${cx + 28},${cy - 58} L${cx + 54},${cy - 104} L${cx + 70},${cy - 84} M${cx - 4},${cy - 86} m-6,0 a6,6 0 1 0 12,0 a6,6 0 1 0 -12,0" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`,
   dipper: (cx, cy) =>
     `<path d="M${cx - 100},${cy + 34} Q${cx - 60},${cy + 62} ${cx + 6},${cy + 34} Q${cx + 60},${cy + 20} ${cx + 70},${cy - 20} Q${cx + 30},${cy - 56} ${cx - 18},${cy - 40}" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`,
+  scorpion: (cx, cy) =>
+    `<path d="M${cx + 48},${cy + 18} q20,-4 26,-22 l6,6 m-6,-6 l-8,2" fill="none" stroke="${GOLD}" stroke-width="1.5"/>`,
+  swan: (cx, cy) =>
+    `<path d="M${cx},${cy - 70} L${cx},${cy + 76} M${cx - 74},${cy - 34} Q${cx - 30},${cy - 40} ${cx},${cy - 18} Q${cx + 30},${cy - 6} ${cx + 74},${cy - 2}" fill="none" stroke="${GOLD}" stroke-width="1.2" opacity=".9"/>`,
+  weaver: (cx, cy) =>
+    `<path d="M${cx - 92},${cy - 80} h44 M${cx - 86},${cy - 80} v40 M${cx - 54},${cy - 80} v40 M${cx - 86},${cy - 60} h32 M${cx + 50},${cy + 60} q14,-12 28,0 M${cx + 52},${cy + 60} l-6,-8 M${cx + 76},${cy + 60} l6,-8" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`,
+  lion: (cx, cy) =>
+    `<path d="M${cx - 56},${cy - 32} Q${cx - 70},${cy - 60} ${cx - 46},${cy - 70} Q${cx - 20},${cy - 76} ${cx - 20},${cy - 50}" fill="none" stroke="${GOLD}" stroke-width="1.3"/>`,
+  bull: (cx, cy) =>
+    `<path d="M${cx - 30},${cy + 14} Q${cx},${cy + 36} ${cx + 30},${cy + 14} M${cx - 26},${cy + 6} Q${cx - 50},${cy - 30} ${cx - 24},${cy - 50} M${cx + 26},${cy + 6} Q${cx + 60},${cy - 30} ${cx + 70},${cy - 60}" fill="none" stroke="${GOLD}" stroke-width="1.4"/>`,
+  twins: (cx, cy) =>
+    `<path d="M${cx - 70},${cy - 90} h140 M${cx - 70},${cy + 96} h140 M${cx - 50},${cy - 90} v186 M${cx + 50},${cy - 90} v186" fill="none" stroke="${GOLD}" stroke-width="1" opacity=".7"/>`,
+  queen: (cx, cy) =>
+    `<path d="M${cx - 30},${cy + 70} v-40 h60 v40 M${cx - 36},${cy + 30} l6,-14 h60 l6,14 M${cx - 20},${cy + 16} l6,-12 l8,8 l6,-12 l6,12 l8,-8 l6,12" fill="none" stroke="${GOLD}" stroke-width="1.3"/>`,
+  herdsman: (cx, cy) =>
+    `<path d="M${cx - 50},${cy + 92} Q${cx - 70},${cy + 20} ${cx - 40},${cy - 30} q-6,-10 2,-14" fill="none" stroke="${GOLD}" stroke-width="1.5"/>`,
+  chained: (cx, cy) =>
+    `<path d="M${cx - 92},${cy + 70} H${cx - 72} M${cx + 72},${cy + 70} H${cx + 100} M${cx - 70},${cy + 70} Q${cx - 30},${cy + 40} ${cx},${cy + 40} Q${cx + 30},${cy + 40} ${cx + 70},${cy + 70}" fill="none" stroke="${GOLD}" stroke-width="1.2" stroke-dasharray="4 3"/>`,
+  archer: (cx, cy) =>
+    `<path d="M${cx + 70},${cy - 70} Q${cx + 30},${cy - 30} ${cx + 70},${cy + 10} M${cx + 70},${cy - 70} L${cx + 70},${cy + 10} M${cx + 66},${cy - 30} L${cx - 66},${cy + 32} l10,-1 m-10,1 l6,-8" fill="none" stroke="${GOLD}" stroke-width="1.4"/>`,
+  falling: (cx, cy) =>
+    `<path d="M${cx - 60},${cy + 90} Q${cx},${cy + 70} ${cx + 60},${cy + 90}" fill="none" stroke="${GOLD}" stroke-width="1.2"/>`,
   milkyway: (cx, cy) =>
     `<path d="M${cx - 96},${cy + 84} Q${cx},${cy - 30} ${cx + 96},${cy + 84} M${cx - 70},${cy + 84} V${cy + 66} M${cx + 70},${cy + 84} V${cy + 66}" fill="none" stroke="${GOLD}" stroke-width="1.5"/>`,
 };
@@ -435,6 +778,22 @@ export function domeSvg(st: SkyState, names: Record<string, string>, halo: [numb
     const a = (deg * Math.PI) / 180;
     o += `<text x="${f(cx - (R + 16) * Math.sin(a))}" y="${f(cy - (R + 16) * Math.cos(a) + 4)}" text-anchor="middle" font-family="${SMALLCAPS}" font-weight="600" font-size="12" letter-spacing="2" fill="${ink}">${letter}</text>`;
   }
+  const placed: Array<[number, number, number]> = [];
+  const free = (x: number, y: number, w: number) =>
+    !placed.some(([px, py, pw]) => Math.abs(py - y) < 12 && x < px + pw && px < x + w);
+  const placeLabel = (bx: number, y: number, w: number): { x: number; y: number; end: boolean } => {
+    for (const end of [false, true]) {
+      for (const dy of [0, 13, -13, 26, -26, 39, -39]) {
+        const x = end ? bx - 12 - w : bx + 12;
+        if (free(x, y + dy, w)) {
+          placed.push([x, y + dy, w]);
+          return { x: end ? bx - 12 : bx + 12, y: y + dy, end };
+        }
+      }
+    }
+    placed.push([bx + 12, y, w]);
+    return { x: bx + 12, y, end: false };
+  };
   st.beacons.forEach((b, j) => {
     const name = (names[b.id] ?? b.id).toUpperCase();
     if (b.id === 'sun')
@@ -443,7 +802,8 @@ export function domeSvg(st: SkyState, names: Record<string, string>, halo: [numb
       o += `<g transform="translate(${f(b.x)} ${f(b.y)})">${moonDisc(0, 0, 6, st.moon, CREAM, st.day ? DAY_SKY : SHADE)}<circle r="6" fill="none" stroke="${ink}" stroke-width=".6"/></g>`;
     else if ((HEAVENS as string[]).includes(b.id))
       o += `<g class="beacon" style="animation-delay:${j * 0.4}s"><circle cx="${f(b.x)}" cy="${f(b.y)}" r="11" fill="${GOLD}" opacity=".14"/><circle cx="${f(b.x)}" cy="${f(b.y)}" r="4.2" fill="${GOLD}"/></g>`;
-    o += `<text x="${f(b.x + 12)}" y="${f(b.y + (b.id === 'milkyway' ? 14 : 4))}" font-family="${SMALLCAPS}" font-weight="600" font-size="10" letter-spacing="1.5" fill="${label}" opacity=".8">${esc(name)}</text>`;
+    const spot = placeLabel(b.x, b.y + (b.id === 'milkyway' ? 14 : 4), name.length * 8.2 + 6);
+    o += `<text x="${f(spot.x)}" y="${f(spot.y)}"${spot.end ? ' text-anchor="end"' : ''} font-family="${SMALLCAPS}" font-weight="600" font-size="10" letter-spacing="1.5" fill="${label}" opacity=".8">${esc(name)}</text>`;
   });
   o += `<g data-halo transform="translate(${f(halo[0])} ${f(halo[1])})" fill="none" stroke="${GOLD}"><circle r="26" stroke-width="1.2"/><circle r="30" stroke-width=".5" opacity=".6"/></g></svg>`;
   return o;

@@ -65,6 +65,7 @@ Typed values become wire format in four places: HTML (rendered by components), t
 | System | Purpose | Auth | Verified | License |
 |---|---|---|---|---|
 | GitHub Pages | Hosting, via `actions/deploy-pages` | repo permissions | not yet deployed | n/a |
+| Browser geolocation | The Sky's optional reading of the sky over the reader, asked only on a tap | browser permission | 2026-10-18, through Playwright's emulated geolocation | n/a |
 | Google Fonts | Cormorant Garamond, EB Garamond, Source Sans 3 loaded by the browser at runtime. The deck pages add Cormorant SC (Sky, Year) and IM Fell English (Wood) through a link `Deck.astro` renders | none | 2026-10-18, recorded in the parity HAR | SIL OFL |
 
 Source Sans 3 and the tree page's Source Code Pro are requested and unused (`arb-7r1s`).
@@ -76,6 +77,7 @@ Source Sans 3 and the tree page's Source Code Pro are requested and unused (`arb
 | Saved readings | `localStorage` key `arbora-saved-readings`, JSON array | Entries are `{text, source}` and may carry more fields. The reader accepts the original shape and keeps unknown fields. A new field is added beside the old ones. |
 | The Wood's walks | `localStorage` key `arbora-wood`, one journal object | Entries are `{iso, cards, line, status, outcome}` with `status` kept or branch. `lastDay` is the local date of the last walk. |
 | The Sky's ascents | `localStorage` key `arbora-sky`, one journal object | Entries are `{iso, plate, heavens, line, status}` with `status` kept or set. |
+| The reader's place | `localStorage` key `arbora-place`, `{lat, lon}` | Written only when the reader taps "Read the sky over where you are", rounded to a tenth of a degree. An empty value means the California default (`docs/decisions/0010`). |
 | The Year's notebook | `localStorage` key `arbora-year`, one journal object | Entries are `{iso, w, y, text}`, one line per window per year. `draw` is `{w}` for the day's companion and `lastDay` the day it was drawn. |
 | Offline cache | Cache Storage, one cache named `arbora-<10 hex>` | Replaced on every deploy. The worker deletes only caches starting with `arbora-` because the origin is shared with other project sites. |
 
@@ -98,7 +100,7 @@ The three decks are the first scenes, and they set the shape (`docs/decisions/00
 
 - A scene is a custom element (`<arbora-scene data-scene="...">`) defined once in `src/scripts/scenes.ts`. When the element comes within 400 px of the viewport it imports its module from `src/scenes/<name>/index.ts` and calls `mount(root, env)`. Pages without a scene ship none of the scene code, and each scene is its own chunk.
 - A scene reads its content from the JSON script `Deck.astro` renders inside the element, and builds its own markup. Astro renders no deck markup beyond the element and a `<noscript>` line.
-- `env` carries the clock, the random source, and the storage. Nothing in a scene calls `new Date()`, `Math.random`, or `localStorage` directly, so the end-to-end tests install a clock and a seeded random.
+- `env` carries the clock, the random source, the storage, and the location lookup. Nothing in a scene calls `new Date()`, `Math.random`, or `localStorage` directly, so the end-to-end tests install a clock and a seeded random.
 - Colors are CSS custom properties referenced with `var()` inside the SVG strings and defined per deck in `Deck.css`. Script never carries a color, and a color-scheme change re-resolves them without script.
 - Motion respects `prefers-reduced-motion` through `src/scenes/motion.ts` (`wait`, `animate`, `reducedMotion`). CSS animations for the decks are switched off under the same query in `Deck.css`.
 - Drawing is pure: `art.ts` turns values into SVG strings and is also imported at build time by `DeckBacks.astro` to render the card backs on the hub.

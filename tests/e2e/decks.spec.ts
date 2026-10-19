@@ -53,7 +53,7 @@ test.describe('the year', () => {
     await openDeck(page, 'year.html', SPRING_NOON);
     await expect(page.locator('[data-today]')).toHaveText('16');
     const world = page.locator('#year-pair figure').first().locator('.cardsvg');
-    await expect(world).toHaveAttribute('aria-label', 'Window 16: Goldfields carpet the valley floor');
+    await expect(world).toHaveAttribute('aria-label', 'Window 16: Lupine paints the hillsides');
     await expect(page.locator('#year-open')).toBeDisabled();
     await page.locator('#year-draw').click();
     await page.clock.runFor(3000);
@@ -118,7 +118,7 @@ test.describe('the year', () => {
     await page.locator('#year-copy').click();
     await expect(page.locator('#year-copy')).toHaveText('Copied');
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
-      '3. Manzanita bells hum with bees · 2026: Bees in the manzanita.\n16. Goldfields carpet the valley floor · 2025: Levee gold.',
+      '3. Gray whales turn north · 2026: Bees in the manzanita.\n16. Lupine paints the hillsides · 2025: Levee gold.',
     );
   });
 
@@ -331,5 +331,52 @@ test.describe('the wood', () => {
     await expect(page.locator('#wood-book .bk-q span')).toHaveText('For the table');
     await expect(page.locator('#wood-keep')).toHaveCount(0);
     expect(await journal(page, 'arbora-wood')).toBeNull();
+  });
+});
+
+test.describe('the sky over where you are', () => {
+  test('reads the sky over the reader only when asked, keeps a coarse place, and can return to California', async ({
+    page,
+    context,
+  }) => {
+    await context.grantPermissions(['geolocation']);
+    await context.setGeolocation({ latitude: -33.86882, longitude: 151.20929 });
+    await openDeck(page, 'sky.html', SPRING_NIGHT);
+    const button = page.locator('#sky-place');
+    await expect(button).toHaveText('Read the sky over where you are');
+    await expect(page.locator('#sky-dome svg')).toHaveAttribute('aria-label', /over California/);
+    const californiaLine = await page.locator('#sky-read').innerText();
+    await button.click();
+    await expect(button).toHaveText('Return to the California sky');
+    await expect(page.locator('#sky-dome svg')).toHaveAttribute('aria-label', /over where you are/);
+    expect(await page.evaluate(() => localStorage.getItem('arbora-place'))).toBe('{"lat":-33.9,"lon":151.2}');
+    expect(await page.locator('#sky-read').innerText()).not.toBe(californiaLine);
+    await page.reload();
+    await page.locator('arbora-scene.mounted').waitFor();
+    await expect(page.locator('#sky-place')).toHaveText('Return to the California sky');
+    await page.locator('#sky-place').click();
+    await expect(page.locator('#sky-place')).toHaveText('Read the sky over where you are');
+    await expect(page.locator('#sky-read')).toHaveText(californiaLine);
+  });
+
+  test('stays over California when the browser refuses', async ({ page }) => {
+    await openDeck(page, 'sky.html', SPRING_NIGHT);
+    await page.locator('#sky-place').click();
+    await expect(page.locator('#sky-place-note')).toHaveText(
+      'Your browser did not share a location, so the sky stays over California.',
+    );
+    await expect(page.locator('#sky-place')).toHaveText('Read the sky over where you are');
+  });
+});
+
+test.describe('the table from the rituals page', () => {
+  test('the weekly gathering links to a table draw with the switch already set', async ({ page }) => {
+    await page.goto('rituals.html');
+    const link = page.locator('a[href="wood.html#table"]');
+    await expect(link).toHaveText('Draw for the table');
+    await page.clock.install({ time: SPRING_NIGHT });
+    await link.click();
+    await page.locator('arbora-scene.mounted').waitFor();
+    await expect(page.locator('#wood-table')).toBeChecked();
   });
 });

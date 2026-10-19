@@ -241,6 +241,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     cue.textContent = 'The wood is closed for today.';
   };
 
+  if (location.hash === '#table') tableSwitch.checked = true;
   enterButton.addEventListener('click', enter);
   openButton.addEventListener('click', openBook);
   showReturn();

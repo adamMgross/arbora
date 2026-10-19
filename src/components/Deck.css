@@ -658,6 +658,17 @@
   color: var(--st-fg);
 }
 
+.deck-sky .place {
+  margin-top: 2px;
+}
+
+.deck-sky .place-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--st-dim);
+}
+
 .deck-sky .drawn {
   display: grid;
   grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
