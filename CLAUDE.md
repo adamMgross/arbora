@@ -12,7 +12,7 @@ This repo follows `~/.claude/CLAUDE.md` in full. This file adds only what is spe
 4. `docs/decisions/README.md`: index of decision records. Read one before revisiting the choice it records.
 5. `tk ready`: what to work on.
 
-Also: `DESIGN.md` (design language, where `src/styles/tokens.css` wins on any value).
+Also: `DESIGN.md` (design language, where `src/styles/tokens.css` wins on any value) and `docs/research/mirrors-for-the-mind.md` (the survey of oracle traditions the decks are built on: the seven-part anatomy, where traditions diverge, why they work, failure modes, and design principles). Read the research before designing or extending a deck.
 
 ## Commands
 
