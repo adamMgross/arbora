@@ -1,0 +1,127 @@
+- id: wood-those-who-stayed-awake
+  circle: Elder
+  name: Those Who Stayed Awake
+  from: Cherokee
+  art: stayedAwake
+  principle: principle-3
+  story: In the Cherokee telling of how the world was made, the plants and animals were asked to keep watch for seven nights. One by one they fell asleep. A few trees kept the vigil to the end and were given the gift of staying green all year. Among the animals the owl stayed awake, and can see in the dark.
+  passages:
+    - text: Of the trees only the cedar, the pine, the spruce, the holly, and the laurel were awake to the end, and to them it was given to be always green and to be greatest for medicine.
+      attribution: Cherokee, as recorded in James Mooney, *Myths of the Cherokee*, 1900
+- id: wood-the-aspen
+  circle: Elder
+  name: The Aspen
+  from: Rocky Mountains, Pando
+  art: aspen
+  principle: principle-1
+  story: A stand of aspen is usually one tree. In Utah a single root sends up some forty-seven thousand trunks over a hundred acres and has done so for thousands of years. Each trunk lives about a century. The root does not. In the Rockies the aspens turn gold together in a week, because they are one.
+  passages:
+    - text: If some one were to strike at the root of this large tree here, it would bleed, but live. If he were to strike at its stem, it would bleed, but live. If he were to strike at its top, it would bleed, but live. Pervaded by the living Self that tree stands firm, drinking in its nourishment and rejoicing.
+      attribution: Chandogya Upanishad 6.11, trans. Max Müller, 1879
+- id: wood-the-bristlecone
+  circle: Elder
+  name: The Bristlecone
+  from: White Mountains, California
+  art: bristlecone
+  principle: principle-2
+  story: On a dry ridge at eleven thousand feet, the oldest living trees grow a few inches a century and have stood since before the pyramids. Most of each tree is dead wood, polished by ice, with one strip of living bark feeding one living branch. They live so long because almost nothing else can live there.
+  passages:
+    - text: For a thousand years in thy sight are but as yesterday when it is past, and as a watch in the night.
+      attribution: Psalm 90:4, King James Version
+- id: wood-the-useless-tree
+  circle: Elder
+  name: The Useless Tree
+  from: Daoist, Zhuangzi
+  art: uselessTree
+  principle: principle-8
+  story: Zhuangzi's friend complains of a huge tree so gnarled that no carpenter will touch it. Zhuangzi answers that its uselessness is why it has grown so old, and suggests lying down beneath it.
+  passages:
+    - text: Why don't you plant it in Not-Even-Anything Village, or the field of Broad-and-Boundless, relax and do nothing by its side, or lie down for a free and easy sleep under it?
+      attribution: Zhuangzi, chapter 1, trans. Burton Watson
+- id: wood-yggdrasil
+  circle: Elder
+  name: Yggdrasil
+  from: Norse
+  art: yggdrasil
+  principle: principle-5
+  story: The Norse world tree is an ash. The nine worlds hang in it, a well lies at its root where the Norns draw water for it every day, an eagle sits in the crown and a serpent gnaws below, and a squirrel runs between them carrying insults. The gods meet beneath it to judge. Odin hung on it nine nights to win the runes.
+  passages:
+    - text: |-
+        An ash I know, Yggdrasil its name,
+        With water white is the great tree wet;
+        Thence come the dews that fall in the dales,
+        Green by Urth's well does it ever grow.
+      attribution: Völuspá 19, trans. Henry Adams Bellows, 1923
+- id: wood-the-green-man
+  circle: Spirit
+  name: The Green Man
+  from: Carved in Europe's churches
+  art: greenMan
+  principle: principle-1
+  story: A face made of leaves, with vines growing from his mouth, carved into hundreds of medieval churches. No one knows exactly what the carvers meant. He looks like what a person becomes when they stop holding themselves apart from the green world. Here he wears fir and cedar, and a few maple leaves.
+  passages:
+    - text: "Let the field be joyful, and all that is therein: then shall all the trees of the wood rejoice."
+      attribution: Psalm 96:12, King James Version
+- id: wood-the-dryads
+  circle: Spirit
+  name: The Dryads
+  from: Greek
+  art: dryads
+  principle: principle-1
+  story: In the Homeric hymn the mountain nymphs are born with their trees and die with them. When a pine or an oak withers, its nymph leaves the light of the sun. The Greeks did not say the tree had a spirit. They said the spirit had a tree. In this wood she comes out of a birch.
+  passages:
+    - text: At their birth pines or high-topped oaks spring up with them upon the fruitful earth… But when the fate of death is near at hand, first those lovely trees wither where they stand, and the bark shrivels away about them, and the twigs fall down, and at last the life of the nymph and of the tree leave the light of the sun together.
+      attribution: Homeric Hymn to Aphrodite 264–272, trans. Hugh G. Evelyn-White, 1914
+- id: wood-kodama
+  circle: Spirit
+  name: Kodama
+  from: Japanese, Shinto
+  art: kodama
+  principle: principle-8
+  story: In Japan a kodama is the spirit of an old tree, and the echo that comes back from a mountainside was once said to be its voice. A tree with a kodama in it was marked with a rope and left standing. Fell one anyway, and misfortune followed the axe home. The cedars of the Pacific coast are the right size for one.
+  passages:
+    - text: "For ye shall go out with joy, and be led forth with peace: the mountains and the hills shall break forth before you into singing, and all the trees of the field shall clap their hands."
+      attribution: Isaiah 55:12, King James Version
+- id: wood-the-dark-wood
+  circle: Passage
+  name: The Dark Wood
+  from: Dante, Italy, c. 1308
+  art: darkWood
+  principle: principle-7
+  story: Every people who live near forests know what it is to get lost in one. The dark wood is where the old path ends and the next one has not appeared. Dante begins the greatest poem of his age there, which says something about where journeys start.
+  passages:
+    - text: |-
+        Midway upon the journey of our life
+        I found myself within a forest dark,
+        For the straightforward pathway had been lost.
+      attribution: Dante, *Inferno* I.1–3, trans. Henry Wadsworth Longfellow
+  question: Where has the straight path disappeared, and what are you noticing now that you have to look?
+  table: When were you most lost, and what did you only see because the path was gone?
+- id: wood-the-nurse-log
+  circle: Passage
+  name: The Nurse Log
+  from: The old-growth forest
+  art: nurseLog
+  principle: principle-4
+  story: When an old tree falls in a deep forest it keeps giving for centuries. Seedlings root along its back, fungi turn its wood to soil, and threads under the ground carry what it held to the trees around it. In the Pacific Northwest whole rows of hemlocks stand on stilts where the log they grew on has gone. An ending can be the ground something else grows from.
+  passages:
+    - text: For there is hope of a tree, if it be cut down, that it will sprout again, and that the tender branch thereof will not cease.
+      attribution: Job 14:7, King James Version
+  question: What ended in your life that is now feeding something new?
+  table: Name something that ended and is still feeding you.
+- id: wood-leaf-fall
+  circle: Passage
+  name: Leaf-fall
+  from: Homer, Iliad VI
+  art: leaffall
+  principle: principle-2
+  story: Asked who he is before a fight, Glaucus answers with the oldest image for a human generation, leaves. Trees do it every year without grief. The Greeks put the comparison in the mouth of a man about to risk his life.
+  passages:
+    - text: |-
+        Like leaves on trees the race of man is found,
+        Now green in youth, now withering on the ground;
+        Another race the following spring supplies;
+        They fall successive, and successive rise.
+      attribution: Homer, *Iliad* VI, trans. Alexander Pope, 1715
+  question: What are you being asked to let fall this season, and what is already budding in its place?
+  table: What did each of you let fall this year?

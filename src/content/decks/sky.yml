@@ -1,0 +1,242 @@
+- id: moon
+  kind: heaven
+  n: 1
+  name: The Moon
+  alt: change
+  art: moon
+  above: "The nearest and quickest of the wandering lights, and the only one that visibly changes. Chang'e rose to it with a rabbit. In the Haudenosaunee Thanksgiving Address it is Grandmother, who keeps the tides and the births. Dante placed in its heaven the souls whose vows had wavered, and the Zen masters warned not to mistake the finger pointing at it for the moon. Its lesson in every tongue is the same: light that waxes and wanes is still light. Tonight it is {phase}."
+  set: the demand to be the same every day.
+  receive: permission to wax and wane, and to be dark for a night without being gone.
+  passages:
+    - text: "When I consider thy heavens, the work of thy fingers, the moon and the stars, which thou hast ordained; What is man, that thou art mindful of him?"
+      attribution: Psalm 8:3–4, King James Version
+  question: What phase are you in, and are you trying to be in another?
+- id: mercury
+  kind: heaven
+  n: 2
+  name: Mercury
+  alt: the messenger
+  art: mercury
+  above: The light that never strays far from the sun, hard to see and quick to vanish. Hermes to the Greeks, Thoth who invented writing to the Egyptians, the planet of speech, roads, trade and the crossing of thresholds. The Hermetic books tell the whole ascent of the soul under his name. Dante found in his heaven the souls who did good for the sake of their own fame.
+  set: the need to be heard before you have understood.
+  receive: the word that is yours to carry, and the road it goes by.
+  passages:
+    - text: A word fitly spoken is like apples of gold in pictures of silver.
+      attribution: Proverbs 25:11, King James Version
+  question: What message are you carrying, and whose is it?
+- id: venus
+  kind: heaven
+  n: 3
+  name: Venus
+  alt: the gates
+  art: venus
+  above: "The brightest of the wanderers, morning star and evening star, the same light under two names. Inanna went down through seven gates and at each one gave up an ornament: the crown, the lapis beads, the measuring rod, the robe. She came back up through the same seven. Aphrodite rose from the sea. Dante set the lovers in this heaven, and Sappho called the evening star the one that brings everything home."
+  set: the ornament this gate asks for.
+  receive: the self that remains when it is gone.
+  passages:
+    - text: "Hesperus, you bring back all that the bright dawn scattered: you bring the sheep, you bring the goat, you bring the child back to its mother."
+      attribution: Sappho, fragment 104a, rendered from the Greek
+  question: What is the gate asking you to leave at the door, and what remains when you do?
+- id: sun
+  kind: heaven
+  n: 4
+  name: The Sun
+  alt: the center
+  art: sun
+  above: The middle of the seven, with three heavens below it and three above. Ra in his boat, Amaterasu drawn out of her cave by laughter and a mirror, Surya with seven horses. Francis called it Brother Sun and said it bore the likeness of the highest thing he knew. Dante filled this heaven with the wise, dancing in two rings. It is the symbol of the self that gives light without deciding to, and of the center that everything else turns around. Tonight it stands in {sign}.
+  set: the wish to be the center of someone else's sky.
+  receive: the light you already give without trying.
+  passages:
+    - text: |-
+        Praised be You, my Lord, through Brother Sun,
+        who brings the day; and You give light through him.
+        And he is beautiful and radiant in all his splendor!
+        Of You, Most High, he bears the likeness.
+      attribution: Francis of Assisi, *Canticle of the Sun*
+  question: What rises in you every day whether or not you attend to it?
+- id: mars
+  kind: heaven
+  n: 5
+  name: Mars
+  alt: the will
+  art: mars
+  above: The red wanderer, the one that stops and walks backward across the sky before going on. Nergal to Babylon, Ares to the Greeks, Mangala to India. The planet of will, strife and courage, and of the force that builds when it is aimed and breaks when it is not. Dante filled this heaven with those who fought for what they believed and set a cross of light in it. The Daoists would say its backward loop is the Way moving by contraries.
+  set: the fight you are having with yourself.
+  receive: the force that was for building.
+  passages:
+    - text: |-
+        The movement of the Tao
+        By contraries proceeds;
+        And weakness marks the course
+        Of Tao's mighty deeds.
+      attribution: Tao Te Ching 40, trans. James Legge
+  question: Where is your force going tonight, and is it aimed?
+- id: jupiter
+  kind: heaven
+  n: 6
+  name: Jupiter
+  alt: the just
+  art: jupiter
+  above: The slow bright king of the wanderers. Zeus, Marduk who ordered the world, Brihaspati the teacher of the gods, Thor whose day is Thursday. The planet of expansion, abundance, law and generosity, and of their shadow, appetite. In Dante's sixth heaven the souls of the just fly up as letters and spell out a sentence about loving justice, then settle into the shape of an eagle.
+  set: appetite dressed as generosity.
+  receive: the room your life is asking for.
+  passages:
+    - text: Look round at the courses of the stars, as if thou wert going along with them; and constantly consider the changes of the elements into one another; for such thoughts purge away the filth of the terrene life.
+      attribution: Marcus Aurelius, *Meditations* VII.47, trans. George Long
+  question: Where is your life asking for more room, and is that generosity or appetite?
+- id: saturn
+  kind: heaven
+  n: 7
+  name: Saturn
+  alt: time
+  art: saturn
+  above: The farthest and slowest light the ancients could see, and so the planet of time, age, limit and patience. Kronos with the scythe. The old man. Saturday, his day, which is also the Sabbath, when the work stops. Dante placed the contemplatives in this heaven, climbing a golden ladder out of sight. Astrologers call its return to where it stood at your birth the season when life asks which structures you will keep. In the ascent it is the last gate before the stars.
+  set: the fear that time is against you.
+  receive: the shape that limits give, and the rest at the end of the week.
+  passages:
+    - text: So teach us to number our days, that we may apply our hearts unto wisdom.
+      attribution: Psalm 90:12, King James Version
+  question: What structure in your life is asking to be honored, and what is asking to be outgrown?
+- id: pleiades
+  kind: stars
+  name: The Pleiades
+  alt: the sisters
+  art: pleiades
+  above: "A small knot of light that every people has named: seven sisters pursued by the hunter, Matariki whose rising opens the Māori year, Subaru the gathering, the nurses of the war god in India. Nearly every telling explains why one of the seven is missing. Their rising at dusk opened the planting year for the Greeks and the sailing season in the Andes."
+  set: the count that insists on seven.
+  receive: the sister you can almost see.
+  passages:
+    - text: Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?
+      attribution: Job 38:31, King James Version
+  question: Who or what is the sister you can almost see?
+- id: orion
+  kind: stars
+  name: Orion
+  alt: the hunter
+  art: orion
+  above: The giant who stands up in the east as the year turns cold. The hunter killed by the scorpion and set opposite it so the two never share a sky. Sah to the Egyptians, the soul of Osiris, with the dog star at his heel. Three brothers in a canoe to the Yolŋu. The red star at his shoulder is old and swollen and may already be gone, so that what you see is what was.
+  set: the hunt that has become the hunter.
+  receive: the season you recognize by its first figure.
+  passages:
+    - text: Which maketh Arcturus, Orion, and Pleiades, and the chambers of the south.
+      attribution: Job 9:9, King James Version
+  question: What do you only recognize when the season turns?
+- id: dipper
+  kind: stars
+  name: The Bear
+  alt: the pole
+  art: dipper
+  above: Seven stars that circle the one point that does not move. A bear to the Greeks and to many North American peoples, hunted round the pole each year and bleeding onto the autumn leaves. A plough, a wagon, a ladle, the Seven Sages, the drinking gourd that pointed north for people escaping slavery. Confucius compared the good ruler to the pole star, keeping its place while everything turns toward it.
+  set: the course you have not checked in years.
+  receive: the one point that holds while the rest turns.
+  passages:
+    - text: He who exercises government by means of his virtue may be compared to the north polar star, which keeps its place and all the stars turn towards it.
+      attribution: Confucius, *Analects* 2.1, trans. James Legge
+  question: What do you steer by, and when did you last check it was still there?
+- id: milkyway
+  kind: stars
+  name: The Milky Way
+  alt: the road
+  art: milkyway
+  above: The river of light that stands up out of the south on summer nights. The Silver River that keeps the Weaver from the Cowherd, who meet once a year on a bridge of magpies. Mayu, the river of the Inca sky. Milk from Hera's breast. The Emu drawn in the dark lanes for Aboriginal Australians. For the Maya and for many peoples of the north it was the road the dead walk. It is the whole we belong to, seen from inside.
+  set: the need to see the whole from outside.
+  receive: a place on the road.
+  passages:
+    - text: He telleth the number of the stars; he calleth them all by their names.
+      attribution: Psalm 147:4, King James Version
+  question: What are you part of that is too large to see from inside?
+- id: silence
+  kind: beyond
+  name: The Silence
+  alt: the answer that does not come
+  art: silence
+  above: Every tradition that climbed the ladder met silence at the top. Elijah on the mountain heard wind, earthquake and fire, and then a still small voice. The Cloud of Unknowing says God is known by what cannot be known. The Zen hall is silent on purpose. We have listened to the sky for a long time now and nothing has answered, and the silence can be held as loneliness or as the first condition of prayer.
+  set: the demand for an answer.
+  receive: the quiet in which one could be heard.
+  passages:
+    - text: "And after the earthquake a fire; but the LORD was not in the fire: and after the fire a still small voice."
+      attribution: 1 Kings 19:12, King James Version
+  question: What are you listening for that has not answered yet?
+- id: oldlight
+  kind: beyond
+  name: The Old Light
+  alt: what you see is what was
+  art: oldlight
+  above: Nothing you see in the sky is there now. The light of the nearest wanderer is minutes old, the light of the red star in the hunter's shoulder left before anyone now alive was born, and some of what shines tonight has already gone out. The sky is a letter from the dead, which is what every people meant by setting their ancestors among the stars. To look up is to stand in the presence of what was.
+  set: the belief that what you see is what is.
+  receive: the company of the ones who sent the light.
+  passages:
+    - text: Where is the way where light dwelleth? and as for darkness, where is the place thereof?
+      attribution: Job 38:19, King James Version
+  question: Whose light are you still living by?
+- id: mirror
+  kind: beyond
+  name: The Mirror
+  alt: as above, so below
+  art: mirror
+  above: "The Emerald Tablet says what is below is like what is above. The Kabbalists drew the same tree in the heavens and in the body. The Upanishads say the self within is the self of the whole. And the oldest warning about the sky is that whatever we meet out there, we will meet ourselves first: the stories of gods, visitors and voices all turn out to be about the ones who told them. The sky is a mirror held very far away."
+  set: the hope that the answer is out there.
+  receive: the face in the glass.
+  passages:
+    - text: That which is below is like that which is above, and that which is above is like that which is below, to do the miracles of one only thing.
+      attribution: The Emerald Tablet, trans. Isaac Newton, c. 1680
+  question: What have you been calling the sky that is yourself?
+- id: message
+  kind: beyond
+  name: The Message
+  alt: cast upon the waters
+  art: message
+  above: "People have always sent words where no answer can come back: lanterns floated on rivers for the dead, prayers written on slips and tied to trees, bread cast on the waters. In our own time a record of greetings and songs was sent out past the planets for no one, on purpose. The message is not for the one who may receive it. It is for the one who sends it, to learn what they would say."
+  set: the condition that someone must hear it.
+  receive: the knowledge of what you would say.
+  passages:
+    - text: "Cast thy bread upon the waters: for thou shalt find it after many days."
+      attribution: Ecclesiastes 11:1, King James Version
+  question: Who are you speaking to when you know they cannot answer in your lifetime?
+- id: stranger
+  kind: beyond
+  name: The Stranger
+  alt: the visitor
+  art: stranger
+  above: "Three strangers came to Abraham's tent under the oaks in the heat of the day, and he ran to meet them. The gods walked the roads of Phrygia as beggars and only one old couple took them in. Every people has a story of the visitor who is more than they seem, which is the oldest answer to the question of what we would do if anyone arrived: we would be judged by how we received them. Hospitality to the unknown is the whole ethic of contact."
+  set: the test you would put a stranger to.
+  receive: the table already laid.
+  passages:
+    - text: "Be not forgetful to entertain strangers: for thereby some have entertained angels unawares."
+      attribution: Hebrews 13:2, King James Version
+  question: Who has come to your door lately that you have not yet recognized?
+- id: view
+  kind: beyond
+  name: The View from Above
+  alt: the small earth
+  art: view
+  above: Scipio dreamed he was carried up among the spheres and saw the earth so small that he was ashamed of the empire. Marcus Aurelius told himself to look down from a height on the herds, the harvests and the funerals. Zhuangzi's great bird rose so high that the earth below looked as blue as the sky looks from here. The ones who went up in our own time saw the same thing and came back changed. Distance is a kind of seeing.
+  set: the size you have given your troubles.
+  receive: the scale of what you belong to.
+  passages:
+    - text: How small a part of the boundless and unfathomable time is assigned to every man! … And on what a small clod of the whole earth you creep!
+      attribution: Marcus Aurelius, *Meditations* V.24, trans. George Long
+  question: From that height, which of today's worries would still be visible?
+- id: net
+  kind: beyond
+  name: The Net
+  alt: every jewel reflects every other
+  art: net
+  above: In the heaven of Indra hangs a net with a jewel at every knot, and each jewel reflects every other jewel and the reflections in them, without end. The Buddhist sutras count worlds like sands of the Ganges. The old philosophers argued that infinite space must hold other earths, and the sky has lately agreed with them. The net was never a claim about astronomy. It is a picture of what it means that nothing exists alone.
+  set: the belief that you are the only jewel.
+  receive: your reflection in every other.
+  passages:
+    - ref: cosmology-indra-s-net-and-the-wheel-of-becoming-1
+  question: Who is reflected in you tonight, and whom do you reflect?
+- id: deep
+  kind: beyond
+  name: The Deep
+  alt: before the first light
+  art: deep
+  above: Before the gods, the dark. Nun, the waters of Egypt. Ginnungagap, the yawning gap of the north. The Ein Sof of the Kabbalists, without end, from which the first light was drawn. The hymn of the Rig Veda says there was neither being nor non-being then, and asks who could know. Most of what there is cannot be seen, and the oldest light arriving tonight set out before there were stars to leave from. The dark is not the absence of the sky. It is most of it.
+  set: the need for the dark to be empty.
+  receive: the ground the first light stood on.
+  passages:
+    - text: Who verily knows and who can here declare it, whence it was born and whence comes this creation? The Gods are later than this world's production. Who knows then whence it first came into being?
+      attribution: Rig Veda 10.129.6, trans. Ralph T. H. Griffith
+  question: What is the dark holding for you that you have been calling nothing?

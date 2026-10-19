@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from 'astro:content';
 import CanonToc from '../components/CanonToc.astro';
+import Deck from '../components/Deck.astro';
+import DeckBacks from '../components/DeckBacks.astro';
 import Invocation from '../components/Invocation.astro';
 import Passage from '../components/Passage.astro';
 import PrincipleHeading from '../components/PrincipleHeading.astro';
@@ -23,7 +25,7 @@ export async function getStaticPaths() {
 
 const props = Astro.props;
 const { Content } = await render(props.entry);
-const components = { Passage, Invocation, PrincipleHeading, PrinciplesToc };
+const components = { Passage, Invocation, PrincipleHeading, PrinciplesToc, Deck, DeckBacks };
 ---
 
 {

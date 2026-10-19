@@ -1,0 +1,23 @@
+---
+import { sphereBack } from '../scenes/sky/art';
+import { woodBack } from '../scenes/wood/art';
+import { yearBack } from '../scenes/year/art';
+
+const decks = [
+  { href: 'wood.html', name: 'The Wood', line: 'Three lights, a held question, and a triptych. When you are lost.', back: woodBack(), cls: 'back-wood' },
+  { href: 'sky.html', name: 'The Sky', line: 'The heavens as they stand over you tonight, read as symbol. After dark.', back: sphereBack(), cls: 'back-sky' },
+  { href: 'year.html', name: 'The Year', line: 'The California year in five-day windows, and a notebook that comes back. In the morning.', back: yearBack(), cls: 'back-year' },
+];
+---
+
+<div class="deck-backs">
+  {
+    decks.map((d) => (
+      <a class={`deck-link ${d.cls}`} href={d.href}>
+        <div class="cardbox" set:html={d.back} />
+        <span class="deck-link-name">{d.name}</span>
+        <span class="deck-link-line">{d.line}</span>
+      </a>
+    ))
+  }
+</div>

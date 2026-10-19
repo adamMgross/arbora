@@ -1,0 +1,91 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import type { DeckName, DeckPassage, SkyData, WoodData, YearData } from '../lib/decks';
+import { inline } from '../lib/inline';
+import { CALIFORNIA } from '../lib/sky-dome';
+
+interface Props {
+  deck: DeckName;
+}
+
+type RawPassage = { ref: { id: string } } | { text: string; attribution: string };
+
+async function resolvePassage(p: RawPassage): Promise<DeckPassage> {
+  if ('ref' in p) {
+    const entry = await getEntry('passages', p.ref.id);
+    if (!entry) throw new Error(`Unknown passage id "${p.ref.id}"`);
+    return { html: inline(entry.data.text), attributionHtml: inline(entry.data.attribution ?? '') };
+  }
+  return { html: inline(p.text), attributionHtml: inline(p.attribution) };
+}
+
+const resolveAll = (list: RawPassage[]) => Promise.all(list.map(resolvePassage));
+
+const { deck } = Astro.props;
+
+async function load(): Promise<WoodData | SkyData | YearData> {
+  if (deck === 'wood') {
+    const cards = await getCollection('wood');
+    return {
+      cards: await Promise.all(
+        cards.map(async ({ data }) => {
+          const principle = await getEntry('principles', data.principle.id);
+          if (!principle) throw new Error(`Unknown principle "${data.principle.id}"`);
+          return {
+            circle: data.circle,
+            name: data.name,
+            from: data.from,
+            art: data.art,
+            principle: principle.data.title,
+            story: data.story,
+            passages: await resolveAll(data.passages),
+            ...(data.circle === 'Passage' ? { question: data.question, table: data.table } : {}),
+          };
+        }),
+      ),
+    };
+  }
+  if (deck === 'sky') {
+    const plates = await getCollection('sky');
+    return {
+      place: CALIFORNIA,
+      plates: await Promise.all(
+        plates.map(async ({ id, data }) => ({
+          id,
+          kind: data.kind,
+          ...(data.kind === 'heaven' ? { n: data.n } : {}),
+          name: data.name,
+          alt: data.alt,
+          art: data.art,
+          above: data.above,
+          set: data.set,
+          receive: data.receive,
+          passages: await resolveAll(data.passages),
+          question: data.question,
+        })),
+      ),
+    };
+  }
+  const year = (await getEntry('year', 'year'))!.data;
+  return {
+    terms: year.terms,
+    windows: year.windows,
+    ko: year.ko,
+    seasons: await Promise.all(year.seasons.map(async (s) => ({ ...s, passages: await resolveAll(s.passages) }))),
+  };
+}
+
+const data = await load();
+const json = JSON.stringify(data).replace(/</g, '\\u003c');
+const FONTS: Record<DeckName, string> = {
+  wood: 'https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap',
+  sky: 'https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&display=swap',
+  year: 'https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500;600&display=swap',
+};
+---
+
+<link href={FONTS[deck]} rel="stylesheet" />
+<arbora-scene class={`deck deck-${deck}`} data-scene={deck}>
+  <script is:inline type="application/json" set:html={json} />
+  <noscript><p class="deck-noscript">This deck is drawn in the browser and needs JavaScript.</p></noscript>
+</arbora-scene>

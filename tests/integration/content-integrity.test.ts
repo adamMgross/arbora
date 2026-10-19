@@ -64,6 +64,39 @@ describe('content integrity', () => {
     expect(output).toContain('no-such-entry');
   }, 120_000);
 
+  it('fails the build when a deck card quotes a canon passage that does not exist', () => {
+    const dir = freshCopy();
+    appendFileSync(
+      join(dir, 'src/content/decks/wood.yml'),
+      [
+        '- id: wood-ghost',
+        '  circle: Spirit',
+        '  name: Ghost',
+        '  from: Nowhere',
+        '  art: kodama',
+        '  principle: principle-1',
+        '  story: A card that quotes nothing.',
+        '  passages:',
+        '    - ref: no-such-passage',
+        '',
+      ].join('\n'),
+    );
+    const { ok, output } = build(dir);
+    rmSync(dir, { recursive: true, force: true });
+    expect(ok).toBe(false);
+    expect(output).toContain('no-such-passage');
+  }, 120_000);
+
+  it('fails the build when a deck card names art that is not drawn', () => {
+    const dir = freshCopy();
+    const file = join(dir, 'src/content/decks/wood.yml');
+    writeFileSync(file, readFileSync(file, 'utf8').replace('art: kodama', 'art: sasquatch'));
+    const { ok, output } = build(dir);
+    rmSync(dir, { recursive: true, force: true });
+    expect(ok).toBe(false);
+    expect(output).toContain('art: Invalid option');
+  }, 120_000);
+
   it('fails the build on a field the schema does not define', () => {
     const dir = freshCopy();
     appendFileSync(join(dir, 'src/content/passages/stoics.yml'), '- id: stoics-extra\n  text: x\n  surprise: true\n');

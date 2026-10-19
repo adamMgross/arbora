@@ -1,0 +1,201 @@
+- id: year
+  terms:
+    - { name: Spring begins, month: 2, day: 4 }
+    - { name: Rain water, month: 2, day: 19 }
+    - { name: Insects awaken, month: 3, day: 6 }
+    - { name: Spring equinox, month: 3, day: 21 }
+    - { name: Pure and clear, month: 4, day: 5 }
+    - { name: Grain rain, month: 4, day: 20 }
+    - { name: Summer begins, month: 5, day: 5 }
+    - { name: Lesser ripening, month: 5, day: 21 }
+    - { name: Grain in ear, month: 6, day: 6 }
+    - { name: Summer solstice, month: 6, day: 21 }
+    - { name: Lesser heat, month: 7, day: 7 }
+    - { name: Greater heat, month: 7, day: 23 }
+    - { name: Autumn begins, month: 8, day: 8 }
+    - { name: Heat ends, month: 8, day: 23 }
+    - { name: White dew, month: 9, day: 8 }
+    - { name: Autumn equinox, month: 9, day: 23 }
+    - { name: Cold dew, month: 10, day: 8 }
+    - { name: Frost descends, month: 10, day: 23 }
+    - { name: Winter begins, month: 11, day: 7 }
+    - { name: Lesser snow, month: 11, day: 22 }
+    - { name: Greater snow, month: 12, day: 7 }
+    - { name: Winter solstice, month: 12, day: 22 }
+    - { name: Lesser cold, month: 1, day: 6 }
+    - { name: Greater cold, month: 1, day: 20 }
+  windows:
+    - Almond orchards bloom in the valley
+    - Elephant seal pups are weaned on the beaches
+    - Manzanita bells hum with bees
+    - Gray whales turn north
+    - The hills are at their greenest
+    - First poppies open on the slopes
+    - Ladybugs leave their winter clusters
+    - The desert blooms
+    - Cliff swallows return to Capistrano
+    - The first grunion run
+    - Lupine paints the hillsides
+    - Ceanothus clouds the chaparral blue
+    - Oak catkins dust the air
+    - Quail call in pairs
+    - Sage blooms on the coastal scrub
+    - Goldfields carpet the valley floor
+    - The last rains of the season
+    - Yucca stalks rise on the slopes
+    - Matilija poppies open
+    - May Gray settles on the coast
+    - Grasses go to seed
+    - Jacarandas bloom purple in the cities
+    - Snowmelt fills the rivers
+    - Cherries ripen in the valley
+    - June Gloom
+    - The high passes open
+    - Elderberries hang in dark clusters
+    - The longest light on the Pacific
+    - Wildflowers climb to the high meadows
+    - Fog pours through the Golden Gate
+    - Heat shimmers over the valley
+    - Buckeyes drop their leaves early
+    - Thunderheads build over the mountains
+    - Blackberries ripen along the creeks
+    - Figs ripen for the second time
+    - Grapes begin to color
+    - The Perseids fall over the desert
+    - The hills are the color of lions
+    - Tarweed scents the dry fields
+    - Harvest begins in the vineyards
+    - Acorns swell on the oaks
+    - Fire season reaches its height
+    - The coast has its summer at last
+    - Tarantulas wander the foothills
+    - Salmon gather at the river mouths
+    - Pomegranates split on the branch
+    - Aspens turn gold in the high country
+    - Acorns fall and the gathering begins
+    - Santa Ana winds come down from the desert
+    - Monarchs return to the coastal groves
+    - Sycamores turn along the washes
+    - Waterfowl arrive in the valley wetlands
+    - First rain wakes the smell of the earth
+    - Persimmons glow among the falling leaves
+    - Green returns to the hills
+    - Toyon berries redden
+    - Mushrooms rise in the oak woods
+    - Snow closes the high passes
+    - Sandhill cranes dance in the Delta
+    - Oranges color on the trees
+    - Tule fog fills the valley
+    - Elephant seals return to the beaches
+    - Gray whales pass southward
+    - The longest night
+    - Storms roll in from the Pacific
+    - Newts walk to the creeks
+    - Snowpack deepens in the mountains
+    - Creeks run full
+    - Bald eagles winter at the mountain lakes
+    - Pink currants bloom in the shade
+    - Mustard yellows the fields
+    - Plums bloom early
+  ko:
+    - East wind melts the ice
+    - Bush warblers start singing
+    - Fish emerge from the ice
+    - Rain moistens the soil
+    - Mist starts to linger
+    - Grass sprouts, trees bud
+    - Hibernating insects surface
+    - First peach blossoms
+    - Caterpillars become butterflies
+    - Sparrows start to nest
+    - First cherry blossoms
+    - Distant thunder
+    - Swallows return
+    - Wild geese fly north
+    - First rainbows
+    - First reeds sprout
+    - Last frost, rice seedlings grow
+    - Peonies bloom
+    - Frogs start singing
+    - Worms surface
+    - Bamboo shoots sprout
+    - Silkworms start feasting on mulberry leaves
+    - Safflowers bloom
+    - Wheat ripens and is harvested
+    - Praying mantises hatch
+    - Rotten grass becomes fireflies
+    - Plums turn yellow
+    - Self-heal withers
+    - Irises bloom
+    - Crow-dipper sprouts
+    - Warm winds blow
+    - First lotus blossoms
+    - Hawks learn to fly
+    - Paulownia trees produce seeds
+    - Earth is damp, air is humid
+    - Great rains sometimes fall
+    - Cool winds blow
+    - Evening cicadas sing
+    - Thick fog descends
+    - Cotton flowers bloom
+    - Heat starts to die down
+    - Rice ripens
+    - Dew glistens white on grass
+    - Wagtails sing
+    - Swallows leave
+    - Thunder ceases
+    - Insects hole up underground
+    - Farmers drain fields
+    - Wild geese return
+    - Chrysanthemums bloom
+    - Crickets chirp around the door
+    - First frost
+    - Light rains sometimes fall
+    - Maple leaves and ivy turn yellow
+    - Camellias bloom
+    - Land starts to freeze
+    - Daffodils bloom
+    - Rainbows hide
+    - North wind blows the leaves from the trees
+    - Tachibana citrus leaves start to turn yellow
+    - Cold sets in, winter begins
+    - Bears start hibernating in their dens
+    - Salmon gather and swim upstream
+    - Self-heal sprouts
+    - Deer shed antlers
+    - Wheat sprouts under snow
+    - Parsley flourishes
+    - Springs thaw
+    - Pheasants start to call
+    - Butterburs bud
+    - Ice thickens on streams
+    - Hens start laying eggs
+  seasons:
+    - key: bloom
+      name: Bloom
+      from: 0
+      to: 20
+      passages:
+        - text: "For, lo, the winter is past, the rain is over and gone; the flowers appear on the earth; the time of the singing of birds is come."
+          attribution: Song of Songs 2:11–12, King James Version
+    - key: gold
+      name: Gold
+      from: 21
+      to: 40
+      passages:
+        - text: "The sun also ariseth, and the sun goeth down, and hasteth to his place where he arose."
+          attribution: Ecclesiastes 1:5, King James Version
+    - key: ember
+      name: Ember
+      from: 41
+      to: 51
+      passages:
+        - text: "This world, which is the same for all, no one of gods or men has made; but it was ever, is now, and ever shall be an ever-living Fire, with measures of it kindling, and measures going out."
+          attribution: Heraclitus, Fragment 30, trans. John Burnet
+    - key: rain
+      name: Rain
+      from: 52
+      to: 71
+      passages:
+        - text: "Hath the rain a father? or who hath begotten the drops of dew?"
+          attribution: Job 38:28, King James Version

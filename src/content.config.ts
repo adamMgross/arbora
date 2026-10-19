@@ -2,6 +2,7 @@ import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import type { TocItem } from './lib/toc';
+import { SKY_ART, WOOD_ART } from './lib/decks';
 import { yamlListLoader } from './lib/yaml-list-loader';
 
 const passages = defineCollection({
@@ -84,4 +85,80 @@ const principles = defineCollection({
   }),
 });
 
-export const collections = { passages, invocations, canon, pages, today, principles };
+const deckPassage = z.union([
+  z.strictObject({ ref: reference('passages') }),
+  z.strictObject({ text: z.string().min(1), attribution: z.string().min(1) }),
+]);
+
+const woodCard = {
+  name: z.string().min(1),
+  from: z.string().min(1),
+  art: z.enum(WOOD_ART),
+  principle: reference('principles'),
+  story: z.string().min(1),
+  passages: z.array(deckPassage).min(1),
+};
+
+const wood = defineCollection({
+  loader: yamlListLoader('src/content/decks/wood.yml'),
+  schema: z.discriminatedUnion('circle', [
+    z.strictObject({ circle: z.literal('Elder'), ...woodCard }),
+    z.strictObject({ circle: z.literal('Spirit'), ...woodCard }),
+    z.strictObject({
+      circle: z.literal('Passage'),
+      ...woodCard,
+      question: z.string().min(1),
+      table: z.string().min(1),
+    }),
+  ]),
+});
+
+const skyPlate = {
+  name: z.string().min(1),
+  alt: z.string().min(1),
+  art: z.enum(SKY_ART),
+  above: z.string().min(1),
+  set: z.string().min(1),
+  receive: z.string().min(1),
+  passages: z.array(deckPassage).min(1),
+  question: z.string().min(1),
+};
+
+const sky = defineCollection({
+  loader: yamlListLoader('src/content/decks/sky.yml'),
+  schema: z.discriminatedUnion('kind', [
+    z.strictObject({ kind: z.literal('heaven'), n: z.number().int().min(1).max(7), ...skyPlate }),
+    z.strictObject({ kind: z.literal('stars'), ...skyPlate }),
+    z.strictObject({ kind: z.literal('beyond'), ...skyPlate }),
+  ]),
+});
+
+const year = defineCollection({
+  loader: yamlListLoader('src/content/decks/year.yml'),
+  schema: z.strictObject({
+    terms: z
+      .array(
+        z.strictObject({
+          name: z.string().min(1),
+          month: z.number().int().min(1).max(12),
+          day: z.number().int().min(1).max(31),
+        }),
+      )
+      .length(24),
+    windows: z.array(z.string().min(1)).length(72),
+    ko: z.array(z.string().min(1)).length(72),
+    seasons: z
+      .array(
+        z.strictObject({
+          key: z.string().min(1),
+          name: z.string().min(1),
+          from: z.number().int().min(0).max(71),
+          to: z.number().int().min(0).max(71),
+          passages: z.array(deckPassage).min(1),
+        }),
+      )
+      .min(1),
+  }),
+});
+
+export const collections = { passages, invocations, canon, pages, today, principles, wood, sky, year };

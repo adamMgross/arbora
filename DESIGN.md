@@ -47,6 +47,8 @@ Shadows (`--shadow-*`), organic radii (`--radius-*`), easing (`--ease-organic`, 
 
 Dark mode follows `prefers-color-scheme` and redefines the palette in `tokens.css`. Several palette tokens change meaning there, so `--earth` becomes a light color. Moving this to semantic tokens is ticketed (`arb-748i`).
 
+The three reflection decks carry their own palettes, defined on their stages in `src/components/Deck.css` and the same in both color schemes: the Wood is gold line on night green with moonlight on birch and aspen, the Sky is the celestial atlas in lapis, gold, vermilion, and cream, and the Year is washi, sumi ink, and seal red with each California season's colors. The SVG art references these tokens with `var()` and never a literal.
+
 ---
 
 ## Typography

@@ -4,26 +4,32 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete locally, not pushed. Hosting is the next step and is owner-blocked.
+**Phase:** Restructure complete and the three reflection decks built locally, not pushed. Hosting is the next step and is owner-blocked.
 
-**Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled (`gh api repos/adamMgross/arbora/pages` returned 404). `main` is 13 commits ahead of `origin/main` before the onboarding commit and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
+**Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled. `main` is ahead of `origin/main` by the restructure, the onboarding, the CHARTER removal, and the decks, and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
 
-**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 68 unit tests, a root-path build of 21 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 5 content-integrity tests, and 16 end-to-end tests at both base paths. `npm run parity -- --base baseline/pre-astro` reports 0 failures across 21 pages and 9 configurations (205 captures, 189 screenshots). The harness was shown to detect text, title, link, route, and screenshot changes by editing a copy of the baseline.
+**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 108 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 29 end-to-end tests at both base paths. The three decks run in headless Chromium at 1280 and 400 px wide in both color schemes with no console errors, no page errors, and no horizontal overflow.
+
+**Sizes, measured 2026-10-18 from `dist/`:** main script 10.3 KB raw and 4.2 KB gzipped, stylesheet 55.9 KB raw and 11.6 KB gzipped, scene chunks 30.5 KB (Sky), 25.4 KB (Wood), 11.8 KB (Year) raw, loaded only on their pages. The stylesheet is 1.6 KB gzipped over the ceiling VISION.md proposed and the owner never confirmed, because `Deck.css` joins the one global stylesheet (`docs/decisions/0005`).
 
 **Blockers:** `arb-hk2f`, the owner step that enables Pages and approves the first push. `arb-32io` decides the public address.
 
-**Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address.
+**Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address. The deck decisions tagged `decks` and `owner`: location for the Sky (`arb-ccw6`), illustration for the Wood (`arb-4ajl`), the table switch on Rituals (`arb-r5bw`), a tone read of the drafted plates and stories (`arb-y8k3`), and Native-reader review of the Native-sourced cards (`arb-kbpk`).
 
 **Untested assumptions:**
 
 | Assumption | Confidence |
 |---|---|
 | The Deploy workflow runs green on GitHub, including `playwright install --with-deps` and the pinned action majors | low, it has never run (`arb-nlmj`) |
-| Safari and Firefox render the site as Chromium does | low, only Chromium is exercised (`arb-589u`) |
+| Safari and Firefox render the site as Chromium does, including `var()` inside SVG presentation attributes and `transform-box: fill-box` on the Year's needle | low, only Chromium is exercised (`arb-589u`) |
 | Older Safari still gets a nav blur, since the minifier keeps only the unprefixed `backdrop-filter` | medium, depends on the build's browser targets |
 | Cache-first HTML shows a new deploy one navigation late | high, read from `src/pwa/sw.template.js` |
 | Parity screenshots are stable across machines | medium, shown on this machine with recorded fonts only |
 | The `adammgross.github.io` user site does not register a worker that collides with `/arbora/` | low, not inspected |
+| The sky model stays within a degree for the current decades | medium, checked against four recorded events in 2000, 2020, and 2026 (`tests/unit/sky-math.test.ts`), not against a full ephemeris |
+| The fixed solar-term dates in `year.yml` are within a day of the true terms every year | medium, true for 2026 by inspection, not computed |
+| The 72 California window names are right for their dates | low, drafts from general natural history (`arb-skse`) |
+| The quoted translations match their named editions word for word | low, not yet checked (`arb-hlt9`) |
 
 ## Log
 
@@ -80,3 +86,13 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** older site copy in history, and two lines in the current content (`src/content/canon/ancestral.mdx` and `src/content/today.yml`), name the family's towns of origin, and one old version of `rituals.html` names the owner's neighborhood. Whether to reword them is the owner's call.
 
 **Left unfinished:** the Deploy workflow has not run. `arb-hk2f` stays open until the first deploy is green. `arb-eq17` tracks a public content guide.
+
+### 2026-10-18 (the three reflection decks)
+
+**Done:** built the owner's approved proposal for the three oracle decks into the site in one feature commit: the Wood (`wood.html`), the Sky (`sky.html`), the Year (`year.html`), and a hub (`oracles.html`) in the nav. Each deck is a page in the pages collection carrying a `<Deck>` component, which renders an `<arbora-scene>` element with the deck's content as JSON. `src/scripts/scenes.ts` defines the element and imports the scene module from `src/scenes/<deck>/` when it nears the viewport, so the three chunks load only on their pages. Content lives in `src/content/decks/` as three validated collections: 11 Wood cards, 19 Sky plates, and the Year's 24 terms, 72 windows, 72 old Japanese names, and 4 California seasons. Pure logic sits in `src/lib/`: an approximate sky model checked against the 2020 great conjunction, the 2020 Mars opposition, the 2026 equinox, and a reference new moon, the 72-window calendar, one journal shape for all three decks, and the walk's rules. The scenes take a clock, a random source, and a storage from the caller. 40 unit tests, 2 integration cases, and 14 end-to-end tests cover them. Decisions 0008 and 0009 record the shape and the real-sky choice. `arb-7r81` (the graphics layer) is closed.
+
+**Decisions:** one feature commit rather than one per deck, because the hub, the shared component, the content config, and the end-to-end spec span all three and would have needed staged variants to build at each step. Colors are `var()` tokens inside the SVG strings, defined per deck in `Deck.css`, so no color reader exists and a color-scheme change needs no script. The Sky shows the Sun alone by day even when the Moon is up, as the proposal said. Deck passages are lists, each entry inline or a `ref` to a canon passage, so a quotation already in the canon has one home (the Net plate quotes the canon's Indra's net). The Year offers a plain-text copy of its notebook because a notebook on one device is fragile over years.
+
+**Findings:** `Deck.css` display rules cancelled the `hidden` attribute on the deck's toggled elements, which the first headless run showed as a door that never closed, so the file ends with a doubled-class `[hidden]` rule. Playwright's installed clock fakes `requestAnimationFrame` and timers but not IntersectionObserver delivery, so the Sky tests scroll the dome into view and wait for the `adapting` class before advancing the clock. The stylesheet grew past the proposed, unconfirmed 10 KB gzipped ceiling to 11.6 KB.
+
+**Left unfinished:** nothing is pushed. The remaining 41 Wood cards (`arb-3enk`) and the fixed-star plates (`arb-smpw`) are content tasks. The window names (`arb-skse`) and the quoted editions (`arb-hlt9`) need checking. The owner decides location, illustration, the Rituals table switch, tone, and Native-reader review (`arb-ccw6`, `arb-4ajl`, `arb-r5bw`, `arb-y8k3`, `arb-kbpk`).

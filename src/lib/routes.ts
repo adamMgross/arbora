@@ -5,6 +5,7 @@ export const routes = {
   principles: { label: 'Principles', href: 'principles.html' },
   practices: { label: 'Practices', href: 'practices.html' },
   rituals: { label: 'Rituals', href: 'rituals.html' },
+  oracles: { label: 'Oracles', href: 'oracles.html' },
   canon: { label: 'Canon', href: 'canon.html' },
   tree: { label: 'The Tree', href: 'tree.html' },
 } as const;
@@ -15,6 +16,7 @@ export const navLinks = [
   routes.principles,
   routes.practices,
   routes.rituals,
+  routes.oracles,
   routes.canon,
   routes.tree,
 ] as const;

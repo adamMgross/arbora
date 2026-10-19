@@ -56,6 +56,8 @@ Breaking one of these is a defect, not a tradeoff.
 - **Add Today content:** edit `src/content/today.yml`. The pick is `dayOfYear % length`, so adding or removing an entry changes which entry every day maps to.
 - **Add a styled component:** put its CSS beside it and add one `@import` line to `src/styles/index.css` in cascade order.
 - **Add browser behavior:** one file in `src/scripts/`, started from `main.ts`. Put any logic worth testing in `src/lib/` first.
+- **Add a deck card:** append an entry to `src/content/decks/wood.yml` or `sky.yml`. `art` must name a drawing in that deck's `src/scenes/<deck>/art.ts` (add the drawing and its name in `src/lib/decks.ts` first). A passage is `{text, attribution}` or `{ref: <canon passage id>}` when the canon already holds it. Wood cards in the Passage circle also need `question` and `table`.
+- **Add a scene:** a directory under `src/scenes/` with `index.ts` exporting `mount(root, env)`, a loader line in `src/scripts/scenes.ts`, colors as `var()` tokens defined in `src/components/Deck.css`, and `env` for the clock, random, and storage. See `ARCHITECTURE.md`, Graphics convention.
 
 ## Traps
 
@@ -66,3 +68,5 @@ Breaking one of these is a defect, not a tradeoff.
 - `tests/unit/daily.test.ts` keeps the original day-number formula as an oracle, including its off-by-one in the first hour of each day under daylight saving time (`arb-65hn`). Fixing the bug means replacing that test.
 - Only Chromium is tested (`arb-589u`).
 - The prose pre-commit hook rejects em dashes and semicolons in added Markdown lines and in comments. Rendered copy in HTML, YAML values, and `.mdx` is exempt.
+- Deck elements toggled with the `hidden` attribute also carry `display` rules, so `Deck.css` ends with a doubled-class `[hidden]` rule. Keep it last in that file.
+- The deck end-to-end tests install a fake clock. The Sky's dark adaptation starts from an IntersectionObserver, so a test scrolls the dome into view and waits for the `adapting` class before advancing the clock.
