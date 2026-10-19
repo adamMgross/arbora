@@ -1,30 +1,41 @@
 ---
 id: 7
-title: CHARTER.md is kept out of the repository and its history
+title: Personal details are kept out of the repository and its history
 date: 2026-10-18
 status: accepted
 decided_by: human
 supersedes: null
 superseded_by: null
-verified_at: 2026-10-18
+verified_at: 2026-10-19
 ---
 
 ## Context
 
-`CHARTER.md` was the founding document and agent dispatch file. Part 1 and the appendices hold biographical details about the owner and their family. The repository was private, and the owner chose to leave the file in place. Then the owner made the repository public to host the site on GitHub Pages, which put the file on a public remote.
+`CHARTER.md` was the founding document and agent dispatch file. Part 1 and the appendices hold biographical details about the owner and their family. Early site copy drew on the same details: the owner's name beside the family's towns of origin, the owner's neighborhood and streets, a spouse and a pet, a specific tea, and the owner's daily routine. The repository and its legacy Pages site were public from creation on 2026-04-12, so the file and that copy were publicly readable from then until they were removed.
 
 ## Decision
 
-Remove `CHARTER.md` from every commit, keep a copy on the owner's machine next to the code, and gitignore it. History was rewritten with `git filter-branch` on 2026-10-18 and force-pushed. The rewritten history has no path or object named `CHARTER.md`.
+Nothing that describes the owner personally is tracked, in any commit.
+
+- `CHARTER.md` lives only on the owner's machine next to the code and is gitignored. It was removed from every commit with `git filter-branch` on 2026-10-18.
+- Site copy speaks to the reader's own setting, not the owner's. The current copy was reworded on 2026-10-19, and every older version of each passage was rewritten in history to the same wording with `git filter-repo --replace-text`. The rules file stayed outside the repository.
+- Both rewrites were force-pushed. A search over all commits finds no `CHARTER.md` and none of the removed details, apart from quotations and book titles that use the same words.
+
+```
+local only:   CHARTER.md (gitignored)
+repository:   site copy in the reader's voice, every commit
+GitHub cache: orphaned pre-rewrite commits, until purged or the repo is replaced
+```
 
 ## Consequences
 
-Fresh clones have no `CHARTER.md`, so an agent there cannot read its content rules. `README.md` and `VISION.md` restate the working rules, and `arb-eq17` tracks extracting a public content guide from the non-biographical parts. Commit hashes changed, so any link to an old hash breaks.
+Fresh clones have no `CHARTER.md`, so an agent there cannot read its content rules. `README.md` and `VISION.md` restate the working rules, and `arb-eq17` tracks extracting a public content guide from the non-biographical parts. Commit hashes changed twice, so any link to an old hash breaks.
 
-A force-push does not erase copies that already exist. GitHub can keep unreachable objects and serve them by hash for a while, and a clone or crawler could have fetched the file during the hours the repository was public. The repository had no forks, stars, or watchers when checked. Full removal from GitHub's side needs a request to GitHub support to purge cached objects, or deleting and recreating the repository.
+A force-push does not erase copies that already exist. GitHub keeps unreachable commits and serves them by hash, and anyone who cloned, crawled, or archived the repository or the site between 2026-04-12 and the rewrites may hold the old content. The owner plans to move the code to a new repository with no history and delete this one, which retires the orphaned commits (`arb-54cu`). Until then a GitHub Support request to purge cached objects is the fallback.
 
 ## Alternatives rejected
 
-- Leave it public: rejected by the owner once it was exposed.
-- Split off only the biographical part and keep the rest tracked: the owner asked for the whole file out of history. The split remains possible later as a new, reviewed document (`arb-eq17`).
-- Delete and recreate the repository: the strongest removal, but it loses issues, settings, and Pages configuration, so it was not chosen.
+- Leave it public: rejected by the owner once it was noticed.
+- Split off only the biographical part of `CHARTER.md` and keep the rest tracked: the owner asked for the whole file out of history. The split remains possible later as a new, reviewed document (`arb-eq17`).
+- A private repository with free hosting elsewhere (Cloudflare, Netlify, Vercel): possible, and it would hide the orphaned commits, but the owner chose to stay on GitHub Pages.
+- Delete and recreate the repository right away: deferred, not rejected, until the owner moves to a fresh repository.

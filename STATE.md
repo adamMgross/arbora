@@ -12,7 +12,7 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 **Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.9 KB gzipped (ceiling 12 KB, about 60 bytes of room), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
 
-**Blockers:** none. `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
+**Blockers:** none. Orphaned pre-rewrite commits on GitHub still hold personal details until the move to a fresh repository (`arb-54cu`, decision 0007). `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
 **Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address. Two deck items need people rather than code: the owner's read for tone (`arb-y8k3`) and a reading of the Native-sourced cards by Native readers, with a packet on the ticket (`arb-kbpk`). Which Meditations translation the canon's V.24 passage really is (`arb-w81y`).
 
@@ -124,3 +124,11 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 
 **Left unfinished:** the address decision (`arb-32io`) and the action version bump (`arb-nlmj`).
 
+
+### 2026-10-19 (personal details scrubbed from the site and its history)
+
+**Done:** at the owner's request, reworded 21 lines of site copy and `VISION.md` that described the owner's own neighborhood, family places, and daily routine, so each passage speaks to the reader's setting. Then rewrote every commit with `git filter-repo --replace-text` so older versions of the same passages carry the new wording, and force-pushed with the owner's approval. Decision 0007 is rewritten to cover both rewrites and corrects the earlier entry: the repository and its legacy Pages site were public from 2026-04-12, not for a few hours.
+
+**Findings:** a search over every commit finds no `CHARTER.md` and none of the removed details, apart from quotations and Muir's book title. The rewrite left the tip tree byte-identical, and `npm run parity` against the pre-rewrite commit shows differences only on the five reworded pages. GitHub still serves the orphaned pre-rewrite commits by hash.
+
+**Left unfinished:** the owner plans to move to a new repository with no history (`arb-54cu`). All commit hashes changed again, including `baseline/pre-astro`.
