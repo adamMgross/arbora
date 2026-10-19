@@ -1,13 +1,5 @@
 import type { YearData } from '../../lib/decks';
-import {
-  drewOn,
-  loadJournal,
-  storeJournal,
-  withDraw,
-  withNote,
-  type Journal,
-  type JournalEntry,
-} from '../../lib/journal';
+import { loadJournal, storeJournal, withEntry, type Journal, type JournalEntry } from '../../lib/journal';
 import { esc, f } from '../../lib/svg';
 import {
   formatRange,
@@ -35,16 +27,17 @@ const isNote = (e: JournalEntry): e is NoteEntry =>
   typeof e.w === 'number' && typeof e.y === 'number' && typeof e.text === 'string';
 
 const STAGE = `
-<div class="stage-top"><p class="stage-cue" id="year-cue">The world's window is marked in red.</p></div>
 <div class="year-layout">
   <div class="ring" id="year-ring"></div>
-  <div class="actions year-actions"><button class="sbtn" id="year-draw" type="button">Turn the needle</button><button class="sbtn quiet" id="year-open" type="button" disabled>Open the book</button><button class="sbtn quiet" id="year-review" type="button">Review the season just ended</button></div>
+  <div class="actions year-actions"><button class="sbtn" id="year-draw" type="button">Turn the needle</button><button class="sbtn quiet" id="year-open" type="button" hidden>Read</button></div>
   <div class="pair" id="year-pair"></div>
 </div>
-<p class="closed" id="year-closed" hidden></p>
 <div id="year-book" class="out"></div>
-<div class="notebook" id="year-notebook"></div>
-<div class="actions"><button class="sbtn quiet" id="year-copy" type="button">Copy the whole notebook as text</button></div>`;
+<div class="actions"><button class="sbtn quiet" id="year-notes" type="button" aria-expanded="false">Notebook</button></div>
+<div id="year-notes-box" hidden>
+  <div class="notebook" id="year-notebook"></div>
+  <div class="actions"><button class="sbtn quiet" id="year-review" type="button">Review the season just ended</button><button class="sbtn quiet" id="year-copy" type="button">Copy the whole notebook as text</button></div>
+</div>`;
 
 export function mount(root: HTMLElement, env: SceneEnv): void {
   const data = readData<YearData>(root);
@@ -54,11 +47,11 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   const year = now.getFullYear();
   const ring = byId(root, 'year-ring');
   const pair = byId(root, 'year-pair');
-  const cue = byId(root, 'year-cue');
   const drawButton = byId<HTMLButtonElement>(root, 'year-draw');
   const openButton = byId<HTMLButtonElement>(root, 'year-open');
+  const notesButton = byId<HTMLButtonElement>(root, 'year-notes');
+  const notesBox = byId(root, 'year-notes-box');
   const reviewButton = byId<HTMLButtonElement>(root, 'year-review');
-  const closed = byId(root, 'year-closed');
   const book = byId(root, 'year-book');
   const notebook = byId(root, 'year-notebook');
 
@@ -66,8 +59,6 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     index,
     name: data.windows[index]!,
     season: seasonOf(index, data.seasons),
-    term: data.terms[Math.floor(index / 3)]!,
-    range: windowRange(index, year, data.terms),
   });
 
   let journal: Journal = loadJournal(env.storage, KEY);
@@ -75,27 +66,26 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     journal = next;
     storeJournal(env.storage, KEY, journal);
   };
-  let drawn: number | null = drewOn(journal, now) && typeof journal.draw?.w === 'number' ? journal.draw.w : null;
-  let rotation = needleAngle(drawn ?? today);
+  let drawn: number | null = null;
+  let rotation = needleAngle(today);
   let busy = false;
   let reviewing = false;
 
-  const needle = () => ring.querySelector<SVGGElement>('[data-needle]');
   const setNeedle = () => {
-    const el = needle();
+    const el = ring.querySelector<SVGGElement>('[data-needle]');
     if (el) el.style.transform = `rotate(${f(rotation)}deg)`;
   };
   const drawRing = (highlight: string | null) => {
-    ring.innerHTML = ringSvg(today, data.terms, data.seasons, highlight);
+    ring.innerHTML = ringSvg(today, data.seasons, highlight);
     setNeedle();
   };
 
   const renderPair = (fresh: boolean) => {
     const yours =
       drawn === null
-        ? `<div class="cardbox">${yearBack()}</div><figcaption>Yours, not yet drawn</figcaption>`
-        : `<div class="cardbox${fresh ? ' new' : ''}">${windowFace(card(drawn))}</div><figcaption>Your window</figcaption>`;
-    pair.innerHTML = `<figure><div class="cardbox">${windowFace(card(today))}</div><figcaption>The world's window</figcaption></figure><figure>${yours}</figure>`;
+        ? `<div class="cardbox">${yearBack()}</div>`
+        : `<div class="cardbox${fresh ? ' new' : ''}">${windowFace(card(drawn))}</div>`;
+    pair.innerHTML = `<figure><div class="cardbox">${windowFace(card(today))}</div></figure><figure>${yours}</figure>`;
   };
 
   const notes = (w: number) =>
@@ -129,19 +119,20 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     notebook.querySelector('#year-write')?.addEventListener('click', () => {
       const text = byId<HTMLTextAreaElement>(notebook, 'year-note').value.trim();
       if (!text) return;
-      save(withNote(journal, { iso: env.now().toISOString(), w: today, y: year, text }));
+      save(withEntry(journal, { iso: env.now().toISOString(), w: today, y: year, text }));
       renderNotebook();
     });
   };
 
   const openBook = () => {
     if (drawn === null) return;
+    openButton.hidden = true;
     const yours = card(drawn);
     const world = card(today);
     const others = notes(today).filter((n) => n.y !== year);
     const passage = yours.season.passages[Math.floor(env.random() * yours.season.passages.length)]!;
     let h = `<div class="book"><p class="bk-kicker">Window ${today + 1} and window ${drawn + 1}</p><h4 class="bk-title">${esc(yours.name)}</h4>`;
-    h += `<p class="bk-teach">The world is in ${esc(world.season.name.toLowerCase())}: ${esc(world.name.toLowerCase())}. You drew a window in ${esc(yours.season.name.toLowerCase())}, ${esc(formatRange(yours.range))}. Hold the two together for a moment before deciding what they mean.</p>`;
+    h += `<p class="bk-teach">The world is in ${esc(world.season.name.toLowerCase())}: ${esc(world.name.toLowerCase())}. You drew a window in ${esc(yours.season.name.toLowerCase())}, ${esc(formatRange(windowRange(drawn, year, data.terms)))}. Hold the two together for a moment before deciding what they mean.</p>`;
     h += passageHtml(passage);
     h += `<p class="bk-note">In Japan's old calendar, the world's window is called “${esc(data.ko[today]!)}.”${others.length ? ` A year ago in this window you wrote: “${esc(others[others.length - 1]!.text)}”` : ''}</p>`;
     h += question('Sit with', 'What in you belongs to the window you drew, while the world moves through this one?');
@@ -149,33 +140,33 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     reveal(book);
   };
 
-  const closedState = () => {
-    drawButton.disabled = true;
-    closed.hidden = false;
-    closed.textContent = "You drew today. The needle rests until tomorrow. The world's window is always open.";
-  };
-
   const turn = () => {
-    if (busy || drawn !== null) return;
+    if (busy) return;
     busy = true;
     drawButton.disabled = true;
+    openButton.hidden = true;
+    book.innerHTML = '';
     const pick = pickOtherWindow(today, env.random);
     const current = ((rotation % 360) + 360) % 360;
     const delta = (((needleAngle(pick) - current) % 360) + 360) % 360;
     rotation += 720 + delta;
     setNeedle();
     reveal(ring);
-    book.innerHTML = '';
     void wait(2900).then(() => {
       drawn = pick;
-      save(withDraw(journal, { w: pick }, env.now()));
       renderPair(true);
-      cue.textContent = `The needle came to rest: ${data.windows[pick]!.toLowerCase()}.`;
-      openButton.disabled = false;
+      openButton.hidden = false;
+      drawButton.disabled = false;
       busy = false;
-      closedState();
       reveal(pair.lastElementChild!, 'nearest');
     });
+  };
+
+  const toggleNotes = () => {
+    const open = notesBox.hidden;
+    notesBox.hidden = !open;
+    notesButton.setAttribute('aria-expanded', String(open));
+    if (open) reveal(notesBox, 'nearest');
   };
 
   const review = () => {
@@ -193,8 +184,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       const ns = notes(w);
       h += `<div class="nb-line${ns.length ? '' : ' ghost'}"><span class="seal">${w + 1}</span><span><b>${esc(data.windows[w]!)}.</b> ${ns.length ? ns.map((n) => `${n.y}: ${esc(n.text)}`).join(' · ') : 'nothing written yet'}</span></div>`;
     }
-    const passage = ended.passages[0]!;
-    h += `</div><p class="bk-note">At the equinox or solstice that closes a season, the ring lights it and the notebook opens every page of it.</p>${passageHtml(passage)}`;
+    h += `</div><p class="bk-note">At the equinox or solstice that closes a season, the ring lights it and the notebook opens every page of it.</p>${passageHtml(ended.passages[0]!)}`;
     notebook.innerHTML = h;
     reveal(notebook);
   };
@@ -202,11 +192,6 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   drawRing(null);
   renderPair(false);
   renderNotebook();
-  if (drawn !== null) {
-    openButton.disabled = false;
-    cue.textContent = `The needle rests on: ${data.windows[drawn]!.toLowerCase()}.`;
-    closedState();
-  }
   const copyButton = byId<HTMLButtonElement>(root, 'year-copy');
   copyButton.addEventListener('click', () => {
     void navigator.clipboard.writeText(notebookText()).then(() => {
@@ -216,5 +201,6 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   });
   drawButton.addEventListener('click', turn);
   openButton.addEventListener('click', openBook);
+  notesButton.addEventListener('click', toggleNotes);
   reviewButton.addEventListener('click', review);
 }

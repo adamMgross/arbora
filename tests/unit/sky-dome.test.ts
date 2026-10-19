@@ -1,5 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { CALIFORNIA, DOME, lift, pickBeyond, project, skyState, standings } from '../../src/lib/sky-dome';
+import {
+  CALIFORNIA,
+  DOME,
+  drawPlate,
+  FIGURES,
+  HEAVENS,
+  landing,
+  project,
+  skyState,
+  standings,
+} from '../../src/lib/sky-dome';
 
 const NIGHT = new Date('2026-10-18T21:00:00-07:00');
 const NOON = new Date('2026-10-18T12:00:00-07:00');
@@ -48,48 +58,52 @@ describe('project', () => {
   });
 });
 
-describe('lift', () => {
-  it('opens the nearest light when the eye lands within reach of it', () => {
-    const st = skyState(NIGHT, CALIFORNIA);
-    const target = st.beacons[0]!;
-    const result = lift(st, target.x + 10, target.y - 10);
-    expect(result).toEqual({ kind: 'beacon', beacon: target });
+describe('placing a drawn plate', () => {
+  const lights = [...HEAVENS, ...Object.keys(FIGURES), 'milkyway'];
+
+  it('knows where every heaven, figure, and the Milky Way stands by day and by night', () => {
+    for (const date of [NIGHT, NOON]) {
+      const st = skyState(date, CALIFORNIA);
+      for (const id of lights)
+        expect(st.places[id as keyof typeof st.places], `${id} at ${date.toISOString()}`).toBeDefined();
+    }
   });
 
-  it('looks past the stars when no light is within reach at night', () => {
+  it('lands on a light that has risen where the dome draws it', () => {
     const st = skyState(NIGHT, CALIFORNIA);
-    const far = st.beacons.reduce(
-      (best, b) => {
-        const candidates: Array<[number, number]> = [
-          [DOME.cx, DOME.cy],
-          [DOME.cx + 120, DOME.cy + 120],
-          [DOME.cx - 120, DOME.cy - 120],
-          [DOME.cx + 120, DOME.cy - 120],
-          [DOME.cx - 120, DOME.cy + 120],
-        ];
-        return candidates.find(([x, y]) => st.beacons.every((bb) => Math.hypot(bb.x - x, bb.y - y) > 80)) ?? best;
-      },
-      null as [number, number] | null,
-    );
-    if (!far) return;
-    expect(lift(st, far[0], far[1]).kind).toBe('beyond');
+    const up = st.beacons.find((b) => b.id !== 'milkyway')!;
+    expect(landing(st, up.id, [0, 0])).toEqual({ x: up.x, y: up.y, risen: true });
   });
 
-  it('by day always opens the Sun, however far the eye lands from it', () => {
-    const st = skyState(NOON, CALIFORNIA);
-    expect(lift(st, 20, 20)).toMatchObject({ kind: 'beacon', beacon: { id: 'sun' } });
+  it("lands on the rim, at the light's bearing, when it is below the horizon", () => {
+    const st = skyState(NIGHT, CALIFORNIA);
+    const down = lights.find((id) => st.places[id as keyof typeof st.places]!.alt < 0)!;
+    const spot = landing(st, down, [0, 0]);
+    expect(spot.risen).toBe(false);
+    expect(Math.hypot(spot.x - DOME.cx, spot.y - DOME.cy)).toBeCloseTo(DOME.r, 6);
+  });
+
+  it('lands where the eye did for a mystery beyond the stars, and for falling stars out of season', () => {
+    const st = skyState(NIGHT, CALIFORNIA);
+    expect(landing(st, 'silence', [120, 80])).toEqual({ x: 120, y: 80, risen: null });
+    expect(landing(st, 'falling', [120, 80])).toEqual({ x: 120, y: 80, risen: null });
   });
 });
 
-describe('pickBeyond', () => {
+describe('drawPlate', () => {
   const pool = [{ id: 'a' }, { id: 'b' }, { id: 'c' }];
 
-  it('never repeats the last mystery when another is available', () => {
-    for (let i = 0; i < 20; i++) expect(pickBeyond(pool, 'b', () => i / 20).id).not.toBe('b');
+  it('reaches every plate in the pool', () => {
+    const seen = new Set(Array.from({ length: 30 }, (_, i) => drawPlate(pool, null, () => i / 30).id));
+    expect(seen).toEqual(new Set(['a', 'b', 'c']));
+  });
+
+  it('never repeats the last plate when another is available', () => {
+    for (let i = 0; i < 20; i++) expect(drawPlate(pool, 'b', () => i / 20).id).not.toBe('b');
   });
 
   it('falls back to the whole pool when it holds one plate', () => {
-    expect(pickBeyond([{ id: 'only' }], 'only', () => 0.5).id).toBe('only');
+    expect(drawPlate([{ id: 'only' }], 'only', () => 0.5).id).toBe('only');
   });
 });
 

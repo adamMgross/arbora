@@ -1,5 +1,5 @@
 import type { SkyArt, SkyPlate } from '../../lib/decks';
-import { DOME, FIGURES, HEAVENS, ORDINALS, project, type FigureId, type SkyState } from '../../lib/sky-dome';
+import { DOME, FIGURES, HEAVENS, project, type FigureId, type SkyState } from '../../lib/sky-dome';
 import type { MoonPhase } from '../../lib/sky-math';
 import { esc, f, rng, uid } from '../../lib/svg';
 import { svgOpen } from '../book';
@@ -644,20 +644,6 @@ const OVERLAY: Partial<Record<SkyArt, (cx: number, cy: number) => string>> = {
     `<path d="M${cx - 96},${cy + 84} Q${cx},${cy - 30} ${cx + 96},${cy + 84} M${cx - 70},${cy + 84} V${cy + 66} M${cx + 70},${cy + 84} V${cy + 66}" fill="none" stroke="${GOLD}" stroke-width="1.5"/>`,
 };
 
-export const header = (p: SkyPlate): string =>
-  p.kind === 'heaven'
-    ? `THE ${ORDINALS[p.n ?? 0]!.toUpperCase()} HEAVEN`
-    : p.kind === 'stars'
-      ? 'THE FIXED STARS'
-      : 'BEYOND THE STARS';
-
-const motto = (p: SkyPlate) =>
-  p.kind === 'heaven'
-    ? 'as above, so below'
-    : p.kind === 'stars'
-      ? 'the figures every people drew'
-      : 'what you find when you look past the stars';
-
 const fitSize = (text: string, maxWidth: number, base: number, charWidth: number) =>
   Math.min(base, maxWidth / (text.length * charWidth));
 
@@ -673,7 +659,7 @@ export function sphereFace(p: SkyPlate, st: SkyState | null): string {
     [256, 456],
   ])
     o += sparkle(x!, y!, 7, GOLD);
-  o += `<text x="140" y="44" text-anchor="middle" font-family="${SMALLCAPS}" font-size="10.5" letter-spacing="3" fill="${GOLD}">${header(p)}</text>`;
+  o += `<g transform="translate(140 214) scale(1.24) translate(-140 -176)">`;
   o += `<circle cx="140" cy="176" r="100" fill="${LAPIS}"/>`;
   const rings = p.kind === 'heaven' ? 7 : 8;
   for (let i = 1; i <= rings; i++) {
@@ -693,13 +679,7 @@ export function sphereFace(p: SkyPlate, st: SkyState | null): string {
     ticks += `M${f(140 + Math.cos(a) * r1)},${f(176 + Math.sin(a) * r1)}L${f(140 + Math.cos(a) * r2)},${f(176 + Math.sin(a) * r2)}`;
   }
   o += `<circle cx="140" cy="176" r="100" fill="none" stroke="${GOLD}" stroke-width="1.2"/><circle cx="140" cy="176" r="106" fill="none" stroke="${GOLD}" stroke-width=".5"/><path d="${ticks}" stroke="${GOLD}" stroke-width=".7"/>`;
-  o += `<text x="140" y="322" text-anchor="middle" font-family="${SMALLCAPS}" font-weight="600" font-size="${f(fitSize(p.name, 230, 25, 0.58))}" fill="${CREAM}">${esc(p.name)}</text>`;
-  o += `<text x="140" y="344" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="${f(fitSize(p.alt, 220, 13, 0.5))}" fill="${GOLD}" opacity=".85">${esc(p.alt)}</text>`;
-  o += `<path d="M70,364 H128 M152,364 H210" stroke="${GOLD}" stroke-width=".6"/>${sparkle(140, 364, 5, GOLD)}`;
-  [`set down · ${p.set}`, `receive · ${p.receive}`].forEach((t, j) => {
-    o += `<text x="140" y="${388 + j * 17}" text-anchor="middle" font-family="${SERIF}" font-size="${f(fitSize(t, 232, 11.5, 0.46))}" fill="${CREAM}" opacity=".9">${esc(t)}</text>`;
-  });
-  o += `<text x="140" y="446" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="10.5" fill="${MUTED}">${motto(p)}</text>`;
+  o += `</g><text x="140" y="418" text-anchor="middle" font-family="${SMALLCAPS}" font-weight="600" font-size="${f(fitSize(p.name, 230, 28, 0.58))}" fill="${CREAM}">${esc(p.name)}</text>`;
   return `${o}</svg>`;
 }
 

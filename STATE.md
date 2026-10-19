@@ -4,13 +4,13 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete, the three reflection decks finished and tailored for phones, and the site is live.
+**Phase:** Restructure complete and the site is live. The three reflection decks now show the picture first, open the book on request, and draw without a daily limit (decision 0012). The Sky is being doubled to at least 62 plates.
 
 **Deployed vs main:** Deployed. The owner approved the first push on 2026-10-18, and https://adammgross.github.io/arbora/ serves `main` through the Deploy workflow (run 39210926422 green). Every push to `main` deploys.
 
-**What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 114 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 57 end-to-end tests at both base paths, 32 at desktop size and 25 in the `phone` project at an iPhone 15 viewport. The three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
+**What works, verified 2026-10-19:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 117 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.9 KB gzipped (ceiling 12 KB, about 60 bytes of room), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
+**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,832 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 13.9 KB (Sky), 4.4 KB (Year) gzipped, loaded only on their pages.
 
 **Blockers:** none. Orphaned pre-rewrite commits on GitHub still hold personal details until the move to a fresh repository (`arb-54cu`, decision 0007). `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
@@ -132,3 +132,12 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** a search over every commit finds no `CHARTER.md` and none of the removed details, apart from quotations and Muir's book title. The rewrite left the tip tree byte-identical, and `npm run parity` against the pre-rewrite commit shows differences only on the five reworded pages. GitHub still serves the orphaned pre-rewrite commits by hash.
 
 **Left unfinished:** the owner plans to move to a new repository with no history (`arb-54cu`). All commit hashes changed again, including `baseline/pre-astro`.
+
+### 2026-10-19 (the decks show the picture first and draw without limit)
+
+**Done:** at the owner's direction, after using all three decks, every deck now follows one flow: one line at the threshold, a wordless draw, a card showing only its picture and name, then Read and Again (decision 0012). The daily limit is gone from all three. The Wood draws one card from all fifty-two by default, with three lights and the table as choices at the door. The Sky draws by chance from every plate, and the real sky places it: the halo goes to where its light stands, or to the horizon if it has set, and the book says where. The Year's needle turns as often as asked, and its notebook and season review sit behind a Notebook button. Card faces lost every line but the name (and the Year's number). Each deck page's intro moved below the deck, and the page copy that described one draw a day now describes the new flow. The journal shape is `{ entries }`.
+
+**Findings:** the fixed nav hides when the page scrolls down and comes back when it scrolls up, so Walk again and Look again landed the deck's top under it. A test tap on the second walk hit the nav's home link about one run in three. Revealed deck elements now keep 80 px clear at the top, and `reveal` counts anything under the nav as off screen. The stylesheet went from 11,942 to 11,832 bytes gzipped.
+
+**Left unfinished:** the pictures were drawn to sit beside text and now carry the whole card, and the Year's seventy-two cards share four seasonal landscapes. Deepening them, with a written picture grammar per deck and one test card each for the owner first, is the next step after the Sky's new plates.
+

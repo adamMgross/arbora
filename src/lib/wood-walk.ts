@@ -2,8 +2,23 @@ import type { JournalEntry } from './journal';
 
 export type Circle = 'Elder' | 'Spirit' | 'Passage';
 
-export const WALK_ORDER: Circle[] = ['Elder', 'Spirit', 'Passage'];
-export const TABLE_ORDER: Circle[] = ['Passage'];
+export type WalkMode = 'one' | 'three' | 'table';
+export type Slot = 'left' | 'center' | 'right';
+
+export interface Step {
+  slot: Slot;
+  circle: Circle | null;
+}
+
+export const WALKS: Record<WalkMode, Step[]> = {
+  one: [{ slot: 'center', circle: null }],
+  three: [
+    { slot: 'left', circle: 'Elder' },
+    { slot: 'right', circle: 'Spirit' },
+    { slot: 'center', circle: 'Passage' },
+  ],
+  table: [{ slot: 'center', circle: 'Passage' }],
+};
 
 export const POSITION_LABEL: Record<Circle, string> = {
   Elder: 'Where you stand',
@@ -37,11 +52,6 @@ export function lastKept(entries: JournalEntry[]): { index: number; entry: WalkE
     if (isWalk(entry) && entry.status === 'kept' && entry.line) return { index: i, entry };
   }
   return null;
-}
-
-export function lastWalk(entries: JournalEntry[]): WalkEntry | null {
-  const entry = entries[entries.length - 1];
-  return entry && isWalk(entry) ? entry : null;
 }
 
 const LIGHT_SPOTS: Array<[number, number]> = [

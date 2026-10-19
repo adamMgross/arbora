@@ -5,8 +5,6 @@ export interface JournalEntry {
 
 export interface Journal {
   entries: JournalEntry[];
-  lastDay: string | null;
-  draw: Record<string, unknown> | null;
 }
 
 export interface JournalStorage {
@@ -14,7 +12,7 @@ export interface JournalStorage {
   setItem(key: string, value: string): void;
 }
 
-export const EMPTY_JOURNAL: Journal = { entries: [], lastDay: null, draw: null };
+export const EMPTY_JOURNAL: Journal = { entries: [] };
 
 const isRecord = (value: unknown): value is Record<string, unknown> => typeof value === 'object' && value !== null;
 
@@ -25,11 +23,7 @@ export function parseJournal(raw: string | null): Journal {
   try {
     const parsed: unknown = JSON.parse(raw);
     if (!isRecord(parsed)) return EMPTY_JOURNAL;
-    return {
-      entries: Array.isArray(parsed.entries) ? parsed.entries.filter(isEntry) : [],
-      lastDay: typeof parsed.lastDay === 'string' ? parsed.lastDay : null,
-      draw: isRecord(parsed.draw) ? parsed.draw : null,
-    };
+    return { entries: Array.isArray(parsed.entries) ? parsed.entries.filter(isEntry) : [] };
   } catch {
     return EMPTY_JOURNAL;
   }
@@ -51,22 +45,7 @@ export function storeJournal(storage: JournalStorage, key: string, journal: Jour
   }
 }
 
-const pad = (n: number) => String(n).padStart(2, '0');
-
-export const dayKey = (date: Date): string =>
-  `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-
-export const drewOn = (journal: Journal, date: Date): boolean => journal.lastDay === dayKey(date);
-
-export function withEntry(journal: Journal, entry: JournalEntry, date: Date): Journal {
-  return { ...journal, entries: [...journal.entries, entry], lastDay: dayKey(date) };
-}
-
-export function withDraw(journal: Journal, draw: Record<string, unknown>, date: Date): Journal {
-  return { ...journal, draw, lastDay: dayKey(date) };
-}
-
-export function withNote(journal: Journal, entry: JournalEntry): Journal {
+export function withEntry(journal: Journal, entry: JournalEntry): Journal {
   return { ...journal, entries: [...journal.entries, entry] };
 }
 

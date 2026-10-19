@@ -1,6 +1,6 @@
 import type { YearSeasonData } from '../../lib/decks';
 import { esc, f, polar, rng, uid } from '../../lib/svg';
-import { formatRange, needleAngle, windowArcStart, type SolarTerm, type WindowRange } from '../../lib/year-windows';
+import { needleAngle, windowArcStart } from '../../lib/year-windows';
 import { svgOpen } from '../book';
 
 const WASHI = 'var(--art-washi)';
@@ -34,12 +34,10 @@ export interface WindowCard {
   index: number;
   name: string;
   season: YearSeasonData;
-  term: SolarTerm;
-  range: WindowRange;
 }
 
 export function windowFace(card: WindowCard): string {
-  const { index, name, season, term, range } = card;
+  const { index, name, season } = card;
   const key = season.key;
   const id = uid('ca');
   const r = rng(index * 7 + 3);
@@ -67,15 +65,10 @@ export function windowFace(card: WindowCard): string {
       o += `<circle cx="${f(20 + r() * 240)}" cy="${f(240 + r() * 76)}" r="${f(1.2 + r() * 1.6)}" fill="${r() < 0.6 ? seasonVar(key, 'arc') : seasonVar(key, 'sun')}"/>`;
   }
   o += `</g><rect x="18" y="18" width="244" height="300" fill="none" stroke="${SUMI}" stroke-width="1"/>`;
-  o += `<text x="242" y="38" transform="rotate(90 242 38)" font-family="${SMALLCAPS}" font-weight="600" font-size="17" letter-spacing="5" fill="${SUMI}">${esc(season.name.toUpperCase())}</text>`;
-  const sealY = 48 + season.name.length * 16;
-  o += `<rect x="228" y="${sealY}" width="28" height="28" rx="2" fill="${RED}"/><text x="242" y="${sealY + 19}" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="15" fill="${WASHI}">${index + 1}</text>`;
-  const lines = wrapWords(name, 22);
-  lines.forEach((l, i) => {
-    o += `<text x="20" y="${352 + i * 22}" font-family="${SERIF}" font-size="20" font-weight="500" fill="${SUMI}">${esc(l)}</text>`;
+  o += `<rect x="228" y="30" width="28" height="28" rx="2" fill="${RED}"/><text x="242" y="49" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="15" fill="${WASHI}">${index + 1}</text>`;
+  wrapWords(name, 22).forEach((l, i) => {
+    o += `<text x="20" y="${360 + i * 24}" font-family="${SERIF}" font-size="21" font-weight="500" fill="${SUMI}">${esc(l)}</text>`;
   });
-  const yb = 352 + lines.length * 22 + 6;
-  o += `<text x="20" y="${yb}" font-family="${SERIF}" font-style="italic" font-size="12" fill="${SUMI}" opacity=".7">${esc(term.name)} · ${esc(formatRange(range))}</text>`;
   return `${o}</svg>`;
 }
 
@@ -95,12 +88,7 @@ export function yearBack(): string {
 const CX = 200;
 const CY = 200;
 
-export function ringSvg(
-  today: number,
-  terms: SolarTerm[],
-  seasons: YearSeasonData[],
-  highlight: string | null,
-): string {
+export function ringSvg(today: number, seasons: YearSeasonData[], highlight: string | null): string {
   let o = `<svg viewBox="-28 -28 456 456" role="img" aria-label="The California year as a ring of 72 windows, today marked">`;
   o += `<circle cx="${CX}" cy="${CY}" r="168" fill="none" stroke="${SUMI}" stroke-width=".8"/>`;
   for (const s of seasons) {
@@ -121,14 +109,10 @@ export function ringSvg(
     ticks += `M${x0},${y0}L${x1},${y1}`;
   }
   o += `<path d="${ticks}" stroke="${SUMI}" stroke-width=".9"/>`;
-  for (const si of [0, 3, 6, 9, 12, 15, 18, 21]) {
-    const [x, y] = polar(CX, CY, windowArcStart(si * 3), 124);
-    o += `<text x="${x}" y="${y + 3}" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="11" fill="${SUMI}" opacity=".7">${esc(terms[si]!.name)}</text>`;
-  }
   const [tx0, ty0] = polar(CX, CY, needleAngle(today), 144);
   const [tx1, ty1] = polar(CX, CY, needleAngle(today), 168);
   o += `<line x1="${tx0}" y1="${ty0}" x2="${tx1}" y2="${ty1}" stroke="${RED}" stroke-width="4"/>`;
   o += `<g class="needle" data-needle style="transform:rotate(${f(needleAngle(today))}deg)"><line x1="200" y1="200" x2="200" y2="58" stroke="${SUMI}" stroke-width="1.6"/><path d="M200,52 l-5,12 h10z" fill="${SUMI}"/></g>`;
-  o += `<circle cx="200" cy="200" r="40" fill="${WASHI}" stroke="${SUMI}" stroke-width=".8"/><text x="200" y="195" text-anchor="middle" font-family="${SERIF}" font-style="italic" font-size="12" fill="${SUMI}" opacity=".7">today</text><text x="200" y="217" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="20" fill="${RED}" data-today>${today + 1}</text></svg>`;
+  o += `<circle cx="200" cy="200" r="40" fill="${WASHI}" stroke="${SUMI}" stroke-width=".8"/><text x="200" y="208" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="22" fill="${RED}" data-today>${today + 1}</text></svg>`;
   return o;
 }

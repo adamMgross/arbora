@@ -23,8 +23,10 @@ export function animate(duration: number, frame: (progress: number) => void): Pr
   });
 }
 
+const navBottom = (): number => Math.max(0, document.querySelector('.site-nav')?.getBoundingClientRect().bottom ?? 0);
+
 export function reveal(el: Element, block: ScrollLogicalPosition = 'start'): void {
   const r = el.getBoundingClientRect();
-  const settled = r.top >= 0 && (r.bottom <= innerHeight || (block === 'start' && r.top < innerHeight / 3));
+  const settled = r.top >= navBottom() && (r.bottom <= innerHeight || (block === 'start' && r.top < innerHeight / 3));
   if (!settled) el.scrollIntoView({ block, behavior: reducedMotion() ? 'auto' : 'smooth' });
 }

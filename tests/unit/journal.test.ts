@@ -1,16 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import {
-  dayKey,
-  drewOn,
-  EMPTY_JOURNAL,
-  loadJournal,
-  parseJournal,
-  storeJournal,
-  updateEntry,
-  withDraw,
-  withEntry,
-  withNote,
-} from '../../src/lib/journal';
+import { EMPTY_JOURNAL, loadJournal, parseJournal, storeJournal, updateEntry, withEntry } from '../../src/lib/journal';
 
 const memory = () => {
   const map = new Map<string, string>();
@@ -40,17 +29,11 @@ describe('parseJournal', () => {
     expect(parsed.entries).toEqual([
       { iso: '2026-10-18T04:00:00.000Z', plate: 'saturn', mood: 'quiet', later: { nested: true } },
     ]);
-    expect(parsed.lastDay).toBeNull();
-    expect(parsed.draw).toBeNull();
   });
 
   it('round-trips through storage without losing unknown fields', () => {
     const storage = memory();
-    const journal = withEntry(
-      withDraw(EMPTY_JOURNAL, { w: 17, extra: 'kept' }, new Date(2026, 3, 22, 9)),
-      { iso: 'x', text: 'one line', futureField: [1, 2] },
-      new Date(2026, 3, 22, 9),
-    );
+    const journal = withEntry(EMPTY_JOURNAL, { iso: 'x', text: 'one line', futureField: [1, 2] });
     storeJournal(storage, 'k', journal);
     expect(loadJournal(storage, 'k')).toEqual(journal);
   });
@@ -69,27 +52,21 @@ describe('parseJournal', () => {
   });
 });
 
-describe('one draw a day', () => {
-  it('keys the day by the local calendar date with zero padding', () => {
-    expect(dayKey(new Date(2026, 0, 5, 0, 10))).toBe('2026-01-05');
-    expect(dayKey(new Date(2026, 11, 31, 23, 59))).toBe('2026-12-31');
+describe('entries', () => {
+  it('reads a journal written when draws were limited to one a day, keeping every entry', () => {
+    const old = parseJournal(
+      JSON.stringify({ entries: [{ iso: 'a', line: 'kept' }], lastDay: '2026-10-18', draw: { w: 17 } }),
+    );
+    expect(old).toEqual({ entries: [{ iso: 'a', line: 'kept' }] });
   });
 
-  it('closes the deck for the rest of the day and reopens it the next morning', () => {
-    const drawn = withEntry(EMPTY_JOURNAL, { iso: 'x' }, new Date(2026, 3, 22, 21, 30));
-    expect(drewOn(drawn, new Date(2026, 3, 22, 23, 59))).toBe(true);
-    expect(drewOn(drawn, new Date(2026, 3, 23, 0, 1))).toBe(false);
-    expect(drewOn(EMPTY_JOURNAL, new Date(2026, 3, 22))).toBe(false);
-  });
-
-  it('a notebook line does not spend the day', () => {
-    const noted = withNote(EMPTY_JOURNAL, { iso: 'x', text: 'saw a newt' });
-    expect(drewOn(noted, new Date())).toBe(false);
-    expect(noted.entries).toHaveLength(1);
+  it('keeps every entry made on the same day, in order', () => {
+    const journal = withEntry(withEntry(withEntry(EMPTY_JOURNAL, { iso: 'a' }), { iso: 'b' }), { iso: 'c' });
+    expect(journal.entries.map((e) => e.iso)).toEqual(['a', 'b', 'c']);
   });
 
   it('patches one entry in place and leaves the others alone', () => {
-    const journal = withNote(withNote(EMPTY_JOURNAL, { iso: 'a', line: 'first' }), { iso: 'b', line: 'second' });
+    const journal = withEntry(withEntry(EMPTY_JOURNAL, { iso: 'a', line: 'first' }), { iso: 'b', line: 'second' });
     const patched = updateEntry(journal, 0, { outcome: 'it passed' });
     expect(patched.entries[0]).toEqual({ iso: 'a', line: 'first', outcome: 'it passed' });
     expect(patched.entries[1]).toEqual({ iso: 'b', line: 'second' });

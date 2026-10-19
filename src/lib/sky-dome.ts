@@ -406,6 +406,7 @@ export interface SkyState {
   moon: MoonPhase;
   positions: Record<HeavenId, HeavenPosition>;
   beacons: Beacon[];
+  places: Partial<Record<BeaconId, AltAz>>;
   ecliptic: AltAz[];
   milkyWay: AltAz[];
   figures: Partial<Record<FigureId, AltAz[]>>;
@@ -426,6 +427,7 @@ export function skyState(date: Date, place: Place): SkyState {
     moon: { lon: mo.lon, alt: moonAA.alt, az: moonAA.az },
   } as Record<HeavenId, HeavenPosition>;
   const beacons: Beacon[] = [];
+  const places: Partial<Record<BeaconId, AltAz>> = { sun: sunAA, moon: moonAA };
   const add = (id: BeaconId, aa: AltAz) => {
     if (aa.alt > 2) {
       const [x, y] = project(aa);
@@ -438,6 +440,7 @@ export function skyState(date: Date, place: Place): SkyState {
     const q = planet(name, date);
     const aa = altaz(q.ra, q.dec, date, lat, lon);
     positions[name] = { lon: q.lon, alt: aa.alt, az: aa.az };
+    places[name] = aa;
     if (!day) add(name, aa);
   }
   const eclipticArc: AltAz[] = [];
@@ -448,23 +451,30 @@ export function skyState(date: Date, place: Place): SkyState {
   const figures: Partial<Record<FigureId, AltAz[]>> = {};
   const milkyWay: AltAz[] = [];
   let stars: FieldStar[] = [];
+  for (const id of Object.keys(FIGURES) as FigureId[]) {
+    const figure = FIGURES[id];
+    const pts = figure.stars.map(([ra, dec]) => altaz(ra, dec, date, lat, lon));
+    places[id] = pts[figure.center]!;
+    if (day) continue;
+    figures[id] = pts;
+    add(id, pts[figure.center]!);
+  }
+  let highest: AltAz | null = null;
+  for (let l = 0; l < 360; l += 5) {
+    const g = galacticToEquatorial(l, 0);
+    const aa = altaz(g.ra, g.dec, date, lat, lon);
+    if (!day) milkyWay.push(aa);
+    if (!highest || aa.alt > highest.alt) highest = aa;
+  }
+  places.milkyway = highest!;
+  if (!day && highest!.alt > 10) add('milkyway', highest!);
+  const shower = activeShower(date);
+  if (shower) {
+    const radiant = altaz(shower.ra, shower.dec, date, lat, lon);
+    places.falling = radiant;
+    if (!day) add('falling', radiant);
+  }
   if (!day) {
-    for (const id of Object.keys(FIGURES) as FigureId[]) {
-      const figure = FIGURES[id];
-      const pts = figure.stars.map(([ra, dec]) => altaz(ra, dec, date, lat, lon));
-      figures[id] = pts;
-      add(id, pts[figure.center]!);
-    }
-    let best: AltAz | null = null;
-    for (let l = 0; l < 360; l += 5) {
-      const g = galacticToEquatorial(l, 0);
-      const aa = altaz(g.ra, g.dec, date, lat, lon);
-      milkyWay.push(aa);
-      if (aa.alt > 10 && (!best || aa.alt > best.alt)) best = aa;
-    }
-    if (best) add('milkyway', best);
-    const shower = activeShower(date);
-    if (shower) add('falling', altaz(shower.ra, shower.dec, date, lat, lon));
     stars = FIELD_STARS.flatMap((s) => {
       const aa = altaz(s.ra, s.dec, date, lat, lon);
       if (aa.alt <= 0) return [];
@@ -480,6 +490,7 @@ export function skyState(date: Date, place: Place): SkyState {
     moon: moonPhase(date),
     positions,
     beacons,
+    places,
     ecliptic: eclipticArc,
     milkyWay,
     figures,
@@ -509,25 +520,20 @@ export function standings(st: SkyState): HeavenStanding[] {
   });
 }
 
-export type Lift = { kind: 'beacon'; beacon: Beacon } | { kind: 'beyond'; x: number; y: number };
-
-const BEACON_REACH = 64;
-
-export function lift(st: SkyState, x: number, y: number): Lift {
-  let best: Beacon | null = null;
-  let bestDistance = Infinity;
-  for (const b of st.beacons) {
-    const d = Math.hypot(b.x - x, b.y - y);
-    if (d < bestDistance) {
-      bestDistance = d;
-      best = b;
-    }
-  }
-  if (!best || (bestDistance > BEACON_REACH && !st.day)) return { kind: 'beyond', x, y };
-  return { kind: 'beacon', beacon: best };
+export interface Landing {
+  x: number;
+  y: number;
+  risen: boolean | null;
 }
 
-export function pickBeyond<T extends { id: string }>(pool: T[], last: string | null, random: () => number): T {
+export function landing(st: SkyState, id: string, tap: [number, number]): Landing {
+  const aa = st.places[id as BeaconId];
+  if (!aa) return { x: tap[0], y: tap[1], risen: null };
+  const [x, y] = project(aa.alt > 0 ? aa : { alt: 0, az: aa.az });
+  return { x, y, risen: aa.alt > 0 };
+}
+
+export function drawPlate<T extends { id: string }>(pool: T[], last: string | null, random: () => number): T {
   const candidates = pool.filter((p) => p.id !== last);
   const from = candidates.length ? candidates : pool;
   return from[Math.floor(random() * from.length)]!;

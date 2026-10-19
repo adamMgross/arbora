@@ -263,9 +263,7 @@ export function woodFace(card: WoodCard): string {
   s += `<path d="M22,458 V150 A118,118 0 0 1 258,150 V458 Z" fill="none" stroke="${G}" stroke-width="1.6"/><path d="M30,450 V152 A110,110 0 0 1 250,152 V450 Z" fill="none" stroke="${G}" stroke-width=".7" opacity=".75"/>`;
   s += `<circle cx="140" cy="24" r="3" fill="${G}"/>${sprig(16, 44, -62, 26, 0.9)}${sprig(264, 44, 242, 26, 0.9)}`;
   s += `<rect x="46" y="390" width="188" height="56" rx="3" fill="${INK}" stroke="${G}" stroke-width=".9"/><rect x="50" y="394" width="180" height="48" rx="2" fill="none" stroke="${G}" stroke-width=".4" opacity=".6"/>`;
-  s += `<text x="140" y="406" text-anchor="middle" font-family="${FELL_SC}" font-size="9.5" letter-spacing="3" fill="${G}">${card.circle.toUpperCase()}</text>`;
-  s += `<text x="140" y="425" text-anchor="middle" font-family="${FELL_SC}" font-size="${card.name.length > 16 ? 15.5 : 18.5}" fill="${GP}">${esc(card.name)}</text>`;
-  s += `<text x="140" y="438" text-anchor="middle" font-family="${FELL}" font-style="italic" font-size="9.5" fill="${G}">${esc(card.from)}</text>`;
+  s += `<text x="140" y="425" text-anchor="middle" font-family="${FELL_SC}" font-size="${card.name.length > 16 ? 16.5 : 20}" fill="${GP}">${esc(card.name)}</text>`;
   return `${s}</svg>`;
 }
 

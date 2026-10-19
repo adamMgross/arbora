@@ -26,6 +26,16 @@ const adjustEyes = async (page: Page, ms = 12500) => {
   await page.clock.runFor(ms);
 };
 
+async function settle(page: Page) {
+  let last = -1;
+  for (;;) {
+    const y = await page.evaluate(() => scrollY);
+    if (y === last) return;
+    last = y;
+    await page.waitForTimeout(150);
+  }
+}
+
 const journal = (page: Page, key: string) =>
   page.evaluate((k) => JSON.parse(localStorage.getItem(k) ?? 'null') as unknown, key);
 
@@ -46,34 +56,39 @@ test.describe('the hub', () => {
   });
 });
 
+const readDeck = <T>(page: Page) =>
+  page.locator('arbora-scene script[type="application/json"]').evaluate((el) => JSON.parse(el.textContent ?? '') as T);
+
 test.describe('the year', () => {
-  test('shows the window for the date, draws a different companion once a day, and reopens tomorrow', async ({
+  test('shows the window for the date and draws a different companion every time the needle turns', async ({
     page,
   }) => {
     await openDeck(page, 'year.html', SPRING_NOON);
     await expect(page.locator('[data-today]')).toHaveText('16');
     const world = page.locator('#year-pair figure').first().locator('.cardsvg');
     await expect(world).toHaveAttribute('aria-label', 'Window 16: Lupine paints the hillsides');
-    await expect(page.locator('#year-open')).toBeDisabled();
-    await page.locator('#year-draw').click();
-    await page.clock.runFor(3000);
+    await expect(world.locator('text')).toHaveText(['16', 'Lupine paints the', 'hillsides']);
+    await expect(page.locator('#year-open')).toBeHidden();
     const yours = page.locator('#year-pair figure').nth(1).locator('.cardsvg');
-    await expect(yours).toHaveAttribute('aria-label', /^Window \d+: /);
-    const label = await yours.getAttribute('aria-label');
-    expect(label).not.toContain('Window 16:');
-    await expect(page.locator('#year-draw')).toBeDisabled();
-    await expect(page.locator('#year-closed')).toContainText('You drew today');
+    for (let i = 0; i < 3; i++) {
+      await page.locator('#year-draw').click();
+      await expect(page.locator('#year-draw')).toBeDisabled();
+      await page.clock.runFor(3000);
+      await expect(yours).toHaveAttribute('aria-label', /^Window \d+: /);
+      expect(await yours.getAttribute('aria-label')).not.toContain('Window 16:');
+      await expect(page.locator('#year-draw')).toBeEnabled();
+      await expect(page.locator('#year-open')).toBeVisible();
+      await expect(page.locator('#year-book')).toBeEmpty();
+    }
     await page.locator('#year-open').click();
     await expect(page.locator('#year-book .bk-title')).toBeVisible();
     await expect(page.locator('#year-book .bk-kicker')).toHaveText(/^Window 16 and window \d+$/);
     await expect(page.locator('#year-book .bk-pass cite')).not.toBeEmpty();
+    await page.locator('#year-draw').click();
+    await expect(page.locator('#year-book')).toBeEmpty();
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
-    await expect(page.locator('#year-pair figure').nth(1).locator('.cardsvg')).toHaveAttribute('aria-label', label!);
-    await expect(page.locator('#year-draw')).toBeDisabled();
-    await page.clock.setSystemTime(NEXT_NIGHT);
-    await page.reload();
-    await page.locator('arbora-scene.mounted').waitFor();
+    await expect(page.locator('#year-pair figure').nth(1).locator('.cardsvg')).not.toHaveAttribute('aria-label');
     await expect(page.locator('#year-draw')).toBeEnabled();
   });
 
@@ -81,6 +96,8 @@ test.describe('the year', () => {
     page,
   }) => {
     await openDeck(page, 'year.html', SPRING_NOON);
+    await expect(page.locator('.notebook')).toBeHidden();
+    await page.locator('#year-notes').click();
     await expect(page.locator('.notebook h4')).toContainText('Window 16');
     await expect(page.locator('.nb-line.ghost')).toHaveCount(1);
     await page.locator('#year-note').fill('Goldfields all the way to the levee.');
@@ -89,11 +106,12 @@ test.describe('the year', () => {
     await expect(page.locator('.nb-line').nth(1).locator('.seal')).toHaveText('2026');
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
+    await page.locator('#year-notes').click();
     await expect(page.locator('.nb-line').nth(1)).toContainText('Goldfields all the way to the levee.');
-    expect(await journal(page, 'arbora-year')).toMatchObject({ lastDay: null });
     await page.clock.setSystemTime(new Date('2027-04-22T12:00:00-07:00'));
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
+    await page.locator('#year-notes').click();
     await expect(page.locator('.nb-line').first()).toContainText('Goldfields all the way to the levee.');
     await expect(page.locator('.nb-line').first().locator('.seal')).toHaveText('2026');
     await expect(page.locator('#year-note')).toBeVisible();
@@ -110,11 +128,12 @@ test.describe('the year', () => {
             { iso: 'a', w: 15, y: 2025, text: 'Levee gold.' },
             { iso: 'b', w: 2, y: 2026, text: 'Bees in the manzanita.' },
           ],
-          lastDay: null,
-          draw: null,
+          lastDay: '2026-04-21',
+          draw: { w: 40 },
         }),
       );
     });
+    await page.locator('#year-notes').click();
     await page.locator('#year-copy').click();
     await expect(page.locator('#year-copy')).toHaveText('Copied');
     expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
@@ -124,6 +143,7 @@ test.describe('the year', () => {
 
   test('the review lights the season just ended and lists every one of its windows', async ({ page }) => {
     await openDeck(page, 'year.html', SPRING_NOON);
+    await page.locator('#year-notes').click();
     await page.locator('#year-review').click();
     await expect(page.locator('.notebook h4')).toContainText('The season just ended · Rain');
     await expect(page.locator('.review .nb-line')).toHaveCount(20);
@@ -134,24 +154,31 @@ test.describe('the year', () => {
 });
 
 test.describe('the sky', () => {
-  test('opens the heavens after the eyes adjust, reads a plate above and below, and closes until tomorrow', async ({
+  const look = async (page: Page, x = 0.5, y = 0.45) => {
+    const svg = page.locator('#sky-dome svg');
+    const box = (await svg.boundingBox())!;
+    await svg.click({ position: { x: box.width * x, y: box.height * y } });
+    await page.clock.runFor(1500);
+  };
+  const plateLabel = (page: Page) => page.locator('#sky-out .cardsvg').getAttribute('aria-label');
+
+  test('opens the heavens after the eyes adjust, draws a plate showing only its name, and draws again as often as asked', async ({
     page,
   }) => {
     await openDeck(page, 'sky.html', SPRING_NIGHT);
-    await expect(page.locator('#sky-cue')).toHaveText('Let your eyes adjust.');
-    await expect(page.locator('#sky-read')).toContainText('Tonight · The Moon in');
+    await expect(page.locator('#sky-cue')).toBeEmpty();
     await expect(page.locator('#sky-dome')).not.toHaveClass(/day/);
     await page.locator('#sky-dome svg').click({ position: { x: 300, y: 250 }, force: true });
     await expect(page.locator('#sky-out .cardbox')).toHaveCount(0);
     await adjustEyes(page);
     await expect(page.locator('arbora-scene')).toHaveClass(/adapted/);
-    await expect(page.locator('#sky-cue')).toHaveText('Lift your eyes. The heavens are open where the lights stand.');
-    const svg = page.locator('#sky-dome svg');
-    const box = (await svg.boundingBox())!;
-    await svg.click({ position: { x: box.width / 2, y: box.height * 0.45 } });
-    await page.clock.runFor(1500);
-    await expect(page.locator('#sky-cue')).toHaveText(/^(You looked|By day)/);
+    await expect(page.locator('#sky-cue')).toHaveText('Lift your eyes.');
+    await look(page);
+    await expect(page.locator('#sky-cue')).toBeEmpty();
     await expect(page.locator('#sky-out .cardbox .cardsvg')).toHaveCount(1);
+    const first = (await plateLabel(page))!;
+    await expect(page.locator('#sky-out .cardsvg text')).toHaveText([first.split(', ')[0]!]);
+    await expect(page.locator('#sky-book')).toBeEmpty();
     await page.locator('#sky-open').click();
     await expect(page.locator('#sky-book .above')).not.toBeEmpty();
     await expect(page.locator('#sky-book .below p').first()).toContainText('Set down');
@@ -159,61 +186,76 @@ test.describe('the sky', () => {
     await expect(page.locator('#sky-book .bk-pass cite')).not.toBeEmpty();
     await page.locator('#sky-line').fill('Quiet, and the moon low.');
     await page.locator('#sky-keep').click();
-    await expect(page.locator('#sky-cue')).toHaveText('The heavens are closed for tonight.');
-    const stored = (await journal(page, 'arbora-sky')) as { entries: Array<Record<string, unknown>>; lastDay: string };
-    expect(stored.lastDay).toBe('2026-04-22');
-    expect(stored.entries).toHaveLength(1);
+    await page.locator('#sky-again').click();
+    await expect(page.locator('#sky-out .cardbox')).toHaveCount(0);
+    await expect(page.locator('#sky-cue')).toHaveText('Lift your eyes.');
+    await look(page, 0.3, 0.6);
+    const second = (await plateLabel(page))!;
+    expect(second).not.toBe(first);
+    await page.locator('#sky-open').click();
+    await page.locator('#sky-keep').click();
+    const stored = (await journal(page, 'arbora-sky')) as { entries: Array<Record<string, unknown>> };
+    expect(stored.entries).toHaveLength(2);
     expect(stored.entries[0]).toMatchObject({ line: 'Quiet, and the moon low.', status: 'kept' });
-    expect(String(stored.entries[0]!.heavens)).toContain('Tonight');
+    expect(String(stored.entries[0]!.heavens)).toContain('Tonight · The Moon in');
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
-    await expect(page.locator('#sky-closed')).toBeVisible();
     await adjustEyes(page);
-    await svg.click({ position: { x: box.width / 2, y: box.height * 0.45 } });
-    await page.clock.runFor(1500);
-    await expect(page.locator('#sky-out .cardbox')).toHaveCount(0);
+    await look(page);
+    await expect(page.locator('#sky-out .cardbox .cardsvg')).toHaveCount(1);
   });
 
-  test('by day the Sun stands alone and any look opens the fourth heaven', async ({ page }) => {
+  test('by day draws from the whole deck, not only the Sun', async ({ page }) => {
     await openDeck(page, 'sky.html', SPRING_NOON);
     await expect(page.locator('#sky-dome')).toHaveClass(/day/);
     await expect(page.locator('#sky-dome svg text')).toContainText(['N', 'E', 'S', 'W', 'THE SUN']);
     await expect(page.locator('#sky-dome svg .beacon')).toHaveCount(0);
     await adjustEyes(page);
-    const svg = page.locator('#sky-dome svg');
-    const box = (await svg.boundingBox())!;
-    await svg.click({ position: { x: box.width * 0.3, y: box.height * 0.5 } });
-    await page.clock.runFor(1500);
-    await expect(page.locator('#sky-cue')).toHaveText(/^By day the Sun stands alone, in \w+, the fourth heaven\.$/);
-    await expect(page.locator('#sky-out .cardsvg')).toHaveAttribute('aria-label', 'The Sun, the center');
+    const labels = new Set<string>();
+    for (let i = 0; i < 6; i++) {
+      await look(page);
+      labels.add((await plateLabel(page))!);
+      await page.locator('#sky-again').click();
+    }
+    expect(labels.size).toBeGreaterThan(1);
   });
 
-  test('a line kept under a heaven is the first thing read when it opens again', async ({ page }) => {
-    await openDeck(page, 'sky.html', SPRING_NOON, () => {
-      localStorage.setItem(
-        'arbora-sky',
-        JSON.stringify({
-          entries: [
-            {
+  test('the book says where the light stands, and a line kept under a plate is the first thing in its book', async ({
+    page,
+  }) => {
+    await openDeck(page, 'sky.html', SPRING_NIGHT);
+    const { plates } = await readDeck<{ plates: Array<{ id: string; name: string; alt: string; kind: string }> }>(page);
+    await page.evaluate(
+      (ids) =>
+        localStorage.setItem(
+          'arbora-sky',
+          JSON.stringify({
+            entries: ids.map((plate) => ({
               iso: '2026-03-01T20:00:00.000Z',
-              plate: 'sun',
+              plate,
               heavens: 'x',
-              line: 'Give light without deciding to.',
+              line: `Kept under ${plate}.`,
               status: 'kept',
-            },
-          ],
-          lastDay: '2026-03-01',
-          draw: null,
-        }),
-      );
-    });
+            })),
+          }),
+        ),
+      plates.map((p) => p.id),
+    );
+    await page.reload();
+    await page.locator('arbora-scene.mounted').waitFor();
     await adjustEyes(page);
-    const svg = page.locator('#sky-dome svg');
-    const box = (await svg.boundingBox())!;
-    await svg.click({ position: { x: box.width * 0.5, y: box.height * 0.5 } });
-    await page.clock.runFor(1500);
-    await expect(page.locator('#sky-return .return')).toContainText('When the sun last opened for you');
-    await expect(page.locator('#sky-return .return')).toContainText('Give light without deciding to.');
+    for (let i = 0; i < 4; i++) {
+      await look(page);
+      const label = await plateLabel(page);
+      const plate = plates.find((p) => `${p.name}, ${p.alt}` === label)!;
+      await page.locator('#sky-open').click();
+      await expect(page.locator('#sky-book .return')).toContainText('last opened for you');
+      await expect(page.locator('#sky-book .return')).toContainText(`Kept under ${plate.id}.`);
+      const where = page.locator('#sky-book .bk-title + .bk-note');
+      if (plate.kind === 'beyond' || plate.id === 'falling') await expect(where).toHaveCount(0);
+      else await expect(where).toHaveText(/ (stands|has risen|have risen|is below|are below) /);
+      await page.locator('#sky-again').click();
+    }
   });
 
   test('with reduced motion the firmament is open at once', async ({ page }) => {
@@ -228,49 +270,76 @@ test.describe('the wood', () => {
   const walk = async (page: Page, lights: number) => {
     for (let i = 0; i < lights; i++) {
       await expect(page.locator('.wisp')).toHaveCount(3);
+      await settle(page);
       await page.locator('.wisp').first().click({ force: true });
+      await expect(page.locator('.wisp.chosen')).toHaveCount(1);
       await page.clock.runFor(3000);
     }
   };
+  const face = (page: Page, slot: string) => page.locator(`#wood-slot-${slot} .flip-front .cardsvg`);
 
-  test('three lights fill the triptych, the book opens, a line is kept, and the wood closes for the day', async ({
+  test('one light turns one card showing only its name, the book opens on request, and the wood can be walked again at once', async ({
     page,
   }) => {
     await openDeck(page, 'wood.html', SPRING_NIGHT);
     await expect(page.locator('#wood-trip')).toBeHidden();
+    await expect(page.locator('#wood-one')).toBeChecked();
     await page.locator('#wood-enter').click();
     await expect(page.locator('#wood-hold')).toBeHidden();
-    await expect(page.locator('#wood-trip')).toBeVisible();
+    await walk(page, 1);
+    await expect(page.locator('#wood-trip .flip.flipped')).toHaveCount(1);
+    await expect(page.locator('#wood-slot-left')).toBeHidden();
+    await expect(page.locator('#wood-slot-right')).toBeHidden();
+    const label = (await face(page, 'center').getAttribute('aria-label'))!;
+    expect(label).toMatch(/^(Elder|Spirit|Passage): /);
+    const name = label.replace(/^\w+: /, '').split(', ')[0]!;
+    await expect(face(page, 'center').locator('text')).toHaveText([name]);
+    await expect(page.locator('#wood-book')).toBeEmpty();
+    await page.locator('#wood-open').click();
+    await expect(page.locator('#wood-book .bk-entry')).toHaveCount(1);
+    await expect(page.locator('#wood-book .bk-title')).toHaveText(name);
+    await page.locator('#wood-line').fill('I have been walking in circles on purpose.');
+    await page.locator('#wood-keep').click();
+    await page.locator('#wood-again').click();
+    await expect(page.locator('#wood-hold')).toBeVisible();
+    await expect(page.locator('#wood-trip')).toBeHidden();
+    await page.locator('#wood-enter').click();
+    await walk(page, 1);
+    await page.locator('#wood-open').click();
+    await page.locator('#wood-set').click();
+    const stored = (await journal(page, 'arbora-wood')) as { entries: Array<Record<string, unknown>> };
+    expect(stored.entries).toHaveLength(2);
+    expect(stored.entries[0]).toMatchObject({ status: 'kept', line: 'I have been walking in circles on purpose.' });
+    expect(Object.values(stored.entries[0]!.cards as Record<string, string>)).toEqual([name]);
+    expect(stored.entries[1]).toMatchObject({ status: 'branch' });
+    await page.reload();
+    await page.locator('arbora-scene.mounted').waitFor();
+    await expect(page.locator('#wood-enter')).toBeVisible();
+  });
+
+  test('three lights fill the triptych with an elder, a spirit, and a passage, and the book reads them in place', async ({
+    page,
+  }) => {
+    await openDeck(page, 'wood.html', SPRING_NIGHT);
+    await page.locator('#wood-three').check();
+    await page.locator('#wood-enter').click();
     await walk(page, 3);
     await expect(page.locator('#wood-trip .flip.flipped')).toHaveCount(3);
-    await expect(page.locator('#wood-slot-Elder .flip-front .cardsvg')).toHaveAttribute('aria-label', /^Elder: /);
-    await expect(page.locator('#wood-slot-Spirit .flip-front .cardsvg')).toHaveAttribute('aria-label', /^Spirit: /);
-    await expect(page.locator('#wood-slot-Passage .flip-front .cardsvg')).toHaveAttribute('aria-label', /^Passage: /);
-    await expect(page.locator('#wood-cue')).toHaveText('The three lights led here.');
+    await expect(face(page, 'left')).toHaveAttribute('aria-label', /^Elder: /);
+    await expect(face(page, 'right')).toHaveAttribute('aria-label', /^Spirit: /);
+    await expect(face(page, 'center')).toHaveAttribute('aria-label', /^Passage: /);
     await page.locator('#wood-open').click();
     await expect(page.locator('#wood-book .bk-entry')).toHaveCount(3);
     await expect(page.locator('#wood-book .bk-pass cite')).toHaveCount(3);
+    await expect(page.locator('#wood-book .bk-kicker')).toHaveText([
+      /^Where you stand · Elder · /,
+      /^What is happening · Passage · /,
+      /^What meets you · Spirit · /,
+    ]);
     await expect(page.locator('#wood-book .bk-q span')).toHaveText('Sit with');
-    const passageName = await page.locator('#wood-book .bk-entry').nth(2).locator('.bk-title').innerText();
-    await page.locator('#wood-line').fill('I have been walking in circles on purpose.');
-    await page.locator('#wood-keep').click();
-    await expect(page.locator('#wood-cue')).toHaveText('The wood is closed for today.');
-    const stored = (await journal(page, 'arbora-wood')) as { entries: Array<Record<string, unknown>>; lastDay: string };
-    expect(stored.lastDay).toBe('2026-04-22');
-    expect(stored.entries[0]).toMatchObject({ status: 'kept', line: 'I have been walking in circles on purpose.' });
-    expect((stored.entries[0]!.cards as Record<string, string>).Passage).toBe(passageName);
-    await page.reload();
-    await page.locator('arbora-scene.mounted').waitFor();
-    await expect(page.locator('#wood-closed')).toContainText('The wood is closed until tomorrow');
-    await expect(page.locator('#wood-enter')).toBeHidden();
-    await expect(page.locator('#wood-trip .flip.flipped')).toHaveCount(3);
-    await expect(page.locator('#wood-slot-Passage .flip-front .cardsvg')).toHaveAttribute(
-      'aria-label',
-      new RegExp(`^Passage: ${passageName}`),
-    );
   });
 
-  test('the next day the door returns the kept line and takes what came of it', async ({ page }) => {
+  test('the last line kept waits under the deck and takes what came of it', async ({ page }) => {
     await openDeck(page, 'wood.html', NEXT_NIGHT, () => {
       if (localStorage.getItem('arbora-wood')) return;
       localStorage.setItem(
@@ -290,7 +359,8 @@ test.describe('the wood', () => {
         }),
       );
     });
-    await expect(page.locator('#wood-enter')).toBeVisible();
+    await expect(page.locator('#wood-return .return')).toHaveCount(0);
+    await page.locator('#wood-past').click();
     await expect(page.locator('#wood-return .return')).toContainText('Let the old job be the log.');
     await expect(page.locator('#wood-return .return')).toContainText('What came of it?');
     await page.locator('#wood-outcome').fill('It fed the garden.');
@@ -298,6 +368,7 @@ test.describe('the wood', () => {
     await expect(page.locator('#wood-return .return')).toContainText('What came of it: It fed the garden.');
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
+    await page.locator('#wood-past').click();
     await expect(page.locator('#wood-return .return')).toContainText('What came of it: It fed the garden.');
   });
 
@@ -309,12 +380,10 @@ test.describe('the wood', () => {
           entries: [
             { iso: 'x', cards: { Passage: 'The Dark Wood' }, line: 'A hard one.', status: 'branch', outcome: '' },
           ],
-          lastDay: '2026-04-22',
-          draw: null,
         }),
       );
     });
-    await expect(page.locator('#wood-return .return')).toHaveCount(0);
+    await expect(page.locator('#wood-past')).toBeHidden();
     await expect(page.locator('#wood-enter')).toBeVisible();
   });
 
@@ -322,10 +391,10 @@ test.describe('the wood', () => {
     await openDeck(page, 'wood.html', SPRING_NIGHT);
     await page.locator('#wood-table').check();
     await page.locator('#wood-enter').click();
-    await expect(page.locator('#wood-cue')).toHaveText('One light for the table. Follow it.');
     await walk(page, 1);
     await expect(page.locator('#wood-trip .flip.flipped')).toHaveCount(1);
-    await expect(page.locator('#wood-slot-Elder')).toBeHidden();
+    await expect(face(page, 'center')).toHaveAttribute('aria-label', /^Passage: /);
+    await expect(page.locator('#wood-slot-left')).toBeHidden();
     await page.locator('#wood-open').click();
     await expect(page.locator('#wood-book .bk-entry')).toHaveCount(1);
     await expect(page.locator('#wood-book .bk-q span')).toHaveText('For the table');
@@ -345,18 +414,19 @@ test.describe('the sky over where you are', () => {
     const button = page.locator('#sky-place');
     await expect(button).toHaveText('Read the sky over where you are');
     await expect(page.locator('#sky-dome svg')).toHaveAttribute('aria-label', /over California/);
-    const californiaLine = await page.locator('#sky-read').innerText();
+    const labels = () => page.locator('#sky-dome svg text').allTextContents();
+    const californiaLabels = await labels();
     await button.click();
     await expect(button).toHaveText('Return to the California sky');
     await expect(page.locator('#sky-dome svg')).toHaveAttribute('aria-label', /over where you are/);
     expect(await page.evaluate(() => localStorage.getItem('arbora-place'))).toBe('{"lat":-33.9,"lon":151.2}');
-    expect(await page.locator('#sky-read').innerText()).not.toBe(californiaLine);
+    expect(await labels()).not.toEqual(californiaLabels);
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
     await expect(page.locator('#sky-place')).toHaveText('Return to the California sky');
     await page.locator('#sky-place').click();
     await expect(page.locator('#sky-place')).toHaveText('Read the sky over where you are');
-    await expect(page.locator('#sky-read')).toHaveText(californiaLine);
+    expect(await labels()).toEqual(californiaLabels);
   });
 
   test('stays over California when the browser refuses', async ({ page }) => {

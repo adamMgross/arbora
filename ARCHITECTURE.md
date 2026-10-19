@@ -41,7 +41,7 @@ A static site built by Astro from validated content files. Facts live in YAML an
 | `src/lib/canon.ts` | Turning a canon entry into layout props: title, breadcrumb, pager, table of contents. | Astro. |
 | `src/lib/daily.ts`, `season.ts`, `saved-readings.ts` | Pure Today logic: day number, season, time of day, shuffle, saved-reading storage rules. | The DOM, the clock (callers pass `Date` and `random`). |
 | `src/lib/sitemap.ts`, `pages.ts` | Sitemap and robots text, the list of built pages. | The filesystem. |
-| `src/lib/sky-math.ts`, `sky-dome.ts` | Approximate positions of the Sun, Moon, and planets, their altitude over a place, and the dome's state: which lights are up, where the eye landed, what the heavens line says. | The DOM, the clock (callers pass `Date`), drawing. |
+| `src/lib/sky-math.ts`, `sky-dome.ts` | Approximate positions of the Sun, Moon, and planets, their altitude over a place, and the dome's state: which lights are up, where every plate's light stands, where a drawn plate lands, and the heavens line kept with a saved entry. | The DOM, the clock (callers pass `Date`), drawing. |
 | `src/lib/year-windows.ts`, `wood-walk.ts` | The 72-window calendar math and the walk's rules: order of positions, the last kept line, light positions. | The DOM, content. |
 | `src/lib/journal.ts` | The one storage shape every deck keeps, its tolerant parser, and the one-draw-a-day rule. | Which deck is writing. |
 | `src/lib/decks.ts` | The data contract between `Deck.astro` and the scenes, and the art enums the schemas validate against. | Rendering. |
@@ -75,13 +75,13 @@ Source Sans 3 and the tree page's Source Code Pro are requested and unused (`arb
 | Data | Where | Rule |
 |---|---|---|
 | Saved readings | `localStorage` key `arbora-saved-readings`, JSON array | Entries are `{text, source}` and may carry more fields. The reader accepts the original shape and keeps unknown fields. A new field is added beside the old ones. |
-| The Wood's walks | `localStorage` key `arbora-wood`, one journal object | Entries are `{iso, cards, line, status, outcome}` with `status` kept or branch. `lastDay` is the local date of the last walk. |
+| The Wood's walks | `localStorage` key `arbora-wood`, one journal object | Entries are `{iso, cards, line, status, outcome}` with `status` kept or branch. |
 | The Sky's ascents | `localStorage` key `arbora-sky`, one journal object | Entries are `{iso, plate, heavens, line, status}` with `status` kept or set. |
 | The reader's place | `localStorage` key `arbora-place`, `{lat, lon}` | Written only when the reader taps "Read the sky over where you are", rounded to a tenth of a degree. An empty value means the California default (`docs/decisions/0010`). |
-| The Year's notebook | `localStorage` key `arbora-year`, one journal object | Entries are `{iso, w, y, text}`, one line per window per year. `draw` is `{w}` for the day's companion and `lastDay` the day it was drawn. |
+| The Year's notebook | `localStorage` key `arbora-year`, one journal object | Entries are `{iso, w, y, text}`, one line per window per year. |
 | Offline cache | Cache Storage, one cache named `arbora-<10 hex>` | Replaced on every deploy. The worker deletes only caches starting with `arbora-` because the origin is shared with other project sites. |
 
-A journal is `{entries, lastDay, draw}`. `parseJournal` keeps every field an entry carries, reads a missing field as null, and returns an empty journal for anything it cannot read, so a new field is added beside the old ones and an older page still reads a newer record.
+A journal is `{entries}`. Journals written before `docs/decisions/0012` also carry `lastDay` and `draw`, which are read and dropped. `parseJournal` keeps every field an entry carries, reads a missing field as null, and returns an empty journal for anything it cannot read, so a new field is added beside the old ones and an older page still reads a newer record.
 
 ## Build, run, deploy
 
@@ -123,7 +123,7 @@ Invariants a reviewer can check. Where the code does not hold one yet, the ticke
 11. **Scenes load only where they are used.** A page without an `<arbora-scene>` requests no scene chunk, and a deck page requests only its own. Pinned by the hub test in `tests/e2e/decks.spec.ts`.
 12. **Journals accrete.** `parseJournal` keeps unknown fields and reads missing ones as null. Pinned by `tests/unit/journal.test.ts`.
 13. **A card's art and quotations exist.** The art enum and the passage references are validated at build time. Pinned by `tests/integration/content-integrity.test.ts`.
-14. **One draw a day, per deck, per device.** A second walk, ascent, or needle turn on the same local date is refused, and the deck reopens the next day. Pinned by `tests/e2e/decks.spec.ts`.
+14. **The picture first, and no limit on draws.** Until the reader asks, a drawn card shows its picture and its name and no other text, the book opens only on Read, and every deck can be drawn again at once, any number of times a day (`docs/decisions/0012`). Pinned by `tests/e2e/decks.spec.ts`.
 15. **The decks work on a phone.** At an iPhone 15 viewport every deck runs edge to edge with no side scroll, touch targets are at least 44 px, and the result of each tap comes into view. Pinned by the `phone` project, which runs `tests/e2e/decks.spec.ts` and `tests/e2e/phone.spec.ts`.
 
 Known drift from the Shape:

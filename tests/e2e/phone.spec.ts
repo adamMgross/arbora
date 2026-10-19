@@ -29,7 +29,7 @@ async function expectTouchSized(page: Page) {
   const small = await page.evaluate(() =>
     [
       ...document.querySelectorAll(
-        'arbora-scene button, arbora-scene input:not(label.switch input), arbora-scene textarea, arbora-scene label:not(.sr-only)',
+        'arbora-scene button, arbora-scene input:not(.modes input), arbora-scene textarea, arbora-scene label:not(.sr-only)',
       ),
     ]
       .map((el) => [el.id || el.className, el.getBoundingClientRect()] as const)
@@ -65,13 +65,31 @@ test.describe('on a phone, every deck', () => {
 });
 
 test.describe('on a phone, the wood', () => {
-  test('keeps the lights and the triptych on one screen, then lays the plates out large to look at', async ({
-    page,
-  }) => {
+  test('on one light shows only the lights, then a card large enough to look at', async ({ page }) => {
     await open(page, 'wood.html');
     await expectTouchSized(page);
     await page.locator('#wood-enter').click();
-    await expect(page.locator('#wood-cue')).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('#wood-play')).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('#wood-trip')).toBeHidden();
+    await page.locator('.wisp').first().click({ force: true });
+    await page.clock.runFor(3000);
+    await settle(page);
+    const width = page.viewportSize()!.width;
+    expect((await box(page.locator('#wood-slot-center'))).width).toBeGreaterThan(width * 0.55);
+    await expect(page.locator('#wood-slot-center')).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('#wood-open')).toBeInViewport({ ratio: 1 });
+    await expectNoSideScroll(page);
+    await page.locator('#wood-open').click();
+    await expect(page.locator('#wood-book .bk-entry').first()).toBeInViewport();
+    await expectTouchSized(page);
+  });
+
+  test('on three lights keeps the lights and the triptych on one screen, then lays the plates out large', async ({
+    page,
+  }) => {
+    await open(page, 'wood.html');
+    await page.locator('#wood-three').check();
+    await page.locator('#wood-enter').click();
     await expect(page.locator('#wood-play')).toBeInViewport({ ratio: 1 });
     await expect(page.locator('#wood-trip')).toBeInViewport({ ratio: 1 });
     for (let i = 0; i < 3; i++) {
@@ -81,16 +99,13 @@ test.describe('on a phone, the wood', () => {
     }
     await expect(page.locator('#wood-trip')).toHaveClass(/spread/);
     const width = page.viewportSize()!.width;
-    for (const circle of ['Elder', 'Passage', 'Spirit'])
-      expect((await box(page.locator(`#wood-slot-${circle}`))).width).toBeGreaterThan(width * 0.6);
-    await expect(page.locator('#wood-slot-Elder')).toBeInViewport({ ratio: 1 });
+    for (const slot of ['left', 'center', 'right'])
+      expect((await box(page.locator(`#wood-slot-${slot}`))).width).toBeGreaterThan(width * 0.6);
+    await expect(page.locator('#wood-slot-left')).toBeInViewport({ ratio: 1 });
     await expect(page.locator('#wood-open')).toBeInViewport({ ratio: 1 });
     await page.locator('#wood-trip').evaluate((el) => el.scrollTo({ left: el.scrollWidth }));
-    await expect(page.locator('#wood-slot-Spirit')).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('#wood-slot-right')).toBeInViewport({ ratio: 1 });
     await expectNoSideScroll(page);
-    await page.locator('#wood-open').click();
-    await expect(page.locator('#wood-book .bk-entry').first()).toBeInViewport();
-    await expectTouchSized(page);
   });
 
   test('a link to the table lands on the deck', async ({ page }) => {

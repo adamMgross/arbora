@@ -1,10 +1,21 @@
 import { describe, expect, it } from 'vitest';
-import { lastKept, lastWalk, lightSpots, pickFrom, TABLE_ORDER, WALK_ORDER } from '../../src/lib/wood-walk';
+import { lastKept, lightSpots, pickFrom, WALKS } from '../../src/lib/wood-walk';
 
 describe('the walk', () => {
-  it('draws the elder, then the spirit, then the passage, and one passage for the table', () => {
-    expect(WALK_ORDER).toEqual(['Elder', 'Spirit', 'Passage']);
-    expect(TABLE_ORDER).toEqual(['Passage']);
+  it('draws one card from any circle by default, into the center', () => {
+    expect(WALKS.one).toEqual([{ slot: 'center', circle: null }]);
+  });
+
+  it('on three lights draws the elder left, the spirit right, then the passage in the center', () => {
+    expect(WALKS.three.map((s) => [s.circle, s.slot])).toEqual([
+      ['Elder', 'left'],
+      ['Spirit', 'right'],
+      ['Passage', 'center'],
+    ]);
+  });
+
+  it('for the table draws one passage into the center', () => {
+    expect(WALKS.table).toEqual([{ slot: 'center', circle: 'Passage' }]);
   });
 
   it('picks from the whole pool for any random draw', () => {
@@ -22,8 +33,6 @@ describe('the walk', () => {
     ];
     expect(lastKept(entries)).toEqual({ index: 0, entry: entries[0] });
     expect(lastKept([])).toBeNull();
-    expect(lastWalk(entries)).toBeNull();
-    expect(lastWalk(entries.slice(0, 3))).toEqual(entries[2]);
   });
 
   it('places three lights at different spots on each step', () => {

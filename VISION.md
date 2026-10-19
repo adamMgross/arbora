@@ -18,7 +18,7 @@ The owner, reading mostly on a phone in the spare minutes of an ordinary day, an
 4. The site is static files on GitHub Pages with no server. Pinned by `npm run ci`, which builds and verifies the deployed base path.
 5. Every URL that existed before the restructure still exists. Pinned by the route check in `npm run parity`.
 6. The canon never closes, but stays lean: three tiers, curated not invented, ancient traditions primary. Reviewed by the owner, not by a test.
-7. Three reflection decks, the Wood, the Sky, and the Year, each drawn in the browser, each allowing one draw a day, each keeping what the reader writes on the device and returning it later. Pinned by `tests/e2e/decks.spec.ts` and the unit tests for the sky math, the window calendar, and the journal.
+7. Three reflection decks, the Wood, the Sky, and the Year, each drawn in the browser, each showing a picture and a name first with its book opened only on request, each drawable as often as the reader likes, each keeping what the reader writes on the device and returning it later. Pinned by `tests/e2e/decks.spec.ts` and the unit tests for the sky math, the window calendar, and the journal.
 
 ## Craft goals
 

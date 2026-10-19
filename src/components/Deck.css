@@ -16,10 +16,11 @@
   touch-action: manipulation;
 }
 
+/* The fixed nav reappears when the page scrolls up, so a revealed element starts below it. */
 .deck,
 .deck [id],
 .deck figure {
-  scroll-margin-block: 12px;
+  scroll-margin-block: 80px 12px;
 }
 
 .deck-noscript {
@@ -104,7 +105,13 @@
   z-index: 2;
 }
 
-.deck .switch {
+.deck .modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+}
+
+.deck .modes label {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -114,7 +121,7 @@
   min-height: 44px;
 }
 
-.deck .switch input {
+.deck .modes input {
   accent-color: var(--st-accent);
   width: 18px;
   height: 18px;
@@ -217,14 +224,6 @@
   padding-bottom: 0;
 }
 
-.deck .look {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.12rem;
-  color: var(--st-dim);
-  line-height: 1.4;
-}
-
 .deck .keep {
   display: grid;
   gap: 8px;
@@ -287,16 +286,6 @@
 .deck .return .rq {
   font-style: italic;
   color: var(--st-dim);
-}
-
-.deck .closed {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.1rem;
-  color: var(--st-dim);
-  margin-top: 10px;
-  position: relative;
-  z-index: 2;
 }
 
 .deck .cardbox {
@@ -453,12 +442,6 @@
   padding: 22px 0 10px;
 }
 
-.deck-wood .wood-hold p {
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--st-fg);
-}
-
 .deck-wood .wood-hold .q {
   font-family: var(--font-display);
   font-style: italic;
@@ -527,6 +510,11 @@
   max-width: 560px;
 }
 
+.deck-wood .trip:has(> .wing[hidden]) {
+  grid-template-columns: minmax(0, 240px);
+  justify-content: center;
+}
+
 .deck-wood .trip .wing {
   padding-bottom: 14px;
 }
@@ -538,25 +526,10 @@
   margin: 0;
 }
 
-.deck-wood .trip figcaption {
-  font-family: 'IM Fell English SC', Georgia, serif;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--st-dim);
-  text-align: center;
-}
-
 .deck-wood .trip .slot-empty {
   aspect-ratio: 7 / 12;
   border-radius: 10px;
   border: 1px dashed rgba(207, 169, 79, 0.35);
-  display: grid;
-  place-items: center;
-  color: var(--st-dim);
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 0.95rem;
 }
 
 .deck-wood .trip .arrive {
@@ -651,23 +624,6 @@
 
 .deck-sky .dome.day .adapt-msg {
   color: var(--art-day-ink);
-}
-
-.deck-sky .heavens {
-  margin-top: 12px;
-  font-family: var(--font-display);
-  font-style: italic;
-  font-size: 1.05rem;
-  line-height: 1.5;
-  color: var(--st-dim);
-  position: relative;
-  z-index: 2;
-}
-
-.deck-sky .heavens b {
-  font-weight: 500;
-  font-style: normal;
-  color: var(--st-fg);
 }
 
 .deck-sky .place {
@@ -797,14 +753,6 @@
   gap: 6px;
   min-width: 0;
   margin: 0;
-}
-
-.deck-year .pair figcaption {
-  font-size: 0.68rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--st-dim);
-  text-align: center;
 }
 
 .deck-year .cardbox {
