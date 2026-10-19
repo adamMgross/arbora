@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process';
+import { stripVTControlCharacters } from 'node:util';
 import { appendFileSync, cpSync, mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
@@ -13,7 +14,7 @@ function build(dir: string) {
     encoding: 'utf8',
     env: { ...process.env, BASE_PATH: '/' },
   });
-  return { ok: result.status === 0, output: `${result.stdout}${result.stderr}` };
+  return { ok: result.status === 0, output: stripVTControlCharacters(`${result.stdout}${result.stderr}`) };
 }
 
 function freshCopy() {
