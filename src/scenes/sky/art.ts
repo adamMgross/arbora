@@ -1,4 +1,4 @@
-import type { SkyArt, SkyPlate } from '../../lib/decks';
+import type { SKY_ART_BASE, SkyArt, SkyPlate } from '../../lib/decks';
 import { DOME, FIGURES, HEAVENS, project, type FigureId, type SkyState } from '../../lib/sky-dome';
 import { esc, f, rng, uid } from '../../lib/svg';
 import { svgOpen } from '../book';
@@ -21,8 +21,11 @@ import {
   VERM,
   type Drawer,
 } from './ink';
+import { FIGURE_ART } from './art-figures';
+import { ZODIAC_ART } from './art-zodiac';
+import { MYSTERY_ART } from './art-mysteries';
 
-const ART: Record<SkyArt, Drawer> = {
+const BASE_ART: Record<(typeof SKY_ART_BASE)[number], Drawer> = {
   sun(cx, cy) {
     let o = '';
     for (let i = 0; i < 24; i++) {
@@ -551,6 +554,8 @@ const ART: Record<SkyArt, Drawer> = {
   },
 };
 
+const ART: Record<SkyArt, Drawer> = { ...BASE_ART, ...ZODIAC_ART, ...FIGURE_ART, ...MYSTERY_ART };
+
 const OVERLAY: Partial<Record<SkyArt, (cx: number, cy: number) => string>> = {
   sun: (cx, cy) =>
     `<path d="M${cx - 78},${cy + 62} Q${cx},${cy + 96} ${cx + 78},${cy + 62} L${cx + 92},${cy + 42} M${cx - 78},${cy + 62} L${cx - 92},${cy + 42}" fill="none" stroke="${GOLD}" stroke-width="1.6"/>`,
@@ -752,6 +757,7 @@ export function domeSvg(st: SkyState, names: Record<string, string>, halo: [numb
       o += `<g transform="translate(${f(b.x)} ${f(b.y)})">${moonDisc(0, 0, 6, st.moon, CREAM, st.day ? DAY_SKY : SHADE)}<circle r="6" fill="none" stroke="${ink}" stroke-width=".6"/></g>`;
     else if ((HEAVENS as string[]).includes(b.id))
       o += `<g class="beacon" style="animation-delay:${j * 0.4}s"><circle cx="${f(b.x)}" cy="${f(b.y)}" r="11" fill="${GOLD}" opacity=".14"/><circle cx="${f(b.x)}" cy="${f(b.y)}" r="4.2" fill="${GOLD}"/></g>`;
+    if (!(HEAVENS as string[]).includes(b.id)) return;
     const spot = placeLabel(
       b.x,
       b.y + (b.id === 'milkyway' ? 14 : labelSize * 0.4),

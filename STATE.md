@@ -4,13 +4,13 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete and the site is live. The three reflection decks now show the picture first, open the book on request, and draw without a daily limit (decision 0012). The Sky is being doubled to at least 62 plates.
+**Phase:** Restructure complete and the site is live. The three reflection decks now show the picture first, open the book on request, and draw without a daily limit (decision 0012). The Sky has 62 plates (decision 0013).
 
 **Deployed vs main:** Deployed. The owner approved the first push on 2026-10-18, and https://adammgross.github.io/arbora/ serves `main` through the Deploy workflow (run 39210926422 green). Every push to `main` deploys.
 
-**What works, verified 2026-10-19:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 117 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
+**What works, verified 2026-10-19:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 119 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,832 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 13.9 KB (Sky), 4.4 KB (Year) gzipped, loaded only on their pages.
+**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,832 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 27.6 KB (Sky, 62 drawings), 4.4 KB (Year) gzipped, loaded only on their pages.
 
 **Blockers:** none. Orphaned pre-rewrite commits on GitHub still hold personal details until the move to a fresh repository (`arb-54cu`, decision 0007). `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
@@ -140,4 +140,12 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** the fixed nav hides when the page scrolls down and comes back when it scrolls up, so Walk again and Look again landed the deck's top under it. A test tap on the second walk hit the nav's home link about one run in three. Revealed deck elements now keep 80 px clear at the top, and `reveal` counts anything under the nav as off screen. The stylesheet went from 11,942 to 11,832 bytes gzipped.
 
 **Left unfinished:** the pictures were drawn to sit beside text and now carry the whole card, and the Year's seventy-two cards share four seasonal landscapes. Deepening them, with a written picture grammar per deck and one test card each for the owner first, is the next step after the Sky's new plates.
+
+### 2026-10-19 (the Sky doubled to sixty-two plates)
+
+**Done:** at the owner's request, so repeated draws stay varied, the Sky went from 31 plates to 62 (decision 0013). Twenty-two fixed-star plates complete the twelve signs and add the Pole Star, the Dragon, the Crown, the Kneeler, the Serpent-Bearer, Berenice's Hair, the Hero, the Winged Horse, the Charioteer, the Crow and the Cup, the River, the Whale, the Dolphin, the Southern Fish, and the Little Cloud, each with real star positions. Nine new mysteries: the World Egg, the Widening, the Great Year, the Long Sleep, the Edge, the Dust and the Stars, the Breath, the Far Traveler, and the Last Light. Research agents drafted the lore and passages and checked each passage word for word on an opened page of a public-domain translation, and three drawing agents drew the plates in `src/scenes/sky/art-zodiac.ts`, `art-figures.ts`, and `art-mysteries.ts`. A preparatory commit moved the Sky's palette and helpers to `ink.ts`, checked by comparing every plate's SVG before and after. The dome now names only the seven heavens.
+
+**Findings:** naming all 36 figures on the dome buried it in labels. The Little Cloud's "candle seen through horn" was cut, because that comparison was made through a telescope. The Orphic tablet's translation is credited to Harrison's book, not to Gilbert Murray, because the page does not name the translator. Three lore claims rest on a single source: the Ram's link to Amun (Wikipedia), the Great Year's Timaeus line number, and "Scots" read as Irishmen in the Far Traveler.
+
+**Left unfinished:** the weakest drawings are the human figures (the Kneeler, the Serpent-Bearer, the Hero, the Maiden), the Whale's body, the Charioteer's horses, and the Great Year, which reads as a diagram. They are first editions for the picture pass. The new plates need the owner's read for tone (`arb-y8k3`).
 

@@ -10,6 +10,7 @@ import {
   skyState,
   standings,
 } from '../../src/lib/sky-dome';
+import { SKY_ART_FIGURES } from '../../src/lib/decks';
 
 const NIGHT = new Date('2026-10-18T21:00:00-07:00');
 const NOON = new Date('2026-10-18T12:00:00-07:00');
@@ -60,6 +61,25 @@ describe('project', () => {
 
 describe('placing a drawn plate', () => {
   const lights = [...HEAVENS, ...Object.keys(FIGURES), 'milkyway'];
+
+  it('has a figure for every new fixed-star plate, with lines and a center inside its stars', () => {
+    for (const id of SKY_ART_FIGURES) {
+      const figure = FIGURES[id];
+      expect(figure, id).toBeDefined();
+      expect(figure.stars[figure.center], id).toBeDefined();
+      for (const [a, b] of figure.lines) expect(figure.stars[a] && figure.stars[b], `${id} ${a}-${b}`).toBeTruthy();
+    }
+  });
+
+  it('raises every new figure at least fifteen degrees over California at some hour of the year', () => {
+    const highest: Record<string, number> = {};
+    for (let month = 0; month < 12; month++)
+      for (const hour of [0, 6, 12, 18]) {
+        const st = skyState(new Date(Date.UTC(2026, month, 15, hour)), CALIFORNIA);
+        for (const id of SKY_ART_FIGURES) highest[id] = Math.max(highest[id] ?? -90, st.places[id]!.alt);
+      }
+    for (const id of SKY_ART_FIGURES) expect(highest[id], id).toBeGreaterThan(15);
+  });
 
   it('knows where every heaven, figure, and the Milky Way stands by day and by night', () => {
     for (const date of [NIGHT, NOON]) {

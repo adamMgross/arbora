@@ -14,3 +14,4 @@
 | 0010 | The Sky reads the sky over the reader on request, and California by default | accepted |
 | 0011 | The decks are designed for phones first | accepted |
 | 0012 | The decks show the picture first, open the book on request, and draw without a daily limit | accepted |
+| 0013 | The Sky holds sixty-two plates, and its dome names only the seven heavens | accepted |

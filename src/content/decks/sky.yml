@@ -384,3 +384,393 @@
     - text: "Thou tellest my wanderings: put thou my tears into thy bottle: are they not in thy book?"
       attribution: Psalm 56:8, King James Version
   question: What would you wish if you saw one fall tonight?
+- id: ram
+  kind: stars
+  name: The Ram
+  alt: the one sent in your place
+  art: ram
+  above: A short bent line of stars, the head of a ram turned to look behind it. In Babylon it was first the hired man of the fields and later the ram of Dumuzi the shepherd. Egypt gave it to Amun, the god with a ram's head. The Greeks said a golden ram came for a boy who was about to be sacrificed and carried him away through the air, though his sister fell into the sea. The sun crossed into spring in these stars, so they became the first of the signs. It is the beginning that comes in place of the sacrifice.
+  set: the sacrifice no one is asking of you.
+  receive: the ram in the thicket.
+  passages:
+    - text: "And Abraham lifted up his eyes, and looked, and behold behind him a ram caught in a thicket by his horns: and Abraham went and took the ram, and offered him up for a burnt offering in the stead of his son."
+      attribution: Genesis 22:13, King James Version
+  question: What are you ready to give up that no one has asked you to give?
+- id: crab
+  kind: stars
+  name: The Crab
+  alt: the gate of souls
+  art: crab
+  above: The dark sign, so faint that it was called black and without eyes, with a pale smudge of light at its breast. The Greeks said a crab came out to bite Heracles in the foot while he fought the Hydra, and when he killed it Hera set it among the stars. They called the smudge the Manger, with a star on either side for the asses that feed there. In China it is the Ghost, a spirit riding in a carriage, pale as willow pollen on the wind. Porphyry called the Crab the gate through which souls come down to be born.
+  set: the armor you no longer need.
+  receive: the soft light at the heart of the dark.
+  passages:
+    - text: It has two entrances, one facing North by which mortals can go down into the cave, while the other comes from the South and is more mysterious; mortals cannot possibly get in by it, it is the way taken by the gods.
+      attribution: Homer, *Odyssey* XIII, trans. Samuel Butler
+  question: What soft thing is your armor protecting, and does it still need protecting?
+- id: maiden
+  kind: stars
+  name: The Maiden
+  alt: the last to leave
+  art: maiden
+  above: A long figure of stars along the sun's road, holding a bright ear of wheat. In Babylon these stars were the Furrow, the goddess Shala and her ear of grain. The Greeks saw Demeter and her daughter in them, and above all Justice, who lived among people in the golden age and sat with the elders in the marketplace, urging kinder judgments. As people grew harder she withdrew to the hills, and at last to the sky. She is still there, holding the harvest, near enough to see.
+  set: the harsh verdict you have already passed.
+  receive: a kinder judgment.
+  passages:
+    - text: Her men called Justice; but she assembling the elders, it might be in the market-place or in the wide-wayed streets, uttered her voice, ever urging on them judgements kinder to the people.
+      attribution: Aratus, *Phaenomena* 105–107, trans. G. R. Mair
+  question: Whom are you judging tonight, and what would a kinder judgment sound like?
+- id: scales
+  kind: stars
+  name: The Scales
+  alt: the even balance
+  art: scales
+  above: Two pale stars like the pans of a balance, between the Maiden and the Scorpion. In Babylon they were the Scales, sacred to Shamash, the sun, keeper of truth and justice. The Greeks called them the Claws of the Scorpion, and the Romans gave them back to Justice as the scales in her hand. The sun stood here when day and night were equal. In Egypt the heart of the dead was weighed against a single feather of truth, and it passed if it was no heavier.
+  set: the weight you keep adding to one side.
+  receive: a heart as light as a feather.
+  passages:
+    - text: Let me be weighed in an even balance that God may know mine integrity.
+      attribution: Job 31:6, King James Version
+  question: What is weighing on your heart, and what would balance it?
+- id: goatfish
+  kind: stars
+  name: The Goat-Fish
+  alt: the gate of ascent
+  art: goatfish
+  above: A faint triangle of stars low in the south, a goat in front and a fish behind. It is one of the oldest figures in the sky. In Babylon the Goat-Fish was the emblem of Ea, god of wisdom and of the fresh waters under the earth. The Greeks said Pan dove into a river to escape a monster and came out with a fish's tail. The sun turned back from midwinter in these stars, and Porphyry called them the gate through which souls climb back to the gods.
+  set: the footing you refuse to leave.
+  receive: the way back up out of the deep.
+  passages:
+    - text: And of these, theologists say, that Cancer is the gate through which souls descend; but Capricorn that through which they ascend. Cancer is indeed northern, and adapted to descent; but Capricorn is southern, and adapted to ascent.
+      attribution: Porphyry, *On the Cave of the Nymphs*, trans. Thomas Taylor
+  question: What deep water are you climbing out of, and what climbs with you?
+- id: waterbearer
+  kind: stars
+  name: The Water-Bearer
+  alt: the one who pours
+  art: waterbearer
+  above: A figure pouring a long stream of faint stars from a jar down to the mouth of the southern fish. In Babylon he was the Great One, the god Ea himself, holding a vase that overflows. In India the sign is Kumbha, the water pot. The Greeks told of Ganymede, the shepherd boy carried up to pour for the gods, and of Cecrops, the king who offered the gods water instead of wine. The stream falls freely and the fish below drinks. It is the one who pours without asking who deserves it.
+  set: the jar you keep for yourself.
+  receive: the gift of pouring out.
+  passages:
+    - text: For I will pour water upon him that is thirsty, and floods upon the dry ground …
+      attribution: Isaiah 44:3, King James Version
+  question: Who is thirsty near you, and what are you holding back?
+- id: fishes
+  kind: stars
+  name: The Fishes
+  alt: the cord that holds
+  art: fishes
+  above: Two fishes swimming different ways across the autumn sky, tied together by a long cord with a star at the knot. When the monster Typhon came against the gods, Aphrodite and her son leapt into the Euphrates and swam away as fishes, and in Ovid's telling two fishes carried them to safety on their backs. After that, Hyginus says, the Syrians would not eat fish. The Babylonians already saw a cord in these stars, and the star at the knot is still called the cord. The two pull apart and are not parted.
+  set: the wish to be free of every tie.
+  receive: the cord that holds while you swim apart.
+  passages:
+    - text: I drew them with cords of a man, with bands of love …
+      attribution: Hosea 11:4, King James Version
+  question: What are you tied to that pulls the other way, and what does the cord keep safe?
+- id: southernfish
+  kind: stars
+  name: The Southern Fish
+  alt: the mouth that drinks
+  art: southernfish
+  above: A bright star low in the autumn south, the mouth of a great fish that drinks the stream poured out by the Water-Bearer. Its Arabic name means the mouth of the fish. The Babylonians already saw a fish here, and the Greeks called it the parent of the two fishes that swim above it. In Syria it was the fish that saved the goddess Derceto, and in Egypt the fish that saved Isis. In China the star is the gate of the northern camp. It drinks from a stream that is always being poured.
+  set: the way you cling when the water runs low.
+  receive: the open water, where no one has to hold you up.
+  passages:
+    - text: When the springs are dried up, the fishes collect together on the land. Than that they should moisten one another there by the damp about them, and keep one another wet by their slime, it would be better for them to forget one another in the rivers and lakes.
+      attribution: Zhuangzi 6, trans. James Legge
+  question: What are you keeping alive on dry land that belongs back in the river?
+- id: whale
+  kind: stars
+  name: The Whale
+  alt: the wonderful star
+  art: whale
+  above: A long sea monster sprawled low across the autumn sky beneath the fishes. The Greeks said Poseidon sent it against the shore when the queen boasted, and that the hero who freed the chained woman killed it, or in another telling turned it to stone with the Gorgon's head. Its Arabic star names are the nostril and the whale's tail. Among its stars is the one called Mira, the wonderful, which brightens, fades until the eye cannot find it, and comes back. In the Hebrew scriptures a great fish swallowed Jonah and gave him back to the dry land.
+  set: the fear of being swallowed.
+  receive: the shore you are given back to.
+  passages:
+    - text: "I went down to the bottoms of the mountains; the earth with her bars was about me for ever: yet hast thou brought up my life from corruption, O LORD my God."
+      attribution: Jonah 2:6, King James Version
+  question: What has swallowed you, and what are you learning in its belly?
+- id: river
+  kind: stars
+  name: The River
+  alt: the river that receives
+  art: river
+  above: A long river of faint stars that rises at the hunter's foot and winds away into the south, farther than this sky can follow. The Babylonians called it the star of Eridu, sacred to Enki and the waters of the abyss. The Greeks said it was the river that received Phaethon when he lost the reins of his father's sun and fell burning out of the sky. It was first the Nile and later the Po. Its last star is called the river's end, and from here it never rises. Every river runs on past where we can see.
+  set: the reins you could not hold.
+  receive: the river that receives the fallen.
+  passages:
+    - text: |-
+        Far distant from his home
+        the deep Eridanus received the lad
+        and bathed his foaming face.
+      attribution: Ovid, *Metamorphoses* 2.323–324, trans. Brookes More
+  question: Where have you fallen, and what has been there to receive you?
+- id: dolphin
+  kind: stars
+  name: The Dolphin
+  alt: the one who carries
+  art: dolphin
+  above: A small diamond of stars with a short tail, leaping high in the sky at summer's end. The Greeks said it was the dolphin who found the sea nymph Amphitrite where she hid and won her for Poseidon, and was set among the stars for it. Herodotus tells of the singer Arion, whose sailors plotted to take his money and throw him overboard. He sang one last song and leapt, and a dolphin carried him to shore. Hyginus says Apollo set the dolphin in the sky for the music. In India its four stars are a mansion of the moon whose sign is a drum.
+  set: the deck you are afraid to leave.
+  receive: the song, and the one who carries the singer.
+  passages:
+    - text: He maketh the storm a calm, so that the waves thereof are still. Then are they glad because they be quiet; so he bringeth them unto their desired haven.
+      attribution: Psalm 107:29–30, King James Version
+  question: What would you sing now if you trusted something to carry you?
+- id: crow
+  kind: stars
+  name: The Crow and the Cup
+  alt: the errand and the excuse
+  art: crow
+  above: A small crooked square of stars beside a faint cup, both riding on the back of the long water serpent. The Babylonians saw a raven perched on the serpent's tail, sacred to the god of rain and storm. The Greeks said Apollo sent the crow with his cup to fetch water, and the crow stopped to eat figs, then came back blaming the serpent. Apollo set all three in the sky, with the cup forever just beyond the thirsty bird. In China the four stars are a chariot. In the book of Kings, ravens brought bread to a prophet by a brook.
+  set: the excuse you made for the delay.
+  receive: the errand, and the water at the end of it.
+  passages:
+    - text: And the ravens brought him bread and flesh in the morning, and bread and flesh in the evening; and he drank of the brook.
+      attribution: 1 Kings 17:6, King James Version
+  question: What errand did you leave for figs, and what story are you telling about it?
+- id: polestar
+  kind: stars
+  name: The Pole Star
+  alt: the one that does not move
+  art: polestar
+  above: A modest star at the end of the Little Bear's tail, the one light in the northern sky that seems to stand still while every other light wheels around it. The Greeks said the Phoenicians steered by the Little Bear, and the Old English called the pole star the ship-star. In the Puranas it is Dhruva, a boy turned away from his father's lap, who went into the forest and prayed until he forgot what he had come to ask for, and was given the one seat in heaven that does not move. The still point was never handed to him. It was found.
+  set: the place you are waiting for someone to give you.
+  receive: the stillness that was yours before anyone made room.
+  passages:
+    - text: "But Helice, appearing large at earliest night, is bright and easy to mark; but the other is small, yet better for sailors: for in a smaller orbit wheel all her stars. By her guidance, then, the men of Sidon steer the straightest course."
+      attribution: Aratus, *Phaenomena* 40–44, trans. G. R. Mair
+  question: What place are you still waiting for someone to give you?
+- id: dragon
+  kind: stars
+  name: The Dragon
+  alt: the guardian of the old pole
+  art: dragon
+  above: A long, faint dragon winding between the two Bears, with his head beneath the Kneeler's foot. The Greeks said he was Ladon, set by Hera to guard the golden apples in the garden of the Hesperides. The Arab herders saw instead four mother camels guarding a calf from two hyenas. A dim star in his tail held the pole when the pyramids of Egypt were raised, and in China it is the Right Pivot in the wall around the palace of heaven. The pole has since moved on. Even the center of the sky is a watch that passes from guard to guard.
+  set: the treasure you have guarded so long you forgot what it was.
+  receive: the rest that comes when the watch passes on.
+  passages:
+    - text: By his spirit he hath garnished the heavens; his hand hath formed the crooked serpent.
+      attribution: Job 26:13, King James Version
+  question: What are you guarding, and is it still yours to guard?
+- id: crown
+  kind: stars
+  name: The Crown
+  alt: the ring of the one left behind
+  art: crown
+  above: "A small half-ring of stars between the Herdsman and the Kneeler, with one jewel brighter than the rest. Ariadne gave Theseus the thread that led him out of the labyrinth, and he left her alone on the island of Naxos. Dionysus found her there and set her crown among the stars, so that her name would not be lost. The Welsh called the ring the castle of Arianrhod, the silver circle. The Bedouin called it the bowl of the poor. A crown and an alms bowl in the same stars: what was abandoned is set where everyone can see it."
+  set: the thread you gave to someone who sailed on.
+  receive: a crown set where it cannot be lost.
+  passages:
+    - text: Her, in time, lamenting and deserted, Bacchus found and for his love immortalized her name. He set in the dark heavens the bright crown that rested on her brows. Through the soft air it whirled, while all the sparkling jewels changed to flashing fires, assuming in the sky between the Serpent-holder and the Kneeler the well-known shape of Ariadne's Crown.
+      attribution: Ovid, *Metamorphoses* VIII.176–182, trans. Brookes More
+  question: What were you left holding when someone sailed on, and what crown is in it?
+- id: kneeler
+  kind: stars
+  name: The Kneeler
+  alt: the nameless toiler
+  art: kneeler
+  above: A great figure on one knee in the summer sky, with his foot on the Dragon's head. Aratus wrote that no one could say who he was or at what task he toiled, so people simply called him the one on his knees. Later the Greeks named him Heracles, standing over the dragon of the golden apples, and others saw Prometheus bound, or Sisyphus, or Theseus. The shape came first and the names after. He is anyone who labors without knowing what the labor is for, and keeps on.
+  set: the need to know what the work is for.
+  receive: the strength of the bent knee.
+  passages:
+    - text: Right there in its orbit wheels a Phantom form, like to a man that strives at a task. That sign no man knows how to read clearly, nor what task he is bent, but men simply call him On His Knees.
+      attribution: Aratus, *Phaenomena* 63–66, trans. G. R. Mair
+  question: What are you laboring at that has no name yet?
+- id: serpentbearer
+  kind: stars
+  name: The Serpent-Bearer
+  alt: the healer
+  art: serpentbearer
+  above: A giant holding a great serpent in both hands, his feet on the Scorpion, standing across the road of the sun. The Romans said he was Asclepius, who learned to hold death back by watching one snake bring healing herbs to another. When it seemed that no one in his care would ever die, the king of the gods struck him down, and then set his image in the heavens to honor his work. His staff with one serpent coiled around it is still the sign of healing. To al-Sufi he was the snake charmer. Poison and cure are held in the same hands.
+  set: the wound you refuse to look at.
+  receive: the cure that lives inside the poison.
+  passages:
+    - text: "And the LORD said unto Moses, Make thee a fiery serpent, and set it upon a pole: and it shall come to pass, that every one that is bitten, when he looketh upon it, shall live."
+      attribution: Numbers 21:8, King James Version
+  question: What are you refusing to look at that might heal you?
+- id: berenice
+  kind: stars
+  name: Berenice's Hair
+  alt: the vow in the stars
+  art: berenice
+  above: A faint spray of stars behind the Lion, like loose hair. Queen Berenice of Egypt vowed her long hair to the gods for her husband's safe return from war. She cut it and laid it in a temple, and by morning it was gone. The court astronomer said the goddess had taken it up into the sky, and the poets Callimachus and Catullus sang of it. The Arab astronomers called the same stars the braid, or the tuft at the Lion's tail. A vow kept is never lost. It is only moved somewhere higher.
+  set: the part of the vow you hold back.
+  receive: the knowledge that what is given in love is not lost.
+  passages:
+    - text: "But even the very hairs of your head are all numbered. Fear not therefore: ye are of more value than many sparrows."
+      attribution: Luke 12:7, King James Version
+  question: What have you given for someone else's safe return, and where has it gone?
+- id: hero
+  kind: stars
+  name: The Hero
+  alt: the mirror shield
+  art: hero
+  above: A tall figure striding through the northern sky with a severed head in his hand. The Greeks said Perseus could not look at the Gorgon, whose face turned the living to stone, so he looked at her only in the bronze of his shield, and struck. The Romans named the figure for the hero and the head together. The star in the head the Arabs called the head of the ghoul, Hebrew folklore called it Satan's head, and in China it belongs to the Mausoleum. It dims and brightens like a slow wink. Some things can only be faced in reflection.
+  set: the stare that turns you to stone.
+  receive: a mirror to face it by.
+  passages:
+    - text: Nevertheless reflected on the brazen shield, I bore upon my left, I saw her horrid face.
+      attribution: Ovid, *Metamorphoses* 4.783–784, trans. Brookes More
+  question: What can you only bear to look at in reflection?
+- id: horse
+  kind: stars
+  name: The Winged Horse
+  alt: the spring of the Muses
+  art: horse
+  above: A great square of stars for the body of a horse, with only half of him drawn in the sky. He was born from the Gorgon's blood when the hero struck. The Greeks said he stamped on the mountain of the Muses, where no spring had run, and water broke out of the rock, and whoever drank from it could make poems. The Babylonians saw a field in the same stars, and in India they hold a bed where the moon rests. The horse is the sign of what wells up from hard ground when it is struck.
+  set: the waiting for the spring to come to you.
+  receive: the water that rises where you strike.
+  passages:
+    - text: For not yet on Helicon's summit trickled the fountain's springs, but the Horse smote it and straightway the gushing water was shed abroad at the stamp of his forefoot, and herdsmen were the first to call that stream the fountain of the Horse.
+      attribution: Aratus, *Phaenomena* 218–221, trans. G. R. Mair
+  question: What hard ground in your life is holding water?
+- id: charioteer
+  kind: stars
+  name: The Charioteer
+  alt: the one who holds the reins
+  art: charioteer
+  above: A ring of stars for a driver with the reins in one hand and a she-goat on his shoulder, her two kids at his wrist. The Greeks said he was the first to yoke four horses to a chariot, and that the goat was Amalthea, who nursed the infant Zeus. In Mesopotamia the same stars were a shepherd's crook, and in ancient Peru the bright star kept company with shepherds. In China they were the five chariots of the celestial emperors. Here holding the reins and carrying the young are one art.
+  set: the whip you use on yourself.
+  receive: the reins, and the patience to hold them.
+  passages:
+    - text: Now the winged horses and the charioteers of the gods are all of them noble and of noble descent, but those of other races are mixed; the human charioteer drives his in a pair; and one of them is noble and of noble breed, and the other is ignoble and of ignoble breed; and the driving of them of necessity gives a great deal of trouble to him.
+      attribution: Plato, *Phaedrus* 246a–b, trans. Benjamin Jowett
+  question: Which of your two horses is pulling hardest tonight, and how are you holding the reins?
+- id: littlecloud
+  kind: stars
+  name: The Little Cloud
+  alt: the far wheel
+  art: littlecloud
+  above: A faint smear of light that the Greek astronomers never mentioned, though it was there for them to see. The Arabs drew a great fish across that part of the sky and set the smudge in its mouth, and the Persian astronomer al-Sufi wrote it down as a small cloud. A philosopher guessed it was a whole wheel of stars like the one we turn in, seen from very far away, and so it proved. A dim thing can hold a whole sky.
+  set: the habit of passing over what is faint.
+  receive: eyes that look a seventh time.
+  passages:
+    - text: And it came to pass at the seventh time, that he said, Behold, there ariseth a little cloud out of the sea, like a man's hand.
+      attribution: 1 Kings 18:44, King James Version
+  question: What faint thing are you passing over that holds more than it shows?
+- id: egg
+  kind: beyond
+  name: The World Egg
+  alt: the shell that broke into sky and earth
+  art: egg
+  above: "In the beginning, says the Upanishad, there was only what was not yet. It grew, it turned into an egg, and the egg broke open, a silver half for the earth and a golden half for the sky. In Finland they sang of a duck that nested on the knee of the daughter of the air, and her broken eggs became the vaults of heaven and earth. The Orphics said Night laid a wind-born egg, and Love sprang from it on golden wings. Everything there is was once gathered close, inside one shell."
+  set: the wish to have been born finished.
+  receive: the shell that breaks so a world can come out.
+  passages:
+    - text: In the beginning this was non-existent. It became existent, it grew. It turned into an egg. The egg lay for the time of a year. The egg broke open. The two halves were one of silver, the other of gold.
+      attribution: Chandogya Upanishad III.19.1, trans. Max Müller
+  question: What in you is still inside the shell, and what is it waiting for?
+- id: widening
+  kind: beyond
+  name: The Widening
+  alt: sky and earth pushed apart
+  art: widening
+  above: "Te Rangikāheke of Te Arawa told how Ranginui the sky lay pressed on Papatūānuku the earth, with their children in the dark between them, until Tāne lay on his back, pushed the sky up with his arms and legs, and set posts to hold it there. In Egypt Shu, the air, holds the sky away from the earth, because without the gap nothing could live. Pangu grew each day, and the sky rose with him. The heavens are still widening, every far light drawing away from the rest. The parting is what let the light in."
+  set: the wish to keep everything close.
+  receive: the light let in by parting.
+  passages:
+    - text: "Who coverest thyself with light as with a garment: who stretchest out the heavens like a curtain …"
+      attribution: Psalm 104:2, King James Version
+  question: What parting in your life made room for something to grow?
+- id: greatyear
+  kind: beyond
+  name: The Great Year
+  alt: the slow return of the whole sky
+  art: greatyear
+  above: "Plato wrote of a perfect year in which all the wandering lights come round together and complete their courses at once. The fixed stars turn as well, more slowly than any life. When writing was new the pole stood by a faint star of the Dragon, and the bright star of the Lyre has stood there before and will again. India counted four ages of the world that run down from perfection to the dark age and begin again. The sky tonight is one frame of a turning too long to watch."
+  set: the belief that the sky has always looked like this.
+  receive: a place in the long turning.
+  passages:
+    - text: Wherefore he resolved to have a moving image of eternity, and when he set in order the heaven, he made this image eternal but moving according to number, while eternity itself rests in unity; and this image we call time.
+      attribution: Plato, *Timaeus* 37d, trans. Benjamin Jowett
+  question: What in your life is turning too slowly for you to see it move?
+- id: longsleep
+  kind: beyond
+  name: The Long Sleep
+  alt: the world that moved on
+  art: longsleep
+  above: "Wang Zhi went up the mountain for firewood and stopped to watch two boys at a game. When he looked down, his axe handle had rotted, and when he came home his whole family was gone. Urashima spent what seemed a few days in the palace under the sea and returned to find his house gone and everyone he knew vanished. The Seven Sleepers of Ephesus woke and paid for bread with the coins of an emperor long dead. The one who travels far keeps a different time from the ones who stay."
+  set: the wish for the world to wait for you.
+  receive: the place you wake into.
+  passages:
+    - text: But, beloved, be not ignorant of this one thing, that one day is with the Lord as a thousand years, and a thousand years as one day.
+      attribution: 2 Peter 3:8, King James Version
+  question: What has gone on without you while you were elsewhere?
+- id: edge
+  kind: beyond
+  name: The Edge
+  alt: the staff stretched past the rim
+  art: edge
+  above: "Archytas asked what would happen if he stood at the outermost edge of the heaven and stretched out his staff. If it passed through, there was more beyond, and if something stopped it, that was more beyond too. Lucretius sent a runner to the same coasts to throw a spear. Homer ran the river of Ocean round the rim of Achilles' shield, and the Norse set a serpent in the sea around all lands, biting its own tail. No one has yet reached the edge of the sky. Every horizon is a place to stand and throw again."
+  set: the wall you have built at the edge of your world.
+  receive: the staff, and the reach past it.
+  passages:
+    - text: |-
+        If some one farthest traveller runs forth
+        Unto the extreme coasts and throws ahead
+        A flying spear, is't then thy wish to think
+        It goes, hurled off amain, to where 'twas sent
+        And shoots afar, or that some object there
+        Can thwart and stop it?
+      attribution: Lucretius, *On the Nature of Things* I, trans. William Ellery Leonard
+  question: Where have you decided your world ends, and what would you find if you reached past it?
+- id: stardust
+  kind: beyond
+  name: The Dust and the Stars
+  alt: a child of earth and starry heaven
+  art: stardust
+  above: "Dust thou art, Adam is told, and unto dust shalt thou return. The Orphic dead were buried with leaves of gold that told them what to say at the well of memory: I am a child of Earth and of starry Heaven. Plato wrote that every soul was first assigned to a star, and that one who lived well would go home to dwell in it. The matter of the body was made in stars and scattered when they died. The dust and the stars were never two things."
+  set: the line you draw between earth and heaven.
+  receive: your two lineages, the ground and the stars.
+  passages:
+    - text: |-
+        I am a child of Earth and of Starry Heaven;
+        But my race is of Heaven (alone).
+      attribution: Orphic gold tablet from Petelia, in Jane Harrison, *Prolegomena to the Study of Greek Religion*, 1903
+  question: What in you remembers where it came from?
+- id: breath
+  kind: beyond
+  name: The Breath
+  alt: the worlds breathe out and in
+  art: breath
+  above: "Krishna tells Arjuna that the worlds have a day and a night. When the day of Brahma dawns the invisible is brought forth into the visible, and when that night falls all that is fades back into what sent it forth. The Daoists likened the space between heaven and earth to a bellows, emptied and never spent. The Stoics taught that the cosmos is drawn back into fire and made again, without beginning or end. No one knows whether the widening sky will be drawn back in. The oldest picture of the world is a breath."
+  set: the need for every ending to be final.
+  receive: the next breath, whichever way it goes.
+  passages:
+    - text: |-
+        May not the space between heaven and earth be compared to a bellows?
+        'Tis emptied, yet it loses not its power;
+        'Tis moved again, and sends forth air the more.
+      attribution: Tao Te Ching 5, trans. James Legge
+  question: Are you breathing out tonight, or breathing in?
+- id: traveler
+  kind: beyond
+  name: The Far Traveler
+  alt: the one who does not come back
+  art: traveler
+  above: "Abram was told to leave his country, his kindred and his father's house for a land he would be shown, and he departed. Three Irishmen came to Cornwall in a boat without oars, because they wished to live in pilgrimage for the love of God and cared not where. The Seafarer of the Old English poem knows the cold and loneliness of the winter sea and still cannot stay ashore. Every age dreams of the one who sets out so far that no one at home sees them arrive. The going is the vow."
+  set: the need to come back the same.
+  receive: the road that is home now.
+  passages:
+    - text: Now the LORD had said unto Abram, Get thee out of thy country, and from thy kindred, and from thy father's house, unto a land that I will shew thee …
+      attribution: Genesis 12:1, King James Version
+  question: What are you ready to leave without knowing where the road ends?
+- id: lastlight
+  kind: beyond
+  name: The Last Light
+  alt: the green earth after the fire
+  art: lastlight
+  above: "The Norse seeress saw the sun turn black and the hot stars whirled down from heaven, and then the earth rising again all green from the waves. Othin was told that before the wolf takes the sun, she bears a bright daughter who walks her mother's paths. The Buddha told of seven suns rising one after another until the world burned away, to teach that nothing made lasts. Isaiah heard of new heavens and a new earth. Even the sun will go out, and these tellings hold the end as a turning."
+  set: the dread of the end.
+  receive: the green that rises after.
+  passages:
+    - text: |-
+        Now do I see the earth anew
+        Rise all green from the waves again;
+        The cataracts fall, and the eagle flies,
+        And fish he catches beneath the cliffs.
+      attribution: Völuspá 59, *The Poetic Edda*, trans. Henry Adams Bellows
+  question: What is ending in your life, and what is already rising from it?

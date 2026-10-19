@@ -21,7 +21,7 @@ import { domeSvg, sphereFace } from './art';
 
 const KEY = 'arbora-sky';
 const ADAPT_MS = 12000;
-const PLURAL = new Set(['pleiades', 'twins', 'weaver']);
+const PLURAL = new Set(['pleiades', 'twins', 'weaver', 'scales', 'fishes', 'crow']);
 const READY = 'Lift your eyes.';
 const PHONE = '(max-width: 640px)';
 
