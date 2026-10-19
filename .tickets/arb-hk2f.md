@@ -17,3 +17,9 @@ The deploy workflow in .github/workflows/deploy.yml has never run. A push to mai
 
 The Deploy workflow is green on main and https://adammgross.github.io/arbora/ serves today.html.
 
+
+## Notes
+
+**2026-10-19T02:28:40Z**
+
+2026-10-18: owner enabled Pages with build_type=workflow. Remaining: owner approval to push main, and the CHARTER.md exposure decision (it is on the public remote).
