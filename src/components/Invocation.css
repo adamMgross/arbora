@@ -1,0 +1,32 @@
+/* Invocation boxes (practices/rituals pages) */
+.invocation {
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(138, 154, 123, 0.06) 0%, transparent 60%), rgba(138, 154, 123, 0.04);
+  border-left: 2px solid var(--lichen);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-sm) 0;
+  border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
+}
+
+.invocation strong {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--branch);
+}
+
+.invocation em {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--heartwood);
+  line-height: 1.8;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Invocations */
+  .invocation {
+    background: rgba(138, 154, 123, 0.04);
+    border-color: rgba(138, 154, 123, 0.12);
+  }
+}

@@ -30,6 +30,11 @@ test.describe('navigation', () => {
     await expect(toggle).toHaveAttribute('aria-expanded', 'false');
   });
 
+  test('the nav blurs the content scrolled beneath it', async ({ page }) => {
+    await page.goto('/cosmology.html');
+    await expect(page.locator('.site-nav')).toHaveCSS('backdrop-filter', /blur\(16px\)/);
+  });
+
   test('canon sub-pages highlight only the Canon link as active', async ({ page }) => {
     await page.goto('/canon-stoics.html');
     await expect(page.locator('.nav-links a.active')).toHaveText(['Canon']);

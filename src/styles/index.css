@@ -1,3 +1,17 @@
-@layer reset, tokens, base, layout, legacy, components, utilities;
-
-@import './legacy.css';
+@import './tokens.css';
+@import './base.css';
+@import './shell.css';
+@import '../components/SiteNav.css';
+@import './home.css';
+@import './layout.css';
+@import '../components/SiteFooter.css';
+@import './prose.css';
+@import '../components/Invocation.css';
+@import '../components/TreeDiagram.css';
+@import './motion.css';
+@import './canon-library.css';
+@import '../components/Breadcrumb.css';
+@import '../components/CanonNav.css';
+@import './today.css';
+@import '../components/CanonToc.css';
+@import './print.css';

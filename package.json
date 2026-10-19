@@ -11,7 +11,7 @@
     "test": "vitest run --project unit",
     "test:e2e": "playwright test --project=e2e",
     "parity": "node tests/parity/run.mjs",
-    "format:check": "prettier --no-error-on-unmatched-pattern --check 'tests/**/*.{ts,mjs}' 'scripts/*.mjs' '*.{json,mjs,ts}'",
+    "format:check": "prettier --no-error-on-unmatched-pattern --check 'tests/**/*.{ts,mjs}' 'src/**/*.css' 'scripts/*.mjs' '*.{json,mjs,ts}'",
     "quality": "npm run format:check && npm run check && npm test && npm run build && npm run test:integration && npm run test:e2e",
     "test:integration": "vitest run --project integration"
   },

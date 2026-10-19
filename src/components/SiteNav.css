@@ -1,0 +1,205 @@
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(250, 248, 244, 0.88);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border-bottom: 1px solid rgba(138, 154, 123, 0.1);
+  transition:
+    transform 0.4s var(--ease-organic),
+    background 0.3s ease,
+    padding 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.site-nav.scrolled {
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  background: rgba(250, 248, 244, 0.95);
+  box-shadow:
+    0 1px 16px rgba(58, 46, 42, 0.06),
+    0 0 0 1px rgba(138, 154, 123, 0.06);
+}
+
+.site-nav.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.nav-mark {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--bark);
+  text-decoration: none;
+  transition: opacity 0.3s var(--ease-organic);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Tree-ring icon before "Arbora" */
+.nav-mark::before {
+  content: '';
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid var(--lichen);
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center, var(--lichen) 2px, transparent 2px),
+    radial-gradient(circle at center, transparent 5px, rgba(138, 154, 123, 0.08) 6px, transparent 7px),
+    radial-gradient(circle at center, transparent 9px, rgba(138, 154, 123, 0.06) 10px, transparent 11px);
+  flex-shrink: 0;
+  transition: transform 0.6s var(--ease-organic);
+}
+
+.nav-mark:hover {
+  opacity: 0.75;
+}
+
+.nav-mark:hover::before {
+  transform: rotate(90deg) scale(1.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--branch);
+  text-decoration: none;
+  transition: color 0.3s var(--ease-organic);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--lichen), var(--moss));
+  border-radius: 1px;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s var(--ease-organic);
+}
+
+.nav-links a:hover {
+  color: var(--bark);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
+}
+
+.nav-links a.active {
+  color: var(--bark);
+  font-weight: 600;
+}
+
+.nav-links a.active::after {
+  transform: scaleX(1);
+  background: linear-gradient(90deg, var(--moss), var(--needle));
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: var(--bark);
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  /* Mobile nav — full screen overlay */
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    z-index: 99;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links.open a {
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links.open a::after {
+    bottom: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+    z-index: 101;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (pointer: coarse) {
+  .nav-links a {
+    padding: 0.5rem 0.25rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+@supports (padding: env(safe-area-inset-bottom)) {
+  .site-nav {
+    padding-left: max(var(--space-md), env(safe-area-inset-left));
+    padding-right: max(var(--space-md), env(safe-area-inset-right));
+    padding-top: max(var(--space-sm), env(safe-area-inset-top));
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Nav */
+  .site-nav {
+    background: rgba(30, 27, 24, 0.92);
+  }
+
+  .site-nav.scrolled {
+    background: rgba(30, 27, 24, 0.97);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .nav-links.open {
+    background: #1e1b18;
+  }
+}

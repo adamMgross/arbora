@@ -1,0 +1,67 @@
+/* ── Prev / Next navigation ── */
+.canon-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid rgba(138, 154, 123, 0.15);
+  gap: var(--space-sm);
+}
+
+.canon-nav a {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--moss);
+  text-decoration: none;
+  padding: 0.5rem var(--space-sm);
+  border: 1px solid rgba(138, 154, 123, 0.22);
+  border-radius: var(--radius-soft);
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  transition:
+    background 0.3s var(--ease-organic),
+    color 0.3s var(--ease-organic),
+    border-color 0.3s var(--ease-organic);
+  white-space: nowrap;
+}
+
+.canon-nav a:hover {
+  background: rgba(138, 154, 123, 0.08);
+  border-color: rgba(138, 154, 123, 0.35);
+  color: var(--needle);
+}
+
+.canon-nav .canon-nav-center a {
+  border: none;
+  font-weight: 600;
+  color: var(--heartwood);
+}
+
+.canon-nav .canon-nav-center a:hover {
+  background: transparent;
+  color: var(--bark);
+  border: none;
+}
+
+.canon-nav-spacer {
+  /* Placeholder to keep center/end alignment when one side is empty */
+  min-width: 80px;
+}
+
+@media (max-width: 640px) {
+  .canon-nav {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .canon-nav a {
+    justify-content: center;
+  }
+
+  .canon-nav-spacer {
+    display: none;
+  }
+}

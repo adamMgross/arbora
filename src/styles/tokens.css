@@ -1,0 +1,97 @@
+:root {
+  /* Earth palette */
+  --bark: #3a2e2a;
+  --heartwood: #5c4a3d;
+  --branch: #7d6b5d;
+  --stone: #9a8f84;
+
+  /* Canopy palette */
+  --needle: #4a6741;
+  --moss: #6b7f5e;
+  --lichen: #8a9a7b;
+  --sage: #a3b18a;
+  --sky: #c5cfc0;
+
+  /* Light palette */
+  --warmwhite: #fcfaf6;
+  --cream: #faf8f4;
+  --parchment: #f4f0ea;
+  --fog: #e8e4df;
+  --dawn: #e8c9a0;
+
+  /* Earth depth */
+  --earth: #4a3728;
+  --root: #2a2118;
+  --canopy: #2d4a2d;
+
+  /* Warm accents */
+  --amber: #b8860b;
+  --sunlight: #d4a843;
+  --clay: #a0522d;
+
+  /* Organic shadows */
+  --shadow-rest: 0 2px 8px rgba(58, 46, 42, 0.04), 0 8px 32px rgba(58, 46, 42, 0.06);
+  --shadow-lifted: 0 4px 16px rgba(58, 46, 42, 0.06), 0 16px 48px rgba(58, 46, 42, 0.1);
+  --shadow-glow: 0 0 40px rgba(138, 154, 123, 0.12);
+
+  /* Organic radii */
+  --radius-organic: 12px 8px 16px 4px;
+  --radius-leaf: 20px 4px 20px 4px;
+  --radius-stone: 8px 14px 8px 14px;
+  --radius-soft: 8px;
+
+  /* Organic easing */
+  --ease-organic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-grow: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Typography */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'EB Garamond', Georgia, serif;
+  --font-ui: 'EB Garamond', Georgia, serif;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  --space-2xl: 10rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Inverted earth palette */
+    --bark: #e8e2dc;
+    --heartwood: #c8bfb5;
+    --branch: #a09689;
+    --stone: #8a8078;
+
+    /* Canopy — slightly desaturated for dark bg */
+    --needle: #8aad7e;
+    --moss: #94a887;
+    --lichen: #a3b396;
+    --sage: #7d9570;
+    --sky: #5a6b54;
+
+    /* Dark surfaces */
+    --warmwhite: #1a1714;
+    --cream: #1e1b18;
+    --parchment: #252220;
+    --fog: #2e2a27;
+    --dawn: #3a3020;
+
+    /* Earth depth — lighter for dark mode */
+    --earth: #c8b8a0;
+    --root: #d8d0c8;
+    --canopy: #6a9a6a;
+
+    /* Warm accents — brighter */
+    --amber: #d4a020;
+    --sunlight: #e0c060;
+    --clay: #c07040;
+
+    /* Shadows — stronger for dark bg */
+    --shadow-rest: 0 2px 8px rgba(0, 0, 0, 0.15), 0 8px 32px rgba(0, 0, 0, 0.2);
+    --shadow-lifted: 0 4px 16px rgba(0, 0, 0, 0.2), 0 16px 48px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 40px rgba(138, 154, 123, 0.08);
+  }
+}

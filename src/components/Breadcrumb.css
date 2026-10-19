@@ -1,0 +1,26 @@
+/* ── Breadcrumb ── */
+.canon-breadcrumb {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  color: var(--branch);
+  margin-bottom: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.canon-breadcrumb a {
+  color: var(--moss);
+  text-decoration: none;
+  transition: color 0.3s var(--ease-organic);
+}
+
+.canon-breadcrumb a:hover {
+  color: var(--needle);
+}
+
+.canon-breadcrumb .sep {
+  opacity: 0.4;
+  user-select: none;
+}

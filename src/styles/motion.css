@@ -1,0 +1,36 @@
+@media (prefers-reduced-motion: reduce) {
+  .hero-super,
+  .hero-title,
+  .hero-line,
+  .hero-sub,
+  .page-header h1,
+  .page-header p {
+    opacity: 1;
+    animation: none;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .hero-tree {
+    animation: none;
+  }
+
+  .hero-scroll-hint span {
+    animation: none;
+  }
+
+  .hero-geometry {
+    animation: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,197 @@
+.canon-library-note {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--branch);
+  border-left: 2px solid var(--lichen);
+  padding-left: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  line-height: 1.7;
+}
+
+/* Grid — 3 columns desktop, 2 tablet, 1 mobile */
+.canon-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+/* Each section card — clickable link styled as a shelf entry */
+.canon-card {
+  display: block;
+  padding: var(--space-md);
+  border: 1px solid rgba(138, 154, 123, 0.15);
+  border-radius: var(--radius-organic);
+  background: linear-gradient(145deg, var(--warmwhite) 0%, rgba(250, 248, 244, 0.8) 100%);
+  box-shadow: var(--shadow-rest);
+  transition:
+    border-color 0.4s var(--ease-organic),
+    box-shadow 0.4s var(--ease-organic),
+    transform 0.4s var(--ease-organic);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Vine grows up the left edge on hover */
+.canon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    transparent 5%,
+    var(--sage) 30%,
+    var(--lichen) 55%,
+    var(--moss) 80%,
+    var(--needle) 100%
+  );
+  border-radius: 0 2px 2px 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.5s var(--ease-organic);
+}
+
+.canon-card:hover {
+  border-color: rgba(138, 154, 123, 0.28);
+  box-shadow: var(--shadow-lifted);
+  transform: translateY(-3px);
+}
+
+.canon-card:hover::before,
+.canon-card:focus-visible::before {
+  transform: scaleY(1);
+}
+
+.canon-card:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 3px;
+}
+
+.canon-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--bark);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.canon-card p {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--heartwood);
+  margin-bottom: 0;
+}
+
+/* Author/title preview strip */
+.canon-preview {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--branch);
+  letter-spacing: 0.02em;
+  margin-top: var(--space-sm);
+  padding-top: var(--space-xs);
+  border-top: 1px solid rgba(138, 154, 123, 0.12);
+  line-height: 1.5;
+}
+
+/* Tradition direct-access links below the Philosophy card */
+.canon-tradition-links {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid rgba(138, 154, 123, 0.15);
+  border-radius: var(--radius-leaf);
+  background: linear-gradient(135deg, rgba(250, 248, 244, 0.6), rgba(244, 240, 234, 0.4));
+  margin-top: -0.5rem;
+}
+
+.canon-tradition-label {
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  color: var(--branch);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin-right: 0.25rem;
+}
+
+.canon-tradition-links a {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  color: var(--heartwood);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  border-bottom: 1px solid rgba(107, 127, 94, 0.25);
+  transition:
+    color 0.25s var(--ease-organic),
+    border-color 0.25s var(--ease-organic);
+  padding-bottom: 1px;
+}
+
+.canon-tradition-links a:hover {
+  color: var(--needle);
+  border-color: var(--moss);
+}
+
+@media (max-width: 900px) {
+  /* Responsive */
+  .canon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .canon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 380px) {
+  .canon-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+.canon-read-more {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  margin-top: 0;
+  margin-bottom: var(--space-md);
+}
+
+.canon-read-more a {
+  color: var(--moss);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(107, 127, 94, 0.28);
+  padding-bottom: 0.05em;
+  transition:
+    color 0.25s var(--ease-organic),
+    border-color 0.25s var(--ease-organic);
+}
+
+.canon-read-more a:hover {
+  color: var(--needle);
+  border-color: var(--needle);
+}
+
+@media (prefers-color-scheme: dark) {
+  .canon-card {
+    background: linear-gradient(145deg, var(--fog) 0%, rgba(37, 34, 32, 0.8) 100%);
+    border-color: rgba(138, 154, 123, 0.12);
+  }
+
+  .canon-card:hover {
+    border-color: rgba(138, 154, 123, 0.25);
+  }
+}

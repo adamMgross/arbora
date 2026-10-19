@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--bark);
+  background-color: var(--cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(138, 154, 123, 0.3);
+  color: var(--bark);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s var(--ease-organic),
+    transform 0.9s var(--ease-organic);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    -webkit-font-smoothing: auto;
+  }
+
+  ::selection {
+    background: rgba(138, 154, 123, 0.35);
+    color: var(--bark);
+  }
+
+  /* Images / SVGs in dark mode */
+  img,
+  svg:not(.hero-geometry):not(.hero-tree) {
+    opacity: 0.9;
+  }
+}

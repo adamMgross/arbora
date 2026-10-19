@@ -1,0 +1,177 @@
+.page-header {
+  padding: calc(var(--space-2xl) - 2rem) var(--space-md) var(--space-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(106, 127, 94, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 30%, rgba(212, 168, 67, 0.04) 0%, transparent 45%),
+    radial-gradient(ellipse at 50% 120%, rgba(232, 201, 160, 0.1) 0%, transparent 60%),
+    linear-gradient(175deg, var(--cream) 0%, var(--parchment) 100%);
+}
+
+/* Texture overlay on page headers */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.page-header::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--lichen), transparent);
+  margin: var(--space-md) auto 0;
+  position: relative;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: var(--bark);
+  margin-bottom: var(--space-xs);
+  position: relative;
+}
+
+.page-header p {
+  font-family: var(--font-ui);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--branch);
+  position: relative;
+}
+
+.page-content {
+  padding: var(--space-lg) var(--space-md) var(--space-xl);
+  background: radial-gradient(ellipse at 80% 10%, rgba(212, 168, 67, 0.03) 0%, transparent 40%), var(--warmwhite);
+  border-top: 1px solid rgba(138, 154, 123, 0.08);
+}
+
+.page-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--bark);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid rgba(138, 154, 123, 0.2);
+  position: relative;
+}
+
+/* Small leaf-dot accent before h2 */
+.page-content h2::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lichen);
+  margin-right: 0.6rem;
+  vertical-align: middle;
+  opacity: 0.6;
+}
+
+.page-content h2:first-child {
+  margin-top: 0;
+}
+
+.page-content h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--bark);
+  margin-top: var(--space-md);
+  margin-bottom: var(--space-xs);
+}
+
+.page-content p {
+  margin-bottom: var(--space-sm);
+}
+
+.page-content blockquote {
+  border-left: 2px solid var(--lichen);
+  padding: var(--space-sm) var(--space-md);
+  margin: var(--space-md) 0;
+  font-style: italic;
+  color: var(--branch);
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(138, 154, 123, 0.06) 0%, transparent 60%), rgba(250, 248, 244, 0.5);
+  border-radius: 0 var(--radius-soft) var(--radius-soft) 0;
+  position: relative;
+}
+
+/* Vine gradient on blockquote border */
+.page-content blockquote::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sage), var(--lichen), var(--moss), var(--lichen), var(--sage));
+  border-radius: 1px;
+}
+@media (max-width: 900px) {
+  .page-header {
+    padding: calc(var(--space-2xl) - 3rem) var(--space-sm) var(--space-md);
+  }
+
+  .page-header h1 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 640px) {
+  /* Sub-pages */
+  .page-header {
+    padding: calc(var(--space-xl) + 1rem) var(--space-sm) var(--space-md);
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .page-content {
+    padding: var(--space-md) var(--space-sm) var(--space-lg);
+  }
+
+  .page-content h2 {
+    font-size: 1.5rem;
+    margin-top: var(--space-md);
+  }
+
+  .page-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .page-content blockquote {
+    padding-left: var(--space-sm);
+    font-size: 0.9rem;
+    border-radius: 0 4px 4px 0;
+  }
+}
+
+.page-content blockquote {
+  position: relative;
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Blockquotes */
+  .page-content blockquote {
+    background: rgba(138, 154, 123, 0.04);
+  }
+
+  /* Page headers */
+  .page-header {
+    background: radial-gradient(ellipse at 50% 70%, rgba(60, 50, 40, 0.3) 0%, transparent 60%), var(--cream);
+  }
+}

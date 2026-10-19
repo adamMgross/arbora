@@ -1,0 +1,225 @@
+/* ── SVG Tree Map ── */
+
+.tree-svg-container {
+  width: 100%;
+  max-width: 800px;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md);
+  background: radial-gradient(ellipse at 50% 40%, rgba(138, 154, 123, 0.05) 0%, transparent 65%), var(--warmwhite);
+  border: 1px solid rgba(138, 154, 123, 0.12);
+  border-radius: var(--radius-soft);
+  box-shadow: inset 0 2px 8px rgba(58, 46, 42, 0.04);
+  overflow: visible;
+}
+
+#arbora-tree {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Trunk */
+.trunk-fill {
+  fill: var(--heartwood);
+  opacity: 0.85;
+}
+
+.trunk-edge {
+  fill: none;
+  stroke: var(--bark);
+  stroke-linecap: round;
+}
+
+.trunk-label {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  fill: var(--bark);
+  letter-spacing: 0.06em;
+}
+
+/* Ground line */
+.ground-line {
+  stroke: var(--stone);
+  stroke-width: 1.5;
+  stroke-dasharray: 6 4;
+  opacity: 0.5;
+}
+
+/* Root system */
+.root-path {
+  fill: none;
+  stroke: var(--heartwood);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  opacity: 0.55;
+}
+
+.root-value-text {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  fill: var(--branch);
+  letter-spacing: 0.02em;
+  opacity: 0.75;
+}
+
+/* Canopy clusters */
+.canopy-cluster {
+  fill: var(--moss);
+  opacity: 0.08;
+}
+
+/* Branches */
+.branch-path {
+  fill: none;
+  stroke: var(--heartwood);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition:
+    stroke 0.4s var(--ease-organic),
+    stroke-width 0.4s var(--ease-organic),
+    opacity 0.4s var(--ease-organic);
+}
+
+.branch-main {
+  stroke-width: 5;
+}
+
+.branch-twig {
+  stroke-width: 2;
+  opacity: 0.65;
+}
+
+/* Branch labels */
+.branch-label-bg {
+  fill: var(--needle);
+  opacity: 0.88;
+  transition:
+    opacity 0.4s var(--ease-organic),
+    fill 0.4s var(--ease-organic);
+}
+
+.branch-label {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  fill: var(--warmwhite);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Leaf / sub-section labels */
+.leaf-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  fill: var(--branch);
+  opacity: 0;
+  transition:
+    opacity 0.4s var(--ease-organic),
+    transform 0.4s var(--ease-organic);
+}
+
+/* Branch link — click/touch target */
+.branch-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* ── Branch hover / focus states ── */
+
+.tree-branch:hover .branch-main,
+.tree-branch:focus-within .branch-main {
+  stroke: var(--needle);
+  stroke-width: 6;
+}
+
+.tree-branch:hover .branch-twig,
+.tree-branch:focus-within .branch-twig {
+  stroke: var(--moss);
+  opacity: 0.85;
+  stroke-width: 2.5;
+}
+
+.tree-branch:hover .branch-label-bg,
+.tree-branch:focus-within .branch-label-bg {
+  opacity: 1;
+  fill: var(--canopy);
+}
+
+.tree-branch:hover .leaf-label,
+.tree-branch:focus-within .leaf-label {
+  opacity: 0.75;
+}
+
+.tree-branch:hover .branch-path,
+.tree-branch:focus-within .branch-path {
+  filter: url(#branch-glow);
+}
+
+/* Subtle sway animation on the whole tree */
+@keyframes tree-sway {
+  0%,
+  100% {
+    transform: rotate(-0.15deg);
+  }
+  50% {
+    transform: rotate(0.15deg);
+  }
+}
+
+#arbora-tree {
+  animation: tree-sway 8s var(--ease-organic) infinite;
+  transform-origin: 400px 920px;
+}
+
+@media (max-width: 640px) {
+  /* Tree */
+  .tree-svg-container {
+    padding: var(--space-xs);
+    margin: var(--space-md) auto;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #arbora-tree {
+    min-width: 500px;
+  }
+
+  .branch-label {
+    font-size: 14px;
+  }
+
+  .leaf-label {
+    opacity: 0;
+  }
+
+  /* Show leaf labels on mobile since no hover */
+  .tree-branch .leaf-label {
+    opacity: 0.6;
+  }
+
+  .root-value-text {
+    font-size: 8px;
+  }
+}
+
+@media (pointer: coarse) {
+  /* Tree branch touch targets */
+  .branch-label-bg {
+    /* Ensure minimum 44px touch target */
+    stroke: transparent;
+    stroke-width: 12;
+  }
+
+  /* Show leaf labels at low opacity on touch (no hover) */
+  .leaf-label {
+    opacity: 0.55;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Tree SVG container */
+  .tree-svg-container {
+    background: rgba(138, 154, 123, 0.02);
+  }
+}

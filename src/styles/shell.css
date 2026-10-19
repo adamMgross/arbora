@@ -1,0 +1,105 @@
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: linear-gradient(90deg, var(--lichen), var(--moss), var(--needle));
+  z-index: 200;
+  transition: width 0.1s linear;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-sm);
+  z-index: 300;
+  background: var(--bark);
+  color: var(--cream);
+  padding: 0.6rem var(--space-sm);
+  border-radius: var(--radius-soft);
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: top 0.2s var(--ease-organic);
+}
+
+.skip-link:focus {
+  top: var(--space-sm);
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: 1px solid rgba(138, 154, 123, 0.2);
+  border-radius: var(--radius-soft);
+  color: var(--lichen);
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.3s var(--ease-organic),
+    color 0.25s var(--ease-organic),
+    border-color 0.25s var(--ease-organic),
+    background 0.25s var(--ease-organic);
+  line-height: 1;
+  min-height: 28px;
+  display: flex;
+  align-items: center;
+}
+
+.page-content blockquote:hover .copy-btn,
+.page-content blockquote:focus-within .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  color: var(--moss);
+  border-color: rgba(107, 127, 94, 0.4);
+  background: rgba(138, 154, 123, 0.07);
+}
+
+.copy-btn.copied {
+  color: var(--needle);
+  border-color: var(--needle);
+}
+
+@media (pointer: coarse) {
+  .copy-btn {
+    opacity: 0.6;
+    min-height: 36px;
+  }
+}
+
+.offline-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--heartwood);
+  color: var(--cream);
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 0.4rem var(--space-sm);
+  z-index: 250;
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease-organic);
+}
+
+.offline-bar.visible {
+  transform: translateY(0);
+}
+
+@media (prefers-color-scheme: dark) {
+  .scroll-progress {
+    background: linear-gradient(90deg, var(--sage), var(--moss), var(--needle));
+  }
+}
