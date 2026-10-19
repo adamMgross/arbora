@@ -6,11 +6,11 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 **Phase:** Restructure complete locally, not pushed. Hosting is the next step and is owner-blocked.
 
-**Deployed vs main:** Nothing is deployed. The repository is private and Pages is not enabled (`gh api repos/adamMgross/arbora/pages` returned 404 on 2026-10-18). `main` is 13 commits ahead of `origin/main` before the onboarding commit and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
+**Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled (`gh api repos/adamMgross/arbora/pages` returned 404). `main` is 13 commits ahead of `origin/main` before the onboarding commit and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
 
 **What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 68 unit tests, a root-path build of 21 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 5 content-integrity tests, and 16 end-to-end tests at both base paths. `npm run parity -- --base baseline/pre-astro` reports 0 failures across 21 pages and 9 configurations (205 captures, 189 screenshots). The harness was shown to detect text, title, link, route, and screenshot changes by editing a copy of the baseline.
 
-**Blockers:** `arb-5mng` and `arb-hk2f`, the owner steps that enable Pages. `arb-32io` decides the public address.
+**Blockers:** `arb-hk2f`, the owner step that enables Pages and approves the first push. `arb-32io` decides the public address.
 
 **Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address.
 
@@ -66,3 +66,9 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** The minifier dropped the unprefixed `backdrop-filter`, removing the nav blur in Chromium. Screenshots at scroll zero could not show it, the computed-style comparison did, and an e2e spec now pins it. Of Today's 90 readings, 5 appear verbatim on a different canon page than they link to and about 40 on none (`arb-ceno`). `dayOfYear` is off by one for the first hour of each day under daylight saving time (`arb-65hn`). The print block's heading and link rules lose to screen rules (`arb-witj`). With reduced motion on, `tree.html` still runs its infinite sway, observed in Chromium (`arb-yq84`).
 
 **Left unfinished:** Nothing is pushed. The README, DESIGN.md, and CLAUDE.md were updated in the onboarding commit. The known defects above are ticketed, not fixed, by design.
+
+### 2026-10-18 (repository made public)
+
+**Done:** the owner made the repository public, closing `arb-5mng`. Verified with `gh repo view`. `origin/main` is still at `1920c5a`, so the public remote holds the original site, including `CHARTER.md` at the root.
+
+**Left unfinished:** Pages is not enabled and nothing is pushed.

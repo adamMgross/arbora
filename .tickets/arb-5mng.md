@@ -1,6 +1,6 @@
 ---
 id: arb-5mng
-status: open
+status: closed
 deps: []
 links: []
 created: 2026-10-19T00:07:49Z
