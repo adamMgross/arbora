@@ -35,7 +35,7 @@ Start: read `STATE.md` Current State, run `tk ready`, `tk start <id>`. `tk ready
 
 End: `tk close <id>` (or `tk add-note <id>` with what remains), append a dated entry to the `STATE.md` Log, refresh Current State, commit. A non-trivial decision gets a record in `docs/decisions/` in the same commit. Anything only the owner can resolve becomes `tk create ... -t owner`.
 
-Do not push until the tickets tagged `hosting` are closed. A push to `main` runs the Deploy workflow, and it fails while Pages is disabled.
+A push to `main` runs the Deploy workflow, which runs `npm run ci` and publishes the site to https://adammgross.github.io/arbora/. Push only after `npm run ci` passes locally.
 
 ## Invariants
 

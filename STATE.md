@@ -4,15 +4,15 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete and the three reflection decks finished and tailored for phones locally, not pushed. Hosting is the next step and is owner-blocked.
+**Phase:** Restructure complete, the three reflection decks finished and tailored for phones, and the site is live.
 
-**Deployed vs main:** Nothing is deployed. The owner made the repository public on 2026-10-18 (`arb-5mng` closed). Pages is not enabled. `main` is ahead of `origin/main` by the restructure, the onboarding, the CHARTER removal, and the decks, and has not been pushed, because a push runs the deploy workflow, which fails until Pages is enabled.
+**Deployed vs main:** Deployed. The owner approved the first push on 2026-10-18, and https://adammgross.github.io/arbora/ serves `main` through the Deploy workflow (run 39210926422 green). Every push to `main` deploys.
 
 **What works, verified 2026-10-18:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 114 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 57 end-to-end tests at both base paths, 32 at desktop size and 25 in the `phone` project at an iPhone 15 viewport. The three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
 **Sizes, measured 2026-10-18 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11.9 KB gzipped (ceiling 12 KB, about 60 bytes of room), scene chunks 19.9 KB (Wood, 52 drawings), 14.2 KB (Sky), 4.8 KB (Year) gzipped, loaded only on their pages.
 
-**Blockers:** `arb-hk2f`, the owner step that enables Pages and approves the first push. `arb-32io` decides the public address.
+**Blockers:** none. `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
 **Open questions:** Which wording wins where Today and the canon pages disagree (`arb-g4c9`). Whether `arbora.site` should be the address. Two deck items need people rather than code: the owner's read for tone (`arb-y8k3`) and a reading of the Native-sourced cards by Native readers, with a packet on the ticket (`arb-kbpk`). Which Meditations translation the canon's V.24 passage really is (`arb-w81y`).
 
@@ -20,7 +20,7 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 | Assumption | Confidence |
 |---|---|
-| The Deploy workflow runs green on GitHub, including `playwright install --with-deps` and the pinned action majors | low, it has never run (`arb-nlmj`) |
+| The Deploy workflow keeps running green as GitHub retires Node 20 actions and moves `ubuntu-latest` to Ubuntu 26 | medium, green on 2026-10-18 with deprecation warnings (`arb-nlmj`) |
 | Safari and Firefox render the site as Chromium does, including `var()` inside SVG presentation attributes and `transform-box: fill-box` on the Year's needle | medium for the decks in WebKit, checked by hand on 2026-10-18 with Playwright's WebKit build, low for Firefox and for the other pages (`arb-589u`) |
 | A real iPhone behaves like the WebKit build at an iPhone viewport, including `svh` units, the 3D card flip, smooth scrolling, and the tap feedback | medium, not tried on a device |
 | Older Safari still gets a nav blur, since the minifier keeps only the unprefixed `backdrop-filter` | medium, depends on the build's browser targets |
@@ -115,4 +115,12 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 **Findings:** long dome labels near the zenith fit on neither side of their star and were placed without checking for overlap. Placement now takes the spot with the least overlap among both sides and a clamped position, which also clears overlaps on desktop. The stylesheet reached exactly 12,000 bytes gzipped and was trimmed to 11,942, so the 12 KB ceiling has almost no room left.
 
 **Left unfinished:** WebKit is not in CI (`arb-589u`), and nothing was tried on a real device. In phone landscape the Wood's walk takes a scroll.
+
+### 2026-10-18 (the site goes live)
+
+**Done:** the owner approved the push and `main` deployed to https://adammgross.github.io/arbora/. The live hub and all three decks load and mount in WebKit at an iPhone viewport with no errors. `arb-hk2f` is closed.
+
+**Findings:** the first run failed one integration test, because Astro colors its errors on GitHub's runner and the test matched plain text. The test now strips terminal color codes from the build output, reproduced locally with `FORCE_COLOR=1`. The run warns that the pinned action majors target Node 20 (`arb-nlmj`).
+
+**Left unfinished:** the address decision (`arb-32io`) and the action version bump (`arb-nlmj`).
 

@@ -1,6 +1,6 @@
 ---
 id: arb-hk2f
-status: open
+status: closed
 deps: [arb-5mng]
 links: []
 created: 2026-10-19T00:07:49Z
@@ -23,3 +23,7 @@ The Deploy workflow is green on main and https://adammgross.github.io/arbora/ se
 **2026-10-19T02:28:40Z**
 
 2026-10-18: owner enabled Pages with build_type=workflow. Remaining: owner approval to push main, and the CHARTER.md exposure decision (it is on the public remote).
+
+**2026-10-19T06:40:04Z**
+
+2026-10-18: owner approved the push. Deploy run 39210926422 is green and https://adammgross.github.io/arbora/ serves every page, checked with curl and in WebKit at an iPhone viewport.
