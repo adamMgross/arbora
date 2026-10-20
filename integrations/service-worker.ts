@@ -6,12 +6,15 @@ export interface BuiltFile {
 }
 
 const WORKER = 'sw.js';
+const CACHED_ON_VIEW = /\.webp$/;
 
 export function renderServiceWorker(template: string, files: BuiltFile[]): string {
   if (!template.includes('__CACHE_NAME__') || !template.includes('__PRECACHE_URLS__')) {
     throw new Error('Service worker template is missing a placeholder');
   }
-  const shipped = files.filter((f) => f.path !== WORKER).sort((a, b) => a.path.localeCompare(b.path));
+  const shipped = files
+    .filter((f) => f.path !== WORKER && !CACHED_ON_VIEW.test(f.path))
+    .sort((a, b) => a.path.localeCompare(b.path));
   const hash = createHash('sha256');
   for (const file of shipped) hash.update(file.path).update('\0').update(file.bytes).update('\0');
   return template

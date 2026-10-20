@@ -3,6 +3,13 @@
   name: Those Who Stayed Awake
   from: Cherokee
   art: stayedAwake
+  picture:
+    title: Camp Fire
+    artist: Winslow Homer
+    year: "1880"
+    source: https://commons.wikimedia.org/wiki/File:Camp_Fire_MET_DT2829.jpg
+    license: CC0
+    alt: Two woodsmen keeping a fire at night under dark evergreens, sparks rising.
   principle: principle-3
   story: In the Cherokee telling of how the world was made, the plants and animals were asked to keep watch for seven nights. One by one they fell asleep. A few trees kept the vigil to the end and were given the gift of staying green all year. Among the animals the owl stayed awake, and can see in the dark.
   passages:
@@ -13,6 +20,13 @@
   name: The Aspen
   from: Rocky Mountains, Pando
   art: aspen
+  picture:
+    title: Autumn--On the Hudson River
+    artist: Jasper Francis Cropsey
+    year: "1860"
+    source: https://commons.wikimedia.org/wiki/File:Autumn--On_the_Hudson_River-1860-Jasper_Francis_Cropsey.jpg
+    license: public domain
+    alt: Tiny figures and cattle in the middle distance.
   principle: principle-1
   story: A stand of aspen is usually one tree. In Utah a single root sends up some forty-seven thousand trunks over a hundred acres and has done so for thousands of years. Each trunk lives about a century. The root does not. In the Rockies the aspens turn gold together in a week, because they are one.
   passages:
@@ -23,6 +37,13 @@
   name: The Bristlecone
   from: White Mountains, California
   art: bristlecone
+  picture:
+    title: Landscape (Landscape with Tree Trunks)
+    artist: Thomas Cole
+    year: "1828"
+    source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_Landscape_with_Dead_Tree_1828.jpg
+    license: public domain
+    alt: None visible.
   principle: principle-2
   story: On a dry ridge at eleven thousand feet, the oldest living trees grow a few inches a century and have stood since before the pyramids. Most of each tree is dead wood, polished by ice, with one strip of living bark feeding one living branch. They live so long because almost nothing else can live there.
   passages:
@@ -33,6 +54,13 @@
   name: The Useless Tree
   from: Daoist, Zhuangzi
   art: uselessTree
+  picture:
+    title: The Nooning
+    artist: Winslow Homer
+    year: c. 1872
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_Nooning.jpg
+    license: public domain
+    alt: A boy in a straw hat lying in the grass under a tree, doing nothing.
   principle: principle-8
   story: Zhuangzi's friend complains of a huge tree so gnarled that no carpenter will touch it. Zhuangzi answers that its uselessness is why it has grown so old, and suggests lying down beneath it.
   passages:
@@ -43,6 +71,13 @@
   name: Yggdrasil
   from: Norse
   art: yggdrasil
+  picture:
+    title: The Titan's Goblet
+    artist: Thomas Cole
+    year: "1833"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Titan%27s_Goblet.jpg
+    license: public domain
+    alt: Only specks of boats and buildings on the goblet's rim.
   principle: principle-5
   story: The Norse world tree is an ash. The nine worlds hang in it, a well lies at its root where the Norns draw water for it every day, an eagle sits in the crown and a serpent gnaws below, and a squirrel runs between them carrying insults. The gods meet beneath it to judge. Odin hung on it nine nights to win the runes.
   passages:
@@ -57,6 +92,13 @@
   name: The Green Man
   from: Carved in Europe's churches
   art: greenMan
+  picture:
+    title: The Forest of Arden
+    artist: Albert Pinkham Ryder
+    year: 1888-97, reworked 1908
+    source: https://commons.wikimedia.org/wiki/File:The_Forest_of_Arden_MET_DT240272.jpg
+    license: CC0
+    alt: Two small figures at the lower left beneath a looming, almost bodily tree.
   principle: principle-1
   story: A face made of leaves, with vines growing from his mouth, carved into hundreds of medieval churches. No one knows exactly what the carvers meant. He looks like what a person becomes when they stop holding themselves apart from the green world. Here he wears fir and cedar, and a few maple leaves.
   passages:
@@ -67,6 +109,13 @@
   name: The Dryads
   from: Greek
   art: dryads
+  picture:
+    title: Dream of Arcadia
+    artist: Thomas Cole
+    year: c. 1838
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_Dream_of_Arcadia_-_Google_Art_Project.jpg
+    license: public domain
+    alt: Small figures in classical dress dancing and resting under trees near a temple.
   principle: principle-1
   story: In the Homeric hymn the mountain nymphs are born with their trees and die with them. When a pine or an oak withers, its nymph leaves the light of the sun. The Greeks did not say the tree had a spirit. They said the spirit had a tree. In this wood she comes out of a birch.
   passages:
@@ -77,6 +126,13 @@
   name: Kodama
   from: Japanese, Shinto
   art: kodama
+  picture:
+    title: The Grizzly Giant Sequoia, Mariposa Grove, California
+    artist: Albert Bierstadt
+    year: c. 1872-1873
+    source: https://commons.wikimedia.org/wiki/File:Albert_Bierstadt_-_The_Grizzly_Giant_Sequoia,_Mariposa_Grove,_California.jpg
+    license: public domain
+    alt: One ancient sequoia stands among younger trees in a hushed grey light.
   principle: principle-8
   story: In Japan a kodama is the spirit of an old tree, and the echo that comes back from a mountainside was once said to be its voice. A tree with a kodama in it was marked with a rope and left standing. Fell one anyway, and misfortune followed the axe home. The cedars of the Pacific coast are the right size for one.
   passages:
@@ -87,6 +143,13 @@
   name: The Dark Wood
   from: Dante, Italy, c. 1308
   art: darkWood
+  picture:
+    title: "The Voyage of Life: Manhood"
+    artist: Thomas Cole
+    year: "1842"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Voyage_of_Life_Manhood,_1842_(National_Gallery_of_Art).jpg
+    license: public domain
+    alt: A man alone in a small boat, hands clasped, carried toward rapids under storm and dead trees.
   principle: principle-7
   story: Every people who live near forests know what it is to get lost in one. The dark wood is where the old path ends and the next one has not appeared. Dante begins the greatest poem of his age there, which says something about where journeys start.
   passages:
@@ -102,6 +165,13 @@
   name: The Nurse Log
   from: The old-growth forest
   art: nurseLog
+  picture:
+    title: Study of a Wood Interior
+    artist: Asher Brown Durand
+    year: c. 1850
+    source: https://commons.wikimedia.org/wiki/File:AsherDurand-Study_Woodland_Interior.jpg
+    license: public domain
+    alt: None.
   principle: principle-4
   story: When an old tree falls in a deep forest it keeps giving for centuries. Seedlings root along its back, fungi turn its wood to soil, and threads under the ground carry what it held to the trees around it. In the Pacific Northwest whole rows of hemlocks stand on stilts where the log they grew on has gone. An ending can be the ground something else grows from.
   passages:
@@ -114,6 +184,13 @@
   name: Leaf-fall
   from: Homer, Iliad VI
   art: leaffall
+  picture:
+    title: Autumn
+    artist: Winslow Homer
+    year: "1877"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer,_Autumn,_1877,_NGA_66420.jpg
+    license: public domain
+    alt: A young woman standing in falling leaves, holding a spray of them.
   principle: principle-2
   story: Asked who he is before a fight, Glaucus answers with the oldest image for a human generation, leaves. Trees do it every year without grief. The Greeks put the comparison in the mouth of a man about to risk his life.
   passages:
@@ -130,6 +207,13 @@
   name: The White Pine
   from: Haudenosaunee
   art: whitePine
+  picture:
+    title: The Pic-Nic
+    artist: Thomas Cole
+    year: "1846"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Pic-Nic_(1846)_-_Google_Art_Project.jpg
+    license: public domain
+    alt: A crowd of people at ease together beneath one great tree by a lake, one playing a guitar.
   principle: principle-6
   story: The Haudenosaunee tell that the Peacemaker brought five warring nations together and planted a great white pine at Onondaga as the sign of their union. The nations threw their weapons into the hole beneath it, where a current carried them away. Four white roots ran out to the four directions for any people who would follow them back to the tree, and an eagle sat at the top to watch for danger.
   passages:
@@ -140,6 +224,13 @@
   name: The Sugar Maple
   from: New England and the Great Lakes
   art: sugarMaple
+  picture:
+    title: The Sugar Camp
+    artist: Eastman Johnson
+    year: 1861-1866
+    source: https://commons.wikimedia.org/wiki/File:Eastman_Johnson_-_The_Sugar_Camp_(also_known_as_Making_Maple_Sugar_or_Susan_Ray%E2%80%99s_Maple_Sugaring_Kitchen)_-_1992.5.14_-_Yale_University_Art_Gallery.jpg
+    license: public domain
+    alt: Two men tending sap and a barrel at a sugar camp with snow at the door.
   principle: principle-4
   story: At the end of winter, when the nights still freeze and the days begin to thaw, the sap of the sugar maple runs. The Haudenosaunee and the Anishinaabe were boiling it down long before anyone else on the continent, and the Haudenosaunee Thanksgiving Address greets the maple as the leader of the trees. It takes about forty gallons of sap to make one of syrup. The tree gives it at the leanest moment of the year.
   passages:
@@ -150,6 +241,13 @@
   name: The Paper Birch
   from: The north woods
   art: paperBirch
+  picture:
+    title: Landscape with Birches
+    artist: Asher Brown Durand
+    year: "1855"
+    source: https://commons.wikimedia.org/wiki/File:Asher_Brown_Durand_-_Landscape_with_Birches_-_63.268_-_Museum_of_Fine_Arts.jpg
+    license: public domain
+    alt: None visible.
   principle: principle-1
   story: After a fire in the north woods, the paper birch is among the first trees back, a stand of white trunks rising out of the ash to shade the spruce and fir that will one day replace it. Its bark peels in sheets like pages and does not rot, so the Anishinaabe and their neighbors made canoes of it, and containers, and lodges. It lives about a century and makes way.
   passages:
@@ -160,6 +258,13 @@
   name: The Redwood
   from: The California coast
   art: redwood
+  picture:
+    title: Giant Redwood Trees of California
+    artist: Albert Bierstadt
+    year: "1874"
+    source: https://commons.wikimedia.org/wiki/File:Albert_Bierstadt_-_Giant_Redwood_Trees_of_California_-_Google_Art_Project.jpg
+    license: public domain
+    alt: Three small Native figures at the base, one walking with a burden basket beneath a vast trunk.
   principle: principle-5
   story: The coast redwood is the tallest living thing, and it drinks the fog. In a dry summer as much as a third of its water is mist combed out of the air by its needles. When an old redwood falls or burns, young trees sprout from its roots in a ring around the place where it stood, and grow up in a circle around an absence. Foresters call them family circles.
   passages:
@@ -170,6 +275,13 @@
   name: The Oak
   from: Celtic, the druids
   art: oak
+  picture:
+    title: The Monk
+    artist: George Inness
+    year: "1873"
+    source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Monk_(1873).jpg
+    license: public domain
+    alt: A single white-robed monk walking under a grove at dusk.
   principle: principle-8
   story: The Roman writers say the druids kept their rites in oak groves, and their name may mean oak-knowers. Across Europe the oak was the tree of the sky god, from Zeus's oracle at Dodona, where priests listened to the rustling of its leaves, to the oak of Thor that Boniface cut down. Lightning seems to find oaks more than other trees, which may be why.
   passages:
@@ -180,6 +292,13 @@
   name: The Bodhi Tree
   from: Buddhist, Bodh Gaya
   art: bodhi
+  picture:
+    title: Indian at Sunset
+    artist: Thomas Cole
+    year: 1845-47
+    source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_Indian_at_Sunset_1845-47.jpg
+    license: public domain
+    alt: A man seated alone at the foot of a great tree, facing the lake at sunset.
   principle: principle-3
   story: Siddhartha sat down under a pipal fig at Bodh Gaya and resolved not to rise until he understood. He rose the Buddha. A cutting of that tree was carried to Sri Lanka in the third century before the common era and planted at Anuradhapura, where it still grows, the oldest tree in the world planted by a person on a known date. Bodhi trees at temples across Asia grow from its cuttings.
   passages:
@@ -190,6 +309,13 @@
   name: The Ceiba
   from: Maya
   art: ceiba
+  picture:
+    title: The Lonely Pine
+    artist: George Inness
+    year: c. 1880s
+    source: https://commons.wikimedia.org/wiki/File:The_Lonely_Pine_by_George_Inness_(Detroit_Inst_Arts_51.331).jpg
+    license: public domain
+    alt: None clearly visible; a few dark marks in the field may be distant figures or cattle.
   principle: principle-1
   story: For the Maya the world has a great tree at each of its four corners and one at its center, and the tree at the center is the ceiba, the green tree, whose roots go down into the underworld and whose branches hold up the sky. A ceiba is still left standing when the forest around it is cleared, alone in the middle of a field, and its spines and buttresses make it look built rather than grown.
   passages:
@@ -200,6 +326,13 @@
   name: Honi's Carob
   from: Jewish, the Talmud
   art: carob
+  picture:
+    title: Home in the Woods
+    artist: Thomas Cole
+    year: "1847"
+    source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_Home_in_the_Woods_1847.jpg
+    license: public domain
+    alt: A settler family at a log cabin in a clearing, a man returning with fish, children at the door.
   principle: principle-5
   story: Honi the Circle-Maker saw a man planting a carob and asked how long it would take to bear fruit. Seventy years, the man said. Honi asked whether he expected to live seventy years. The man answered that he had found the world full of carob trees planted by those before him, and was planting for those after. Then Honi fell asleep for seventy years and woke to see the man's grandson gathering the fruit.
   passages:
@@ -210,6 +343,13 @@
   name: Humbaba
   from: Mesopotamian, Gilgamesh
   art: humbaba
+  picture:
+    title: Hunter Mountain, Twilight
+    artist: Sanford Robinson Gifford
+    year: "1866"
+    source: https://commons.wikimedia.org/wiki/File:Sanford_Robinson_Gifford_-_Cr%C3%A9puscule_sur_le_mont_Hunter.jpg
+    license: public domain
+    alt: None visible at card size, only a cabin and cattle in a field of stumps.
   principle: principle-8
   story: In the oldest written epic, Humbaba guards the Cedar Forest for the gods, a giant whose voice is the flood and whose breath is fire. Gilgamesh and Enkidu go to kill him for fame and for cedar, and they do. The poem does not let them enjoy it. The gods take Enkidu for the killing, and Gilgamesh goes looking for a way not to die. The guardian of a forest is there for a reason.
   passages:
@@ -220,6 +360,13 @@
   name: Pan
   from: Greek, Arcadia
   art: pan
+  picture:
+    title: "The Course of Empire: The Arcadian or Pastoral State"
+    artist: Thomas Cole
+    year: "1834"
+    source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg
+    license: public domain
+    alt: A shepherd, a dancing group, and an old man drawing figures in the dirt, all small.
   principle: principle-1
   story: Pan is the god of the wild places of Arcadia, goat-legged and piping, the source of the sudden fear that comes over people alone in the woods, which is why it is called panic. Socrates, who almost never left the city, prayed to him once, at the end of a long afternoon under a plane tree by a stream outside Athens.
   passages:
@@ -230,6 +377,13 @@
   name: The Leshy
   from: Slavic
   art: leshy
+  picture:
+    title: "Landscape with Figures: A Scene from The Last of the Mohicans"
+    artist: Thomas Cole
+    year: "1826"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_Landscape_with_Figures,_A_Scene_from_The_Last_of_the_Mohicans_(1826).jpg
+    license: public domain
+    alt: A lone figure on a rock in a tangled wild valley, another small figure below.
   principle: principle-7
   story: In the Slavic forests the leshy is the master of the woods, as tall as the trees in the forest and as small as the grass in the meadow. He leads travelers in circles until they are lost. The remedy, the old people said, is to sit down, take off your clothes and put them back on inside out, and change your shoes from one foot to the other. Then the paths come right again.
   passages:
@@ -240,6 +394,13 @@
   name: Tapio
   from: Finnish, the Kalevala
   art: tapio
+  picture:
+    title: Hound and Hunter
+    artist: Winslow Homer
+    year: "1892"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer,_Hound_and_Hunter,_1892,_NGA_33970.jpg
+    license: public domain
+    alt: A boy in a canoe holding a swimming deer by the antlers, a hound arriving.
   principle: principle-4
   story: In the Finnish woods Tapio is the forest's king and Mielikki its mistress, and a hunter asks them for game rather than taking it. In the Kalevala the hunter sings to them, praising their forest castle and promising gifts, and the old hunters left offerings on a stump. What the forest gives is given.
   passages:
@@ -250,6 +411,13 @@
   name: Cernunnos
   from: Celtic, Gaul
   art: cernunnos
+  picture:
+    title: Guide Carrying a Deer
+    artist: Winslow Homer
+    year: "1891"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Guide_Carrying_a_Deer.jpg
+    license: public domain
+    alt: A woodsman carrying a deer across his shoulders, its head beside his.
   principle: principle-1
   story: A god with a stag's antlers sits cross-legged on a silver cauldron found in a Danish bog, holding a torc in one hand and a serpent in the other, with a stag beside him and animals all around. A stone carved in Paris in the first century names him Cernunnos. Almost nothing written about him survives. He is known only by what surrounds him.
   passages:
@@ -260,6 +428,13 @@
   name: The Yakshi
   from: India, Sanchi
   art: yakshi
+  picture:
+    title: Girl in the Orchard
+    artist: Winslow Homer
+    year: "1874"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Girl_in_the_Orchard,_1874.jpg
+    license: public domain
+    alt: A young woman standing under apple trees, head bowed, hat in hand.
   principle: principle-1
   story: On the stone gateways of the great stupa at Sanchi, a woman leans out from a tree, one arm around its trunk and one hand pulling down a branch, and the tree blooms at her touch. She is a yakshi, one of the spirits of trees and fertility worshipped in India before the Buddha and carved onto his monuments anyway. The Buddha's mother is said to have given birth holding the branch of a sal tree in the same pose.
   passages:
@@ -270,6 +445,13 @@
   name: The Burning Bush
   from: Hebrew, Exodus
   art: burningBush
+  picture:
+    title: A Gorge in the Mountains (Kauterskill Clove)
+    artist: Sanford Robinson Gifford
+    year: "1862"
+    source: https://commons.wikimedia.org/wiki/File:A_Gorge_in_the_Mountains_(Kauterskill_Clove)_MET_DT81.jpg
+    license: CC0
+    alt: None visible at card size.
   principle: principle-8
   story: Moses was keeping his father-in-law's sheep at the back of the wilderness when he saw a bush on fire that was not burning up. He turned aside to look, and only when he turned aside did the voice call his name. The first thing it told him was to take off his shoes. The Midrash says the presence chose a thornbush to teach that no place is empty of it.
   passages:
@@ -280,6 +462,13 @@
   name: The Owl
   from: Many peoples
   art: owl
+  picture:
+    title: Moonlight, Indian Encampment
+    artist: Ralph Albert Blakelock
+    year: 1885 to 1889
+    source: https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_Moonlight,_Indian_Encampment_-_1929.6.3_-_Smithsonian_American_Art_Museum.jpg
+    license: public domain
+    alt: A lone silhouetted figure standing by moonlit water under dark trees, a fire by the tents.
   principle: principle-3
   story: The owl belongs to Athena, who sees clearly, and its picture was stamped on the coins of Athens. In the Cherokee telling of the seven nights, the owl was among the animals that stayed awake, and was given sight in the dark. In other places it is the bird of death and bad news. Everywhere it is the one awake when everyone else is sleeping, which is a gift and a loneliness.
   passages:
@@ -290,6 +479,13 @@
   name: The Forest Sage
   from: Hindu, the forest books
   art: forestSage
+  picture:
+    title: Kindred Spirits
+    artist: Asher B. Durand
+    year: "1849"
+    source: https://commons.wikimedia.org/wiki/File:Asher_B._Durand_-_Kindred_Spirits_-_2010.106_-_Crystal_Bridges_Museum_of_American_Art.jpg
+    license: public domain
+    alt: Two men standing on a ledge under an arching tree, one gesturing as he talks.
   principle: principle-3
   story: The oldest Indian wisdom was spoken among trees. The Upanishads were taught in forest hermitages, and the texts just before them are called the Aranyakas, the forest books. The laws of Manu describe a stage of life, after the work of the household is done, when a person goes to live in the forest, eating what it gives and studying. The forest is where you go to learn what could not be learned at home.
   passages:
@@ -300,6 +496,13 @@
   name: The Wind in the Tops
   from: Hebrew and Greek scripture
   art: wind
+  picture:
+    title: The Coming Storm
+    artist: George Inness
+    year: c. 1879
+    source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Coming_Storm_(c._1879).jpg
+    license: public domain
+    alt: A lone figure walking across a field toward bending trees under a dark sky.
   principle: principle-8
   story: In Hebrew and in Greek one word means wind, breath and spirit. David was told to wait until he heard the sound of marching in the tops of the trees, and then to move, because then he would not be going alone. In the gospel the wind blows where it wishes, and you hear its sound but cannot say where it came from. In a forest you hear it before you feel it, coming through the tops a long way off.
   passages:
@@ -310,6 +513,13 @@
   name: The Clearing
   from: The deep forest
   art: clearing
+  picture:
+    title: The First Harvest in the Wilderness
+    artist: Asher B. Durand
+    year: "1855"
+    source: https://commons.wikimedia.org/wiki/File:Asher_B._Durand_-_The_First_Harvest_in_the_Wilderness_-_Google_Art_Project.jpg
+    license: public domain
+    alt: A tiny reaper in a sunlit field among stumps, a cabin at the edge.
   principle: principle-3
   story: Somewhere in every old forest a tree has fallen and taken its neighbors with it, and the sun reaches the ground for the first time in a century. Seeds that waited in the soil for decades wake. Light-hungry things grow fast. Foresters call it a gap, and most of a forest's change happens in its gaps. A clearing is what a loss looks like from the ground, a year later.
   passages:
@@ -322,6 +532,13 @@
   name: Rings
   from: The cut stump
   art: rings
+  picture:
+    title: The Old Hunting Grounds
+    artist: Worthington Whittredge
+    year: "1864"
+    source: https://commons.wikimedia.org/wiki/File:The_Old_Hunting_Grounds_by_Worthington_Whittredge,_1864.jpg
+    license: public domain
+    alt: None, only an abandoned birchbark canoe in a birch grove.
   principle: principle-2
   story: Every year a tree lays down a ring, pale and wide in a good spring, dark and narrow in drought. Fire scars, insect years, the year the neighbor fell and the light came in are all written in the wood, outside the old rings and never over them. Read across thousands of trees, the rings date old roof beams and keep the record of a climate.
   passages:
@@ -334,6 +551,13 @@
   name: The Seed
   from: Chandogya Upanishad
   art: seed
+  picture:
+    title: Winnowing Grain
+    artist: Eastman Johnson
+    year: c. 1873-1879
+    source: https://commons.wikimedia.org/wiki/File:Eastman_Johnson_-_Winnowing_Grain.jpg
+    license: public domain
+    alt: A young farmer pouring a stream of grain from a basket in a shaft of light.
   principle: principle-8
   story: A father sends his son to fetch a fig from the great banyan, has him break it open, then break open one of the tiny seeds inside, and asks what he sees. Nothing, says the son. The father says that from that nothing the whole great tree has grown, that the same fine essence is the self of everything, and then, you are that.
   passages:
@@ -346,6 +570,13 @@
   name: Fire
   from: The western forests
   art: fire
+  picture:
+    title: The Guide and Woodsman
+    artist: Winslow Homer
+    year: "1889"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_Guide_and_Woodsman_(1889).jpg
+    license: public domain
+    alt: A woodsman with an axe walking past charred stumps toward a spruce ridge.
   principle: principle-8
   story: Some forests need to burn. Many cones of the lodgepole pine are sealed with resin that only fire melts, and the giant sequoia drops its seeds onto ash, where its seedlings take best. Low fires clear the brush and leave the big trees standing. The forests that never burn are the ones that burn worst when they finally do.
   passages:
@@ -358,6 +589,13 @@
   name: Shelter
   from: Every rain
   art: shelter
+  picture:
+    title: Bo-Peep
+    artist: Winslow Homer
+    year: "1878"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Bo-Peep_(1878).jpg
+    license: public domain
+    alt: A young shepherdess sitting against a great tree trunk, chin in her hand.
   principle: principle-6
   story: Caught in the rain on a mountain, people go under the biggest tree they can find. Under an old fir the ground can stay dry through an hour of rain. Birds, deer and people have all known this for as long as there have been trees and rain. To shelter is to admit that you are not, at the moment, enough by yourself.
   passages:
@@ -370,6 +608,13 @@
   name: The Old Paths
   from: Jeremiah
   art: oldPaths
+  picture:
+    title: The Beeches
+    artist: Asher Brown Durand
+    year: "1845"
+    source: https://commons.wikimedia.org/wiki/File:The_Beeches_MET_DT75.jpg
+    license: CC0
+    alt: A shepherd and flock walking a worn path under ancient beeches.
   principle: principle-5
   story: Old trails in a forest are often older than the maps. Game trails became footpaths and footpaths became roads. Walking one, you put your feet where thousands have put theirs, and the path knows where the water is and where the pass is lower. The prophet told a people who had lost their way to stand at the crossroads and ask for the old paths.
   passages:
@@ -382,6 +627,13 @@
   name: Pruning
   from: The orchard and the vine
   art: pruning
+  picture:
+    title: The Woodchopper, Lake Featherstonhaugh
+    artist: Thomas Cole
+    year: "1826"
+    source: https://commons.wikimedia.org/wiki/File:The_Woodchopper,_Lake_Featherstonhaugh.jpg
+    license: public domain
+    alt: A woodsman with an axe stands at the foot of a dead, stripped tree in an autumn clearing.
   principle: principle-3
   story: A gardener cuts back a healthy branch so the tree can put its strength elsewhere, and a vine left unpruned grows long and wild and bears little. In the forest the trees prune themselves. The lower branches of a fir die in the shade and drop, and the trunk rises clean. What is cut away was alive, which is why it is hard.
   passages:
@@ -394,6 +646,13 @@
   name: The Root
   from: The ground beneath
   art: root
+  picture:
+    title: Tree in a Landscape
+    artist: John Frederick Kensett
+    year: 19th century
+    source: https://commons.wikimedia.org/wiki/File:John_Frederick_Kensett_-_Tree_in_a_Landscape.jpg
+    license: public domain
+    alt: An old tree grips bare rock with its roots exposed, above a dry valley.
   principle: principle-5
   story: Most of a tree is out of sight. The roots of a big oak spread wider than its crown, and in a dry year the tree lives on what they reach. The trees blown down in storms are mostly the ones whose roots ran shallow, in wet ground where they never had to go deep. The prophet said a people that survived would take root downward first, and only then bear fruit upward.
   passages:
@@ -406,6 +665,13 @@
   name: Dormancy
   from: The winter woods
   art: dormancy
+  picture:
+    title: Winter in the Country
+    artist: George Henry Durrie
+    year: "1857"
+    source: https://commons.wikimedia.org/wiki/File:George_Henry_Durrie_-_Winter_in_the_Country_-_Google_Art_Project.jpg
+    license: public domain
+    alt: Farm folk with a sleigh and oxen go about their work under a bare, sleeping elm.
   principle: principle-2
   story: In winter a maple looks dead. It has dropped its leaves, sealed its wounds, moved its water out of the cells that would burst in a freeze, and stopped. The buds for next spring are already formed, wrapped in scales. A tree that did not stop in winter would not survive it. Rest is part of the work.
   passages:
@@ -418,6 +684,13 @@
   name: Grafting
   from: The orchard
   art: grafting
+  picture:
+    title: Apple Orchard
+    artist: George Inness
+    year: "1892"
+    source: https://commons.wikimedia.org/wiki/File:George_Inness_-_Apple_Orchard_-_23.100_-_Detroit_Institute_of_Arts.jpg
+    license: public domain
+    alt: A tiny figure stands among the orchard trees near a red barn.
   principle: principle-6
   story: A grafter cuts a branch from one tree and binds it into another, and if the wood takes, the two grow as one tree, with the roots of one and the fruit of the other. Paul used the image for strangers who joined an old people, a wild olive branch grafted into a cultivated tree, drawing on a root it did not grow. Belonging can be given as well as inherited.
   passages:
@@ -430,6 +703,13 @@
   name: The Fruit
   from: The orchard in September
   art: fruit
+  picture:
+    title: Peace and Plenty
+    artist: George Inness
+    year: "1865"
+    source: https://commons.wikimedia.org/wiki/File:Peace_and_Plenty_MET_DP159755.jpg
+    license: CC0
+    alt: Small harvesters among sheaves in a broad golden valley at evening.
   principle: principle-4
   story: A tree does not eat its own fruit. It makes it for the birds and animals and people who will carry its seed away, and the fruit is how anyone outside the tree knows what kind of tree it is. You cannot tell an apple from a crabapple in winter. You can in September.
   passages:
@@ -442,6 +722,13 @@
   name: Bending
   from: Tao Te Ching
   art: bending
+  picture:
+    title: The Tempest
+    artist: Thomas Cole
+    year: c. 1826
+    source: https://commons.wikimedia.org/wiki/File:The_Tempest_by_Thomas_Cole,_c._1826,_High_Museum_of_Art.jpg
+    license: public domain
+    alt: Two figures crouch at the base of rocks while a storm wrenches a twisted tree above them.
   principle: principle-8
   story: In a hard wind the stiff trees break and the supple ones bend and stand up again. Willows and young birches can be bowed to the ground by snow and rise in spring. Laozi, who took water and infants and grass for his images of strength, said that what is hard and stiff belongs with death and what is soft and supple belongs with life.
   passages:
@@ -454,6 +741,13 @@
   name: Stillness
   from: The windless forest
   art: stillness
+  picture:
+    title: The Trout Pool
+    artist: Worthington Whittredge
+    year: "1870"
+    source: https://commons.wikimedia.org/wiki/File:The_Trout_Pool_MET_DT11615.jpg
+    license: CC0
+    alt: None visible, the viewer stands at the edge of a still pool in a golden forest.
   principle: principle-3
   story: Deep in an old forest on a windless day it can be quieter than any room. Moss, needles and trunks soak up the sound, and after a while you begin to hear what was under the noise, a creek a long way off, a woodpecker, your own breath. Every contemplative tradition has a word for this stillness, and most of them went to the woods to find it.
   passages:
@@ -466,6 +760,13 @@
   name: The Sprout
   from: Tao Te Ching
   art: sprout
+  picture:
+    title: "The Voyage of Life: Childhood"
+    artist: Thomas Cole
+    year: "1842"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Voyage_of_Life_Childhood,_1842_(National_Gallery_of_Art).jpg
+    license: public domain
+    alt: An infant rides a small boat out of a dark cave into a flowering dawn, guarded by an angel.
   principle: principle-2
   story: Every redwood was once a seedling an inch tall that a deer could have eaten. In a forest most seedlings die, and the ones that live do almost nothing visible for years, putting their effort into roots. The Daoists liked this. The tree that fills your arms grew from a shoot as fine as a hair.
   passages:
@@ -478,6 +779,13 @@
   name: The Threads Beneath
   from: The forest floor
   art: threads
+  picture:
+    title: Snap the Whip
+    artist: Winslow Homer
+    year: "1872"
+    source: https://commons.wikimedia.org/wiki/File:Snap_the_Whip_1872_Winslow_Homer.jpg
+    license: public domain
+    alt: A line of schoolboys run hand in hand, one end tumbling as the chain swings.
   principle: principle-1
   story: Under the forest floor, fungal threads wrap the roots of nearly every tree and run between them. The fungus trades water and minerals for the sugar the trees make, and some of what one tree makes can pass through the threads to another. How much passes, and how deliberately, is still argued over. A walk in the woods is a walk across a net you cannot see.
   passages:
@@ -490,6 +798,13 @@
   name: First Leaf
   from: The mountains in spring
   art: firstLeaf
+  picture:
+    title: Spring Blossoms, Montclair, New Jersey
+    artist: George Inness
+    year: c. 1891
+    source: https://commons.wikimedia.org/wiki/File:Spring_Blossoms,_Montclair,_New_Jersey_MET_DT98.jpg
+    license: CC0
+    alt: A small figure walks a meadow path under trees just coming into pale bloom.
   principle: principle-2
   story: The first leaves of spring come out small and soft, a green so pale it is almost yellow, before the tree has made the tougher leaves of summer. In the mountains the leaf-out climbs the slopes a little higher every day. Jesus told his listeners to learn from the fig tree, which tells you summer is near when its branch turns tender.
   passages:
@@ -502,6 +817,13 @@
   name: The Bare Mountain
   from: Mencius
   art: bareMountain
+  picture:
+    title: The Lackawanna Valley
+    artist: George Inness
+    year: c. 1856
+    source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Lackawanna_Valley_-_Google_Art_Project.jpg
+    license: public domain
+    alt: A boy reclines on a hillside of fresh stumps, watching a train cross the cleared valley.
   principle: principle-7
   story: Mencius pointed to Ox Mountain, bare and brown outside the city, and said it had once been beautiful with trees. People cut them, and when sprouts came back the cattle and goats grazed them, and now everyone thinks the mountain was always bare. That, he said, is what happens to the goodness in a person. What you see now is not the nature of the mountain.
   passages:
@@ -514,6 +836,13 @@
   name: The Unremembered
   from: Ecclesiasticus
   art: unremembered
+  picture:
+    title: River in the Catskills
+    artist: Thomas Cole
+    year: "1843"
+    source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_River_in_the_Catskills_-_47.1201_-_Museum_of_Fine_Arts.jpg
+    license: public domain
+    alt: A small woodcutter swings his axe among stumps above a river valley.
   principle: principle-5
   story: Walking in a second-growth forest you pass the stumps of the first one, huge and gone grey, cut a century ago by people whose names no one knows, for houses no one remembers. The book of Ben Sira praises the famous ancestors, then turns to the others, the ones who left no memorial, and says their goodness was not forgotten anyway.
   passages:
@@ -526,6 +855,13 @@
   name: The Hollow
   from: The old tree
   art: hollow
+  picture:
+    title: Pioneers of the Woods
+    artist: Albert Bierstadt
+    year: 19th century
+    source: https://commons.wikimedia.org/wiki/File:Albert_Bierstadt_-_Pioneers_of_the_Woods.jpg
+    license: public domain
+    alt: Two very old oaks in full leaf, one broken at the top with a pocked trunk.
   principle: principle-8
   story: An old tree is often hollow, its heartwood rotted away while the living wood around it keeps growing. It stands as well as before, and the hollow fills with life, owls, bats, bees, a bear in winter. The Daoists said that the use of a cup, a room or a wheel is in its emptiness.
   passages:
@@ -538,6 +874,13 @@
   name: The Tree of the Field
   from: Deuteronomy
   art: treeOfField
+  picture:
+    title: The Veteran in a New Field
+    artist: Winslow Homer
+    year: "1865"
+    source: https://commons.wikimedia.org/wiki/File:The_Veteran_in_a_New_Field_MET_DP102298.jpg
+    license: CC0
+    alt: A Union veteran, his army jacket thrown down, mows wheat with a scythe.
   principle: principle-4
   story: The law of Deuteronomy forbids an army besieging a city to cut down its fruit trees for siege works. You may eat from them, it says. The verse can be read two ways, that the tree of the field is a person's life, or, are the trees of the field people, that they should be besieged by you? The rabbis built on it a whole ethic against needless destruction, called bal tashchit, do not destroy.
   passages:
@@ -550,6 +893,13 @@
   name: The Edge of the Wood
   from: Every trailhead
   art: edge
+  picture:
+    title: Early Morning at Cold Spring
+    artist: Asher Brown Durand
+    year: "1850"
+    source: https://commons.wikimedia.org/wiki/File:HRSOA_AsherDurand-Early_morning_at_cold_spring_1850.jpg
+    license: public domain
+    alt: A lone figure stands at the forest's edge by the water, looking out toward a distant steeple.
   principle: principle-6
   story: Coming out of a forest, the light changes before you reach the edge. The trunks thin, the ground brightens, there is sky between the trees, and then the open, the trailhead, the road. Ecologists say the edge between two places holds more life than either. Every walk in the woods ends with returning to the people you left, carrying something.
   passages:
@@ -562,6 +912,13 @@
   name: Climbing to See
   from: Luke
   art: climbing
+  picture:
+    title: The Two Guides
+    artist: Winslow Homer
+    year: "1877"
+    source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_two_guides.jpg
+    license: public domain
+    alt: Two Adirondack guides stand on a high slope, one pointing out over the clouds.
   principle: principle-7
   story: Zacchaeus was a tax collector, rich and unloved and short, and when the crowd blocked his view he ran ahead and climbed a sycamore fig by the road. That is where he was seen, and called down, and asked to host dinner. Children climb trees to see farther. Adults mostly forget that it can be done.
   passages:
@@ -574,6 +931,13 @@
   name: Under the Juniper
   from: 1 Kings
   art: juniper
+  picture:
+    title: Elijah in the Desert
+    artist: Washington Allston
+    year: "1818"
+    source: https://commons.wikimedia.org/wiki/File:Washington_Allston_-_Elijah_in_the_Desert_-_Google_Art_Project.jpg
+    license: public domain
+    alt: Elijah lies small and spent beneath a stripped desert tree while a raven brings him food.
   principle: principle-6
   story: Elijah, worn out and afraid, walked a day into the wilderness, sat down under a desert broom, which the old English Bible calls a juniper, and asked to die. Then he slept. An angel woke him, gave him bread baked on hot stones and a jar of water, and let him sleep again, and only after the second meal did he go on. Before anything else, the exhausted need to eat and sleep under a tree.
   passages:

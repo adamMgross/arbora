@@ -90,10 +90,28 @@ const deckPassage = z.union([
   z.strictObject({ text: z.string().min(1), attribution: z.string().min(1) }),
 ]);
 
+const deckPicture = z.strictObject({
+  title: z.string().min(1),
+  artist: z.string().min(1),
+  year: z.string().min(1),
+  source: z.string().regex(/^https:\/\/commons\.wikimedia\.org\/wiki\/File:./),
+  license: z.enum(['public domain', 'CC0']),
+  alt: z.string().min(1),
+  trim: z
+    .strictObject({
+      top: z.number().min(0).max(50).optional(),
+      right: z.number().min(0).max(50).optional(),
+      bottom: z.number().min(0).max(50).optional(),
+      left: z.number().min(0).max(50).optional(),
+    })
+    .optional(),
+});
+
 const woodCard = {
   name: z.string().min(1),
   from: z.string().min(1),
   art: z.enum(WOOD_ART),
+  picture: deckPicture,
   principle: reference('principles'),
   story: z.string().min(1),
   passages: z.array(deckPassage).min(1),

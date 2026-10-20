@@ -20,6 +20,13 @@ describe('renderServiceWorker', () => {
     ]);
   });
 
+  it('leaves the deck pictures out of the precache, so installing the worker does not download every card', () => {
+    const withPictures = [...site, { path: '_astro/wood-the-oak.a1b2c3_Z1x.webp', bytes: 'pixels' }];
+    const precache = precacheOf(renderServiceWorker(template, withPictures));
+    expect(precache).not.toContain('_astro/wood-the-oak.a1b2c3_Z1x.webp');
+    expect(precache).toContain('index.html');
+  });
+
   it('gives the same cache name for the same build regardless of file order', () => {
     expect(nameOf(renderServiceWorker(template, site))).toBe(
       nameOf(renderServiceWorker(template, [...site].reverse())),
