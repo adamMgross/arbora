@@ -276,9 +276,9 @@ test.describe('the wood', () => {
       await page.clock.runFor(3000);
     }
   };
-  const face = (page: Page, slot: string) => page.locator(`#wood-slot-${slot} .flip-front .cardsvg`);
+  const face = (page: Page, slot: string) => page.locator(`#wood-slot-${slot} .flip-front .face`);
 
-  test('one light turns one card showing only its name, the book opens on request, and the wood can be walked again at once', async ({
+  test('one light turns one card showing only its picture and name, the book opens on request with the picture credited, and the wood can be walked again at once', async ({
     page,
   }) => {
     await openDeck(page, 'wood.html', SPRING_NIGHT);
@@ -290,14 +290,22 @@ test.describe('the wood', () => {
     await expect(page.locator('#wood-trip .flip.flipped')).toHaveCount(1);
     await expect(page.locator('#wood-slot-left')).toBeHidden();
     await expect(page.locator('#wood-slot-right')).toBeHidden();
-    const label = (await face(page, 'center').getAttribute('aria-label'))!;
-    expect(label).toMatch(/^(Elder|Spirit|Passage): /);
-    const name = label.replace(/^\w+: /, '').split(', ')[0]!;
-    await expect(face(page, 'center').locator('text')).toHaveText([name]);
+    const picture = face(page, 'center').locator('img');
+    await expect(picture).toHaveAttribute('alt', /\w/);
+    await expect(picture).toHaveAttribute('width', /^\d+$/);
+    await expect(picture).toHaveAttribute('height', /^\d+$/);
+    await expect(picture).toHaveJSProperty('complete', true);
+    expect(await picture.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+    await expect(face(page, 'center').locator('figcaption')).toHaveCount(1);
+    const name = (await face(page, 'center').locator('figcaption').textContent())!;
     await expect(page.locator('#wood-book')).toBeEmpty();
     await page.locator('#wood-open').click();
     await expect(page.locator('#wood-book .bk-entry')).toHaveCount(1);
     await expect(page.locator('#wood-book .bk-title')).toHaveText(name);
+    await expect(page.locator('#wood-book .bk-credit a')).toHaveAttribute(
+      'href',
+      /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/,
+    );
     await page.locator('#wood-line').fill('I have been walking in circles on purpose.');
     await page.locator('#wood-keep').click();
     await page.locator('#wood-again').click();

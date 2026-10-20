@@ -13,7 +13,7 @@ import {
   type WalkEntry,
   type WalkMode,
 } from '../../lib/wood-walk';
-import { byId, keepForm, niceDate, passageHtml, question, readData } from '../book';
+import { byId, credit, keepForm, niceDate, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
 import { reveal, wait } from '../motion';
 import { woodBack, woodFace, woodScene } from './art';
@@ -91,7 +91,8 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
   const fillSlot = (s: Slot, card: WoodCard) => {
     const el = slot(s);
     el.className = '';
-    el.innerHTML = `<div class="flip arrive"><div class="flip-inner"><div class="flip-face">${woodBack()}</div><div class="flip-face flip-front">${woodFace(card)}</div></div></div>`;
+    const { width, height } = card.picture;
+    el.innerHTML = `<div class="flip arrive" style="--ar:${width}/${height}"><div class="flip-inner"><div class="flip-face">${woodBack()}</div><div class="flip-face flip-front">${woodFace(card)}</div></div></div>`;
     const flip = el.firstElementChild!;
     void wait(700).then(() => flip.classList.add('flipped'));
   };
@@ -198,7 +199,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       .filter(Boolean)
       .join(' · ');
     const passage = card.passages[Math.floor(env.random() * card.passages.length)]!;
-    return `<div class="bk-entry"><p class="bk-kicker">${esc(kicker)}</p><h4 class="bk-title">${esc(card.name)}</h4><p class="bk-teach">${esc(card.story)}</p>${passageHtml(passage)}<p class="bk-note">${esc(card.principle)}</p></div>`;
+    return `<div class="bk-entry"><p class="bk-kicker">${esc(kicker)}</p><h4 class="bk-title">${esc(card.name)}</h4><p class="bk-teach">${esc(card.story)}</p>${passageHtml(passage)}<p class="bk-note">${esc(card.principle)}</p>${credit(card.picture)}</div>`;
   };
 
   const openBook = () => {

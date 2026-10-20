@@ -25,6 +25,7 @@ A static site built by Astro from validated content files. Facts live in YAML an
  (one explicit import order)                 (reads src/lib, touches the DOM)
                                              src/scripts/scenes.ts -> import('../scenes/<deck>')
                                              src/scenes/<deck>/{art,index}.ts  (markup, drawing, behavior)
+                                             src/assets/decks/<deck>/<id>.jpg -> astro:assets -> _astro/*.webp
         |
         v
  .github/workflows/deploy.yml: npm run ci -> upload dist -> deploy to Pages
@@ -45,7 +46,7 @@ A static site built by Astro from validated content files. Facts live in YAML an
 | `src/lib/year-windows.ts`, `wood-walk.ts` | The 72-window calendar math and the walk's rules: order of positions, the last kept line, light positions. | The DOM, content. |
 | `src/lib/journal.ts` | The one storage shape every deck keeps, its tolerant parser, and the one-draw-a-day rule. | Which deck is writing. |
 | `src/lib/decks.ts` | The data contract between `Deck.astro` and the scenes, and the art enums the schemas validate against. | Rendering. |
-| `src/scenes/` | One directory per deck with `art.ts` (pure SVG strings) and `index.ts` (markup and behavior, mounted with a clock, a random source, and a storage), plus the shared `motion.ts`, `book.ts`, and `env.ts`. | Astro, the content layer, and the other decks. |
+| `src/scenes/` | One directory per deck with `art.ts` (pure card faces, backs, and scenery as markup strings) and `index.ts` (markup and behavior, mounted with a clock, a random source, and a storage), plus the shared `motion.ts`, `book.ts`, and `env.ts`. | Astro, the content layer, and the other decks. |
 | `src/layouts/` | The page shell: head, nav, footer, page header, canon frame. | Where content comes from. |
 | `src/components/` | One piece of markup each, with a stylesheet of the same name where it has one. | Other components' internals. |
 | `src/pages/` | Routes. `[slug].astro` serves every canon and prose page. | Prose. |
@@ -56,7 +57,7 @@ A static site built by Astro from validated content files. Facts live in YAML an
 
 ## Data flow
 
-Raw bytes become typed values at two boundaries. At build time `yamlListLoader` and Astro's `glob` loader parse YAML and MDX frontmatter, and the Zod schemas in `src/content.config.ts` validate every field. An unknown field, a duplicate id, a dangling `reference()`, or a deck card naming art that is not drawn fails the build. `Deck.astro` resolves a card's passage references against the canon and fails the build on a missing one. In the browser, `parseSaved` in `src/lib/saved-readings.ts` and `parseJournal` in `src/lib/journal.ts` validate what `localStorage` returns before anything uses it. Today's pools and each deck's cards arrive as one JSON script element that the page's script parses once.
+Raw bytes become typed values at two boundaries. At build time `yamlListLoader` and Astro's `glob` loader parse YAML and MDX frontmatter, and the Zod schemas in `src/content.config.ts` validate every field. An unknown field, a duplicate id, a dangling `reference()`, or a deck card naming art that is not drawn, or a picture record with a source outside Commons or a license other than public domain or CC0, fails the build. `Deck.astro` fails the build when a card's master is missing from `src/assets/decks`. `Deck.astro` resolves a card's passage references against the canon and fails the build on a missing one. In the browser, `parseSaved` in `src/lib/saved-readings.ts` and `parseJournal` in `src/lib/journal.ts` validate what `localStorage` returns before anything uses it. Today's pools and each deck's cards arrive as one JSON script element that the page's script parses once.
 
 Typed values become wire format in four places: HTML (rendered by components), the Today pools and deck JSON in their pages, the saved-readings array in `localStorage`, and the three deck journals in `localStorage`.
 
@@ -104,7 +105,8 @@ The three decks are the first scenes, and they set the shape (`docs/decisions/00
 - Colors are CSS custom properties referenced with `var()` inside the SVG strings and defined per deck in `Deck.css`. Script never carries a color, and a color-scheme change re-resolves them without script.
 - Motion respects `prefers-reduced-motion` through `src/scenes/motion.ts` (`wait`, `animate`, `reducedMotion`). CSS animations for the decks are switched off under the same query in `Deck.css`.
 - Phones are the design target and the desktop layout is the variant (`docs/decisions/0011`). The phone rules sit in the 640 px query at the end of `Deck.css`. After each tap a scene brings what it produced into view with `reveal` from `motion.ts`, which scrolls only when the element is off screen.
-- Drawing is pure: `art.ts` turns values into SVG strings and is also imported at build time by `DeckBacks.astro` to render the card backs on the hub.
+- Drawing is pure: `art.ts` turns values into markup strings and is also imported at build time by `DeckBacks.astro` to render the card backs on the hub.
+- Pictures are values. `npm run art:fetch <deck>` turns each card's picture record into a committed master, and `Deck.astro` sizes the master into WebP at three widths and hands the scene `src`, `srcset`, `width`, and `height`. The service worker precaches no WebP, so a picture is cached on its first view (`docs/decisions/0014`).
 
 ## Shape
 

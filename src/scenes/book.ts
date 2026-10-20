@@ -1,8 +1,11 @@
-import type { DeckPassage } from '../lib/decks';
+import type { CardPicture, DeckPassage } from '../lib/decks';
 import { esc } from '../lib/svg';
 
 export const passageHtml = (p: DeckPassage): string =>
   `<blockquote class="bk-pass"><p>${p.html}</p><cite>${p.attributionHtml}</cite></blockquote>`;
+
+export const credit = ({ title, artist, year, source }: CardPicture): string =>
+  `<p class="bk-credit">Picture: <a href="${esc(source)}" target="_blank" rel="noopener">${esc(title)}</a>, ${esc(artist)}, ${esc(year)}</p>`;
 
 export const niceDate = (iso: string): string =>
   new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });

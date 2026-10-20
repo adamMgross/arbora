@@ -1,6 +1,8 @@
 ---
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
 import { getCollection, getEntry } from 'astro:content';
-import type { DeckName, DeckPassage, SkyData, WoodData, YearData } from '../lib/decks';
+import type { CardPicture, DeckName, DeckPassage, SkyData, WoodData, YearData } from '../lib/decks';
 import { inline } from '../lib/inline';
 import { CALIFORNIA } from '../lib/sky-dome';
 
@@ -21,6 +23,24 @@ async function resolvePassage(p: RawPassage): Promise<DeckPassage> {
 
 const resolveAll = (list: RawPassage[]) => Promise.all(list.map(resolvePassage));
 
+const MASTERS = import.meta.glob<{ default: ImageMetadata }>('../assets/decks/*/*.jpg', { eager: true });
+
+interface PictureRecord {
+  title: string;
+  artist: string;
+  year: string;
+  source: string;
+  alt: string;
+}
+
+async function picture(deck: DeckName, id: string, record: PictureRecord): Promise<CardPicture> {
+  const master = MASTERS[`../assets/decks/${deck}/${id}.jpg`]?.default;
+  if (!master) throw new Error(`No picture for ${deck} card "${id}". Run npm run art:fetch ${deck}.`);
+  const image = await getImage({ src: master, widths: [480, 800, 1200], format: 'webp' });
+  const { title, artist, year, source, alt } = record;
+  return { src: image.src, srcset: image.srcSet.attribute, width: master.width, height: master.height, alt, title, artist, year, source };
+}
+
 const { deck } = Astro.props;
 
 async function load(): Promise<WoodData | SkyData | YearData> {
@@ -28,14 +48,14 @@ async function load(): Promise<WoodData | SkyData | YearData> {
     const cards = await getCollection('wood');
     return {
       cards: await Promise.all(
-        cards.map(async ({ data }) => {
+        cards.map(async ({ id, data }) => {
           const principle = await getEntry('principles', data.principle.id);
           if (!principle) throw new Error(`Unknown principle "${data.principle.id}"`);
           return {
             circle: data.circle,
             name: data.name,
             from: data.from,
-            art: data.art,
+            picture: await picture('wood', id, data.picture),
             principle: principle.data.title,
             story: data.story,
             passages: await resolveAll(data.passages),

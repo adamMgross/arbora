@@ -74,7 +74,13 @@ describe('content integrity', () => {
         '  circle: Spirit',
         '  name: Ghost',
         '  from: Nowhere',
-        '  art: kodama',
+        '  picture:',
+        '    title: A Ghost',
+        '    artist: Nobody',
+        "    year: '1850'",
+        '    source: https://commons.wikimedia.org/wiki/File:Ghost.jpg',
+        '    license: public domain',
+        '    alt: Nothing at all.',
         '  principle: principle-1',
         '  story: A card that quotes nothing.',
         '  passages:',
@@ -82,6 +88,7 @@ describe('content integrity', () => {
         '',
       ].join('\n'),
     );
+    cpSync(join(dir, 'src/assets/decks/wood/wood-kodama.jpg'), join(dir, 'src/assets/decks/wood/wood-ghost.jpg'));
     const { ok, output } = build(dir);
     rmSync(dir, { recursive: true, force: true });
     expect(ok).toBe(false);
@@ -90,13 +97,40 @@ describe('content integrity', () => {
 
   it('fails the build when a deck card names art that is not drawn', () => {
     const dir = freshCopy();
-    const file = join(dir, 'src/content/decks/wood.yml');
-    writeFileSync(file, readFileSync(file, 'utf8').replace('art: kodama', 'art: sasquatch'));
+    const file = join(dir, 'src/content/decks/sky.yml');
+    writeFileSync(file, readFileSync(file, 'utf8').replace('art: moon', 'art: sasquatch'));
     const { ok, output } = build(dir);
     rmSync(dir, { recursive: true, force: true });
     expect(ok).toBe(false);
     expect(output).toContain('art: Invalid option');
   }, 120_000);
+
+  it('fails the build when a deck card has no picture master, naming the command that makes one', () => {
+    const dir = freshCopy();
+    rmSync(join(dir, 'src/assets/decks/wood/wood-kodama.jpg'));
+    const { ok, output } = build(dir);
+    rmSync(dir, { recursive: true, force: true });
+    expect(ok).toBe(false);
+    expect(output).toContain('No picture for wood card "wood-kodama". Run npm run art:fetch wood.');
+  }, 120_000);
+
+  it('fails the build when a picture comes from outside Commons or under another license', () => {
+    const dir = freshCopy();
+    const file = join(dir, 'src/content/decks/wood.yml');
+    const yaml = readFileSync(file, 'utf8');
+    writeFileSync(file, yaml.replace('license: public domain', 'license: all rights reserved'));
+    const license = build(dir);
+    writeFileSync(
+      file,
+      yaml.replace(/source: https:\/\/commons\.wikimedia\.org\/wiki\//, 'source: https://example.com/'),
+    );
+    const source = build(dir);
+    rmSync(dir, { recursive: true, force: true });
+    expect(license.ok).toBe(false);
+    expect(license.output).toContain('license');
+    expect(source.ok).toBe(false);
+    expect(source.output).toContain('source');
+  }, 240_000);
 
   it('fails the build on a field the schema does not define', () => {
     const dir = freshCopy();

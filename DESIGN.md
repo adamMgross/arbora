@@ -124,26 +124,15 @@ The footer is the root system. Background transitions from earth to deep root co
 
 ## Deck Pictures
 
-A drawn card shows its picture and its name and nothing else (`docs/decisions/0012`), so the picture carries the card. Every picture in a deck is built from the same small vocabulary, where each element always means the same thing. The vocabulary is what lets a dense picture stay readable, and what lets a reader who has drawn a deck many times read a new card without the book. Each picture layers three things: the lore's central scene, the elements of its deck's grammar, and one or two marks from another tradition the card's story names. No picture carries text, letters, numerals (apart from the Year's seal), instruments, or machines. Colors come from the deck's tokens in `Deck.css`.
+A drawn card shows its picture and its name and nothing else (`docs/decisions/0012`), so the picture carries the card. The pictures are public-domain art, not drawings (`docs/decisions/0014`). A tarot card works because the reader steps into the figure on it, so a picture has a person in it wherever the card allows, small against trees, sky, or weather.
 
-### The Wood: the bands of a tree
+- **One source per deck,** so a deck reads as one look. The Wood is American landscape painting of the 1800s. The Sky is Doré's engravings, with Flammarion, Verne, and one NASA painting. The Year is Hokusai and Hiroshige.
+- **The whole picture.** Each card takes its picture's shape, on a mat with the name beneath. Nothing is cropped except text.
+- **No text in the picture.** Titles, captions, poems, and labels are cropped away by the picture's `trim`. Artists' signatures and seals stay.
+- **Credit.** The book ends with the work's title, artist, year, and a link to its source.
+- **Every card has one.** A card with no fitting picture leaves the deck.
 
-```
-      .-""""""-.
-     /  crown   \     sky, what comes, light from above
-    |------------|
-    |   trunk    |    the wood itself, where the walker goes
-    |            |
-    |============|    ground line
-    |   roots    |    lineage, what holds, light from below
-    [  The Name  ]
-```
-
-- **Bands.** The crown (sky and canopy), the trunk (the wood at a walker's height), and the roots (below the ground line, above the name plaque). Where a card's subject lives says what it is about.
-- **Circles.** An Elder is a tree filling the arch, with its roots shown. A Spirit is a presence with its own light, in the crown or among the trunks. A Passage has the walker, a small human figure, on a path through the trunk band.
-- **Light.** One source per card, and its place means something. Light from below, at the roots, is lineage and what holds (Elders). Light from within the presence is a Spirit. Light along a path or through a gap in the canopy is a Passage.
-- **Scale.** People are small and trees are vast, because the wood keeps deep time.
-- **The story's act.** The card shows the moment its story turns on, such as the three strikes on the Aspen that bleed but do not kill.
+The Sky and the Year still show drawn pictures until each switches over. Their drawings follow the grammars below.
 
 ### The Sky: as above, so below
 

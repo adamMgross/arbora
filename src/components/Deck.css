@@ -187,10 +187,15 @@
   color: var(--st-dim);
 }
 
-.deck .bk-note {
+.deck .bk-note,
+.deck .bk-credit {
   font-size: 0.88rem;
   color: var(--st-dim);
   line-height: 1.5;
+}
+
+.deck .bk-credit a {
+  color: inherit;
 }
 
 .deck .bk-q {
@@ -305,15 +310,12 @@
 
 .deck .flip {
   perspective: 1400px;
-  width: 100%;
-  aspect-ratio: 7 / 12;
-  max-width: 100%;
+  width: min(100%, 62svh * var(--ar));
+  margin-inline: auto;
 }
 
 .deck .flip-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
+  display: grid;
   transform-style: preserve-3d;
   transition: transform 1.4s var(--ease-organic);
 }
@@ -323,8 +325,8 @@
 }
 
 .deck .flip-face {
-  position: absolute;
-  inset: 0;
+  grid-area: 1 / 1;
+  background: var(--art-ink);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   border-radius: 10px;
@@ -334,6 +336,38 @@
 
 .deck .flip-front {
   transform: rotateY(180deg);
+}
+
+.deck .flip-face:not(.flip-front) {
+  position: relative;
+}
+
+.deck .flip-face:not(.flip-front) .cardsvg {
+  position: absolute;
+  inset: 0;
+}
+
+.deck .face {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 8px 8px 10px;
+  border: 1px solid var(--st-line);
+  border-radius: 10px;
+}
+
+.deck .face img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.deck .face figcaption {
+  font-family: 'IM Fell English SC', Georgia, serif;
+  font-size: 1.1rem;
+  text-align: center;
+  color: var(--art-gold-pale);
 }
 
 @keyframes deck-unfold {
@@ -392,8 +426,6 @@
   --art-moon: #d4e2d8;
   --art-ink: #0b170f;
   --art-ink-deep: #06100a;
-  --art-ink-light: #132519;
-  --art-glow: #1c3526;
   --art-far: #15302a;
   --art-far-line: #1d3b32;
   --art-mid: #0e2219;
@@ -507,11 +539,11 @@
   position: relative;
   z-index: 2;
   margin-top: 10px;
-  max-width: 560px;
+  max-width: 900px;
 }
 
 .deck-wood .trip:has(> .wing[hidden]) {
-  grid-template-columns: minmax(0, 240px);
+  grid-template-columns: minmax(0, 520px);
   justify-content: center;
 }
 
@@ -527,7 +559,7 @@
 }
 
 .deck-wood .trip .slot-empty {
-  aspect-ratio: 7 / 12;
+  aspect-ratio: 4 / 3;
   border-radius: 10px;
   border: 1px dashed rgba(207, 169, 79, 0.35);
 }
@@ -928,8 +960,7 @@
   .deck-wood .trip.spread {
     grid-template-columns: none;
     grid-auto-flow: column;
-    grid-auto-columns: 70%;
-    grid-auto-columns: min(70%, calc((100svh - 240px) * 7 / 12));
+    grid-auto-columns: 82%;
     gap: 14px;
     align-items: start;
     max-width: none;

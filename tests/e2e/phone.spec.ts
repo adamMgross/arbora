@@ -77,6 +77,9 @@ test.describe('on a phone, the wood', () => {
     const width = page.viewportSize()!.width;
     expect((await box(page.locator('#wood-slot-center'))).width).toBeGreaterThan(width * 0.55);
     await expect(page.locator('#wood-slot-center')).toBeInViewport({ ratio: 1 });
+    const card = await box(page.locator('#wood-slot-center .face'));
+    const picture = await box(page.locator('#wood-slot-center .face img'));
+    expect(card.height - picture.height).toBeLessThan(80);
     await expect(page.locator('#wood-open')).toBeInViewport({ ratio: 1 });
     await expectNoSideScroll(page);
     await page.locator('#wood-open').click();

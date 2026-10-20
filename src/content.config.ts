@@ -2,7 +2,7 @@ import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import type { TocItem } from './lib/toc';
-import { SKY_ART, WOOD_ART } from './lib/decks';
+import { SKY_ART } from './lib/decks';
 import { yamlListLoader } from './lib/yaml-list-loader';
 
 const passages = defineCollection({
@@ -110,7 +110,6 @@ const deckPicture = z.strictObject({
 const woodCard = {
   name: z.string().min(1),
   from: z.string().min(1),
-  art: z.enum(WOOD_ART),
   picture: deckPicture,
   principle: reference('principles'),
   story: z.string().min(1),

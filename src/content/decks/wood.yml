@@ -2,7 +2,6 @@
   circle: Elder
   name: Those Who Stayed Awake
   from: Cherokee
-  art: stayedAwake
   picture:
     title: Camp Fire
     artist: Winslow Homer
@@ -19,7 +18,6 @@
   circle: Elder
   name: The Aspen
   from: Rocky Mountains, Pando
-  art: aspen
   picture:
     title: Autumn--On the Hudson River
     artist: Jasper Francis Cropsey
@@ -36,7 +34,6 @@
   circle: Elder
   name: The Bristlecone
   from: White Mountains, California
-  art: bristlecone
   picture:
     title: Landscape (Landscape with Tree Trunks)
     artist: Thomas Cole
@@ -53,7 +50,6 @@
   circle: Elder
   name: The Useless Tree
   from: Daoist, Zhuangzi
-  art: uselessTree
   picture:
     title: The Nooning
     artist: Winslow Homer
@@ -70,7 +66,6 @@
   circle: Elder
   name: Yggdrasil
   from: Norse
-  art: yggdrasil
   picture:
     title: The Titan's Goblet
     artist: Thomas Cole
@@ -91,7 +86,6 @@
   circle: Spirit
   name: The Green Man
   from: Carved in Europe's churches
-  art: greenMan
   picture:
     title: The Forest of Arden
     artist: Albert Pinkham Ryder
@@ -108,7 +102,6 @@
   circle: Spirit
   name: The Dryads
   from: Greek
-  art: dryads
   picture:
     title: Dream of Arcadia
     artist: Thomas Cole
@@ -125,7 +118,6 @@
   circle: Spirit
   name: Kodama
   from: Japanese, Shinto
-  art: kodama
   picture:
     title: The Grizzly Giant Sequoia, Mariposa Grove, California
     artist: Albert Bierstadt
@@ -142,7 +134,6 @@
   circle: Passage
   name: The Dark Wood
   from: Dante, Italy, c. 1308
-  art: darkWood
   picture:
     title: "The Voyage of Life: Manhood"
     artist: Thomas Cole
@@ -164,7 +155,6 @@
   circle: Passage
   name: The Nurse Log
   from: The old-growth forest
-  art: nurseLog
   picture:
     title: Study of a Wood Interior
     artist: Asher Brown Durand
@@ -183,7 +173,6 @@
   circle: Passage
   name: Leaf-fall
   from: Homer, Iliad VI
-  art: leaffall
   picture:
     title: Autumn
     artist: Winslow Homer
@@ -206,7 +195,6 @@
   circle: Elder
   name: The White Pine
   from: Haudenosaunee
-  art: whitePine
   picture:
     title: The Pic-Nic
     artist: Thomas Cole
@@ -223,7 +211,6 @@
   circle: Elder
   name: The Sugar Maple
   from: New England and the Great Lakes
-  art: sugarMaple
   picture:
     title: The Sugar Camp
     artist: Eastman Johnson
@@ -240,7 +227,6 @@
   circle: Elder
   name: The Paper Birch
   from: The north woods
-  art: paperBirch
   picture:
     title: Landscape with Birches
     artist: Asher Brown Durand
@@ -257,7 +243,6 @@
   circle: Elder
   name: The Redwood
   from: The California coast
-  art: redwood
   picture:
     title: Giant Redwood Trees of California
     artist: Albert Bierstadt
@@ -274,7 +259,6 @@
   circle: Elder
   name: The Oak
   from: Celtic, the druids
-  art: oak
   picture:
     title: The Monk
     artist: George Inness
@@ -291,7 +275,6 @@
   circle: Elder
   name: The Bodhi Tree
   from: Buddhist, Bodh Gaya
-  art: bodhi
   picture:
     title: Indian at Sunset
     artist: Thomas Cole
@@ -308,7 +291,6 @@
   circle: Elder
   name: The Ceiba
   from: Maya
-  art: ceiba
   picture:
     title: The Lonely Pine
     artist: George Inness
@@ -325,7 +307,6 @@
   circle: Elder
   name: Honi's Carob
   from: Jewish, the Talmud
-  art: carob
   picture:
     title: Home in the Woods
     artist: Thomas Cole
@@ -342,7 +323,6 @@
   circle: Spirit
   name: Humbaba
   from: Mesopotamian, Gilgamesh
-  art: humbaba
   picture:
     title: Hunter Mountain, Twilight
     artist: Sanford Robinson Gifford
@@ -359,7 +339,6 @@
   circle: Spirit
   name: Pan
   from: Greek, Arcadia
-  art: pan
   picture:
     title: "The Course of Empire: The Arcadian or Pastoral State"
     artist: Thomas Cole
@@ -376,7 +355,6 @@
   circle: Spirit
   name: The Leshy
   from: Slavic
-  art: leshy
   picture:
     title: "Landscape with Figures: A Scene from The Last of the Mohicans"
     artist: Thomas Cole
@@ -393,7 +371,6 @@
   circle: Spirit
   name: Tapio
   from: Finnish, the Kalevala
-  art: tapio
   picture:
     title: Hound and Hunter
     artist: Winslow Homer
@@ -410,7 +387,6 @@
   circle: Spirit
   name: Cernunnos
   from: Celtic, Gaul
-  art: cernunnos
   picture:
     title: Guide Carrying a Deer
     artist: Winslow Homer
@@ -427,7 +403,6 @@
   circle: Spirit
   name: The Yakshi
   from: India, Sanchi
-  art: yakshi
   picture:
     title: Girl in the Orchard
     artist: Winslow Homer
@@ -444,7 +419,6 @@
   circle: Spirit
   name: The Burning Bush
   from: Hebrew, Exodus
-  art: burningBush
   picture:
     title: A Gorge in the Mountains (Kauterskill Clove)
     artist: Sanford Robinson Gifford
@@ -461,7 +435,6 @@
   circle: Spirit
   name: The Owl
   from: Many peoples
-  art: owl
   picture:
     title: Moonlight, Indian Encampment
     artist: Ralph Albert Blakelock
@@ -478,7 +451,6 @@
   circle: Spirit
   name: The Forest Sage
   from: Hindu, the forest books
-  art: forestSage
   picture:
     title: Kindred Spirits
     artist: Asher B. Durand
@@ -495,7 +467,6 @@
   circle: Spirit
   name: The Wind in the Tops
   from: Hebrew and Greek scripture
-  art: wind
   picture:
     title: The Coming Storm
     artist: George Inness
@@ -512,7 +483,6 @@
   circle: Passage
   name: The Clearing
   from: The deep forest
-  art: clearing
   picture:
     title: The First Harvest in the Wilderness
     artist: Asher B. Durand
@@ -531,7 +501,6 @@
   circle: Passage
   name: Rings
   from: The cut stump
-  art: rings
   picture:
     title: The Old Hunting Grounds
     artist: Worthington Whittredge
@@ -550,7 +519,6 @@
   circle: Passage
   name: The Seed
   from: Chandogya Upanishad
-  art: seed
   picture:
     title: Winnowing Grain
     artist: Eastman Johnson
@@ -569,7 +537,6 @@
   circle: Passage
   name: Fire
   from: The western forests
-  art: fire
   picture:
     title: The Guide and Woodsman
     artist: Winslow Homer
@@ -588,7 +555,6 @@
   circle: Passage
   name: Shelter
   from: Every rain
-  art: shelter
   picture:
     title: Bo-Peep
     artist: Winslow Homer
@@ -607,7 +573,6 @@
   circle: Passage
   name: The Old Paths
   from: Jeremiah
-  art: oldPaths
   picture:
     title: The Beeches
     artist: Asher Brown Durand
@@ -626,7 +591,6 @@
   circle: Passage
   name: Pruning
   from: The orchard and the vine
-  art: pruning
   picture:
     title: The Woodchopper, Lake Featherstonhaugh
     artist: Thomas Cole
@@ -645,7 +609,6 @@
   circle: Passage
   name: The Root
   from: The ground beneath
-  art: root
   picture:
     title: Tree in a Landscape
     artist: John Frederick Kensett
@@ -664,7 +627,6 @@
   circle: Passage
   name: Dormancy
   from: The winter woods
-  art: dormancy
   picture:
     title: Winter in the Country
     artist: George Henry Durrie
@@ -683,7 +645,6 @@
   circle: Passage
   name: Grafting
   from: The orchard
-  art: grafting
   picture:
     title: Apple Orchard
     artist: George Inness
@@ -702,7 +663,6 @@
   circle: Passage
   name: The Fruit
   from: The orchard in September
-  art: fruit
   picture:
     title: Peace and Plenty
     artist: George Inness
@@ -721,7 +681,6 @@
   circle: Passage
   name: Bending
   from: Tao Te Ching
-  art: bending
   picture:
     title: The Tempest
     artist: Thomas Cole
@@ -740,7 +699,6 @@
   circle: Passage
   name: Stillness
   from: The windless forest
-  art: stillness
   picture:
     title: The Trout Pool
     artist: Worthington Whittredge
@@ -759,7 +717,6 @@
   circle: Passage
   name: The Sprout
   from: Tao Te Ching
-  art: sprout
   picture:
     title: "The Voyage of Life: Childhood"
     artist: Thomas Cole
@@ -778,7 +735,6 @@
   circle: Passage
   name: The Threads Beneath
   from: The forest floor
-  art: threads
   picture:
     title: Snap the Whip
     artist: Winslow Homer
@@ -797,7 +753,6 @@
   circle: Passage
   name: First Leaf
   from: The mountains in spring
-  art: firstLeaf
   picture:
     title: Spring Blossoms, Montclair, New Jersey
     artist: George Inness
@@ -816,7 +771,6 @@
   circle: Passage
   name: The Bare Mountain
   from: Mencius
-  art: bareMountain
   picture:
     title: The Lackawanna Valley
     artist: George Inness
@@ -835,7 +789,6 @@
   circle: Passage
   name: The Unremembered
   from: Ecclesiasticus
-  art: unremembered
   picture:
     title: River in the Catskills
     artist: Thomas Cole
@@ -854,7 +807,6 @@
   circle: Passage
   name: The Hollow
   from: The old tree
-  art: hollow
   picture:
     title: Pioneers of the Woods
     artist: Albert Bierstadt
@@ -873,7 +825,6 @@
   circle: Passage
   name: The Tree of the Field
   from: Deuteronomy
-  art: treeOfField
   picture:
     title: The Veteran in a New Field
     artist: Winslow Homer
@@ -892,7 +843,6 @@
   circle: Passage
   name: The Edge of the Wood
   from: Every trailhead
-  art: edge
   picture:
     title: Early Morning at Cold Spring
     artist: Asher Brown Durand
@@ -911,7 +861,6 @@
   circle: Passage
   name: Climbing to See
   from: Luke
-  art: climbing
   picture:
     title: The Two Guides
     artist: Winslow Homer
@@ -930,7 +879,6 @@
   circle: Passage
   name: Under the Juniper
   from: 1 Kings
-  art: juniper
   picture:
     title: Elijah in the Desert
     artist: Washington Allston

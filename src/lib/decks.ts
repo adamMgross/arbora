@@ -1,71 +1,3 @@
-export const WOOD_ART_BASE = [
-  'stayedAwake',
-  'aspen',
-  'bristlecone',
-  'uselessTree',
-  'yggdrasil',
-  'greenMan',
-  'dryads',
-  'kodama',
-  'darkWood',
-  'nurseLog',
-  'leaffall',
-] as const;
-
-export const WOOD_ART_ELDERS = [
-  'whitePine',
-  'sugarMaple',
-  'paperBirch',
-  'redwood',
-  'oak',
-  'bodhi',
-  'ceiba',
-  'carob',
-] as const;
-
-export const WOOD_ART_SPIRITS = [
-  'humbaba',
-  'pan',
-  'leshy',
-  'tapio',
-  'cernunnos',
-  'yakshi',
-  'burningBush',
-  'owl',
-  'forestSage',
-  'wind',
-] as const;
-
-export const WOOD_ART_PASSAGES = [
-  'clearing',
-  'rings',
-  'seed',
-  'fire',
-  'shelter',
-  'oldPaths',
-  'pruning',
-  'root',
-  'dormancy',
-  'grafting',
-  'fruit',
-  'bending',
-  'stillness',
-  'sprout',
-  'threads',
-  'firstLeaf',
-  'bareMountain',
-  'unremembered',
-  'hollow',
-  'treeOfField',
-  'edge',
-  'climbing',
-  'juniper',
-] as const;
-
-export const WOOD_ART = [...WOOD_ART_BASE, ...WOOD_ART_ELDERS, ...WOOD_ART_SPIRITS, ...WOOD_ART_PASSAGES] as const;
-
-export type WoodArt = (typeof WOOD_ART)[number];
-
 export const SKY_ART_BASE = [
   'sun',
   'moon',
@@ -146,13 +78,25 @@ export interface DeckPassage {
   attributionHtml: string;
 }
 
+export interface CardPicture {
+  src: string;
+  srcset: string;
+  width: number;
+  height: number;
+  alt: string;
+  title: string;
+  artist: string;
+  year: string;
+  source: string;
+}
+
 export type Circle = 'Elder' | 'Spirit' | 'Passage';
 
 export interface WoodCard {
   circle: Circle;
   name: string;
   from: string;
-  art: WoodArt;
+  picture: CardPicture;
   principle: string;
   story: string;
   passages: DeckPassage[];
