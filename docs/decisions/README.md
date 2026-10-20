@@ -15,4 +15,4 @@
 | 0011 | The decks are designed for phones first | accepted |
 | 0012 | The decks show the picture first, open the book on request, and draw without a daily limit | accepted |
 | 0013 | The Sky holds sixty-two plates, and its dome names only the seven heavens | accepted |
-| 0014 | The decks show public-domain pictures, committed as cropped masters and sized at build | proposed |
+| 0014 | The decks show public-domain pictures, committed as cropped masters and sized at build | accepted |

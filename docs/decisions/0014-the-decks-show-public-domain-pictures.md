@@ -2,7 +2,7 @@
 id: 14
 title: The decks show public-domain pictures, committed as cropped masters and sized at build
 date: 2026-10-20
-status: proposed
+status: accepted
 decided_by: human
 supersedes: null
 superseded_by: null
@@ -47,7 +47,7 @@ card face: mat + <img> at its own aspect + name   (backs stay drawn)
 
 ### Rollout
 
-Each deck is one tracer slice, the Wood first. Within each deck, the schema and the masters land first as a commit that changes nothing on the page. A parity run shows zero differences. The switch to pictures and the deletion of the drawings follow as one behavior change. A deck ships only once every card has a picture. Rewording a card to fit its picture is the owner's call, and each rewording is its own commit (`arb-g4c9`).
+Each deck is one tracer slice, the Wood first. Within each deck, the schema and the masters land first as a commit that changes nothing on the page. A parity run shows zero differences. The switch to pictures and the deletion of the drawings follow as one behavior change. A deck ships only once every card has a picture, and a card with no fitting picture is removed from the deck. Rewording a card to fit its picture is the owner's call, and each rewording is its own commit (`arb-g4c9`).
 
 ### Failure cases, written as tests first
 
@@ -62,7 +62,7 @@ Each deck is one tracer slice, the Wood first. Within each deck, the schema and 
 
 The repository grows by about 48 MB of masters, and the built site by about 80 MB of WebP. Both are well inside GitHub's limits, and git history keeps every replaced master. Pictures follow the reader's color scheme only through their mat, because the artwork itself does not change color. Cards in one deck differ in shape. The hub's card backs keep their drawn look, so each deck's back no longer matches its faces in style.
 
-Several owner calls stay open: the Wood's five missing cards and the Sky's three, the card texts the review pages flag for rewording, three Wood paintings of Native people by white painters of the 1800s, the Crown's nude etching, the late copy of the persimmon print, and the faded Sky scans that need better copies.
+The owner settled the open calls on 2026-10-20. Every card in a deck has a picture. A card with no fitting picture leaves the deck rather than shipping without one, and the deck's count drops with it. The flagged rewordings are approved, each as its own commit. The three Wood paintings of Native people, the Crown's etching, and the late copy of the persimmon print stay. Faded or small scans are replaced with better copies of the same work.
 
 ## Alternatives rejected
 
