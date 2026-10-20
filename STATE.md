@@ -4,13 +4,13 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 
 ## Current State
 
-**Phase:** Restructure complete and the site is live. The three reflection decks now show the picture first, open the book on request, and draw without a daily limit (decision 0012). The Sky has 62 plates (decision 0013).
+**Phase:** Restructure complete and the site is live. The three reflection decks show the picture first, open the book on request, and draw without a daily limit (decision 0012). The decks are moving from drawn art to public-domain pictures (decision 0014): the Wood shows its 52 paintings, and the Sky (`arb-lj8n`) and the Year (`arb-6d4h`) still show drawings, with their matches approved and recorded in `docs/research/deck-pictures/`.
 
 **Deployed vs main:** Deployed. The owner approved the first push on 2026-10-18, and https://adammgross.github.io/arbora/ serves `main` through the Deploy workflow (run 39210926422 green). Every push to `main` deploys.
 
-**What works, verified 2026-10-19:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 119 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 7 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
+**What works, verified 2026-10-20:** `npm run ci` passes locally: format check, `astro check` with 0 errors, 128 unit tests, a root-path build of 25 pages plus sitemap, robots, and service worker, `verify:dist` under `/` and `/arbora/`, 9 content-integrity tests, and 60 end-to-end tests at both base paths, across desktop size and the `phone` project at an iPhone 15 viewport. On 2026-10-18 the three decks were walked through in Playwright's WebKit build on iPhone SE, iPhone 15, iPhone 15 Pro Max, and iPhone 15 landscape, and in Chromium on a Galaxy S24, with no console errors, no page errors, and no horizontal overflow.
 
-**Sizes, measured 2026-10-19 from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,841 bytes gzipped (ceiling 12 KB), scene chunks 19.5 KB (Wood, 52 drawings), 27.6 KB (Sky, 62 drawings), 4.4 KB (Year) gzipped, loaded only on their pages.
+**Sizes, measured from `dist/`:** main script 4.3 KB gzipped, stylesheet 11,891 bytes gzipped (ceiling 12 KB), scene chunks 4.5 KB (Wood, 2026-10-20), 27.6 KB (Sky, 62 drawings), 4.4 KB (Year) gzipped, loaded only on their pages. The Wood's 52 masters are 8.5 MB in the repository, and their WebP widths are 12 MB in `dist/`, largest 214 KB. A Wood draw loads one picture.
 
 **Blockers:** none. Orphaned pre-rewrite commits on GitHub still hold personal details until the move to a fresh repository (`arb-54cu`, decision 0007). `arb-32io` decides whether the address stays `adammgross.github.io/arbora` or moves to `arbora.site`. The workflow's action majors target the deprecated Node 20 (`arb-nlmj`).
 
@@ -25,7 +25,9 @@ Read Current State first. The Log is append-only, newest last, and is corrected 
 | A real iPhone behaves like the WebKit build at an iPhone viewport, including `svh` units, the 3D card flip, smooth scrolling, and the tap feedback | medium, not tried on a device |
 | Older Safari still gets a nav blur, since the minifier keeps only the unprefixed `backdrop-filter` | medium, depends on the build's browser targets |
 | Cache-first HTML shows a new deploy one navigation late | high, read from `src/pwa/sw.template.js` |
-| Parity screenshots are stable across machines | medium, shown on this machine with recorded fonts only |
+| A tall picture fits a phone screen, by the `62svh` cap on the card | medium, seen at 390 by 844, but the drawn card is random, so no test pins the tallest |
+| Commons keeps serving the recorded sources, which matters only when `npm run art:fetch` reruns | medium, masters are committed so builds never fetch |
+| Parity screenshots are stable across machines | medium, shown on this machine with recorded fonts only, and the deck pages differ even against themselves (`arb-0yit`) |
 | The `adammgross.github.io` user site does not register a worker that collides with `/arbora/` | low, not inspected |
 | The sky model stays within a degree for the current decades | medium, checked against four recorded events in 2000, 2020, and 2026 (`tests/unit/sky-math.test.ts`), not against a full ephemeris |
 | The fixed solar-term dates in `year.yml` are within a day of the true terms every year | medium, true for 2026 by inspection, not computed |
@@ -157,3 +159,10 @@ Then onboarded to the portfolio layout in one more commit: VISION, ARCHITECTURE,
 
 **Left unfinished:** the owner's read of the three test cards. After that, the rest of each deck gets drawn to its language, the Sky's pilgrim moves into every plate's drawing (`OWN_PILGRIM` in `src/scenes/sky/art.ts` lists the plates that already draw their own), and the Year's windows gain a place each.
 
+### 2026-10-20 (the Wood shows public-domain paintings)
+
+**Done:** after using the decks, the owner found the drawn art too simple and asked for figures a reader can step into, as on a tarot card. Found candidate public-domain art for each deck, and the owner chose a source per deck: American landscape painting of the 1800s for the Wood, Doré with Flammarion, Verne, and NASA's Island Three for the Sky (pulp covers and busy colony art rejected as whimsical), and Hokusai and Hiroshige for the Year. Matched every card of all three decks to a verified Commons image on review pages the owner approved (Wood https://claude.ai/artifact/4H7vC6qYGR81tMjHyPF7JV, Sky https://claude.ai/artifact/UERrRCVV9x393cpgDqXCV4, Year https://claude.ai/artifact/GFrLVY4oNXdj53F8H8boq5). Recorded decision 0014. Built the Wood end to end: a `picture` record on each card, `npm run art:fetch` to make committed masters, WebP widths at build, the painting on a mat at its own shape with the name beneath, the credit in the book, no WebP in the service worker precache, and the drawn Wood faces deleted.
+
+**Findings:** owner rules: no text in a picture (titles, captions, poems, labels), though signatures and seals stay. The whole picture shows and the card takes its shape. A card with no fitting picture leaves the deck, and in the end every card in all three decks found one. The drawn back is tall, and stacked with a wide painting it stretched every card into an empty block, which a phone test now catches. The old SVG face carried the card's circle and origin for screen readers, and the figure keeps that label. One Humbaba scan was 500 px wide and was replaced with a 2,705 px copy of the same painting.
+
+**Left unfinished:** the Sky (`arb-lj8n`) and the Year (`arb-6d4h`), the rewordings the review page flags (`arb-igp1`), frame edges on a few Wood masters (`arb-k1j0`), and deck screenshot parity, which differs even against itself (`arb-0yit`).
