@@ -24,6 +24,10 @@ describe.each(DECKS)('the %s pictures', (deck) => {
     expect(readdirSync(masters).sort()).toEqual(entries.map((e) => `${e.id}.jpg`).sort());
   });
 
+  it('each describe what the picture shows for a screen reader, never a placeholder', () => {
+    for (const { id, picture } of entries) expect(picture.alt, id).not.toMatch(/^(none|n\/a|tbd)\b/i);
+  });
+
   it('never use one work for two cards', () => {
     const sources = entries.map((e) => e.picture.source);
     expect(new Set(sources).size).toBe(sources.length);
