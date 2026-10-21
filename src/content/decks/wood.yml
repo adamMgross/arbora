@@ -13,7 +13,7 @@
       top: 1.2
       right: 1.4
       bottom: 1.4
-      left: 0.7
+      left: 1.3
   principle: principle-3
   story: In the Cherokee telling of how the world was made, the plants and animals were asked to keep watch for seven nights. One by one they fell asleep. A few trees kept the vigil to the end and were given the gift of staying green all year. Among the animals the owl stayed awake, and can see in the dark.
   passages:
@@ -49,7 +49,7 @@
     trim:
       right: 0.8
       bottom: 0.4
-      left: 0.2
+      left: 0.8
   principle: principle-2
   story: On a dry ridge at eleven thousand feet, the oldest living trees grow a few inches a century and have stood since before the pyramids. Most of each tree is dead wood, polished by ice, with one strip of living bark feeding one living branch. They live so long because almost nothing else can live there.
   passages:
@@ -188,6 +188,7 @@
     trim:
       top: 0.9
       right: 0.6
+      bottom: 0.6
   principle: principle-4
   story: When an old tree falls in a deep forest it keeps giving for centuries. Seedlings root along its back, fungi turn its wood to soil, and threads under the ground carry what it held to the trees around it. In the Pacific Northwest whole rows of hemlocks stand on stilts where the log they grew on has gone. An ending can be the ground something else grows from.
   passages:
@@ -491,7 +492,7 @@
     trim:
       top: 1
       right: 1.2
-      bottom: 1
+      bottom: 1.3
       left: 1.2
   principle: principle-8
   story: Moses was keeping his father-in-law's sheep at the back of the wilderness when he saw a bush on fire that was not burning up. He turned aside to look, and only when he turned aside did the voice call his name. The first thing it told him was to take off his shoes. The Midrash says the presence chose a thornbush to teach that no place is empty of it.
@@ -732,10 +733,10 @@
     license: public domain
     alt: Farm folk with a sleigh and oxen go about their work under a bare, sleeping elm.
     trim:
-      top: 0.9
-      right: 1
+      top: 5.4
+      right: 2.1
       bottom: 2.4
-      left: 0.5
+      left: 2.1
   principle: principle-2
   story: In winter a maple looks dead. It has dropped its leaves, sealed its wounds, moved its water out of the cells that would burst in a freeze, and stopped. The buds for next spring are already formed, wrapped in scales. A tree that did not stop in winter would not survive it. Rest is part of the work.
   passages:
@@ -859,6 +860,10 @@
     source: https://commons.wikimedia.org/wiki/File:Snap_the_Whip_1872_Winslow_Homer.jpg
     license: public domain
     alt: A line of schoolboys run hand in hand, one end tumbling as the chain swings.
+    trim:
+      top: 0.4
+      right: 0.4
+      left: 0.4
   principle: principle-1
   story: Under the forest floor, fungal threads wrap the roots of nearly every tree and run between them. The fungus trades water and minerals for the sugar the trees make, and some of what one tree makes can pass through the threads to another. How much passes, and how deliberately, is still argued over. A walk in the woods is a walk across a net you cannot see.
   passages:
