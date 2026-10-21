@@ -95,16 +95,6 @@ describe('content integrity', () => {
     expect(output).toContain('no-such-passage');
   }, 120_000);
 
-  it('fails the build when a deck card names art that is not drawn', () => {
-    const dir = freshCopy();
-    const file = join(dir, 'src/content/decks/sky.yml');
-    writeFileSync(file, readFileSync(file, 'utf8').replace('art: moon', 'art: sasquatch'));
-    const { ok, output } = build(dir);
-    rmSync(dir, { recursive: true, force: true });
-    expect(ok).toBe(false);
-    expect(output).toContain('art: Invalid option');
-  }, 120_000);
-
   it('fails the build when a deck card has no picture master, naming the command that makes one', () => {
     const dir = freshCopy();
     rmSync(join(dir, 'src/assets/decks/wood/wood-kodama.jpg'));

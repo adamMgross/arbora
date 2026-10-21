@@ -56,7 +56,7 @@ Breaking one of these is a defect, not a tradeoff.
 - **Add Today content:** edit `src/content/today.yml`. The pick is `dayOfYear % length`, so adding or removing an entry changes which entry every day maps to.
 - **Add a styled component:** put its CSS beside it and add one `@import` line to `src/styles/index.css` in cascade order.
 - **Add browser behavior:** one file in `src/scripts/`, started from `main.ts`. Put any logic worth testing in `src/lib/` first.
-- **Add a deck card:** append an entry to `src/content/decks/wood.yml` or `sky.yml`. `art` must name a drawing in that deck's `src/scenes/<deck>/art.ts` (add the drawing and its name in `src/lib/decks.ts` first). A passage is `{text, attribution}` or `{ref: <canon passage id>}` when the canon already holds it. Wood cards in the Passage circle also need `question` and `table`.
+- **Add a deck card:** append an entry to `src/content/decks/wood.yml` or `sky.yml` with a `picture` record (title, artist, year, Commons file page, license, alt, and an optional `trim` in percent that cuts away any text), then run `npm run art:fetch <deck>`, check the contact sheet in `.art/` by eye, and commit the master. The Year's pictures are a list beside its 72 windows. A passage is `{text, attribution}` or `{ref: <canon passage id>}` when the canon already holds it. Wood cards in the Passage circle also need `question` and `table`.
 - **Add a scene:** a directory under `src/scenes/` with `index.ts` exporting `mount(root, env)`, a loader line in `src/scripts/scenes.ts`, colors as `var()` tokens defined in `src/components/Deck.css`, and `env` for the clock, random, and storage. See `ARCHITECTURE.md`, Graphics convention.
 
 ## Traps

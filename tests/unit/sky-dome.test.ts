@@ -10,7 +10,16 @@ import {
   skyState,
   standings,
 } from '../../src/lib/sky-dome';
-import { SKY_ART_FIGURES } from '../../src/lib/decks';
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { parse } from 'yaml';
+
+const plates: Array<{ id: string; kind: string }> = parse(
+  readFileSync(join(import.meta.dirname, '../../src/content/decks/sky.yml'), 'utf8'),
+);
+const STAR_FIGURES = plates
+  .filter((p) => p.kind === 'stars' && p.id !== 'milkyway' && p.id !== 'falling')
+  .map((p) => p.id as keyof typeof FIGURES);
 
 const NIGHT = new Date('2026-10-18T21:00:00-07:00');
 const NOON = new Date('2026-10-18T12:00:00-07:00');
@@ -62,8 +71,8 @@ describe('project', () => {
 describe('placing a drawn plate', () => {
   const lights = [...HEAVENS, ...Object.keys(FIGURES), 'milkyway'];
 
-  it('has a figure for every new fixed-star plate, with lines and a center inside its stars', () => {
-    for (const id of SKY_ART_FIGURES) {
+  it('has a figure for every fixed-star plate in the deck, with lines and a center inside its stars', () => {
+    for (const id of STAR_FIGURES) {
       const figure = FIGURES[id];
       expect(figure, id).toBeDefined();
       expect(figure.stars[figure.center], id).toBeDefined();
@@ -71,14 +80,14 @@ describe('placing a drawn plate', () => {
     }
   });
 
-  it('raises every new figure at least fifteen degrees over California at some hour of the year', () => {
+  it('raises every star figure at least fifteen degrees over California at some hour of the year', () => {
     const highest: Record<string, number> = {};
     for (let month = 0; month < 12; month++)
       for (const hour of [0, 6, 12, 18]) {
         const st = skyState(new Date(Date.UTC(2026, month, 15, hour)), CALIFORNIA);
-        for (const id of SKY_ART_FIGURES) highest[id] = Math.max(highest[id] ?? -90, st.places[id]!.alt);
+        for (const id of STAR_FIGURES) highest[id] = Math.max(highest[id] ?? -90, st.places[id]!.alt);
       }
-    for (const id of SKY_ART_FIGURES) expect(highest[id], id).toBeGreaterThan(15);
+    for (const id of STAR_FIGURES) expect(highest[id], id).toBeGreaterThan(15);
   });
 
   it('knows where every heaven, figure, and the Milky Way stands by day and by night', () => {

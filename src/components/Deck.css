@@ -364,9 +364,15 @@
 }
 
 .deck .face figcaption {
-  font-family: 'IM Fell English SC', Georgia, serif;
+  font-family: 'Cormorant SC', Georgia, serif;
+  font-weight: 600;
   font-size: 1.1rem;
   text-align: center;
+}
+
+.deck-wood .face figcaption {
+  font-family: 'IM Fell English SC', Georgia, serif;
+  font-weight: 400;
   color: var(--art-gold-pale);
 }
 
@@ -577,7 +583,6 @@
   --st-line: rgba(216, 180, 90, 0.3);
   --art-gold: #d8b45a;
   --art-verm: #c4473a;
-  --art-teal: #3fa7a0;
   --art-lapis: #0b1440;
   --art-shade: #1d2b7c;
   --art-cream: #f1dfa6;
@@ -671,7 +676,7 @@
 
 .deck-sky .drawn {
   display: grid;
-  grid-template-columns: minmax(0, 210px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   gap: 24px;
   align-items: start;
 }
@@ -679,6 +684,13 @@
 .deck-sky .drawn .cardslot {
   animation: deck-develop 1.4s var(--ease-organic) both;
   min-width: 0;
+  width: min(100%, 70svh * var(--ar));
+}
+
+.deck-sky .face {
+  background: var(--art-lapis);
+  color: var(--art-cream);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 .deck-sky .above {
@@ -997,9 +1009,8 @@
   }
 
   .deck-sky .drawn .cardslot {
-    max-width: min(82%, 300px);
+    width: min(100%, 56svh * var(--ar));
     margin-inline: auto;
-    width: 100%;
   }
 
   .deck-year .year-layout {

@@ -14,10 +14,10 @@ import {
 import { loadPlace, storePlace } from '../../lib/place';
 import { signOf } from '../../lib/sky-math';
 import { esc, f } from '../../lib/svg';
-import { byId, keepForm, niceDate, passageHtml, question, readData } from '../book';
+import { byId, credit, keepForm, niceDate, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
 import { animate, reducedMotion, reveal, wait } from '../motion';
-import { domeSvg, sphereFace } from './art';
+import { domeSvg, plateFace } from './art';
 
 const KEY = 'arbora-sky';
 const ADAPT_MS = 12000;
@@ -138,7 +138,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     });
     halo = [spot.x, spot.y];
     current = { plate, spot };
-    out.innerHTML = `<div class="drawn"><div class="cardslot"><div class="cardbox">${sphereFace(plate, st)}</div></div><div><div class="actions"><button class="sbtn" type="button" id="sky-open">Read</button><button class="sbtn quiet" type="button" id="sky-again">Look again</button></div><div id="sky-book" class="out"></div></div></div>`;
+    out.innerHTML = `<div class="drawn"><div class="cardslot" style="--ar:${plate.picture.width}/${plate.picture.height}">${plateFace(plate)}</div><div><div class="actions"><button class="sbtn" type="button" id="sky-open">Read</button><button class="sbtn quiet" type="button" id="sky-again">Look again</button></div><div id="sky-book" class="out"></div></div></div>`;
     byId(out, 'sky-open').addEventListener('click', openBook);
     byId(out, 'sky-again').addEventListener('click', lookAgain);
     reveal(out);
@@ -168,7 +168,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
       : '';
     const passage = c.passages[Math.floor(env.random() * c.passages.length)]!;
     byId(out, 'sky-book').innerHTML =
-      `<div class="book">${remembered}<p class="bk-kicker">${esc(kicker)}</p><h4 class="bk-title">${esc(c.name)}</h4>${standing ? `<p class="bk-note">${esc(standing)}</p>` : ''}<p class="above">${esc(fill(c.above, st))}</p><div class="below"><p><span>Set down</span>${esc(c.set)}</p><p><span>Receive</span>${esc(c.receive)}</p></div>${passageHtml(passage)}${question('Sit with', c.question)}${keepForm('sky', 'Keep', 'Let it set', 'One line, in your own words')}</div>`;
+      `<div class="book">${remembered}<p class="bk-kicker">${esc(kicker)}</p><h4 class="bk-title">${esc(c.name)}</h4>${standing ? `<p class="bk-note">${esc(standing)}</p>` : ''}<p class="above">${esc(fill(c.above, st))}</p><div class="below"><p><span>Set down</span>${esc(c.set)}</p><p><span>Receive</span>${esc(c.receive)}</p></div>${passageHtml(passage)}${question('Sit with', c.question)}${credit(c.picture)}${keepForm('sky', 'Keep', 'Let it set', 'One line, in your own words')}</div>`;
     reveal(byId(out, 'sky-book'));
     byId(out, 'sky-keep').addEventListener('click', () => finish('kept'));
     byId(out, 'sky-set').addEventListener('click', () => finish('set'));

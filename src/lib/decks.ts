@@ -1,78 +1,3 @@
-export const SKY_ART_BASE = [
-  'sun',
-  'moon',
-  'mercury',
-  'venus',
-  'mars',
-  'jupiter',
-  'saturn',
-  'pleiades',
-  'orion',
-  'dipper',
-  'milkyway',
-  'dogstar',
-  'scorpion',
-  'swan',
-  'weaver',
-  'lion',
-  'bull',
-  'twins',
-  'queen',
-  'herdsman',
-  'chained',
-  'archer',
-  'falling',
-  'silence',
-  'oldlight',
-  'mirror',
-  'message',
-  'stranger',
-  'view',
-  'net',
-  'deep',
-] as const;
-
-export const SKY_ART_FIGURES = [
-  'ram',
-  'crab',
-  'maiden',
-  'scales',
-  'goatfish',
-  'waterbearer',
-  'fishes',
-  'southernfish',
-  'whale',
-  'river',
-  'dolphin',
-  'crow',
-  'polestar',
-  'dragon',
-  'crown',
-  'kneeler',
-  'serpentbearer',
-  'berenice',
-  'hero',
-  'horse',
-  'charioteer',
-  'littlecloud',
-] as const;
-
-export const SKY_ART_MYSTERIES = [
-  'egg',
-  'widening',
-  'greatyear',
-  'longsleep',
-  'edge',
-  'stardust',
-  'breath',
-  'traveler',
-  'lastlight',
-] as const;
-
-export const SKY_ART = [...SKY_ART_BASE, ...SKY_ART_FIGURES, ...SKY_ART_MYSTERIES] as const;
-
-export type SkyArt = (typeof SKY_ART)[number];
-
 export interface DeckPassage {
   html: string;
   attributionHtml: string;
@@ -116,7 +41,7 @@ export interface SkyPlate {
   n?: number;
   name: string;
   alt: string;
-  art: SkyArt;
+  picture: CardPicture;
   above: string;
   set: string;
   receive: string;

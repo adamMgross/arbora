@@ -76,7 +76,7 @@ async function load(): Promise<WoodData | SkyData | YearData> {
           ...(data.kind === 'heaven' ? { n: data.n } : {}),
           name: data.name,
           alt: data.alt,
-          art: data.art,
+          picture: await picture('sky', id, data.picture),
           above: data.above,
           set: data.set,
           receive: data.receive,

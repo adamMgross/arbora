@@ -15,7 +15,6 @@
       right: 2.7
       bottom: 5.6
       left: 2.8
-  art: moon
   above: "The nearest and quickest of the wandering lights, and the only one that visibly changes. Chang'e rose to it with a rabbit. In the Haudenosaunee Thanksgiving Address it is Grandmother, who keeps the tides and the births. Dante placed in its heaven the souls whose vows had wavered, and the Zen masters warned not to mistake the finger pointing at it for the moon. Its lesson in every tongue is the same: light that waxes and wanes is still light. Tonight it is {phase}."
   set: the demand to be the same every day.
   receive: permission to wax and wane, and to be dark for a night without being gone.
@@ -40,7 +39,6 @@
       right: 0.6
       bottom: 4.2
       left: 0.4
-  art: mercury
   above: The light that never strays far from the sun, hard to see and quick to vanish. Hermes to the Greeks, Thoth who invented writing to the Egyptians, the planet of speech, roads, trade and the crossing of thresholds. The Hermetic books tell the whole ascent of the soul under his name. Dante found in his heaven the souls who did good for the sake of their own fame.
   set: the need to be heard before you have understood.
   receive: the word that is yours to carry, and the road it goes by.
@@ -65,7 +63,6 @@
       right: 23.5
       bottom: 24.7
       left: 14.6
-  art: venus
   above: "The brightest of the wanderers, morning star and evening star, the same light under two names. Inanna went down through seven gates and at each one gave up an ornament: the crown, the lapis beads, the measuring rod, the robe. She came back up through the same seven. Aphrodite rose from the sea. Dante set the lovers in this heaven, and Sappho called the evening star the one that brings everything home."
   set: the ornament this gate asks for.
   receive: the self that remains when it is gone.
@@ -87,7 +84,6 @@
     alt: Dante and Beatrice stand tiny on a cloud between a wheeling ring of blazing souls above and a row of shining angels below.
     trim:
       bottom: 5.3
-  art: sun
   above: The middle of the seven, with three heavens below it and three above. Ra in his boat, Amaterasu drawn out of her cave by laughter and a mirror, Surya with seven horses. Francis called it Brother Sun and said it bore the likeness of the highest thing he knew. Dante filled this heaven with the wise, dancing in two rings. It is the symbol of the self that gives light without deciding to, and of the center that everything else turns around. Tonight it stands in {sign}.
   set: the wish to be the center of someone else's sky.
   receive: the light you already give without trying.
@@ -116,7 +112,6 @@
       right: 0.5
       bottom: 3.2
       left: 0.5
-  art: mars
   above: The red wanderer, the one that stops and walks backward across the sky before going on. Nergal to Babylon, Ares to the Greeks, Mangala to India. The planet of will, strife and courage, and of the force that builds when it is aimed and breaks when it is not. Dante filled this heaven with those who fought for what they believed and set a cross of light in it. The Daoists would say its backward loop is the Way moving by contraries.
   set: the fight you are having with yourself.
   receive: the force that was for building.
@@ -145,7 +140,6 @@
       right: 21.7
       bottom: 25
       left: 13.3
-  art: jupiter
   above: The slow bright king of the wanderers. Zeus, Marduk who ordered the world, Brihaspati the teacher of the gods, Thor whose day is Thursday. The planet of expansion, abundance, law and generosity, and of their shadow, appetite. In Dante's sixth heaven the souls of the just fly up as letters and spell out a sentence about loving justice, then settle into the shape of an eagle.
   set: appetite dressed as generosity.
   receive: the room your life is asking for.
@@ -170,7 +164,6 @@
       right: 23.4
       bottom: 25.2
       left: 15.5
-  art: saturn
   above: The farthest and slowest light the ancients could see, and so the planet of time, age, limit and patience. Kronos with the scythe. The old man. Saturday, his day, which is also the Sabbath, when the work stops. Dante placed the contemplatives in this heaven, climbing a golden ladder out of sight. Astrologers call its return to where it stood at your birth the season when life asks which structures you will keep. In the ascent it is the last gate before the stars.
   set: the fear that time is against you.
   receive: the shape that limits give, and the rest at the end of the week.
@@ -194,7 +187,6 @@
       right: 0.3
       bottom: 4.4
       left: 0.3
-  art: pleiades
   above: "A small knot of light that every people has named: seven sisters pursued by the hunter, Matariki whose rising opens the Māori year, Subaru the gathering, the nurses of the war god in India. Nearly every telling explains why one of the seven is missing. Their rising at dusk opened the planting year for the Greeks and the sailing season in the Andes."
   set: the count that insists on seven.
   receive: the sister you can almost see.
@@ -218,7 +210,6 @@
       right: 1.8
       bottom: 5.9
       left: 1.9
-  art: orion
   above: The giant who stands up in the east as the year turns cold. The hunter killed by the scorpion and set opposite it so the two never share a sky. Sah to the Egyptians, the soul of Osiris, with the dog star at his heel. Three brothers in a canoe to the Yolŋu. The red star at his shoulder is old and swollen and may already be gone, so that what you see is what was.
   set: the hunt that has become the hunter.
   receive: the season you recognize by its first figure.
@@ -242,7 +233,6 @@
       right: 2.7
       bottom: 6.1
       left: 2.4
-  art: dipper
   above: Seven stars that circle the one point that does not move. A bear to the Greeks and to many North American peoples, hunted round the pole each year and bleeding onto the autumn leaves. A plough, a wagon, a ladle, the Seven Sages, the drinking gourd that pointed north for people escaping slavery. Confucius compared the good ruler to the pole star, keeping its place while everything turns toward it.
   set: the course you have not checked in years.
   receive: the one point that holds while the rest turns.
@@ -266,7 +256,6 @@
       right: 0.8
       bottom: 3
       left: 1.2
-  art: milkyway
   above: The river of light that stands up out of the south on summer nights. The Silver River that keeps the Weaver from the Cowherd, who meet once a year on a bridge of magpies. Mayu, the river of the Inca sky. Milk from Hera's breast. The Emu drawn in the dark lanes for Aboriginal Australians. For the Maya and for many peoples of the north it was the road the dead walk. It is the whole we belong to, seen from inside.
   set: the need to see the whole from outside.
   receive: a place on the road.
@@ -290,7 +279,6 @@
       right: 22.6
       bottom: 22.5
       left: 12.6
-  art: silence
   above: Every tradition that climbed the ladder met silence at the top. Elijah on the mountain heard wind, earthquake and fire, and then a still small voice. The Cloud of Unknowing says God is known by what cannot be known. The Zen hall is silent on purpose. We have listened to the sky for a long time now and nothing has answered, and the silence can be held as loneliness or as the first condition of prayer.
   set: the demand for an answer.
   receive: the quiet in which one could be heard.
@@ -314,7 +302,6 @@
       right: 22.3
       bottom: 22
       left: 12.3
-  art: oldlight
   above: Nothing you see in the sky is there now. The light of the nearest wanderer is minutes old, the light of the red star in the hunter's shoulder left before anyone now alive was born, and some of what shines tonight has already gone out. The sky is a letter from the dead, which is what every people meant by setting their ancestors among the stars. To look up is to stand in the presence of what was.
   set: the belief that what you see is what is.
   receive: the company of the ones who sent the light.
@@ -338,7 +325,6 @@
       right: 24.4
       bottom: 24.8
       left: 10.6
-  art: mirror
   above: "The Emerald Tablet says what is below is like what is above. The Kabbalists drew the same tree in the heavens and in the body. The Upanishads say the self within is the self of the whole. And the oldest warning about the sky is that whatever we meet out there, we will meet ourselves first: the stories of gods, visitors and voices all turn out to be about the ones who told them. The sky is a mirror held very far away."
   set: the hope that the answer is out there.
   receive: the face in the glass.
@@ -361,7 +347,6 @@
       right: 1.2
       bottom: 3
       left: 0.6
-  art: message
   above: "People have always sent words where no answer can come back: lanterns floated on rivers for the dead, prayers written on slips and tied to trees, bread cast on the waters. In our own time a record of greetings and songs was sent out past the planets for no one, on purpose. The message is not for the one who may receive it. It is for the one who sends it, to learn what they would say."
   set: the condition that someone must hear it.
   receive: the knowledge of what you would say.
@@ -385,7 +370,6 @@
       right: 0.3
       bottom: 4.5
       left: 1.3
-  art: stranger
   above: "Three strangers came to Abraham's tent under the oaks in the heat of the day, and he ran to meet them. The gods walked the roads of Phrygia as beggars and only one old couple took them in. Every people has a story of the visitor who is more than they seem, which is the oldest answer to the question of what we would do if anyone arrived: we would be judged by how we received them. Hospitality to the unknown is the whole ethic of contact."
   set: the test you would put a stranger to.
   receive: the table already laid.
@@ -406,7 +390,6 @@
     alt: Two tiny riders in a chariot drawn by winged horses sweep up toward an enormous cratered moon, with the earth a small pale disk among the stars below.
     trim:
       bottom: 3.2
-  art: view
   above: Scipio dreamed he was carried up among the spheres and saw the earth so small that he was ashamed of the empire. Marcus Aurelius told himself to look down from a height on the herds, the harvests and the funerals. Zhuangzi's great bird rose so high that the earth below looked as blue as the sky looks from here. The ones who went up in our own time saw the same thing and came back changed. Distance is a kind of seeing.
   set: the size you have given your troubles.
   receive: the scale of what you belong to.
@@ -430,7 +413,6 @@
       right: 22.2
       bottom: 23.4
       left: 11.9
-  art: net
   above: In the heaven of Indra hangs a net with a jewel at every knot, and each jewel reflects every other jewel and the reflections in them, without end. The Buddhist sutras count worlds like sands of the Ganges. The old philosophers argued that infinite space must hold other earths, and the sky has lately agreed with them. The net was never a claim about astronomy. It is a picture of what it means that nothing exists alone.
   set: the belief that you are the only jewel.
   receive: your reflection in every other.
@@ -453,7 +435,6 @@
       right: 0.3
       bottom: 2.6
       left: 0.3
-  art: deep
   above: Before the gods, the dark. Nun, the waters of Egypt. Ginnungagap, the yawning gap of the north. The Ein Sof of the Kabbalists, without end, from which the first light was drawn. The hymn of the Rig Veda says there was neither being nor non-being then, and asks who could know. Most of what there is cannot be seen, and the oldest light arriving tonight set out before there were stars to leave from. The dark is not the absence of the sky. It is most of it.
   set: the need for the dark to be empty.
   receive: the ground the first light stood on.
@@ -477,7 +458,6 @@
       right: 0.5
       bottom: 4
       left: 1.6
-  art: dogstar
   above: The brightest of the fixed stars, at the hunter's heel. In Egypt she was Sopdet, and her first rising before dawn in high summer announced the flooding of the Nile and opened the year. The Greeks called the heavy days of her rising the dog days. In China the same star is the Celestial Wolf, watched by an archer in the south. Every people that saw her return read her as the herald of what comes next.
   set: the wish to be warned of nothing.
   receive: the sign that comes before the water.
@@ -496,7 +476,6 @@
     source: https://commons.wikimedia.org/wiki/File:Gustave_Dor%C3%A9_-_Chant_17._Geryon%27s_Flight_(c._1880).jpg
     license: public domain
     alt: Dante and Virgil ride the back of Geryon, a bat-winged monster with a man's face and a long coiled scorpion tail, as it sinks between dark cliffs into the abyss.
-  art: scorpion
   above: A long curve of stars low in the summer south, with a red star at its heart. The Greeks said the scorpion was sent against the hunter and set across the sky from him, so that one rises as the other sets. To the Polynesian navigators the curve is the fishhook of Maui, which hauled the islands up out of the sea. In China the red star is the heart of the Azure Dragon. The heart of the figure is what everyone sees first.
   set: the sting you keep ready.
   receive: the heart, the brightest part of you.
@@ -517,7 +496,6 @@
     alt: A great eagle carries the sleeping Dante up through billowing clouds past rocky peaks, with the sun blazing behind.
     trim:
       bottom: 5.4
-  art: swan
   above: A great cross of stars flying down the river of light on summer nights, wings spread, neck outstretched toward the south. The Greeks saw Zeus in the shape of a swan, and later Christians called it the Northern Cross. It flies along the very road that many peoples said the dead walk, and in that light it is the soul in flight, going the way everyone goes.
   set: the fear of the long flight.
   receive: wings for the road.
@@ -541,7 +519,6 @@
       right: 22.7
       bottom: 23.8
       left: 12.3
-  art: weaver
   above: Two bright stars on either side of the summer river of light. In China and Japan they are the weaver girl of heaven and the cowherd who loved her, kept apart by the Silver River and allowed to meet one night a year, when the magpies of the world fly up and make a bridge of their wings. On that night people tie wishes to bamboo. It is the oldest story of love held across a distance.
   set: the belief that distance ends love.
   receive: the bridge that comes when it comes.
@@ -565,7 +542,6 @@
       right: 0.4
       bottom: 2.5
       left: 0.3
-  art: lion
   above: A sickle of stars like a lion's mane, crouched along the road of the sun, with the little king, Regulus, at its breast. When the sun passed through the lion in Egypt the river rose, and lion heads were carved on fountains and gates. The Greeks set Heracles' first labor here. Everywhere it is courage and kingship, and the summer heat when the sun is strongest.
   set: the roar that covers fear.
   receive: courage that does not need to be seen.
@@ -589,7 +565,6 @@
       right: 0.5
       bottom: 5
       left: 0.3
-  art: bull
   above: A V of stars for the face of a bull, a red eye, two long horns, and the Pleiades riding on its shoulder. In the oldest epic the gods loose the Bull of Heaven on the earth. Zeus took a bull's shape to carry Europa over the sea. The Greeks named the stars of the face the Hyades, the rainy ones, because their setting brought the rains. It is the strength of the earth and the patience of the plough.
   set: the charge you keep making at the same wall.
   receive: the strength that pulls the plough.
@@ -613,7 +588,6 @@
       right: 0.5
       bottom: 3
       left: 0.5
-  art: twins
   above: Two bright stars side by side in the winter sky. The Greeks said one brother was mortal and one was the son of Zeus, and when the mortal one died the other refused to live without him, so they share one life between them, a day below the earth and a day among the gods. Sailors saw them as the light on the mast in a storm. In India they are the twin horsemen who bring the dawn and heal the sick.
   set: the wish to be spared alone.
   receive: the one who shares your days.
@@ -636,7 +610,6 @@
       top: 1
       bottom: 0.1
       left: 1.3
-  art: queen
   above: A crooked W of stars close to the pole, turning around it all night and all year. The Greeks said Cassiopeia boasted that she was more beautiful than the daughters of the sea, and for her pride she was set in the sky on her throne, which swings her head down for half of every night. The throne is a seat of honor and a wheel at once. What is raised up turns.
   set: the boast that turns the sea against you.
   receive: grace in being turned.
@@ -658,7 +631,6 @@
     trim:
       right: 1
       bottom: 4.2
-  art: herdsman
   above: A kite of stars following the great bear around the pole, with a golden-orange star at its foot. Arcturus means the guardian of the bear. The herdsman drives the bear, or the ploughman follows the plough, through the year. The navigators of the Pacific steered by the same star, which passes overhead in Hawaii, and called it the star of gladness. It is the one who keeps watch and follows, and brings the travelers home.
   set: the need to lead every step.
   receive: the honor of keeping watch.
@@ -682,7 +654,6 @@
       right: 34.6
       bottom: 33.5
       left: 10.5
-  art: chained
   above: A line of stars reaching from the winged horse. The Greeks said Andromeda was chained to a rock by the sea to pay for her mother's boast, and freed by a hero who came down out of the sky. In her girdle lies a faint cloud of light that the Persian astronomers called the little cloud. The figure is a bond and a release in the same stars. Every chain in the sky is drawn with its loosing.
   set: the chain that was never yours to carry.
   receive: the loosing that comes from outside you.
@@ -704,7 +675,6 @@
     trim:
       top: 0.3
       bottom: 3
-  art: archer
   above: Low in the summer south, the archer draws his bow at the scorpion's heart, and just beyond his arrow the river of light is widest and brightest, because there lies the center of the great wheel of stars we turn in. The Babylonians saw a warrior god here, and the Greeks the wise centaur who taught heroes. To aim, the old archers said, is to find the center in yourself.
   set: the target outside you.
   receive: the center you aim from.
@@ -728,7 +698,6 @@
       right: 0.6
       bottom: 3.6
       left: 0.6
-  art: falling
   above: Twice a year the sky rains light. In August the falling stars stream from the hero who freed the chained woman, and in Italy they are called the tears of Saint Lawrence, whose feast falls in the same week. In December they come out of the Twins, on the longest nights. In many places a falling star is a soul passing, and in many more it is the moment for a wish. Each one is the only light in the heavens that never comes back.
   set: the wish you never say aloud.
   receive: what passes, while it passes.
@@ -749,7 +718,6 @@
     alt: A barefoot boy carries a bundle of firewood up a rocky slope while an old bearded man with a staff walks behind him among palms.
     trim:
       bottom: 5
-  art: ram
   above: A short bent line of stars, the head of a ram turned to look behind it. In Babylon it was first the hired man of the fields and later the ram of Dumuzi the shepherd. Egypt gave it to Amun, the god with a ram's head. The Greeks said a golden ram came for a boy who was about to be sacrificed and carried him away through the air, though his sister fell into the sea. The sun crossed into spring in these stars, so they became the first of the signs. It is the beginning that comes in place of the sacrifice.
   set: the sacrifice no one is asking of you.
   receive: the ram in the thicket.
@@ -773,7 +741,6 @@
       right: 23
       bottom: 22.5
       left: 11.8
-  art: crab
   above: The dark sign, so faint that it was called black and without eyes, with a pale smudge of light at its breast. The Greeks said a crab came out to bite Heracles in the foot while he fought the Hydra, and when he killed it Hera set it among the stars. They called the smudge the Manger, with a star on either side for the asses that feed there. In China it is the Ghost, a spirit riding in a carriage, pale as willow pollen on the wind. Porphyry called the Crab the gate through which souls come down to be born.
   set: the armor you no longer need.
   receive: the soft light at the heart of the dark.
@@ -796,7 +763,6 @@
       top: 0.5
       bottom: 3.2
       left: 0.7
-  art: maiden
   above: A long figure of stars along the sun's road, holding a bright ear of wheat. In Babylon these stars were the Furrow, the goddess Shala and her ear of grain. The Greeks saw Demeter and her daughter in them, and above all Justice, who lived among people in the golden age and sat with the elders in the marketplace, urging kinder judgments. As people grew harder she withdrew to the hills, and at last to the sky. She is still there, holding the harvest, near enough to see.
   set: the harsh verdict you have already passed.
   receive: a kinder judgment.
@@ -819,7 +785,6 @@
       right: 1.2
       bottom: 3.6
       left: 0.7
-  art: scales
   above: Two pale stars like the pans of a balance, between the Maiden and the Scorpion. In Babylon they were the Scales, sacred to Shamash, the sun, keeper of truth and justice. The Greeks called them the Claws of the Scorpion, and the Romans gave them back to Justice as the scales in her hand. The sun stood here when day and night were equal. In Egypt the heart of the dead was weighed against a single feather of truth, and it passed if it was no heavier.
   set: the weight you keep adding to one side.
   receive: a heart as light as a feather.
@@ -843,7 +808,6 @@
       right: 24.1
       bottom: 24.2
       left: 11.3
-  art: goatfish
   above: A faint triangle of stars low in the south, a goat in front and a fish behind. It is one of the oldest figures in the sky. In Babylon the Goat-Fish was the emblem of Ea, god of wisdom and of the fresh waters under the earth. The Greeks said Pan dove into a river to escape a monster and came out with a fish's tail. The sun turned back from midwinter in these stars, and Porphyry called them the gate through which souls climb back to the gods.
   set: the footing you refuse to leave.
   receive: the way back up out of the deep.
@@ -864,7 +828,6 @@
     alt: A young woman with a tall water jar on her shoulder stands at a stone well beside a kneeling old traveler with a staff, while other women carry jars behind them and camels rest on the hill.
     trim:
       bottom: 5
-  art: waterbearer
   above: A figure pouring a long stream of faint stars from a jar down to the mouth of the southern fish. In Babylon he was the Great One, the god Ea himself, holding a vase that overflows. In India the sign is Kumbha, the water pot. The Greeks told of Ganymede, the shepherd boy carried up to pour for the gods, and of Cecrops, the king who offered the gods water instead of wine. The stream falls freely and the fish below drinks. It is the one who pours without asking who deserves it.
   set: the jar you keep for yourself.
   receive: the gift of pouring out.
@@ -887,7 +850,6 @@
       top: 0.4
       bottom: 4.2
       left: 0.3
-  art: fishes
   above: Two fishes swimming different ways across the autumn sky, tied together by a long cord with a star at the knot. When the monster Typhon came against the gods, Aphrodite and her son leapt into the Euphrates and swam away as fishes, and in Ovid's telling two fishes carried them to safety on their backs. After that, Hyginus says, the Syrians would not eat fish. The Babylonians already saw a cord in these stars, and the star at the knot is still called the cord. The two pull apart and are not parted.
   set: the wish to be free of every tie.
   receive: the cord that holds while you swim apart.
@@ -909,7 +871,6 @@
     trim:
       right: 0.5
       bottom: 2.5
-  art: southernfish
   above: A bright star low in the autumn south, the mouth of a great fish that drinks the stream poured out by the Water-Bearer. Its Arabic name means the mouth of the fish. The Babylonians already saw a fish here, and the Greeks called it the parent of the two fishes that swim above it. In Syria it was the fish that saved the goddess Derceto, and in Egypt the fish that saved Isis. In China the star is the gate of the northern camp. It drinks from a stream that is always being poured.
   set: the way you cling when the water runs low.
   receive: the open water, where no one has to hold you up.
@@ -930,7 +891,6 @@
     alt: A man thrown from the sea sprawls up a rocky shore, reaching for land, as a great sea creature turns back into the stormy waves behind him.
     trim:
       bottom: 5.2
-  art: whale
   above: A long sea monster sprawled low across the autumn sky beneath the fishes. The Greeks said Poseidon sent it against the shore when the queen boasted, and that the hero who freed the chained woman killed it, or in another telling turned it to stone with the Gorgon's head. Its Arabic star names are the nostril and the whale's tail. Among its stars is the one called Mira, the wonderful, which brightens, fades until the eye cannot find it, and comes back. In the Hebrew scriptures a great fish swallowed Jonah and gave him back to the dry land.
   set: the fear of being swallowed.
   receive: the shore you are given back to.
@@ -953,7 +913,6 @@
       top: 0.3
       right: 0.4
       bottom: 5.2
-  art: river
   above: A long river of faint stars that rises at the hunter's foot and winds away into the south, farther than this sky can follow. The Babylonians called it the star of Eridu, sacred to Enki and the waters of the abyss. The Greeks said it was the river that received Phaethon when he lost the reins of his father's sun and fell burning out of the sky. It was first the Nile and later the Po. Its last star is called the river's end, and from here it never rises. Every river runs on past where we can see.
   set: the reins you could not hold.
   receive: the river that receives the fallen.
@@ -980,7 +939,6 @@
       right: 19.6
       bottom: 24.1
       left: 9.4
-  art: dolphin
   above: A small diamond of stars with a short tail, leaping high in the sky at summer's end. The Greeks said it was the dolphin who found the sea nymph Amphitrite where she hid and won her for Poseidon, and was set among the stars for it. Herodotus tells of the singer Arion, whose sailors plotted to take his money and throw him overboard. He sang one last song and leapt, and a dolphin carried him to shore. Hyginus says Apollo set the dolphin in the sky for the music. In India its four stars are a mansion of the moon whose sign is a drum.
   set: the deck you are afraid to leave.
   receive: the song, and the one who carries the singer.
@@ -1001,7 +959,6 @@
     alt: A bearded man in a heavy cloak sits slumped beneath a bare tree in the wilderness, looking up as a winged angel descends toward him with food.
     trim:
       bottom: 5.2
-  art: crow
   above: A small crooked square of stars beside a faint cup, both riding on the back of the long water serpent. The Babylonians saw a raven perched on the serpent's tail, sacred to the god of rain and storm. The Greeks said Apollo sent the crow with his cup to fetch water, and the crow stopped to eat figs, then came back blaming the serpent. Apollo set all three in the sky, with the cup forever just beyond the thirsty bird. In China the four stars are a chariot. In the book of Kings, ravens brought bread to a prophet by a brook.
   set: the excuse you made for the delay.
   receive: the errand, and the water at the end of it.
@@ -1022,7 +979,6 @@
     alt: A robed man lies bowed in prayer on a high stone ledge, his face hidden in his arms, as a crowd gathers behind him below the city walls.
     trim:
       bottom: 5.2
-  art: polestar
   above: A modest star at the end of the Little Bear's tail, the one light in the northern sky that seems to stand still while every other light wheels around it. The Greeks said the Phoenicians steered by the Little Bear, and the Old English called the pole star the ship-star. In the Puranas it is Dhruva, a boy turned away from his father's lap, who went into the forest and prayed until he forgot what he had come to ask for, and was given the one seat in heaven that does not move. The still point was never handed to him. It was found.
   set: the place you are waiting for someone to give you.
   receive: the stillness that was yours before anyone made room.
@@ -1043,7 +999,6 @@
     alt: An angel with a sword descends through parting clouds toward a vast coiling sea serpent thrashing in the waves.
     trim:
       right: 0.4
-  art: dragon
   above: A long, faint dragon winding between the two Bears, with his head beneath the Kneeler's foot. The Greeks said he was Ladon, set by Hera to guard the golden apples in the garden of the Hesperides. The Arab herders saw instead four mother camels guarding a calf from two hyenas. A dim star in his tail held the pole when the pyramids of Egypt were raised, and in China it is the Right Pivot in the wall around the palace of heaven. The pole has since moved on. Even the center of the sky is a watch that passes from guard to guard.
   set: the treasure you have guarded so long you forgot what it was.
   receive: the rest that comes when the watch passes on.
@@ -1067,7 +1022,6 @@
       right: 3.3
       bottom: 3.6
       left: 2.9
-  art: crown
   above: "A small half-ring of stars between the Herdsman and the Kneeler, with one jewel brighter than the rest. Ariadne gave Theseus the thread that led him out of the labyrinth, and he left her alone on the island of Naxos. Dionysus found her there and set her crown among the stars, so that her name would not be lost. The Welsh called the ring the castle of Arianrhod, the silver circle. The Bedouin called it the bowl of the poor. A crown and an alms bowl in the same stars: what was abandoned is set where everyone can see it."
   set: the thread you gave to someone who sailed on.
   receive: a crown set where it cannot be lost.
@@ -1091,7 +1045,6 @@
       right: 8.7
       bottom: 13
       left: 8.4
-  art: kneeler
   above: A great figure on one knee in the summer sky, with his foot on the Dragon's head. Aratus wrote that no one could say who he was or at what task he toiled, so people simply called him the one on his knees. Later the Greeks named him Heracles, standing over the dragon of the golden apples, and others saw Prometheus bound, or Sisyphus, or Theseus. The shape came first and the names after. He is anyone who labors without knowing what the labor is for, and keeps on.
   set: the need to know what the work is for.
   receive: the strength of the bent knee.
@@ -1113,7 +1066,6 @@
     trim:
       top: 0.6
       right: 0.9
-  art: serpentbearer
   above: A giant holding a great serpent in both hands, his feet on the Scorpion, standing across the road of the sun. The Romans said he was Asclepius, who learned to hold death back by watching one snake bring healing herbs to another. When it seemed that no one in his care would ever die, the king of the gods struck him down, and then set his image in the heavens to honor his work. His staff with one serpent coiled around it is still the sign of healing. To al-Sufi he was the snake charmer. Poison and cure are held in the same hands.
   set: the wound you refuse to look at.
   receive: the cure that lives inside the poison.
@@ -1135,7 +1087,6 @@
     trim:
       top: 0.2
       left: 0.6
-  art: berenice
   above: A faint spray of stars behind the Lion, like loose hair. Queen Berenice of Egypt vowed her long hair to the gods for her husband's safe return from war. She cut it and laid it in a temple, and by morning it was gone. The court astronomer said the goddess had taken it up into the sky, and the poets Callimachus and Catullus sang of it. The Arab astronomers called the same stars the braid, or the tuft at the Lion's tail. A vow kept is never lost. It is only moved somewhere higher.
   set: the part of the vow you hold back.
   receive: the knowledge that what is given in love is not lost.
@@ -1156,7 +1107,6 @@
     alt: A tall woman holds up a severed head before a kneeling man and a crowd of soldiers with spears.
     trim:
       right: 0.9
-  art: hero
   above: A tall figure striding through the northern sky with a severed head in his hand. The Greeks said Perseus could not look at the Gorgon, whose face turned the living to stone, so he looked at her only in the bronze of his shield, and struck. The Romans named the figure for the hero and the head together. The star in the head the Arabs called the head of the ghoul, Hebrew folklore called it Satan's head, and in China it belongs to the Mausoleum. It dims and brightens like a slow wink. Some things can only be faced in reflection.
   set: the stare that turns you to stone.
   receive: a mirror to face it by.
@@ -1177,7 +1127,6 @@
     alt: A thirsty crowd kneels and stoops to drink from water flowing out of the rock, as others raise their arms behind them.
     trim:
       top: 0.3
-  art: horse
   above: A great square of stars for the body of a horse, with only half of him drawn in the sky. He was born from the Gorgon's blood when the hero struck. The Greeks said he stamped on the mountain of the Muses, where no spring had run, and water broke out of the rock, and whoever drank from it could make poems. The Babylonians saw a field in the same stars, and in India they hold a bed where the moon rests. The horse is the sign of what wells up from hard ground when it is struck.
   set: the waiting for the spring to come to you.
   receive: the water that rises where you strike.
@@ -1199,7 +1148,6 @@
     trim:
       top: 0.4
       left: 0.2
-  art: charioteer
   above: A ring of stars for a driver with the reins in one hand and a she-goat on his shoulder, her two kids at his wrist. The Greeks said he was the first to yoke four horses to a chariot, and that the goat was Amalthea, who nursed the infant Zeus. In Mesopotamia the same stars were a shepherd's crook, and in ancient Peru the bright star kept company with shepherds. In China they were the five chariots of the celestial emperors. Here holding the reins and carrying the young are one art.
   set: the whip you use on yourself.
   receive: the reins, and the patience to hold them.
@@ -1223,7 +1171,6 @@
       right: 2.7
       bottom: 6.2
       left: 2.9
-  art: littlecloud
   above: A faint smear of light that the Greek astronomers never mentioned, though it was there for them to see. The Arabs drew a great fish across that part of the sky and set the smudge in its mouth, and the Persian astronomer al-Sufi wrote it down as a small cloud. A philosopher guessed it was a whole wheel of stars like the one we turn in, seen from very far away, and so it proved. A dim thing can hold a whole sky.
   set: the habit of passing over what is faint.
   receive: eyes that look a seventh time.
@@ -1245,7 +1192,6 @@
     trim:
       right: 0.2
       bottom: 2.3
-  art: egg
   above: "In the beginning, says the Upanishad, there was only what was not yet. It grew, it turned into an egg, and the egg broke open, a silver half for the earth and a golden half for the sky. In Finland they sang of a duck that nested on the knee of the daughter of the air, and her broken eggs became the vaults of heaven and earth. The Orphics said Night laid a wind-born egg, and Love sprang from it on golden wings. Everything there is was once gathered close, inside one shell."
   set: the wish to have been born finished.
   receive: the shell that breaks so a world can come out.
@@ -1269,7 +1215,6 @@
       right: 2.3
       bottom: 4.5
       left: 2.2
-  art: widening
   above: "Te Rangikāheke of Te Arawa told how Ranginui the sky lay pressed on Papatūānuku the earth, with their children in the dark between them, until Tāne lay on his back, pushed the sky up with his arms and legs, and set posts to hold it there. In Egypt Shu, the air, holds the sky away from the earth, because without the gap nothing could live. Pangu grew each day, and the sky rose with him. The heavens are still widening, every far light drawing away from the rest. The parting is what let the light in."
   set: the wish to keep everything close.
   receive: the light let in by parting.
@@ -1293,7 +1238,6 @@
       right: 9.9
       bottom: 12.4
       left: 7.2
-  art: greatyear
   above: "Plato wrote of a perfect year in which all the wandering lights come round together and complete their courses at once. The fixed stars turn as well, more slowly than any life. When writing was new the pole stood by a faint star of the Dragon, and the bright star of the Lyre has stood there before and will again. India counted four ages of the world that run down from perfection to the dark age and begin again. The sky tonight is one frame of a turning too long to watch."
   set: the belief that the sky has always looked like this.
   receive: a place in the long turning.
@@ -1317,7 +1261,6 @@
       right: 0.6
       bottom: 5.1
       left: 0.3
-  art: longsleep
   above: "Wang Zhi went up the mountain for firewood and stopped to watch two boys at a game. When he looked down, his axe handle had rotted, and when he came home his whole family was gone. Urashima spent what seemed a few days in the palace under the sea and returned to find his house gone and everyone he knew vanished. The Seven Sleepers of Ephesus woke and paid for bread with the coins of an emperor long dead. The one who travels far keeps a different time from the ones who stay."
   set: the wish for the world to wait for you.
   receive: the place you wake into.
@@ -1341,7 +1284,6 @@
       right: 1.9
       bottom: 9.5
       left: 1.8
-  art: edge
   above: "Archytas asked what would happen if he stood at the outermost edge of the heaven and stretched out his staff. If it passed through, there was more beyond, and if something stopped it, that was more beyond too. Lucretius sent a runner to the same coasts to throw a spear. Homer ran the river of Ocean round the rim of Achilles' shield, and the Norse set a serpent in the sea around all lands, biting its own tail. No one has yet reached the edge of the sky. Every horizon is a place to stand and throw again."
   set: the wall you have built at the edge of your world.
   receive: the staff, and the reach past it.
@@ -1371,7 +1313,6 @@
       right: 0.6
       bottom: 4.4
       left: 0.9
-  art: stardust
   above: "Dust thou art, Adam is told, and unto dust shalt thou return. The Orphic dead were buried with leaves of gold that told them what to say at the well of memory: I am a child of Earth and of starry Heaven. Plato wrote that every soul was first assigned to a star, and that one who lived well would go home to dwell in it. The matter of the body was made in stars and scattered when they died. The dust and the stars were never two things."
   set: the line you draw between earth and heaven.
   receive: your two lineages, the ground and the stars.
@@ -1396,7 +1337,6 @@
       right: 0.9
       bottom: 0.2
       left: 1.3
-  art: breath
   above: "Krishna tells Arjuna that the worlds have a day and a night. When the day of Brahma dawns the invisible is brought forth into the visible, and when that night falls all that is fades back into what sent it forth. The Daoists likened the space between heaven and earth to a bellows, emptied and never spent. The Stoics taught that the cosmos is drawn back into fire and made again, without beginning or end. No one knows whether the widening sky will be drawn back in. The oldest picture of the world is a breath."
   set: the need for every ending to be final.
   receive: the next breath, whichever way it goes.
@@ -1423,7 +1363,6 @@
       right: 0.3
       bottom: 5.2
       left: 0.3
-  art: traveler
   above: "Abram was told to leave his country, his kindred and his father's house for a land he would be shown, and he departed. Three Irishmen came to Cornwall in a boat without oars, because they wished to live in pilgrimage for the love of God and cared not where. The Seafarer of the Old English poem knows the cold and loneliness of the winter sea and still cannot stay ashore. Every age dreams of the one who sets out so far that no one at home sees them arrive. The going is the vow."
   set: the need to come back the same.
   receive: the road that is home now.
@@ -1447,7 +1386,6 @@
       right: 20.3
       bottom: 21
       left: 14.8
-  art: lastlight
   above: "The Norse seeress saw the sun turn black and the hot stars whirled down from heaven, and then the earth rising again all green from the waves. Othin was told that before the wolf takes the sun, she bears a bright daughter who walks her mother's paths. The Buddha told of seven suns rising one after another until the world burned away, to teach that nothing made lasts. Isaiah heard of new heavens and a new earth. Even the sun will go out, and these tellings hold the end as a turning."
   set: the dread of the end.
   receive: the green that rises after.

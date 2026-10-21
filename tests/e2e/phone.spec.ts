@@ -130,8 +130,8 @@ test.describe('on a phone, the sky', () => {
     const dome = await box(page.locator('#sky-dome svg'));
     await page.mouse.click(dome.x + dome.width / 2, dome.y + dome.height * 0.45);
     await page.clock.runFor(1500);
-    await expect(page.locator('#sky-out .cardbox')).toBeInViewport({ ratio: 1 });
-    expect((await box(page.locator('#sky-out .cardbox'))).width).toBeGreaterThanOrEqual(260);
+    await expect(page.locator('#sky-out .face')).toBeInViewport({ ratio: 1 });
+    expect((await box(page.locator('#sky-out .face'))).width).toBeGreaterThanOrEqual(260);
     await page.locator('#sky-open').click();
     await expect(page.locator('#sky-book .book')).toBeInViewport();
     await expectTouchSized(page);

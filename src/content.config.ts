@@ -2,7 +2,6 @@ import { defineCollection, reference } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 import type { TocItem } from './lib/toc';
-import { SKY_ART } from './lib/decks';
 import { yamlListLoader } from './lib/yaml-list-loader';
 
 const passages = defineCollection({
@@ -134,7 +133,6 @@ const skyPlate = {
   name: z.string().min(1),
   alt: z.string().min(1),
   picture: deckPicture,
-  art: z.enum(SKY_ART),
   above: z.string().min(1),
   set: z.string().min(1),
   receive: z.string().min(1),

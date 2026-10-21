@@ -160,7 +160,7 @@ test.describe('the sky', () => {
     await svg.click({ position: { x: box.width * x, y: box.height * y } });
     await page.clock.runFor(1500);
   };
-  const plateLabel = (page: Page) => page.locator('#sky-out .cardsvg').getAttribute('aria-label');
+  const plateLabel = (page: Page) => page.locator('#sky-out .face').getAttribute('aria-label');
 
   test('opens the heavens after the eyes adjust, draws a plate showing only its name, and draws again as often as asked', async ({
     page,
@@ -169,25 +169,33 @@ test.describe('the sky', () => {
     await expect(page.locator('#sky-cue')).toBeEmpty();
     await expect(page.locator('#sky-dome')).not.toHaveClass(/day/);
     await page.locator('#sky-dome svg').click({ position: { x: 300, y: 250 }, force: true });
-    await expect(page.locator('#sky-out .cardbox')).toHaveCount(0);
+    await expect(page.locator('#sky-out .face')).toHaveCount(0);
     await adjustEyes(page);
     await expect(page.locator('arbora-scene')).toHaveClass(/adapted/);
     await expect(page.locator('#sky-cue')).toHaveText('Lift your eyes.');
     await look(page);
     await expect(page.locator('#sky-cue')).toBeEmpty();
-    await expect(page.locator('#sky-out .cardbox .cardsvg')).toHaveCount(1);
+    const picture = page.locator('#sky-out .face img');
+    await expect(picture).toHaveCount(1);
+    await expect(picture).toHaveAttribute('alt', /\w/);
+    await expect(picture).toHaveJSProperty('complete', true);
+    expect(await picture.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
     const first = (await plateLabel(page))!;
-    await expect(page.locator('#sky-out .cardsvg text')).toHaveText([first.split(', ')[0]!]);
+    await expect(page.locator('#sky-out .face figcaption')).toHaveText(first.split(', ')[0]!);
     await expect(page.locator('#sky-book')).toBeEmpty();
     await page.locator('#sky-open').click();
     await expect(page.locator('#sky-book .above')).not.toBeEmpty();
     await expect(page.locator('#sky-book .below p').first()).toContainText('Set down');
     await expect(page.locator('#sky-book .below p').nth(1)).toContainText('Receive');
     await expect(page.locator('#sky-book .bk-pass cite')).not.toBeEmpty();
+    await expect(page.locator('#sky-book .bk-credit a')).toHaveAttribute(
+      'href',
+      /^https:\/\/commons\.wikimedia\.org\/wiki\/File:/,
+    );
     await page.locator('#sky-line').fill('Quiet, and the moon low.');
     await page.locator('#sky-keep').click();
     await page.locator('#sky-again').click();
-    await expect(page.locator('#sky-out .cardbox')).toHaveCount(0);
+    await expect(page.locator('#sky-out .face')).toHaveCount(0);
     await expect(page.locator('#sky-cue')).toHaveText('Lift your eyes.');
     await look(page, 0.3, 0.6);
     const second = (await plateLabel(page))!;
@@ -202,7 +210,7 @@ test.describe('the sky', () => {
     await page.locator('arbora-scene.mounted').waitFor();
     await adjustEyes(page);
     await look(page);
-    await expect(page.locator('#sky-out .cardbox .cardsvg')).toHaveCount(1);
+    await expect(page.locator('#sky-out .face img')).toHaveCount(1);
   });
 
   test('by day draws from the whole deck, not only the Sun', async ({ page }) => {
