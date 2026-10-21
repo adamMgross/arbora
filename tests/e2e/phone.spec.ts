@@ -71,7 +71,7 @@ test.describe('on a phone, the wood', () => {
     await page.locator('#wood-enter').click();
     await expect(page.locator('#wood-play')).toBeInViewport({ ratio: 1 });
     await expect(page.locator('#wood-trip')).toBeHidden();
-    await page.locator('.wisp').first().click({ force: true });
+    await page.locator('.wisp').first().dispatchEvent('click');
     await page.clock.runFor(3000);
     await settle(page);
     const width = page.viewportSize()!.width;
@@ -97,7 +97,7 @@ test.describe('on a phone, the wood', () => {
     await expect(page.locator('#wood-trip')).toBeInViewport({ ratio: 1 });
     for (let i = 0; i < 3; i++) {
       await expect(page.locator('.wisp')).toHaveCount(3);
-      await page.locator('.wisp').first().click({ force: true });
+      await page.locator('.wisp').first().dispatchEvent('click');
       await page.clock.runFor(3000);
     }
     await expect(page.locator('#wood-trip')).toHaveClass(/spread/);
