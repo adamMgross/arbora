@@ -164,6 +164,7 @@ const year = defineCollection({
       .length(24),
     windows: z.array(z.string().min(1)).length(72),
     ko: z.array(z.string().min(1)).length(72),
+    pictures: z.array(deckPicture).length(72),
     seasons: z
       .array(
         z.strictObject({

@@ -56,8 +56,12 @@ async function writeMaster(picture, out) {
     .toFile(out);
 }
 
+export const windowId = (index) => `p${String(index + 1).padStart(2, '0')}`;
+
 export function deckPictures(deck, yamlText) {
-  return parse(yamlText).flatMap((entry) => (entry.picture ? [{ id: entry.id, picture: entry.picture }] : []));
+  const entries = parse(yamlText);
+  if (deck === 'year') return (entries[0].pictures ?? []).map((picture, i) => ({ id: windowId(i), picture }));
+  return entries.flatMap((entry) => (entry.picture ? [{ id: entry.id, picture: entry.picture }] : []));
 }
 
 function contactSheet(deck, entries) {

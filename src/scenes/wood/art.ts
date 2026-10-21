@@ -2,14 +2,17 @@ import type { WoodCard } from '../../lib/decks';
 import { esc, f, rng } from '../../lib/svg';
 import { G, GP, MOON, INK, spire, spireRow } from './forest';
 import type { Wood } from '../../lib/wood-walk';
-import { svgOpen } from '../book';
+import { pictureFace, svgOpen } from '../book';
 
 const FELL_SC = "'IM Fell English SC',Georgia,serif";
 
-export function woodFace(card: WoodCard): string {
-  const p = card.picture;
-  return `<figure class="face" aria-label="${esc(`${card.circle}: ${card.name}, ${card.from}`)}"><img src="${p.src}" srcset="${p.srcset}" sizes="(max-width: 640px) 82vw, 520px" width="${p.width}" height="${p.height}" alt="${esc(p.alt)}" decoding="async"><figcaption>${esc(card.name)}</figcaption></figure>`;
-}
+export const woodFace = (card: WoodCard): string =>
+  pictureFace(
+    card.picture,
+    `${card.circle}: ${card.name}, ${card.from}`,
+    esc(card.name),
+    '(max-width: 640px) 82vw, 520px',
+  );
 
 export function woodBack(): string {
   const r = rng(3);

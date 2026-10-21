@@ -7,6 +7,9 @@ export const passageHtml = (p: DeckPassage): string =>
 export const credit = ({ title, artist, year, source }: CardPicture): string =>
   `<p class="bk-credit">Picture: <a href="${esc(source)}" target="_blank" rel="noopener">${esc(title)}</a>, ${esc(artist)}, ${esc(year)}</p>`;
 
+export const pictureFace = (p: CardPicture, label: string, caption: string, sizes: string): string =>
+  `<figure class="face" aria-label="${esc(label)}"><img src="${p.src}" srcset="${p.srcset}" sizes="${sizes}" width="${p.width}" height="${p.height}" alt="${esc(p.alt)}" decoding="async"><figcaption>${caption}</figcaption></figure>`;
+
 export const niceDate = (iso: string): string =>
   new Date(iso).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
 

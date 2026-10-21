@@ -170,6 +170,791 @@
     - Butterburs bud
     - Ice thickens on streams
     - Hens start laying eggs
+  pictures:
+    - title: Enoshima in Sagami Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E7%9B%B8%E5%B7%9E%E6%B1%9F%E3%81%AE%E5%B3%B6-Enoshima_in_Sagami_Province_(S%C5%8Dsh%C5%AB_Enoshima),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141072.jpg
+      license: CC0
+      alt: Travelers cross a sandbar at low tide toward a wooded island crowded with houses and a pagoda, with Mount Fuji far off across the water.
+      trim:
+        top: 29.3
+        right: 0.8
+        bottom: 1.6
+        left: 0.8
+    - title: Bush Warbler on a Plum Branch
+      artist: Utagawa Hiroshige
+      year: c. 1833-38
+      source: https://commons.wikimedia.org/wiki/File:Ume_ni_Uguisu.jpg
+      license: public domain
+      alt: A bush warbler hangs head down from a flowering plum branch.
+      trim:
+        top: 2.6
+        right: 3.2
+        bottom: 2.6
+        left: 27.2
+    - title: Whaling off the Gotō Islands, from One Thousand Pictures of the Ocean
+      artist: Katsushika Hokusai
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:Whaling_off_the_Coast_of_the_Goto_Islands.jpg
+      license: public domain
+      alt: Whalers in a ring of small flagged boats close around a great whale, watched from a thatched hut on the hillside.
+      trim:
+        top: 0.6
+        right: 7.5
+        bottom: 0.9
+        left: 0.5
+    - title: Plum Garden at Kameido, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:De_pruimenboomgaard_te_Kameido-Rijksmuseum_RP-P-1956-743.jpeg
+      license: public domain
+      alt: Small figures stroll behind a bamboo fence in a blossoming plum orchard, seen past the dark sprawling trunk of an old plum tree under a red sky.
+      trim:
+        top: 23.3
+        right: 5.2
+        bottom: 3.3
+        left: 5.1
+    - title: Mishima Pass in Kai Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E7%94%B2%E5%B7%9E%E4%B8%89%E5%B3%B6%E8%B6%8A-Mishima_Pass_in_Kai_Province_(K%C5%8Dsh%C5%AB_Mishima_goe),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP140981.jpg
+      license: CC0
+      alt: Three travelers link arms around a giant cedar while others rest and climb the path below, with Mount Fuji rising through the clouds.
+      trim:
+        top: 3.7
+        right: 6
+        bottom: 2.6
+        left: 11.8
+    - title: Fuji from Gotenyama at Shinagawa on the Tokaido, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E6%9D%B1%E6%B5%B7%E9%81%93%E5%93%81%E5%B7%9D%E5%BE%A1%E6%AE%BF%E5%B1%B1%E3%81%AE%E4%B8%8D%E4%BA%8C-Fuji_from_Gotenyama_at_Shinagawa_on_the_T%C5%8Dkaid%C5%8D_(T%C5%8Dkaid%C5%8D_Shinagawa_Gotenyama_no_Fuji),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141011.jpg
+      license: CC0
+      alt: Crowds of visitors stroll, dance, and picnic on a hillside under blossoming cherry trees, with Mount Fuji small across the bay.
+      trim:
+        top: 1.8
+        right: 7.1
+        bottom: 2
+        left: 1.2
+    - title: Poppies, from Large Flowers
+      artist: Katsushika Hokusai
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:MET_DP141274.jpg
+      license: CC0
+      alt: Red poppies and buds bend on their prickly stems against a plain brown ground.
+      trim:
+        top: 2
+        right: 6.3
+        bottom: 2.7
+        left: 1.1
+    - title: Swallows and Peach Blossoms under the Full Moon
+      artist: Utagawa Hiroshige
+      year: c. 1850
+      source: https://commons.wikimedia.org/wiki/File:Gekka_Momo_ni_Tsubakura.jpg
+      license: public domain
+      alt: Two swallows dart up beneath hanging branches of pink peach blossoms.
+      trim:
+        top: 31
+        right: 4.6
+        bottom: 2
+        left: 3.8
+    - title: Peonies and Butterfly, from Large Flowers
+      artist: Katsushika Hokusai
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:Poenies_and_butterfly.jpg
+      license: public domain
+      alt: A butterfly flutters above a mass of red and pale peonies among dark leaves.
+    - title: Roses and Sparrow
+      artist: Utagawa Hiroshige
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:MET_DP121487.jpg
+      license: CC0
+      alt: A sparrow dives head first past a thorny stem toward pink wild roses in bloom, with reed blades arching below.
+      trim:
+        top: 3
+        right: 6
+        bottom: 2.6
+        left: 13.2
+    - title: Evening Cherry Blossoms at Gotenyama, from Famous Places in the Eastern Capital
+      artist: Utagawa Hiroshige
+      year: c. 1831
+      source: https://commons.wikimedia.org/wiki/File:Gotenyama_no_yu-zakura-%E6%9D%B1%E9%83%BD%E5%90%8D%E6%89%80_%E5%BE%A1%E6%AE%BF%E5%B1%B1%E4%B9%8B%E5%A4%95%E6%A1%9C-Evening_Cherry_Blossoms_at_Gotenyama_MET_DP123249.jpg
+      license: CC0
+      alt: Strollers cross a grassy hilltop under blossoming cherry trees at dusk, with the bay, moored boats, and a flock of birds beyond.
+      trim:
+        top: 5.5
+        right: 22.9
+        bottom: 5
+        left: 2.8
+    - title: Storm below Mount Fuji, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E5%B1%B1%E4%B8%8B%E7%99%BD%E9%9B%A8-Storm_below_Mount_Fuji_(Sanka_no_haku_u),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141054.jpg
+      license: CC0
+      alt: Mount Fuji rises red above a band of white clouds while lightning forks across its dark lower slopes.
+      trim:
+        top: 2.4
+        right: 2.6
+        bottom: 1.8
+        left: 10.2
+    - title: Hydrangea and Swallow, from Large Flowers
+      artist: Katsushika Hokusai
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:Hydrangea_and_Swallow_2.jpg
+      license: public domain
+      alt: A swallow swoops toward clusters of pale hydrangea blossoms with dark leaves on a golden ground.
+      trim:
+        bottom: 3.5
+    - title: Descending Geese at the Ferry Crossing, from Eight Views of the Sumida River
+      artist: Utagawa Hiroshige
+      year: c. 1840s
+      source: https://commons.wikimedia.org/wiki/File:東都名所之内_(隅田川八景)._,_角田川八景_渡場落雁_-_広重画Sumidagawa_hakkei_Watashiba_rakugan_-_Hiroshige-ga_-_btv1b10526775h.jpg
+      license: public domain
+      alt: Travelers crowd two ferry boats poled across the Sumida River at dusk, with a third boat behind them, as long skeins of wild geese stream across a pink evening sky above the reeds.
+      trim:
+        top: 1.8
+        right: 29
+        bottom: 7.5
+        left: 1.4
+    - title: Viewing Cherry Blossoms at Gotenyama
+      artist: Katsushika Hokusai
+      year: c. 1808-12
+      source: https://commons.wikimedia.org/wiki/File:Bewonderen_van_de_kersenbloesem_bij_Gotenyama,_RP-P-1952-184.jpg
+      license: CC0
+      alt: A woman in a striped kimono stands at the crest of a blossoming hill with her companions, looking out over the bay toward a small Mount Fuji while picnickers rest beneath cherry trees around them.
+      trim:
+        top: 0.5
+        right: 2.9
+        bottom: 0.8
+        left: 0.3
+    - title: Seba, from Sixty-nine Stations of the Kisokaidō
+      artist: Utagawa Hiroshige
+      year: c. 1835-40
+      source: https://commons.wikimedia.org/wiki/File:Seba_(titel_op_object)_De_69_stations_van_de_Kisokaido_(serietitel)_Kisokaido_rokujukyu_tsugi_no_uchi_(serietitel_op_object),_RP-P-1956-739.jpg
+      license: CC0
+      alt: Two boatmen pole a boat heaped with reeds and a long raft through a marshy river under a full moon and windblown willows.
+      trim:
+        top: 28.6
+        right: 3.8
+        bottom: 4.3
+        left: 4.4
+    - title: "Kakegawa: Distant View of Mount Akiba, from Fifty-three Stations of the Tokaido"
+      artist: Utagawa Hiroshige
+      year: c. 1838
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1_%E6%8E%9B%E5%B7%9D-Kakegawa;_Akiba-san_Embo_MET_DP122852.jpg
+      license: CC0
+      alt: Travelers with tall packs and straw hats cross a long arched wooden bridge over blue water, past a shrine gate, stone lanterns, and green rice paddies.
+      trim:
+        top: 45.1
+        right: 15
+        bottom: 4.5
+        left: 6.6
+    - title: Peacock and Peonies
+      artist: Utagawa Hiroshige
+      year: 1833-37
+      source: https://commons.wikimedia.org/wiki/File:Pauw_en_pioenrozen,_RP-P-1956-766.jpg
+      license: CC0
+      alt: A peacock stands beneath pink and white peonies in full bloom, its long tail rising beside them.
+      trim:
+        top: 16.8
+        right: 7
+        bottom: 3.4
+        left: 7.4
+    - title: Hoki Province, Ono, Distant View of Mount Daisen, from Famous Views of the Sixty-odd Provinces
+      artist: Utagawa Hiroshige
+      year: "1853"
+      source: https://commons.wikimedia.org/wiki/File:NDL-DC_1308344-Utagawa_Hiroshige-%E5%85%AD%E5%8D%81%E4%BD%99%E5%B7%9E%E5%90%8D%E6%89%80%E5%9B%B3%E4%BC%9A_%E4%BC%AF%E8%80%86_%E5%A4%A7%E9%87%8E%E5%A4%A7%E5%B1%B1%E9%81%A0%E6%9C%9B-%E5%98%89%E6%B0%B86-crd.jpg
+      license: public domain
+      alt: Farmers in straw rain capes and wide hats bend to plant rice in flooded paddies under slanting rain, with dark cedars and a gray mountain behind.
+      trim:
+        top: 29.5
+        right: 2
+        bottom: 2.5
+        left: 5.8
+    - title: Tsukudajima in Musashi Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E6%AD%A6%E9%99%BD%E4%BD%83%E5%B3%B6-Tsukudajima_in_Musashi_Province_(Buy%C5%8D_Tsukudajima),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141039.jpg
+      license: CC0
+      alt: Fishermen in small boats work a hazy bay around a low wooded island crowded with masts, with Mount Fuji far off.
+      trim:
+        top: 26.3
+        right: 2.1
+        bottom: 2.5
+        left: 1.6
+    - title: Bamboo Yards, Kyobashi Bridge, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E4%BA%AC%E6%A9%8B%E7%AB%B9%E3%81%8C%E3%81%97-Full_Moon_Over_Canal,_with_Bridge_and_Huge_Stacks_of_Bamboo_along_the_Bank_MET_DP122114.jpg
+      license: CC0
+      alt: A boatman poles a laden boat along the canal beneath a wooden bridge crowded with walkers carrying lanterns, by tall dark stacks of bamboo.
+      trim:
+        top: 23.6
+        right: 4.5
+        bottom: 4.6
+        left: 6.3
+    - title: Inside Kameido Tenjin Shrine, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1856"
+      source: https://commons.wikimedia.org/wiki/File:%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E4%BA%80%E6%88%B8%E5%A4%A9%E7%A5%9E%E5%A2%83%E5%86%85-In_the_Kameido_Tenjin_Shrine_Compound_MET_DP121476.jpg
+      license: CC0
+      alt: Visitors stroll past red lanterns under a high arched bridge as purple wisteria hangs over a blue pond with swallows skimming the water.
+      trim:
+        top: 23.6
+        right: 5.3
+        bottom: 4.8
+        left: 8.1
+    - title: Kirifuri Waterfall at Kurokami Mountain, from A Tour of Waterfalls in Various Provinces
+      artist: Katsushika Hokusai
+      year: c. 1832
+      source: https://commons.wikimedia.org/wiki/File:Kirifuri_Waterfall_at_Kurokami_Mountain_in_Shimotsuke_MET_DP141256.jpg
+      license: CC0
+      alt: Pilgrims stand at the foot of a vast branching waterfall looking up, while two more climb a wooded slope at upper right.
+      trim:
+        top: 19.2
+        right: 2.2
+        bottom: 1.6
+        left: 1.2
+    - title: Poem by Emperor Tenji, from One Hundred Poems Explained by the Nurse
+      artist: Katsushika Hokusai
+      year: c. 1835-36
+      source: https://commons.wikimedia.org/wiki/File:%E7%99%BE%E4%BA%BA%E4%B8%80%E9%A6%96_%E3%81%86%E3%81%AF%E3%81%8B%E3%82%91%E3%81%A8%E3%81%8D_%E5%A4%A9%E6%99%BA%E5%A4%A9%E7%9A%87-Poem_by_Tenchi_Tenn%C5%8D,_from_the_series_One_Hundred_Poems_Explained_by_the_Nurse_(Hyakunin_isshu_uba_ga_etoki)_MET_DP141098.jpg
+      license: CC0
+      alt: Farmers in straw hats carry bundles of harvested rice across the fields and over a wooden bridge, past stacked sheaves and thatched farmhouses.
+      trim:
+        top: 27.7
+        right: 2.3
+        bottom: 2.6
+        left: 1.3
+    - title: Miyanokoshi, from The Sixty-nine Stations of the Kisokaido
+      artist: Utagawa Hiroshige
+      year: c. 1835-38
+      source: https://commons.wikimedia.org/wiki/File:%E6%9C%A8%E6%9B%BD%E6%B5%B7%E9%81%93%E5%85%AD%E6%8B%BE%E4%B9%9D%E6%AC%A1%E4%B9%8B%E5%86%85_%E5%AE%AE%E3%83%8E%E8%B6%8A-Moonlit_Night_at_Miyanokoshi,_from_The_Sixty-nine_Stations_of_the_Kisokaid%C5%8D_MET_DP120459.jpg
+      license: CC0
+      alt: A mother carrying a baby, a woman, and a pointing child cross a plank bridge through river mist, with dark silhouetted trees behind them.
+      trim:
+        top: 28
+        right: 4.8
+        bottom: 7.4
+        left: 4.4
+    - title: Yui, Satta Peak, from Fifty-three Stations of the Tokaido
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E7%94%B1%E4%BA%95_%E8%96%A9%E5%9F%B5%E5%B6%BA-Satta_Peak_at_Yui_MET_DP122190.jpg
+      license: CC0
+      alt: Travelers and a porter cling to a steep cliff path high above a blue bay, looking out toward snowy Mount Fuji and a lone sail.
+      trim:
+        top: 7
+        right: 18.8
+        bottom: 5
+        left: 6
+    - title: Chiryu, Summer Horse Fair, from Fifty-three Stations of the Tokaido
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E6%B1%A0%E9%AF%89%E9%AE%92_%E9%A6%96%E5%A4%8F%E9%A6%AC%E5%B8%82-Chiryu,_Shuka_Uma_Ichi_MET_DP122220.jpg
+      license: CC0
+      alt: A horse trader and a herder in a wide hat lead horses through a summer field where a herd stands tethered, with a crowd gathered under a lone pine by the sea.
+      trim:
+        top: 25.3
+        right: 2.3
+        bottom: 7.6
+        left: 4.5
+    - title: Tago Bay near Ejiri on the Tokaido, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E6%9D%B1%E6%B5%B7%E9%81%93%E6%B1%9F%E5%B0%BB%E7%94%B0%E5%AD%90%E3%81%AE%E6%B5%A6%E7%95%A5%E5%9B%B3-Tago_Bay_near_Ejiri_on_the_T%C5%8Dkaid%C5%8D_(T%C5%8Dkaid%C5%8D_Ejiri_Tago_no_ura_ryaku_zu),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141071.jpg
+      license: CC0
+      alt: Boatmen pole two long cargo boats through rolling Pacific swells past a beach busy with salt makers, with Mount Fuji rising beyond the bay.
+      trim:
+        top: 0.8
+        right: 0.9
+        bottom: 1.6
+        left: 10.3
+    - title: Lower Meguro, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E4%B8%8B%E7%9B%AE%E9%BB%92-Lower_Meguro_(Shimo_Meguro),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141086.jpg
+      license: CC0
+      alt: Falconers and farm people climb a path through terraced hillside fields and thatched farmhouses, with a small snowy Mount Fuji showing between the hills.
+      trim:
+        top: 3
+        right: 1.8
+        bottom: 9.4
+        left: 11.3
+    - title: The Inume Pass in Kai Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E7%94%B2%E5%B7%9E%E7%8A%AC%E7%9B%AE%E5%B3%A0-The_Inume_Pass_in_Kai_Province_(K%C5%8Dsh%C5%AB_Inume_t%C5%8Dge),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141034.jpg
+      license: CC0
+      alt: A pack-horse train and porters walk along a green ridge above a sea of cloud, with Mount Fuji rising behind and two travelers climbing the far slope.
+      trim:
+        top: 3.8
+        right: 4.2
+        bottom: 4
+        left: 12.3
+    - title: Ejiri in Suruga Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E9%A7%BF%E5%B7%9E%E6%B1%9F%E5%B0%BB-Ejiri_in_Suruga_Province_(Sunsh%C5%AB_Ejiri),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP140977.jpg
+      license: CC0
+      alt: Travelers on a winding path through marsh grass bend into a sudden gust as hats and sheets of paper fly off across the sky, with Mount Fuji drawn in outline beyond.
+      trim:
+        top: 4.2
+        right: 7.8
+        bottom: 4
+        left: 10.8
+    - title: Lotus Pond at Shinobazu, Ueno, from Famous Places in the Eastern Capital
+      artist: Utagawa Hiroshige
+      year: c. 1844
+      source: https://commons.wikimedia.org/wiki/File:Shinobazu_Pond_at_Ueno_LACMA_M.71.100.23.jpg
+      license: public domain
+      alt: Boatmen pole two small boats through a pond thick with pink lotus blossoms, past teahouses on stilts and a wooded hill with temple roofs at dusk.
+      trim:
+        top: 14.3
+        right: 3.6
+        bottom: 3.4
+        left: 3.4
+    - title: In the Mountains of Totomi Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E9%81%A0%E6%B1%9F%E5%B1%B1%E4%B8%AD-In_the_Mountains_of_T%C5%8Dtomi_Province_(T%C5%8Dtomi_sanch%C5%AB),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP140988.jpg
+      license: CC0
+      alt: Sawyers work high on a huge log propped on a trestle while others saw and rest below, as smoke billows over wooded mountains and Mount Fuji shows through the frame.
+      trim:
+        top: 1.8
+        right: 7.8
+        bottom: 1.8
+        left: 8.8
+    - title: The Waterwheel at Onden, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E9%9A%A0%E7%94%B0%E3%81%AE%E6%B0%B4%E8%BB%8A-The_Waterwheel_at_Onden_(Onden_no_suisha),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141060.jpg
+      license: CC0
+      alt: Villagers carry sacks of grain and wash rice in a rushing stream below a great waterwheel, while a child leads a pet turtle on a string and Mount Fuji rises far off.
+      trim:
+        top: 3.4
+        right: 1.6
+        bottom: 3.2
+        left: 11
+    - title: The Waterfall Where Yoshitsune Washed His Horse at Yoshino, from A Tour of Waterfalls in Various Provinces
+      artist: Katsushika Hokusai
+      year: c. 1832
+      source: https://commons.wikimedia.org/wiki/File:The_Waterfall_Where_Yoshitsune_Washed_His_Horse_at_Yoshino_in_Yamato_Province_(Wash%C5%AB_Yoshino_Yoshitsune_uma_arai_no_taki),_from_the_series_A_Tour_of_Waterfalls_in_Various_Provinces_(Shokoku_taki_meguri)_MET_DP141250.jpg
+      license: CC0
+      alt: Two men stand in a shallow torrent washing a chestnut horse beneath a broad, many-stranded waterfall that spills from a misty height beside a red rock spire.
+      trim:
+        top: 1.2
+        right: 1.9
+        bottom: 1.6
+        left: 16.2
+    - title: Spring Rain at Tsuchiyama, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:Tsuchiyama_Haru_no_Ame-%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E5%9C%9F%E5%B1%B1_%E6%98%A5%E3%81%AE%E9%9B%A8-Spring_Rain_at_Tsuchiyama_(50th_Station_of_the_T%C5%8Dkaid%C5%8D)_MET_DP123236.jpg
+      license: CC0
+      alt: A procession of porters in straw hats and capes bends into a heavy downpour as it crosses a bridge beside a swollen rushing stream, with tree trunks fading into the rain behind.
+      trim:
+        top: 33.6
+        right: 6.3
+        bottom: 4.5
+        left: 6.6
+    - title: Fireworks at Ryōgoku Bridge, from Famous Places in the Eastern Capital
+      artist: Utagawa Hiroshige
+      year: c. 1835-40
+      source: https://commons.wikimedia.org/wiki/File:Vuurwerk_bij_de_Ryogoku_brug_Ryogokubashi_no_hanabi_no_zu_(titel_op_object)_Beroemde_plaatsen_in_de_Oostelijke_hoofdstad_(serietitel)_Toto_meisho_(serietitel_op_object),_RP-P-1960-281.jpg
+      license: CC0
+      alt: Crowds of townspeople stroll and gather on Ryōgoku Bridge on a summer evening, watching red fireworks burst over the Sumida River crowded with pleasure boats.
+      trim:
+        top: 7.6
+        right: 7.3
+        bottom: 4.9
+        left: 2.6
+    - title: Monkey Plateau at Futagawa, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E4%BA%8C%E5%B7%9D_%E7%8C%BF%E3%83%B6%E9%A6%AC%E5%A0%B4-Futagawa,_Saru_ga_Baba_MET_DP122210.jpg
+      license: CC0
+      alt: Three women travelers with hats and staffs walk along the edge of a bare tawny upland dotted with small pines.
+      trim:
+        top: 6.5
+        right: 27.5
+        bottom: 2.6
+        left: 20.4
+    - title: Ōtsuki Plain in Kai Province, from Thirty-six Views of Mount Fuji
+      artist: Utagawa Hiroshige
+      year: "1858"
+      source: https://commons.wikimedia.org/wiki/File:Utagawa_Hiroshige_I,_published_by_Tsutaya_Kichiz%C5%8D_(K%C5%8Deid%C5%8D)_-_%C5%8Dtsuki_Plain_in_Kai_Province_(Kai_%C5%8Dtsuki_no_hara),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(F..._-_Google_Art_Project.jpg
+      license: public domain
+      alt: Plume grass, yellow wildflowers, and red bellflowers crowd a dry autumn plain with a winding stream, and Mount Fuji and a line of geese sit beyond.
+      trim:
+        top: 3.6
+        right: 17.6
+        bottom: 3.4
+        left: 5.8
+    - title: Minakuchi, Famous Dried Gourd, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E6%B0%B4%E5%8F%A3_%E5%90%8D%E7%89%A9%E5%B9%B2%E7%93%A2-Mizukuchi,_Meibutsu_Kampyo_MET_DP122231.jpg
+      license: CC0
+      alt: Village women peel gourds into long strips and hang them to dry on lines in a field, while a traveler with a bundle hurries past a large tree.
+      trim:
+        top: 26.2
+        right: 2.6
+        bottom: 10.8
+        left: 3
+    - title: Twilight at Numazu, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E6%B2%BC%E6%B4%A5_%E9%BB%84%E6%98%8F%E5%9B%B3-Numazu_Ki_Kure_MET_DP122186.jpg
+      license: CC0
+      alt: Pilgrims walk a riverside road at dusk under a rising full moon, one carrying a large red tengu mask on his back.
+      trim:
+        top: 27
+        right: 1.6
+        bottom: 8.2
+        left: 2.8
+    - title: The Ishiyakushi Temple at Ishiyakushi, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: "1834"
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E7%9F%B3%E8%96%AC%E5%B8%AB_%E7%9F%B3%E8%96%AC%E5%B8%AB%E5%AF%BA-The_Ishiyakushi_Temple_at_Ishiyakushi_MET_DP123208.jpg
+      license: CC0
+      alt: Farmers work harvested rice fields stacked with sheaves beside a temple village, below a green wooded hill.
+      trim:
+        top: 27.5
+        right: 12.3
+        bottom: 9.6
+        left: 4.4
+    - title: Shichirigahama in Sagami Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E7%9B%B8%E5%B7%9E%E4%B8%83%E9%87%8C%E6%B5%9C-Shichirigahama_in_Sagami_Province_(S%C5%8Dsh%C5%AB_Shichirigahama),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141074.jpg
+      license: CC0
+      alt: A long beach curves past a wooded headland and a small village toward Mount Fuji beneath a deep blue sky.
+      trim:
+        top: 1.2
+        right: 3.4
+        bottom: 1.6
+        left: 8.6
+    - title: Utsu Hill at Okabe, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: "1834"
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E5%B2%A1%E9%83%A8_%E5%AE%87%E6%B4%A5%E3%81%AE%E5%B1%B1-Utsu_Hill_at_Okabe_MET_DP123213.jpg
+      license: CC0
+      alt: Woodcutters carrying bundles of brushwood climb a narrow path beside a rushing stream through a steep green mountain pass.
+      trim:
+        top: 5.8
+        right: 15.3
+        bottom: 5.4
+        left: 12.4
+    - title: Kuwana, the Seven-Ri Ferry Landing, from Fifty-three Stations of the Tōkaidō
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E6%A1%91%E5%90%8D_%E4%B8%83%E9%87%8C%E6%B8%A1%E5%8F%A3-Kuwana,_Shichi-Ri_Watashi_Guchi_MET_DP122223.jpg
+      license: CC0
+      alt: Boatmen and passengers ride two large sailing ferries through rough water at the river mouth below the stone walls of Kuwana Castle.
+      trim:
+        top: 29.6
+        right: 3.9
+        bottom: 9.4
+        left: 2
+    - title: Distant View of Mount Akiba at Kakegawa, from Fifty-three Stations of the Tokaido
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E6%8E%9B%E5%B7%9D_%E7%A7%8B%E8%91%89%E5%B1%B1%E9%81%A0%E6%9C%9B-Kakegawa,_Akihasan_Empo_MET_DP122204.jpg
+      license: CC0
+      alt: Travelers bow and lean as they cross an arched wooden bridge while a child chases a lost kite string and farmers stoop in the paddies below a dark mountain.
+      trim:
+        top: 25.5
+        right: 3
+        bottom: 10.5
+        left: 3
+    - title: Autumn Maples at Tsūten Bridge
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:NDL-DC_1303492-Utagawa_Hiroshige-京都名所之内_通天橋ノ紅楓-crd.jpg
+      license: public domain
+      alt: People sit on low benches beside a mountain stream under red autumn maples, sharing food and talk while a mother and child climb the slope and a figure crosses the high wooden bridge above.
+      trim:
+        top: 6.8
+        right: 4.3
+        bottom: 6.2
+        left: 13.5
+    - title: Senju in Musashi Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E6%AD%A6%E5%B7%9E%E5%8D%83%E4%BD%8F-Senju_in_Musashi_Province_(Bush%C5%AB_Senju),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141001.jpg
+      license: CC0
+      alt: A farmer leads a bowing packhorse past tall river sluice gates while two men in round hats fish from the bank, with Mount Fuji small in the distance.
+      trim:
+        top: 1.8
+        right: 1.4
+        bottom: 1.6
+        left: 9.6
+    - title: Returning Geese at Katata, from Eight Views of Omi
+      artist: Utagawa Hiroshige
+      year: c. 1834
+      source: https://commons.wikimedia.org/wiki/File:%E8%BF%91%E6%B1%9F%E5%85%AB%E6%99%AF%E4%B9%8B%E5%86%85_%E5%A0%85%E7%94%B0%E8%90%BD%E9%9B%81-Geese_Flying_Down_to_Katada_MET_DP121557.jpg
+      license: CC0
+      alt: Fishermen in sedge hats pole their boats and a sailboat across Lake Biwa at dusk while a long skein of wild geese streams down past the mountains toward the shore.
+      trim:
+        top: 3.2
+        right: 2
+        bottom: 2.7
+        left: 20.8
+    - title: Chrysanthemums and Bee, from the Large Flowers series
+      artist: Katsushika Hokusai
+      year: c. 1831-33
+      source: https://commons.wikimedia.org/wiki/File:Katsushika_Hokusai_(1760-1849),_Chrysanten_met_honingbij.jpg
+      license: public domain
+      alt: A bee hovers over a dense bank of red, pink, and cream chrysanthemums with dark green leaves.
+      trim:
+        top: 0.3
+        right: 8.8
+        bottom: 1.8
+        left: 0.6
+    - title: Persimmon with Grasshopper
+      artist: after Katsushika Hokusai
+      year: c. 1890-1900
+      source: https://commons.wikimedia.org/wiki/File:Kakivrucht_met_sprinkhaan,_RP-P-1958-311.jpg
+      license: CC0
+      alt: A green grasshopper clings to a ripe orange persimmon hanging from a gnarled branch, with the edge of a pale full moon behind.
+      trim:
+        top: 3.2
+        right: 3.5
+        bottom: 2.3
+        left: 10.4
+    - title: Ushibori in Hitachi Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E5%B8%B8%E5%B7%9E%E7%89%9B%E6%8E%98-Ushibori_in_Hitachi_Province_(J%C5%8Dsh%C5%AB_Ushibori),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141057.jpg
+      license: CC0
+      alt: A boatman leans from a moored cargo boat to pour water into the marsh as egrets lift from the reeds, with snowy Mount Fuji beyond.
+      trim:
+        top: 2.9
+        right: 3.6
+        bottom: 2.8
+        left: 10.6
+    - title: Rain at Shohei Bridge and the Kanda River
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:名所江戸百景_昌平橋_聖堂_神田川-Shohei_Bridge,_Seido_Temple_and_Kanda_River_MET_DP121471.jpg
+      license: CC0
+      alt: Travelers in straw hats, one carrying baskets on a pole, walk a sloping road above the Kanda River while a boatman poles his skiff below, all under a fine slanting rain between green banks.
+      trim:
+        top: 25.3
+        right: 4.2
+        bottom: 4.2
+        left: 6.8
+    - title: Maple Trees at Mama, the Tekona Shrine and Tsugihashi Bridge, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E7%9C%9F%E9%96%93%E3%81%AE%E7%B4%85%E8%91%89%E6%89%8B%E5%8F%A4%E9%82%A3%E3%81%AE%E7%A4%BE%E7%B6%99%E3%81%AF%E3%81%97-Maples_at_Mama,_from_the_series_One_Hundred_Famous_Views_of_Edo_MET_DP121529.jpg
+      license: CC0
+      alt: Tiny figures walk among thatched huts and ponds far below, seen through red maple leaves hanging from a branch, with geese crossing the evening sky.
+      trim:
+        top: 24.6
+        right: 5.8
+        bottom: 7.8
+        left: 3.3
+    - title: Camellia and Blue-Headed Bird
+      artist: Utagawa Hiroshige
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:MET_DP121488.jpg
+      license: CC0
+      alt: A small blue-headed bird perches on a bare camellia stem above a pink bud, with a red camellia in full bloom at the lower left.
+      trim:
+        top: 3
+        right: 6.1
+        bottom: 7.4
+        left: 5.3
+    - title: Asakusa Ricefields and Torinomachi Festival, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E6%B5%85%E8%8D%89%E7%94%B0%E5%9C%83%E9%85%89%E3%81%AE%E7%94%BA%E8%A9%A3-Revelers_Returned_from_the_Tori_no_Machi_Festival_at_Asakusa,_from_the_series_One_Hundred_Famous_Views_of_Edo_MET_DP121510.jpg
+      license: CC0
+      alt: A white cat sits on a windowsill gazing through the lattice at bare fields where tiny festival-goers march toward Mount Fuji.
+      trim:
+        top: 14.2
+        right: 12.4
+        bottom: 6.1
+        left: 2
+    - title: Hodogaya on the Tokaido, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BF%9D%E5%9C%9F%E3%82%B1%E8%B0%B7-Hodogaya_on_the_T%C5%8Dkaid%C5%8D_(T%C5%8Dkaid%C5%8D_Hodogaya),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP141068.jpg
+      license: CC0
+      alt: Travelers with a palanquin, a rider on a packhorse, and a porter pass along a road lined with tall pines, with Mount Fuji beyond.
+      trim:
+        top: 25.5
+        right: 1
+        bottom: 1.2
+        left: 1.4
+    - title: Oi, from Sixty-nine Stations of the Kisokaido
+      artist: Utagawa Hiroshige
+      year: c. 1835-38
+      source: https://commons.wikimedia.org/wiki/File:%E6%9C%A8%E6%9B%BD%E6%B5%B7%E9%81%93%E5%85%AD%E6%8B%BE%E4%B9%9D%E6%AC%A1%E4%B9%8B%E5%86%85_%E5%A4%A7%E4%BA%95-%C5%8Ci_MET_DP120460.jpg
+      license: CC0
+      alt: Riders hunched under snow-laden capes and straw hats plod up a mountain road between snowy trees as snow falls on the hills.
+      trim:
+        top: 36
+        right: 4.6
+        bottom: 9.6
+        left: 4.3
+    - title: Crane and Surf
+      artist: Utagawa Hiroshige
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:%E6%B3%A2%E3%81%AB%E4%B8%B9%E9%A0%82%E9%B6%B4-Crane_and_Surf_MET_DP121521.jpg
+      license: CC0
+      alt: A red-crowned crane stands in breaking surf beside tall reeds, its head bowed toward the water.
+      trim:
+        top: 1.6
+        right: 3.9
+        bottom: 5.6
+        left: 3.8
+    - title: "Hamamatsu: Winter Scene, from Fifty-three Stations of the Tokaido"
+      artist: Utagawa Hiroshige
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:Hiroshige-53-Stations-Hoeido-30-Hamamatsu-MET-New-York-01.jpg
+      license: public domain
+      alt: Travelers and porters crouch around a smoky fire at the foot of a great tree while a man in a straw hat stands nearby, with Hamamatsu castle across the fields.
+      trim:
+        top: 27.2
+        right: 0.9
+        bottom: 7.4
+        left: 3.4
+    - title: "Mishima: Morning Mist, from Fifty-three Stations of the Tokaido"
+      artist: Utagawa Hiroshige
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:Mishima_Asa-Giri-%E6%9D%B1%E6%B5%B7%E9%81%93%E4%BA%94%E5%8D%81%E4%B8%89%E6%AC%A1%E4%B9%8B%E5%86%85_%E4%B8%89%E5%B3%B6_%E6%9C%9D%E9%9C%A7-Morning_Mist_MET_DP123235.jpg
+      license: CC0
+      alt: A rider and palanquin bearers trudge forward through morning fog while other travelers, a shrine gate, and trees fade into grey mist behind them.
+      trim:
+        top: 24.2
+        right: 6.4
+        bottom: 5.1
+        left: 6.5
+    - title: Minami Shinagawa and Samezu Coast, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:Minami_Shinagawa_and_Samezu_Coast_Guimet_MA12346.jpg
+      license: public domain
+      alt: Boatmen tend seaweed beds among rows of stakes in a wide blue bay, with a village along the shore and a mountain on the horizon.
+      trim:
+        top: 22.4
+        right: 4.8
+        bottom: 4.8
+        left: 5.6
+    - title: Kajikazawa in Kai Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830-32
+      source: https://commons.wikimedia.org/wiki/File:%E5%86%A8%E5%B6%BD%E4%B8%89%E5%8D%81%E5%85%AD%E6%99%AF_%E7%94%B2%E5%B7%9E%E7%9F%B3%E7%8F%AD%E6%B2%A2-Kajikazawa_in_Kai_Province_(K%C5%8Dsh%C5%AB_Kajikazawa),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanj%C5%ABrokkei)_MET_DP140973.jpg
+      license: CC0
+      alt: A fisherman leans out from a rocky spur over surging waves, hauling on his lines while a boy crouches beside him, with Mount Fuji rising through the mist behind.
+      trim:
+        top: 3.8
+        right: 2.3
+        bottom: 3.3
+        left: 14.1
+    - title: "Kanbara: Night Snow, from Fifty-three Stations of the Tokaido"
+      artist: Utagawa Hiroshige
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:Kanbara,_avondsneeuw_Kanbara,_yoru_no_yuki_(titel_op_object)_De_53_stations_van_de_Tokaido_(serietitel)_Tokaido_gojusan_tsugi_no_uchi_(serietitel_op_object),_RP-P-1960-378.jpg
+      license: CC0
+      alt: Three travelers bent under hats and straw capes trudge through deep snow past a silent, snow-buried village at night.
+      trim:
+        top: 27
+        right: 6.6
+        bottom: 9.2
+        left: 7.3
+    - title: Sudden Shower over Shin-Ohashi Bridge and Atake, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:Ōhashi_Atake_no_yūdachi-名所江戶百景_大はしあたけの夕立-Sudden_Shower_over_Shin-Ōhashi_Bridge_and_Atake_(Ōhashi_Atake_no_yūdachi),_from_the_series_One_Hundred_Famous_Views_of_Edo_(Meisho_Edo_hyakkei)_MET_DP121525.jpg
+      license: public domain
+      alt: People hunched under hats and straw mats hurry across a long wooden bridge in driving rain while a lone raftsman poles across the river.
+      trim:
+        top: 22.8
+        right: 5.9
+        bottom: 3.2
+        left: 6.8
+    - title: Morning after the Snow at Koishikawa in Edo, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:冨嶽三十六景_礫川雪の旦-Morning_after_the_Snow_at_Koishikawa_in_Edo_(Koishikawa_yuki_no_ashita),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanjūrokkei)_MET_DP141015.jpg
+      license: CC0
+      alt: Women on a teahouse balcony point out over snow-covered roofs and fields toward a white Mount Fuji under a deep blue sky.
+      trim:
+        top: 3
+        right: 3.2
+        bottom: 10
+        left: 10.8
+    - title: "Kameyama: Clear Weather after Snow, from Fifty-three Stations of the Tokaido"
+      artist: Utagawa Hiroshige
+      year: c. 1833-34
+      source: https://commons.wikimedia.org/wiki/File:東海道五十三次之内_亀山_雪晴-Clear_Weather_after_Snow_MET_DP123228.jpg
+      license: CC0
+      alt: A procession of travelers in yellow hats climbs a steep, snow-laden slope among leaning pines toward a castle on the cliff above.
+      trim:
+        top: 3.8
+        right: 2.4
+        bottom: 4.1
+        left: 29.6
+    - title: Fudo Falls in Oji, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:NDL-DC_1303251-Utagawa_Hiroshige-%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E7%8E%8B%E5%AD%90%E4%B8%8D%E5%8B%95%E4%B9%8B%E6%BB%9D-crd.jpg
+      license: public domain
+      alt: A man bathes beneath a tall, narrow waterfall pouring down a dark cliff, while two women in kimono and a tea seller with his customer wait on the shore below.
+      trim:
+        top: 25.3
+        right: 1.3
+        bottom: 1.5
+        left: 2
+    - title: Lake Suwa in Shinano Province, from Thirty-six Views of Mount Fuji
+      artist: Katsushika Hokusai
+      year: c. 1830
+      source: https://commons.wikimedia.org/wiki/File:冨嶽三十六景_信州諏訪湖-Lake_Suwa_in_Shinano_Province_(Shinshū_Suwako),_from_the_series_Thirty-six_Views_of_Mount_Fuji_(Fugaku_sanjūrokkei)_MET_DP140970.jpg
+      license: CC0
+      alt: A boatman poles a small boat across wide Lake Suwa below two tall pines and a thatched shrine, with Mount Fuji small on the far shore.
+      trim:
+        top: 4.6
+        right: 2.6
+        bottom: 3
+        left: 12.2
+    - title: Temple Gardens in Nippori, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:NDL-DC_1303218-Utagawa_Hiroshige-%E5%90%8D%E6%89%80%E6%B1%9F%E6%88%B8%E7%99%BE%E6%99%AF_%E6%97%A5%E6%9A%AE%E9%87%8C%E5%AF%BA%E9%99%A2%E3%81%AE%E6%9E%97%E6%B3%89-crd.jpg
+      license: public domain
+      alt: Visitors stroll along a yellow path through a temple garden of tall pines, flowering shrubs, and weeping cherry trees in bloom.
+      trim:
+        top: 14.9
+        right: 11.2
+        bottom: 1.8
+        left: 2.1
+    - title: Snow on the Sumida River, from Snow, Moon, and Flowers
+      artist: Katsushika Hokusai
+      year: c. 1833
+      source: https://commons.wikimedia.org/wiki/File:%E9%9B%AA%E6%9C%88%E8%8A%B1_%E9%9A%85%E7%94%B0-Snow_on_the_Sumida_River_(Sumida),_from_the_series,_Snow,_Moon,_and_Flowers_(Setsugekka)_MET_DP141240.jpg
+      license: CC0
+      alt: A boatman and his passenger drift in a covered boat on the cold blue river past snow-heaped banks and a small shrine, while two figures cross the far shore.
+      trim:
+        top: 1.6
+        right: 13.6
+        bottom: 2.4
+        left: 0.9
+    - title: Plum Garden at Kamata, from One Hundred Famous Views of Edo
+      artist: Utagawa Hiroshige
+      year: "1857"
+      source: https://commons.wikimedia.org/wiki/File:Kamata_no_Baien-名所江戸百景_蒲田の梅園-Plum_Garden_at_Kamata_MET_DP130157.jpg
+      license: CC0
+      alt: Visitors walk among blossoming plum trees toward thatched teahouses while an empty palanquin waits in the foreground.
+      trim:
+        top: 23.3
+        right: 5.5
+        bottom: 3
+        left: 2.3
   seasons:
     - key: bloom
       name: Bloom
