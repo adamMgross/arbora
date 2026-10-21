@@ -1,6 +1,6 @@
 ---
 id: arb-6d4h
-status: open
+status: closed
 deps: []
 links: []
 created: 2026-10-20T23:45:01Z

@@ -127,49 +127,12 @@ The footer is the root system. Background transitions from earth to deep root co
 A drawn card shows its picture and its name and nothing else (`docs/decisions/0012`), so the picture carries the card. The pictures are public-domain art, not drawings (`docs/decisions/0014`). A tarot card works because the reader steps into the figure on it, so a picture has a person in it wherever the card allows, small against trees, sky, or weather.
 
 - **One source per deck,** so a deck reads as one look. The Wood is American landscape painting of the 1800s. The Sky is Doré's engravings, with Flammarion, Verne, and one NASA painting. The Year is Hokusai and Hiroshige.
-- **The whole picture.** Each card takes its picture's shape, on a mat with the name beneath. Nothing is cropped except text.
+- **The whole picture.** Each card takes its picture's shape, on a mat with the name beneath. Nothing is cropped except text and the scan's margins.
 - **No text in the picture.** Titles, captions, poems, and labels are cropped away by the picture's `trim`. Artists' signatures and seals stay.
 - **Credit.** The book ends with the work's title, artist, year, and a link to its source.
 - **Every card has one.** A card with no fitting picture leaves the deck.
-
-The Sky and the Year still show drawn pictures until each switches over. Their drawings follow the grammars below.
-
-### The Sky: as above, so below
-
-```
-         .-----------.
-       /   the light   \     above: what this light has meant
-      |  and its lore   |
-      |-----------------|    horizon
-      | the pilgrim:    |    below: what it asks of you
-       \ set down, take/
-         '-----------'
-```
-
-- **Horizon.** Heavens and fixed stars split the medallion with a horizon. Above it is the light as symbol, with its traditions around it. Below it is the earth or the sea, where the pilgrim stands.
-- **The pilgrim's act.** The pilgrim lays the plate's set-down object on the ground and holds up a hand to receive the plate's gift, shown as an object or as light falling from above. Every plate's pilgrim acts out its own Set down and Receive.
-- **Reflection.** Something above is answered below, such as a star's reflection on the water.
-- **Rings.** The seven faint rings stay, and a heaven lights its own ring. Beyond plates have no horizon, and their rings fade outward.
-- **Real stars.** A fixed-star plate draws its real star pattern as sparkles with faint dashed lines.
-
-### The Year: a window on the California year
-
-```
-   +-------------------+
-   | sky in the season [n]   seal: the window number
-   |    sun at the term's height
-   | far hills: the region
-   | the named event, large, cropped by the frame
-   | a small mark of the old Japanese kō
-   +-------------------+
-     The window's name
-```
-
-- **Season.** The palette is the season's: rain, bloom, gold, or ember.
-- **Sun.** The sun's height is the time of year, low in winter and high in summer (`sunY` in `src/scenes/year/ink.ts`), so the cards of a season share a sky.
-- **Place.** The ground says where in California the event happens: coast, valley, foothills, mountains, or desert.
-- **The event.** The thing the window is named for fills the foreground, cropped by the frame as in a woodblock print.
-- **The other calendar.** A small mark of the original Japanese kō for the same days, such as the crickets at the door under the persimmons.
+- **The mat is the deck's.** The Wood's is forest ink with the name in IM Fell small caps. The Sky's is lapis with the name in cream. The Year's is washi, with the window's number on a red seal before its name, and its book credits both the world's print and the drawn one.
+- **The backs stay drawn.** The hub's card backs, the Wood's forest, the Sky's dome, and the Year's ring are SVG from each deck's `art.ts`.
 
 ---
 
