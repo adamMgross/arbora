@@ -65,11 +65,13 @@ test.describe('the year', () => {
   }) => {
     await openDeck(page, 'year.html', SPRING_NOON);
     await expect(page.locator('[data-today]')).toHaveText('16');
-    const world = page.locator('#year-pair figure').first().locator('.cardsvg');
+    const world = page.locator('#year-pair > div').first().locator('.face');
     await expect(world).toHaveAttribute('aria-label', 'Window 16: Lupine paints the hillsides');
-    await expect(world.locator('text')).toHaveText(['16', 'Lupine paints the', 'hillsides']);
+    await expect(world.locator('figcaption')).toHaveText('16 Lupine paints the hillsides');
+    await expect(world.locator('img')).toHaveAttribute('alt', /\w/);
+    await expect(world.locator('img')).toHaveJSProperty('complete', true);
     await expect(page.locator('#year-open')).toBeHidden();
-    const yours = page.locator('#year-pair figure').nth(1).locator('.cardsvg');
+    const yours = page.locator('#year-pair > div').nth(1).locator('.face');
     for (let i = 0; i < 3; i++) {
       await page.locator('#year-draw').click();
       await expect(page.locator('#year-draw')).toBeDisabled();
@@ -84,11 +86,12 @@ test.describe('the year', () => {
     await expect(page.locator('#year-book .bk-title')).toBeVisible();
     await expect(page.locator('#year-book .bk-kicker')).toHaveText(/^Window 16 and window \d+$/);
     await expect(page.locator('#year-book .bk-pass cite')).not.toBeEmpty();
+    await expect(page.locator('#year-book .bk-credit a')).toHaveCount(2);
     await page.locator('#year-draw').click();
     await expect(page.locator('#year-book')).toBeEmpty();
     await page.reload();
     await page.locator('arbora-scene.mounted').waitFor();
-    await expect(page.locator('#year-pair figure').nth(1).locator('.cardsvg')).not.toHaveAttribute('aria-label');
+    await expect(page.locator('#year-pair > div').nth(1).locator('.face')).toHaveCount(0);
     await expect(page.locator('#year-draw')).toBeEnabled();
   });
 

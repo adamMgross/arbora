@@ -1,70 +1,23 @@
-import type { YearSeasonData } from '../../lib/decks';
-import { esc, f, polar, rng, uid } from '../../lib/svg';
+import type { CardPicture, YearSeasonData } from '../../lib/decks';
+import { esc, f, polar } from '../../lib/svg';
 import { needleAngle, windowArcStart } from '../../lib/year-windows';
-import { svgOpen } from '../book';
-import { hillPath, RED, seasonVar, SERIF, SMALLCAPS, SUMI, WASHI } from './ink';
-import { VIGNETTES } from './windows';
-
-function wrapWords(text: string, max: number): string[] {
-  const lines: string[] = [];
-  let current = '';
-  for (const word of text.split(' ')) {
-    if (`${current} ${word}`.trim().length > max) {
-      lines.push(current.trim());
-      current = word;
-    } else current += ` ${word}`;
-  }
-  lines.push(current.trim());
-  return lines;
-}
+import { pictureFace, svgOpen } from '../book';
+import { RED, seasonVar, SMALLCAPS, SERIF, SUMI, WASHI } from './ink';
 
 export interface WindowCard {
   index: number;
   name: string;
   season: YearSeasonData;
+  picture: CardPicture;
 }
 
-function landscape(index: number, key: string): string {
-  const r = rng(index * 7 + 3);
-  const ph = r() * 6;
-  const ph2 = r() * 6;
-  let o = '';
-  o += `<rect x="18" y="18" width="244" height="300" fill="${seasonVar(key, 'sky')}"/><circle cx="${f(60 + r() * 110)}" cy="${f(84 + r() * 50)}" r="30" fill="${seasonVar(key, 'sun')}"/>`;
-  if (key === 'ember') {
-    for (let b = 0; b < 3; b++)
-      o += `<ellipse cx="${f(80 + r() * 120)}" cy="${110 + b * 40}" rx="150" ry="9" fill="${WASHI}" opacity=".28"/>`;
-  }
-  if (key === 'rain') {
-    let rain = '';
-    for (let q = 0; q < 48; q++) rain += `M${f(18 + r() * 260)},${f(20 + r() * 170)} l-6,16`;
-    o += `<path d="${rain}" stroke="${SUMI}" stroke-width=".8" opacity=".35"/>`;
-  }
-  o += `<path d="${hillPath(214, 18, 38, ph)}" fill="${seasonVar(key, 'hill1')}"/>`;
-  if (key === 'rain') o += `<rect x="18" y="232" width="244" height="16" fill="${WASHI}" opacity=".45"/>`;
-  if (key === 'gold')
-    o += `<path d="M96,222 L96,200" stroke="${SUMI}" stroke-width="3"/><circle cx="84" cy="196" r="11" fill="${seasonVar(key, 'hill2')}"/><circle cx="98" cy="190" r="13" fill="${seasonVar(key, 'hill2')}"/><circle cx="110" cy="198" r="10" fill="${seasonVar(key, 'hill2')}"/>`;
-  o += `<path d="${hillPath(262, 12, 26, ph2)}" fill="${seasonVar(key, 'hill2')}"/>`;
-  if (key === 'bloom') {
-    for (let fl = 0; fl < 70; fl++)
-      o += `<circle cx="${f(20 + r() * 240)}" cy="${f(240 + r() * 76)}" r="${f(1.2 + r() * 1.6)}" fill="${r() < 0.6 ? seasonVar(key, 'arc') : seasonVar(key, 'sun')}"/>`;
-  }
-  return o;
-}
-
-export function windowFace(card: WindowCard): string {
-  const { index, name, season } = card;
-  const key = season.key;
-  const id = uid('ca');
-  let o = svgOpen(`Window ${index + 1}: ${name}`);
-  o += `<defs><clipPath id="${id}"><rect x="18" y="18" width="244" height="300"/></clipPath></defs><rect width="280" height="480" rx="10" fill="${WASHI}"/><g clip-path="url(#${id})">`;
-  o += VIGNETTES[index]?.() ?? landscape(index, key);
-  o += `</g><rect x="18" y="18" width="244" height="300" fill="none" stroke="${SUMI}" stroke-width="1"/>`;
-  o += `<rect x="228" y="30" width="28" height="28" rx="2" fill="${RED}"/><text x="242" y="49" text-anchor="middle" font-family="${SERIF}" font-weight="600" font-size="15" fill="${WASHI}">${index + 1}</text>`;
-  wrapWords(name, 22).forEach((l, i) => {
-    o += `<text x="20" y="${360 + i * 24}" font-family="${SERIF}" font-size="21" font-weight="500" fill="${SUMI}">${esc(l)}</text>`;
-  });
-  return `${o}</svg>`;
-}
+export const windowFace = ({ index, name, picture }: WindowCard): string =>
+  pictureFace(
+    picture,
+    `Window ${index + 1}: ${name}`,
+    `<b>${index + 1}</b> ${esc(name)}`,
+    '(max-width: 640px) 46vw, 300px',
+  );
 
 export function yearBack(): string {
   let o = `${svgOpen()}<rect width="280" height="480" rx="10" fill="${WASHI}"/><rect x="16" y="16" width="248" height="448" fill="none" stroke="${SUMI}" stroke-width=".8"/>`;

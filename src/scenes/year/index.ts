@@ -10,7 +10,7 @@ import {
   windowFor,
   windowRange,
 } from '../../lib/year-windows';
-import { byId, passageHtml, question, readData } from '../book';
+import { byId, credit, passageHtml, question, readData } from '../book';
 import type { SceneEnv } from '../env';
 import { reveal, wait } from '../motion';
 import { ringSvg, windowFace, yearBack, type WindowCard } from './art';
@@ -59,6 +59,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     index,
     name: data.windows[index]!,
     season: seasonOf(index, data.seasons),
+    picture: data.pictures[index]!,
   });
 
   let journal: Journal = loadJournal(env.storage, KEY);
@@ -84,8 +85,8 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     const yours =
       drawn === null
         ? `<div class="cardbox">${yearBack()}</div>`
-        : `<div class="cardbox${fresh ? ' new' : ''}">${windowFace(card(drawn))}</div>`;
-    pair.innerHTML = `<figure><div class="cardbox">${windowFace(card(today))}</div></figure><figure>${yours}</figure>`;
+        : `<div${fresh ? ' class="new"' : ''}>${windowFace(card(drawn))}</div>`;
+    pair.innerHTML = `<div>${windowFace(card(today))}</div><div>${yours}</div>`;
   };
 
   const notes = (w: number) =>
@@ -136,6 +137,7 @@ export function mount(root: HTMLElement, env: SceneEnv): void {
     h += passageHtml(passage);
     h += `<p class="bk-note">In Japan's old calendar, the world's window is called “${esc(data.ko[today]!)}.”${others.length ? ` A year ago in this window you wrote: “${esc(others[others.length - 1]!.text)}”` : ''}</p>`;
     h += question('Sit with', 'What in you belongs to the window you drew, while the world moves through this one?');
+    h += credit(world.picture) + credit(yours.picture);
     book.innerHTML = `${h}</div>`;
     reveal(book);
   };

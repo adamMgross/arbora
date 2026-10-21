@@ -66,6 +66,7 @@ export interface YearData {
   terms: Array<{ name: string; month: number; day: number }>;
   windows: string[];
   ko: string[];
+  pictures: CardPicture[];
   seasons: YearSeasonData[];
 }
 

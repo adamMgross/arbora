@@ -91,6 +91,9 @@ async function load(): Promise<WoodData | SkyData | YearData> {
     terms: year.terms,
     windows: year.windows,
     ko: year.ko,
+    pictures: await Promise.all(
+      year.pictures.map((p, i) => picture('year', `p${String(i + 1).padStart(2, '0')}`, p)),
+    ),
     seasons: await Promise.all(year.seasons.map(async (s) => ({ ...s, passages: await resolveAll(s.passages) }))),
   };
 }

@@ -19,7 +19,8 @@
 /* The fixed nav reappears when the page scrolls up, so a revealed element starts below it. */
 .deck,
 .deck [id],
-.deck figure {
+.deck figure,
+.deck-year .pair > div {
   scroll-margin-block: 80px 12px;
 }
 
@@ -736,26 +737,9 @@
   --art-washi: #f6f1e6;
   --art-sumi: #22201d;
   --art-red: #c8442f;
-  --art-fruit: #e2742a;
-  --art-bloom-sky: #efe1d6;
-  --art-bloom-hill1: #9fbb7f;
-  --art-bloom-hill2: #5f8a63;
-  --art-bloom-sun: #e8a07a;
   --art-bloom-arc: #e8762b;
-  --art-gold-sky: #efe4c2;
-  --art-gold-hill1: #ddb768;
-  --art-gold-hill2: #b98a3e;
-  --art-gold-sun: #f2c14e;
   --art-gold-arc: #d9b260;
-  --art-ember-sky: #f0cba3;
-  --art-ember-hill1: #c07c45;
-  --art-ember-hill2: #7d4528;
-  --art-ember-sun: #c8442f;
   --art-ember-arc: #b8743c;
-  --art-rain-sky: #d9e0e0;
-  --art-rain-hill1: #7da36e;
-  --art-rain-hill2: #3f6b4a;
-  --art-rain-sun: #f4f2ea;
   --art-rain-arc: #5f8a63;
   background: radial-gradient(120% 90% at 50% 0%, #f4efe4, #e6ddca);
 }
@@ -791,17 +775,40 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+  align-items: start;
 }
 
-.deck-year .pair figure {
-  display: grid;
-  gap: 6px;
+.deck-year .pair > div {
   min-width: 0;
-  margin: 0;
 }
 
-.deck-year .cardbox {
+.deck-year .cardbox,
+.deck-year .face {
   box-shadow: 0 10px 24px rgba(60, 40, 20, 0.2);
+}
+
+.deck-year .face {
+  background: var(--art-washi);
+  color: var(--art-sumi);
+  padding: 6px 6px 8px;
+}
+
+.deck-year .face figcaption {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.25;
+  text-align: start;
+}
+
+.deck-year .face b {
+  display: inline-block;
+  min-width: 1.6em;
+  margin-right: 4px;
+  border-radius: 2px;
+  background: var(--art-red);
+  color: var(--art-washi);
+  text-align: center;
 }
 
 .deck-year .pair .new {

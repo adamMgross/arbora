@@ -159,7 +159,7 @@ test.describe('on a phone, the year', () => {
     await expect(page.locator('#year-ring svg')).toBeInViewport({ ratio: 0.9 });
     await settle(page);
     await page.clock.runFor(3000);
-    await expect(page.locator('#year-pair figure').nth(1)).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('#year-pair > div').nth(1)).toBeInViewport({ ratio: 1 });
     await page.locator('#year-open').click();
     await expect(page.locator('#year-book .book')).toBeInViewport();
     await expectTouchSized(page);
