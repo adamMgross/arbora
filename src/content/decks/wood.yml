@@ -9,6 +9,11 @@
     source: https://commons.wikimedia.org/wiki/File:Camp_Fire_MET_DT2829.jpg
     license: CC0
     alt: Two woodsmen keeping a fire at night under dark evergreens, sparks rising.
+    trim:
+      top: 1.2
+      right: 1.4
+      bottom: 1.4
+      left: 0.7
   principle: principle-3
   story: In the Cherokee telling of how the world was made, the plants and animals were asked to keep watch for seven nights. One by one they fell asleep. A few trees kept the vigil to the end and were given the gift of staying green all year. Among the animals the owl stayed awake, and can see in the dark.
   passages:
@@ -41,6 +46,10 @@
     source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_Landscape_with_Dead_Tree_1828.jpg
     license: public domain
     alt: A storm-broken dead tree twists on a dark mountainside as clouds clear from a far peak.
+    trim:
+      right: 0.8
+      bottom: 0.4
+      left: 0.2
   principle: principle-2
   story: On a dry ridge at eleven thousand feet, the oldest living trees grow a few inches a century and have stood since before the pyramids. Most of each tree is dead wood, polished by ice, with one strip of living bark feeding one living branch. They live so long because almost nothing else can live there.
   passages:
@@ -73,6 +82,9 @@
     source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Titan%27s_Goblet.jpg
     license: public domain
     alt: Only specks of boats and buildings on the goblet's rim.
+    trim:
+      top: 0.2
+      left: 0.3
   principle: principle-5
   story: The Norse world tree is an ash. The nine worlds hang in it, a well lies at its root where the Norns draw water for it every day, an eagle sits in the crown and a serpent gnaws below, and a squirrel runs between them carrying insults. The gods meet beneath it to judge. Odin hung on it nine nights to win the runes.
   passages:
@@ -93,6 +105,11 @@
     source: https://commons.wikimedia.org/wiki/File:The_Forest_of_Arden_MET_DT240272.jpg
     license: CC0
     alt: Two small figures at the lower left beneath a looming, almost bodily tree.
+    trim:
+      top: 0.2
+      right: 0.2
+      bottom: 0.2
+      left: 0.2
   principle: principle-1
   story: A face made of leaves, with vines growing from his mouth, carved into hundreds of medieval churches. No one knows exactly what the carvers meant. He looks like what a person becomes when they stop holding themselves apart from the green world. Here he wears fir and cedar, and a few maple leaves.
   passages:
@@ -109,6 +126,9 @@
     source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_Dream_of_Arcadia_-_Google_Art_Project.jpg
     license: public domain
     alt: Small figures in classical dress dancing and resting under trees near a temple.
+    trim:
+      top: 0.8
+      right: 0.3
   principle: principle-1
   story: In the Homeric hymn the mountain nymphs are born with their trees and die with them. When a pine or an oak withers, its nymph leaves the light of the sun. The Greeks did not say the tree had a spirit. They said the spirit had a tree. In this wood she comes out of a birch.
   passages:
@@ -141,6 +161,9 @@
     source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Voyage_of_Life_Manhood,_1842_(National_Gallery_of_Art).jpg
     license: public domain
     alt: A man alone in a small boat, hands clasped, carried toward rapids under storm and dead trees.
+    trim:
+      top: 0.4
+      left: 0.2
   principle: principle-7
   story: Every people who live near forests know what it is to get lost in one. The dark wood is where the old path ends and the next one has not appeared. Dante begins the greatest poem of his age there, which says something about where journeys start.
   passages:
@@ -162,6 +185,9 @@
     source: https://commons.wikimedia.org/wiki/File:AsherDurand-Study_Woodland_Interior.jpg
     license: public domain
     alt: Moss-covered boulders split by roots in a green forest, saplings growing from the rock.
+    trim:
+      top: 0.9
+      right: 0.6
   principle: principle-4
   story: When an old tree falls in a deep forest it keeps giving for centuries. Seedlings root along its back, fungi turn its wood to soil, and threads under the ground carry what it held to the trees around it. In the Pacific Northwest whole rows of hemlocks stand on stilts where the log they grew on has gone. An ending can be the ground something else grows from.
   passages:
@@ -202,6 +228,11 @@
     source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_The_Pic-Nic_(1846)_-_Google_Art_Project.jpg
     license: public domain
     alt: A crowd of people at ease together beneath one great tree by a lake, one playing a guitar.
+    trim:
+      top: 0.4
+      right: 0.3
+      bottom: 0.2
+      left: 0.5
   principle: principle-6
   story: The Haudenosaunee tell that the Peacemaker brought five warring nations together and planted a great white pine at Onondaga as the sign of their union. The nations threw their weapons into the hole beneath it, where a current carried them away. Four white roots ran out to the four directions for any people who would follow them back to the tree, and an eagle sat at the top to watch for danger.
   passages:
@@ -234,6 +265,11 @@
     source: https://commons.wikimedia.org/wiki/File:Asher_Brown_Durand_-_Landscape_with_Birches_-_63.268_-_Museum_of_Fine_Arts.jpg
     license: public domain
     alt: Tall white birches frame a view down a wooded valley to blue hills, fallen logs in the foreground.
+    trim:
+      top: 0.8
+      right: 1.1
+      bottom: 0.7
+      left: 1.1
   principle: principle-1
   story: After a fire in the north woods, the paper birch is among the first trees back, a stand of white trunks rising out of the ash to shade the spruce and fir that will one day replace it. Its bark peels in sheets like pages and does not rot, so the Anishinaabe and their neighbors made canoes of it, and containers, and lodges. It lives about a century and makes way.
   passages:
@@ -250,6 +286,9 @@
     source: https://commons.wikimedia.org/wiki/File:Albert_Bierstadt_-_Giant_Redwood_Trees_of_California_-_Google_Art_Project.jpg
     license: public domain
     alt: Three small Native figures at the base, one walking with a burden basket beneath a vast trunk.
+    trim:
+      top: 0.5
+      left: 0.5
   principle: principle-5
   story: The coast redwood is the tallest living thing, and it drinks the fog. In a dry summer as much as a third of its water is mist combed out of the air by its needles. When an old redwood falls or burns, young trees sprout from its roots in a ring around the place where it stood, and grow up in a circle around an absence. Foresters call them family circles.
   passages:
@@ -266,6 +305,8 @@
     source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Monk_(1873).jpg
     license: public domain
     alt: A single white-robed monk walking under a grove at dusk.
+    trim:
+      bottom: 0.3
   principle: principle-8
   story: The Roman writers say the druids kept their rites in oak groves, and their name may mean oak-knowers. Across Europe the oak was the tree of the sky god, from Zeus's oracle at Dodona, where priests listened to the rustling of its leaves, to the oak of Thor that Boniface cut down. Lightning seems to find oaks more than other trees, which may be why.
   passages:
@@ -298,6 +339,9 @@
     source: https://commons.wikimedia.org/wiki/File:The_Lonely_Pine_by_George_Inness_(Detroit_Inst_Arts_51.331).jpg
     license: public domain
     alt: A lone evergreen stands in a wide green meadow under a dark sky with an orange band of sunset.
+    trim:
+      top: 0.9
+      right: 0.6
   principle: principle-1
   story: For the Maya the world has a great tree at each of its four corners and one at its center, and the tree at the center is the ceiba, the green tree, whose roots go down into the underworld and whose branches hold up the sky. A ceiba is still left standing when the forest around it is cleared, alone in the middle of a field, and its spines and buttresses make it look built rather than grown.
   passages:
@@ -330,6 +374,10 @@
     source: https://commons.wikimedia.org/wiki/File:Sanford_Robinson_Gifford_-_Cr%C3%A9puscule_sur_le_mont_Hunter.jpg
     license: public domain
     alt: A cleared valley of stumps with a small cabin, rising to forested slopes and a blue mountain at sunset.
+    trim:
+      right: 0.2
+      bottom: 0.5
+      left: 0.2
   principle: principle-8
   story: In the oldest written epic, Humbaba guards the Cedar Forest for the gods, a giant whose voice is the flood and whose breath is fire. Gilgamesh and Enkidu go to kill him for fame and for cedar, and they do. The poem does not let them enjoy it. The gods take Enkidu for the killing, and Gilgamesh goes looking for a way not to die. The guardian of a forest is there for a reason.
   passages:
@@ -346,6 +394,8 @@
     source: https://commons.wikimedia.org/wiki/File:Cole_Thomas_The_Course_of_Empire_The_Arcadian_or_Pastoral_State_1836.jpg
     license: public domain
     alt: A shepherd, a dancing group, and an old man drawing figures in the dirt, all small.
+    trim:
+      right: 0.2
   principle: principle-1
   story: Pan is the god of the wild places of Arcadia, goat-legged and piping, the source of the sudden fear that comes over people alone in the woods, which is why it is called panic. Socrates, who almost never left the city, prayed to him once, at the end of a long afternoon under a plane tree by a stream outside Athens.
   passages:
@@ -362,6 +412,8 @@
     source: https://commons.wikimedia.org/wiki/File:Thomas_Cole_-_Landscape_with_Figures,_A_Scene_from_The_Last_of_the_Mohicans_(1826).jpg
     license: public domain
     alt: A lone figure on a rock in a tangled wild valley, another small figure below.
+    trim:
+      left: 0.2
   principle: principle-7
   story: In the Slavic forests the leshy is the master of the woods, as tall as the trees in the forest and as small as the grass in the meadow. He leads travelers in circles until they are lost. The remedy, the old people said, is to sit down, take off your clothes and put them back on inside out, and change your shoes from one foot to the other. Then the paths come right again.
   passages:
@@ -378,6 +430,11 @@
     source: https://commons.wikimedia.org/wiki/File:Winslow_Homer,_Hound_and_Hunter,_1892,_NGA_33970.jpg
     license: public domain
     alt: A boy in a canoe holding a swimming deer by the antlers, a hound arriving.
+    trim:
+      top: 0.6
+      right: 0.3
+      bottom: 0.6
+      left: 0.3
   principle: principle-4
   story: In the Finnish woods Tapio is the forest's king and Mielikki its mistress, and a hunter asks them for game rather than taking it. In the Kalevala the hunter sings to them, praising their forest castle and promising gifts, and the old hunters left offerings on a stump. What the forest gives is given.
   passages:
@@ -394,6 +451,11 @@
     source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Guide_Carrying_a_Deer.jpg
     license: public domain
     alt: A woodsman carrying a deer across his shoulders, its head beside his.
+    trim:
+      top: 9.5
+      right: 1.9
+      bottom: 2.2
+      left: 1.9
   principle: principle-1
   story: A god with a stag's antlers sits cross-legged on a silver cauldron found in a Danish bog, holding a torc in one hand and a serpent in the other, with a stag beside him and animals all around. A stone carved in Paris in the first century names him Cernunnos. Almost nothing written about him survives. He is known only by what surrounds him.
   passages:
@@ -426,6 +488,11 @@
     source: https://commons.wikimedia.org/wiki/File:A_Gorge_in_the_Mountains_(Kauterskill_Clove)_MET_DT81.jpg
     license: CC0
     alt: A golden haze of sunlight fills a deep mountain gorge, one tree lit at the edge of the cliff.
+    trim:
+      top: 1
+      right: 1.2
+      bottom: 1
+      left: 1.2
   principle: principle-8
   story: Moses was keeping his father-in-law's sheep at the back of the wilderness when he saw a bush on fire that was not burning up. He turned aside to look, and only when he turned aside did the voice call his name. The first thing it told him was to take off his shoes. The Midrash says the presence chose a thornbush to teach that no place is empty of it.
   passages:
@@ -442,6 +509,8 @@
     source: https://commons.wikimedia.org/wiki/File:Ralph_Albert_Blakelock_-_Moonlight,_Indian_Encampment_-_1929.6.3_-_Smithsonian_American_Art_Museum.jpg
     license: public domain
     alt: A lone silhouetted figure standing by moonlit water under dark trees, a fire by the tents.
+    trim:
+      left: 0.3
   principle: principle-3
   story: The owl belongs to Athena, who sees clearly, and its picture was stamped on the coins of Athens. In the Cherokee telling of the seven nights, the owl was among the animals that stayed awake, and was given sight in the dark. In other places it is the bird of death and bad news. Everywhere it is the one awake when everyone else is sleeping, which is a gift and a loneliness.
   passages:
@@ -474,6 +543,8 @@
     source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Coming_Storm_(c._1879).jpg
     license: public domain
     alt: A lone figure walking across a field toward bending trees under a dark sky.
+    trim:
+      bottom: 0.3
   principle: principle-8
   story: In Hebrew and in Greek one word means wind, breath and spirit. David was told to wait until he heard the sound of marching in the tops of the trees, and then to move, because then he would not be going alone. In the gospel the wind blows where it wishes, and you hear its sound but cannot say where it came from. In a forest you hear it before you feel it, coming through the tops a long way off.
   passages:
@@ -490,6 +561,11 @@
     source: https://commons.wikimedia.org/wiki/File:Asher_B._Durand_-_The_First_Harvest_in_the_Wilderness_-_Google_Art_Project.jpg
     license: public domain
     alt: A tiny reaper in a sunlit field among stumps, a cabin at the edge.
+    trim:
+      top: 2.8
+      right: 1.7
+      bottom: 2.3
+      left: 1.6
   principle: principle-3
   story: Somewhere in every old forest a tree has fallen and taken its neighbors with it, and the sun reaches the ground for the first time in a century. Seeds that waited in the soil for decades wake. Light-hungry things grow fast. Foresters call it a gap, and most of a forest's change happens in its gaps. A clearing is what a loss looks like from the ground, a year later.
   passages:
@@ -508,6 +584,8 @@
     source: https://commons.wikimedia.org/wiki/File:The_Old_Hunting_Grounds_by_Worthington_Whittredge,_1864.jpg
     license: public domain
     alt: A grove of white birches arches over a still pool, an empty birchbark canoe pulled up at the water.
+    trim:
+      top: 0.2
   principle: principle-2
   story: Every year a tree lays down a ring, pale and wide in a good spring, dark and narrow in drought. Fire scars, insect years, the year the neighbor fell and the light came in are all written in the wood, outside the old rings and never over them. Read across thousands of trees, the rings date old roof beams and keep the record of a climate.
   passages:
@@ -544,6 +622,11 @@
     source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_Guide_and_Woodsman_(1889).jpg
     license: public domain
     alt: A woodsman with an axe walking past charred stumps toward a spruce ridge.
+    trim:
+      top: 0.2
+      right: 0.4
+      bottom: 0.5
+      left: 0.2
   principle: principle-8
   story: Some forests need to burn. Many cones of the lodgepole pine are sealed with resin that only fire melts, and the giant sequoia drops its seeds onto ash, where its seedlings take best. Low fires clear the brush and leave the big trees standing. The forests that never burn are the ones that burn worst when they finally do.
   passages:
@@ -562,6 +645,10 @@
     source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_Bo-Peep_(1878).jpg
     license: public domain
     alt: A young shepherdess sitting against a great tree trunk, chin in her hand.
+    trim:
+      top: 0.3
+      right: 0.3
+      left: 0.5
   principle: principle-6
   story: Caught in the rain on a mountain, people go under the biggest tree they can find. Under an old fir the ground can stay dry through an hour of rain. Birds, deer and people have all known this for as long as there have been trees and rain. To shelter is to admit that you are not, at the moment, enough by yourself.
   passages:
@@ -580,6 +667,11 @@
     source: https://commons.wikimedia.org/wiki/File:The_Beeches_MET_DT75.jpg
     license: CC0
     alt: A shepherd and flock walking a worn path under ancient beeches.
+    trim:
+      top: 1.4
+      right: 1.7
+      bottom: 1.8
+      left: 1.7
   principle: principle-5
   story: Old trails in a forest are often older than the maps. Game trails became footpaths and footpaths became roads. Walking one, you put your feet where thousands have put theirs, and the path knows where the water is and where the pass is lower. The prophet told a people who had lost their way to stand at the crossroads and ask for the old paths.
   passages:
@@ -598,6 +690,11 @@
     source: https://commons.wikimedia.org/wiki/File:The_Woodchopper,_Lake_Featherstonhaugh.jpg
     license: public domain
     alt: A woodsman with an axe stands at the foot of a dead, stripped tree in an autumn clearing.
+    trim:
+      top: 2.1
+      right: 2.2
+      bottom: 1.8
+      left: 2.2
   principle: principle-3
   story: A gardener cuts back a healthy branch so the tree can put its strength elsewhere, and a vine left unpruned grows long and wild and bears little. In the forest the trees prune themselves. The lower branches of a fir die in the shade and drop, and the trunk rises clean. What is cut away was alive, which is why it is hard.
   passages:
@@ -634,6 +731,11 @@
     source: https://commons.wikimedia.org/wiki/File:George_Henry_Durrie_-_Winter_in_the_Country_-_Google_Art_Project.jpg
     license: public domain
     alt: Farm folk with a sleigh and oxen go about their work under a bare, sleeping elm.
+    trim:
+      top: 0.9
+      right: 1
+      bottom: 2.4
+      left: 0.5
   principle: principle-2
   story: In winter a maple looks dead. It has dropped its leaves, sealed its wounds, moved its water out of the cells that would burst in a freeze, and stopped. The buds for next spring are already formed, wrapped in scales. A tree that did not stop in winter would not survive it. Rest is part of the work.
   passages:
@@ -652,6 +754,9 @@
     source: https://commons.wikimedia.org/wiki/File:George_Inness_-_Apple_Orchard_-_23.100_-_Detroit_Institute_of_Arts.jpg
     license: public domain
     alt: A tiny figure stands among the orchard trees near a red barn.
+    trim:
+      top: 0.3
+      left: 0.2
   principle: principle-6
   story: A grafter cuts a branch from one tree and binds it into another, and if the wood takes, the two grow as one tree, with the roots of one and the fruit of the other. Paul used the image for strangers who joined an old people, a wild olive branch grafted into a cultivated tree, drawing on a root it did not grow. Belonging can be given as well as inherited.
   passages:
@@ -670,6 +775,11 @@
     source: https://commons.wikimedia.org/wiki/File:Peace_and_Plenty_MET_DP159755.jpg
     license: CC0
     alt: Small harvesters among sheaves in a broad golden valley at evening.
+    trim:
+      top: 1
+      right: 0.7
+      bottom: 0.8
+      left: 1
   principle: principle-4
   story: A tree does not eat its own fruit. It makes it for the birds and animals and people who will carry its seed away, and the fruit is how anyone outside the tree knows what kind of tree it is. You cannot tell an apple from a crabapple in winter. You can in September.
   passages:
@@ -688,6 +798,8 @@
     source: https://commons.wikimedia.org/wiki/File:The_Tempest_by_Thomas_Cole,_c._1826,_High_Museum_of_Art.jpg
     license: public domain
     alt: Two figures crouch at the base of rocks while a storm wrenches a twisted tree above them.
+    trim:
+      left: 0.3
   principle: principle-8
   story: In a hard wind the stiff trees break and the supple ones bend and stand up again. Willows and young birches can be bowed to the ground by snow and rise in spring. Laozi, who took water and infants and grass for his images of strength, said that what is hard and stiff belongs with death and what is soft and supple belongs with life.
   passages:
@@ -706,6 +818,11 @@
     source: https://commons.wikimedia.org/wiki/File:The_Trout_Pool_MET_DT11615.jpg
     license: CC0
     alt: A forest stream runs through golden autumn light under tall trunks, a fallen log across the water.
+    trim:
+      top: 1.2
+      right: 0.9
+      bottom: 0.8
+      left: 1.1
   principle: principle-3
   story: Deep in an old forest on a windless day it can be quieter than any room. Moss, needles and trunks soak up the sound, and after a while you begin to hear what was under the noise, a creek a long way off, a woodpecker, your own breath. Every contemplative tradition has a word for this stillness, and most of them went to the woods to find it.
   passages:
@@ -760,6 +877,11 @@
     source: https://commons.wikimedia.org/wiki/File:Spring_Blossoms,_Montclair,_New_Jersey_MET_DT98.jpg
     license: CC0
     alt: A small figure walks a meadow path under trees just coming into pale bloom.
+    trim:
+      top: 2.2
+      right: 1.5
+      bottom: 2
+      left: 1.3
   principle: principle-2
   story: The first leaves of spring come out small and soft, a green so pale it is almost yellow, before the tree has made the tougher leaves of summer. In the mountains the leaf-out climbs the slopes a little higher every day. Jesus told his listeners to learn from the fig tree, which tells you summer is near when its branch turns tender.
   passages:
@@ -778,6 +900,8 @@
     source: https://commons.wikimedia.org/wiki/File:George_Inness_-_The_Lackawanna_Valley_-_Google_Art_Project.jpg
     license: public domain
     alt: A boy reclines on a hillside of fresh stumps, watching a train cross the cleared valley.
+    trim:
+      bottom: 0.2
   principle: principle-7
   story: Mencius pointed to Ox Mountain, bare and brown outside the city, and said it had once been beautiful with trees. People cut them, and when sprouts came back the cattle and goats grazed them, and now everyone thinks the mountain was always bare. That, he said, is what happens to the goodness in a person. What you see now is not the nature of the mountain.
   passages:
@@ -832,6 +956,11 @@
     source: https://commons.wikimedia.org/wiki/File:The_Veteran_in_a_New_Field_MET_DP102298.jpg
     license: CC0
     alt: A Union veteran, his army jacket thrown down, mows wheat with a scythe.
+    trim:
+      top: 0.9
+      right: 0.6
+      bottom: 1.2
+      left: 0.6
   principle: principle-4
   story: The law of Deuteronomy forbids an army besieging a city to cut down its fruit trees for siege works. You may eat from them, it says. The verse can be read two ways, that the tree of the field is a person's life, or, are the trees of the field people, that they should be besieged by you? The rabbis built on it a whole ethic against needless destruction, called bal tashchit, do not destroy.
   passages:
@@ -868,6 +997,11 @@
     source: https://commons.wikimedia.org/wiki/File:Winslow_Homer_-_The_two_guides.jpg
     license: public domain
     alt: Two Adirondack guides stand on a high slope, one pointing out over the clouds.
+    trim:
+      top: 0.8
+      right: 0.5
+      bottom: 0.4
+      left: 0.5
   principle: principle-7
   story: Zacchaeus was a tax collector, rich and unloved and short, and when the crowd blocked his view he ran ahead and climbed a sycamore fig by the road. That is where he was seen, and called down, and asked to host dinner. Children climb trees to see farther. Adults mostly forget that it can be done.
   passages:
