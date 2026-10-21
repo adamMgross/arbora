@@ -5,7 +5,7 @@ import { parse } from 'yaml';
 import { deckPictures, windowId } from '../../scripts/art-fetch.mjs';
 
 const repo = join(import.meta.dirname, '../..');
-const DECKS = ['wood', 'year'];
+const DECKS = ['wood', 'sky', 'year'];
 
 const cardIds = (deck: string, entries: Array<{ id: string; windows?: string[] }>) =>
   deck === 'year' ? entries[0]!.windows!.map((_, i) => windowId(i)) : entries.map((e) => e.id);

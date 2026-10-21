@@ -133,6 +133,7 @@ const wood = defineCollection({
 const skyPlate = {
   name: z.string().min(1),
   alt: z.string().min(1),
+  picture: deckPicture,
   art: z.enum(SKY_ART),
   above: z.string().min(1),
   set: z.string().min(1),
