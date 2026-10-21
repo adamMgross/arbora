@@ -2,7 +2,7 @@ import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import { verifyDist } from '../../scripts/verify-dist.mjs';
+import { PICTURE_BUDGET, verifyDist } from '../../scripts/verify-dist.mjs';
 
 const dirs: string[] = [];
 afterEach(() => dirs.splice(0).forEach((d) => rmSync(d, { recursive: true, force: true })));
@@ -32,6 +32,15 @@ const healthy = (): Record<string, string> => ({
 describe('verifyDist', () => {
   it('accepts a consistent build under a base path', () => {
     expect(verifyDist(site(healthy()), '/arbora/')).toEqual([]);
+  });
+
+  it('reports a deck picture over the budget, so a phone never downloads an oversized draw', () => {
+    const files = {
+      ...healthy(),
+      '_astro/fits.webp': 'x'.repeat(PICTURE_BUDGET),
+      '_astro/heavy.webp': 'x'.repeat(PICTURE_BUDGET + 1),
+    };
+    expect(verifyDist(site(files), '/arbora/')).toEqual(['_astro/heavy.webp is 601 KB, over the picture budget']);
   });
 
   it('reports a page that is built but absent from the sitemap', () => {

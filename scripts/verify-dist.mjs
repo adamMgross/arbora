@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, posix } from 'node:path';
 
 function walk(dir, prefix = '') {
@@ -10,6 +10,7 @@ function walk(dir, prefix = '') {
 
 const REFERENCE = /\b(?:href|src)="([^"]+)"/g;
 const EXTERNAL = /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i;
+export const PICTURE_BUDGET = 600 * 1024;
 
 export function verifyDist(dir, base = '/') {
   const problems = [];
@@ -35,6 +36,12 @@ export function verifyDist(dir, base = '/') {
         problems.push(`${page}: "${ref}" points at ${resolved.slice(root.length)}, which was not built`);
       }
     }
+  }
+
+  for (const file of files) {
+    if (!file.endsWith('.webp')) continue;
+    const bytes = statSync(join(dir, file)).size;
+    if (bytes > PICTURE_BUDGET) problems.push(`${file} is ${Math.ceil(bytes / 1024)} KB, over the picture budget`);
   }
 
   if (files.has('sw.js')) {
